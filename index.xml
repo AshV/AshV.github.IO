@@ -6,8 +6,18 @@
     <description>Recent content on Adventure Time!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2015 23:12:18 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jun 2017 12:52:43 +0000</lastBuildDate>
     <atom:link href="http://example.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>First Post</title>
+      <link>http://example.com/posts/first-post/</link>
+      <pubDate>Wed, 21 Jun 2017 12:52:43 +0000</pubDate>
+      
+      <guid>http://example.com/posts/first-post/</guid>
+      <description>&lt;p&gt;This is body which appears by default but why not Tags&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Contact</title>
