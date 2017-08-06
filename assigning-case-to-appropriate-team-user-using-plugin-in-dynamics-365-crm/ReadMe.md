@@ -1,3 +1,5 @@
+![Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM](https://github.com/AshV/AshV.github.io/raw/master/Header-Images/ms-dynamics-365-header.webp)
+
 # Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM
 
 In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfil these three requirements.
