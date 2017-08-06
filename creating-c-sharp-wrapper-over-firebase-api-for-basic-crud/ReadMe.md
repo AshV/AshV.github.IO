@@ -634,7 +634,7 @@ namespace Examples.NetCore
 
 **Execution**
 
-![image alt text](image_19.gif)
+![image alt text](https://raw.githubusercontent.com/AshV/Firebase.Net/master/docs/Firebase.NetExecution.gif)
 
 Here I am calling all the methods in API. First I am instantiating **FirebaseDB** object with base URI of my Firebase App, you may replace it with your App URI. Then in next line **Node("Teams") **is used to point object to a different resource URI. “Teams” don’t need to be already available in your Firebase database.
 
