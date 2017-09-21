@@ -1,4 +1,4 @@
-**Selecting Lookup View dynamically using JavaScript in Dynamics CRM/365**
+# Set Lookup View with JavaScript in Dynamics CRM/365
 
 Lookup Views are shown when user clicks on Look Up More Records in any Lookup Field. In Dynamics CRM/365, Lookup Views are available in almost all entities, In newly created custom entities also it will be available by default. Lookup View of Account Entity is shown.
 
@@ -12,7 +12,7 @@ Parent Account field is a Lookup in Account, you can see Lookup View here
 
 ![image alt text](image_3.png)
 
-Now If we want to show some other view here by default,** **setDeafautView() method does our job. See the syntax below.
+Now If we want to show some other view here by default, **setDeafautView()** method does our job. See the syntax below.
 
 Xrm.Page.getControl("<ControlName>").setDefaultView("<ViewGUID>");
 
@@ -136,7 +136,7 @@ function setLookupViewByName(fieldName, viewName, asynchronous) {
 
 ![image alt text](image_9.png)
 
-I have given **Customers **as view name, so it is coming as default view. See in screenshot.
+I have given **Customers** as view name, so it is coming as default view. See in screenshot.
 
 Hope it is helpful. Cheers!
 
