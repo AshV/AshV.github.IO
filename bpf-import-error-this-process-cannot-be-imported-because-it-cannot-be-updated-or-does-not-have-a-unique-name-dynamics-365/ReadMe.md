@@ -9,7 +9,7 @@ This occurs because BPF implementation is different in Dynamics 365(version 8.2)
 
 ### Solution:
 
-For each BPF, entity will also be generated with same Display Name. Name of entity will be like <Publisher>_BPF_<ProcessId>. **You need to include that entity into your solution** and It will be imported successfully.
+For each BPF, entity will also be generated with same Display Name. Name of entity will be like < Publisher >__ BPF __ < ProcessId >. **You need to include that entity into your solution** and It will be imported successfully.
 
 This resolution is already mentioned in log file of Import solution, you can Download Log File and can see there.
 
