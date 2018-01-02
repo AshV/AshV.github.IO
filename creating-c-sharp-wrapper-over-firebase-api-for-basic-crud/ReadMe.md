@@ -18,7 +18,7 @@ Give Project Name of your choice, your Country/Region and hit **CREATE PROJECT**
 
 ![image alt text](image_2.png)
 
-Now you will be navigated to you newly created App Dashboard with all the Firebase features listed, Click on **Database **on left pane
+Now you will be navigated to you newly created App Dashboard with all the Firebase features listed, Click on **Database** on left pane
 
 ![image alt text](image_3.png)
 
@@ -364,7 +364,7 @@ namespace FirebaseNet.Database
 
 If all parameters are valid, it makes HTTP calls, and forms FirebaseResponse object and returns it. If Request if of type GET then it parses response to string and appends it to FirebaseResponse object to be returned to caller.
 
-**RequestHelper()** is an Asynchronous method, which is returning Task<HttpResponseMessage>, but in Execute method with use of **Wait() **and **Result** we are handling it synchronously. In further enhancement Asynchronous API will also be exposed to consumer.
+**RequestHelper()** is an Asynchronous method, which is returning Task<HttpResponseMessage>, but in Execute method with use of **Wait()** and **Result** we are handling it synchronously. In further enhancement Asynchronous API will also be exposed to consumer.
 
 **FirebaseResponse.cs**
 
