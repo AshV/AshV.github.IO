@@ -101,3 +101,9 @@ Function returns an array of size 2, first element tells name of image web resou
 You can use below images in your web resource.
 
 High : ![High Red](High.png) | Normal : ![Normal Yellow](Medium.png) | Low : ![Low Green](Low.png)
+
+I've set Web resource and function name in All Cases view propery for Priority field.
+> ![5_setting_webresource.png](5_setting_webresource.png)
+
+Publish everything and navigate to **All Cases** view.
+> ![Final Output Working!](6_hooray.png)
