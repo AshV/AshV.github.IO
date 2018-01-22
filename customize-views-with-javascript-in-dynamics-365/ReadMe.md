@@ -5,7 +5,7 @@ Dynamics 365 v9.0 onwards JavaScript scripting is not only limited to Forms, you
 ### What is Offered?
 > ![1_OOB_Icons.png](1_OOB_Icons.png)
 
-As you can see in above image, those icons in vies cells were already avialble in some OOB views, now you can use in custom view as well.
+As you can see in above image, those icons in view cells were already available in some OOB views, now you can use in custom view as well.
 
 ### Where to customize?
 > ![2_View_Properties.png](2_View_Properties.png)
