@@ -72,11 +72,32 @@ Add one JS web resource
 
 And write below code in it
 ```javascript
-
+function casePriorityIcons(rowData, userLCID) {
+  var data = JSON.parse(rowData);
+  var priority = data.prioritycode;
+  var imgWebResource = "";
+  var imgTooltip = "";
+  switch (priority) {
+    case "High":
+      imgWebResource = "ashv_high";
+      imgTooltip = "{High Priority Case}";
+      break;
+    case "Low":
+      imgWebResource = "ashv_low";
+      imgTooltip = "{Low Priority Case}";
+      break;
+    default:
+      imgWebResource = "ashv_normal";
+      imgTooltip = "{Normal Priority Case}";
+      break;
+  }
+  return [imgWebResource, imgTooltip];
+}
 ```
 > ![4_Icons_as_Webresource.png](4_Icons_as_Webresource.png)
 
 In above code I'm reading cell data which is priority field of case, and according to value it will show color icon in fron of it. I have added three 16x16(if you'll take different size it will be scaled back to 16x16, so better take optimized size) icons with color Red, Yellow & Green for High, Normal & Low priorities respectively.
 Function returns an array of size 2, first element tells name of image web resource to show and second is tooltip text.
 You can use below images in your web resource.
+
 High : ![High Red](High.png) | Normal : ![Normal Yellow](Medium.png) | Low : ![Low Green](Low.png)
