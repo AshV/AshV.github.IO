@@ -1,9 +1,6 @@
-# Draft
-
 # Customize Views with Javascript in Dynamics 365
 
 Dynamics 365 v9.0 onwards JavaScript scripting is not only limited to Forms, you can even customize views. More specifically you can just add icon in cells as of now, I was expecting more features actually but it didn’t have.
-
 
 ### What is Offered?
 > ![1_OOB_Icons.png](1_OOB_Icons.png)
@@ -63,7 +60,6 @@ Based on those 2 inputs you can decide what icon to show. And name of this funct
    "processts_Hidden":"424505"
 }
 ```
-
 ### Let's Implement
 I’ll be doing all the customizations in **All Cases** view of **Case** entity. So you can try it right away in new trial instance without creating any custom entity/view.
 
@@ -133,4 +129,5 @@ Here `<cell name="prioritycode" width="150" imageproviderfunctionname="casePrior
 ![7_in_html.png](7_in_html.png)
 
 Feel free to get in touch for any query regarding this.
-Thanks!
+
+Cheers!
