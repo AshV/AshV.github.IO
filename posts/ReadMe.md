@@ -1,9 +1,16 @@
-[Set Lookup View with JavaScript in Dynamics CRM /365](https://www.ashishvishwakarma.com/set-lookup-view-with-javascript-dynamics-crm-365/)
+## All posts
+1. [Chrome For Android Laughs at You 😂](../when-chrome-for-android-laughs-at-you/ReadMe.md) | Jan 17, 2018
 
-[Arduino 101 with Blinking Disco LED](https://www.ashishvishwakarma.com/arduino-101-disco-led/)
+1. [Business Process Flow Import Error](../bpf-import-error-this-process-cannot-be-imported-because-it-cannot-be-updated-or-does-not-have-a-unique-name-dynamics-365/ReadMe.md) | Nov 3, 2017
 
-[Creating C# Wrapper Over Firebase API For CRUD Operations](https://www.ashishvishwakarma.com/creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/)
+1. [Set Lookup View with JavaScript in Dynamics CRM /365](../set-lookup-view-with-javascript-dynamics-crm-365/ReadMe.md) | Sep 22, 2017
 
-[Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM](https://www.ashishvishwakarma.com/assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm/)
+1. [Arduino 101 with Blinking Disco LED](../arduino-101-disco-led/ReadMe.md) | Aug 8, 2017
 
-[replaceAll in JavaScript](https://www.ashishvishwakarma.com/replaceall-in-javascript/)
+1. [Creating C# Wrapper Over Firebase API For CRUD Operations](../creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/ReadMe.md) | Jul 17, 2017
+
+1. [Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM](../assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm/ReadMe.md) | Mar 15, 2017
+
+1. [replaceAll in JavaScript](../replaceall-in-javascript/ReadMe.md) | Feb 28, 2016
+
+[//]: # (http://www.c-sharpcorner.com/code/2396/replaceall-in-javascript-without-jquery.aspx)
