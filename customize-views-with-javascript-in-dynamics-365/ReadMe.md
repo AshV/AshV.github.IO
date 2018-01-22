@@ -80,15 +80,15 @@ function casePriorityIcons(rowData, userLCID) {
   switch (priority) {
     case "High":
       imgWebResource = "ashv_high";
-      imgTooltip = "{High Priority Case}";
+      imgTooltip = "High Priority Case";
       break;
     case "Low":
       imgWebResource = "ashv_low";
-      imgTooltip = "{Low Priority Case}";
+      imgTooltip = "Low Priority Case";
       break;
     default:
       imgWebResource = "ashv_normal";
-      imgTooltip = "{Normal Priority Case}";
+      imgTooltip = "Normal Priority Case";
       break;
   }
   return [imgWebResource, imgTooltip];
@@ -107,3 +107,30 @@ I've set Web resource and function name in All Cases view propery for Priority f
 
 Publish everything and navigate to **All Cases** view.
 > ![Final Output Working!](6_hooray.png)
+
+Hooray! It's working!
+I didn't play anything with second parameter i.e. LCID, you can explore usecases and try.
+
+### Looks Good, but what happen behind the scenes
+
+All this magic happens in **layoutxml** of view you can see below.
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<grid name="resultset" object="112" jump="title" select="1" icon="1" preview="1">
+   <row name="result" id="incidentid">
+      <cell name="title" width="300" />
+      <cell name="ticketnumber" width="125" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+      <cell name="prioritycode" width="150" imageproviderfunctionname="casePriorityIcons" imageproviderwebresource="$webresource:ashv_ViewCustomizations" />
+      <cell name="caseorigincode" width="100" />
+      <cell name="customerid" width="150" />
+      <cell name="ownerid" width="150" />
+      <cell name="statecode" width="150" />
+      <cell name="createdon" width="150" />
+   </row>
+</grid>
+```
+Here `<cell name="prioritycode" width="150" imageproviderfunctionname="casePriorityIcons" imageproviderwebresource="$webresource:ashv_ViewCustomizations" />` got 2 extra attributes with name of web resource and function, they set image source and title while rendering view(see image below).
+![7_in_html.png](7_in_html.png)
+
+Feel free to get in touch for any query regarding this.
+Thanks!
