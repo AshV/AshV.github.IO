@@ -2,16 +2,16 @@
 
 Dynamics 365 v9.0 onwards JavaScript scripting is not only limited to Forms, you can even customize views. More specifically you can just add icon in cells as of now, I was expecting more features actually but it didn’t have.
 
-### What is Offered?
+## What is Offered?
 > ![1_OOB_Icons.png](1_OOB_Icons.png)
 
 As you can see in above image, those icons in view cells were already available in some OOB views, now you can use in custom view as well.
 
-### Where to customize?
+## Where to customize?
 > ![2_View_Properties.png](2_View_Properties.png)
 Goto any view's property, you can see 2 new fields **Web Resource** and **Function Name**, which is very similar to Forms when you write JS.
 
-### What to write in Web Resource?
+## What to write in Web Resource?
 You need to write a JS function with 2 parameters, when you'll add it to view, first parameters will recieve **rowData**(value with metadata shown below for one cell) and **userLCID**(i.e. language code fof current user).
 Based on those 2 inputs you can decide what icon to show. And name of this function goes in **Function Name:** field in View's property.
 
@@ -60,7 +60,7 @@ Based on those 2 inputs you can decide what icon to show. And name of this funct
    "processts_Hidden":"424505"
 }
 ```
-### Let's Implement
+## Let's Implement
 I’ll be doing all the customizations in **All Cases** view of **Case** entity. So you can try it right away in new trial instance without creating any custom entity/view.
 
 Add one JS web resource 
@@ -107,7 +107,7 @@ Publish everything and navigate to **All Cases** view.
 Hooray! It's working!
 I didn't play anything with second parameter i.e. LCID, you can explore usecases and try.
 
-### Looks Good, but what happen behind the scenes
+## Looks Good, but what happen behind the scenes
 
 All this magic happens in **layoutxml** of view you can see below.
 ```xml
