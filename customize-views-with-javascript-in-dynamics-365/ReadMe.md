@@ -15,9 +15,11 @@ As you can see in above image, those icons in vies cells were already avialble i
 Goto any view's property, you can see 2 new fields **Web Resource** and **Function Name**, which is very similar to Forms when you write JS.
 
 ### What to write in Web Resource?
-You need to write a JS function with 2 parameters, when you'll add it to view, first parameters will recieve **rowData**(value with metadata shown below for one cell) and **userLCID**(i.e. language code fof current user)
+You need to write a JS function with 2 parameters, when you'll add it to view, first parameters will recieve **rowData**(value with metadata shown below for one cell) and **userLCID**(i.e. language code fof current user).
+Based on those 2 inputs you can decide what icon to show. And name of this function goes in **Function Name:** field in View's property.
 
-```
+```json
+/// rowData for just one cell
 {
    "RowId":"{B69E62A8-90DF-E311-9565-A45D36FC5FE8}",
    "RowType":"112",
@@ -62,9 +64,8 @@ You need to write a JS function with 2 parameters, when you'll add it to view, f
 }
 ```
 
+### Let's Implement
+I’ll be doing all the customizations in **All Cases** view of **Case** entity. So you can try it right away in new trial instance without creating any custom entity/view.
 
-I’ll be doing all the customizations in *All Cases* view of *Case* entity. So you can try it right away in new trial instance without creating any custom entity/view.
-
-### 1. Add one JS web resource
-
-[Add one JS web resource](Image 1)
+Add one JS web resource 
+> ![Add one JS web resource](3_Add_Web_Resource.png)
