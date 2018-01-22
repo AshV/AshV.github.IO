@@ -69,3 +69,14 @@ I’ll be doing all the customizations in **All Cases** view of **Case** entity.
 
 Add one JS web resource 
 > ![Add one JS web resource](3_Add_Web_Resource.png)
+
+And write below code in it
+```javascript
+
+```
+> ![4_Icons_as_Webresource.png](4_Icons_as_Webresource.png)
+
+In above code I'm reading cell data which is priority field of case, and according to value it will show color icon in fron of it. I have added three 16x16(if you'll take different size it will be scaled back to 16x16, so better take optimized size) icons with color Red, Yellow & Green for High, Normal & Low priorities respectively.
+Function returns an array of size 2, first element tells name of image web resource to show and second is tooltip text.
+You can use below images in your web resource.
+High : ![High Red](High.png) | Normal : ![Normal Yellow](Medium.png) | Low : ![Low Green](Low.png)
