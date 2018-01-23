@@ -128,6 +128,8 @@ All this magic happens in **layoutxml** of view you can see below.
 Here `<cell name="prioritycode" width="150" imageproviderfunctionname="casePriorityIcons" imageproviderwebresource="$webresource:ashv_ViewCustomizations" />` got 2 extra attributes with name of web resource and function, they set image source and title while rendering view(see image below).
 ![7_in_html.png](7_in_html.png)
 
+You can download this as unmanaged solution [here.](CaseViewCustomizations_1_0_0_0.zip)
+
 Feel free to get in touch for any query regarding this.
 
 Cheers!
