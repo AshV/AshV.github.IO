@@ -1,5 +1,5 @@
 ## All posts
-1. [Customize Views with Javascript in Dynamics 365](../customize-views-with-javascript-in-dynamics-365) | Jan 23, 2018
+1. | [Customize Views with Javascript in Dynamics 365](../customize-views-with-javascript-in-dynamics-365) | Jan 23, 2018
 
 1. [Chrome For Android Laughs at You 😂](../when-chrome-for-android-laughs-at-you/ReadMe.md) | Jan 17, 2018
 
