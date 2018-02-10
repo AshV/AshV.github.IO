@@ -1,5 +1,7 @@
 # Customize Views with Javascript in Dynamics 365
 
+>[All Posts](https://www.ashishvishwakarma.com/posts/)
+
 Dynamics 365 v9.0 onwards JavaScript scripting is not only limited to Forms, you can even customize views. More specifically you can just add icon in cells as of now, I was expecting more features actually but it didn’t have.
 
 ## What is Offered?
@@ -133,3 +135,5 @@ You can download this as unmanaged solution [here.](CaseViewCustomizations_1_0_0
 Feel free to get in touch for any query regarding this.
 
 Cheers!
+
+>[All Posts](https://www.ashishvishwakarma.com/posts/)
