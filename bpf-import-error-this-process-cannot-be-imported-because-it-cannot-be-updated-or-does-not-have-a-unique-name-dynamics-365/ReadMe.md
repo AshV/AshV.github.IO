@@ -1,6 +1,8 @@
 # Business Process Flow Import Error
 ## This process cannot be imported because it cannot be updated or does not have a unique name
 
+>[All Posts](https://www.ashishvishwakarma.com/posts/)
+
 Have you ever faced this error while importing Dynamics 365 solution containing Business Process Flow
 
 ![Import Solution Error](Import_Solution_Error.png)
@@ -14,3 +16,5 @@ For each BPF, entity will also be generated with same Display Name. Name of enti
 This resolution is already mentioned in log file of Import solution, you can Download Log File and can see there.
 
 Hope it is helpful.
+
+>[All Posts](https://www.ashishvishwakarma.com/posts/)
