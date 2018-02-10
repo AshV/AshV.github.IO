@@ -2,6 +2,8 @@
 
 ![Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM](https://github.com/AshV/AshV.github.io/raw/master/Header-Images/ms-dynamics-365-header.webp)
 
+>[All Posts](https://www.ashishvishwakarma.com/posts/)
+
 In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfil these three requirements.
 
 1. If the Team has no users in it, Case should be assigned to the default queue of Team.
@@ -580,3 +582,4 @@ namespace AssignPlugin
 
 You can find this code in my GitHub repo as well https://github.com/AshV/AssignPluginDynamics365 For any query regarding this, feel free to get in touch with me. 
 
+>[All Posts](https://www.ashishvishwakarma.com/posts/)
