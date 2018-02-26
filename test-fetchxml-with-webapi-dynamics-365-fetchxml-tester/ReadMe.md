@@ -15,6 +15,8 @@ I have written [AshishVishwakarma.com/FetchXmlTester](https://AshishVishwakarma.
 
 > You must be logged-in into your Dynamics 365/CRM org in same browser instance. This dosen't require any credentials, and works for any type of deployment (Online / On-premises / IFD)
 
+![fetchXml Tester Online](https://github.com/AshV/FetchXmlTester/blob/master/logo.png)
+
 To use the same,
 1. Enter your fetchXml in main big text area.
 1. It will populate entity plural name, just verify, if not correct change it manually.
@@ -23,3 +25,5 @@ To use the same,
 1. Alternatively you can copy link generated in box beside button, aur open that in new tab.
 
 > If you find any bugs or have any suggestion, please update [here](https://github.com/AshV/FetchXmlTester/issues/new)  
+
+Cheers!
