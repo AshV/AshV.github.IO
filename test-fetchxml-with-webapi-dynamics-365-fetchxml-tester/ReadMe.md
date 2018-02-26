@@ -5,7 +5,7 @@ Just append entity's plural name in WebAPI endpoint and pass fetchXml in queryst
 
 > #### Syntax: WebAPI Endpoint + / + Entity Plural Name + ?fetchXml= + Your fetchXml here
 
-> ##### Example: https://AshV.crm.dynamics.com/api/data/v8.2/accounts?fetchXml=%3Cfetch%20version=%221.0%22%20output-format=%22xml-platform%22%20mapping=%22logical%22%20distinct=%22false%22%3E%20%20%3Centity%20name=%22account%22%3E%20%20%3C/entity%3E%3C/fetch%3E
+> ##### Example: https://AshV.crm.dynamics.com/api/data/v8.2/accounts?fetchXml=<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"><entity name="account"></entity></fetch>
 
 I written https://AshishVishwakarma.com/FetchXmlTester which makes it very handy so you can easily test fetchXml or generate query to use somewhere else.
 
