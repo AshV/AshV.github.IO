@@ -15,7 +15,7 @@ I have written [AshishVishwakarma.com/FetchXmlTester](https://AshishVishwakarma.
 
 > You must be logged-in into your Dynamics 365/CRM org in same browser instance. This dosen't require any credentials, and works for any type of deployment (Online / On-premises / IFD)
 
-![fetchXml Tester Online](https://github.com/AshV/FetchXmlTester/blob/master/logo.png)
+![fetchXml Tester Online](https://github.com/AshV/FetchXmlTester/raw/master/logo.png)
 
 To use the same,
 1. Enter your fetchXml in main big text area.
