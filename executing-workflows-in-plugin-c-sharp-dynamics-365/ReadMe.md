@@ -1,10 +1,11 @@
-# Executing Worflows using C# in Dynamics 365
+# WIP
+# Executing Worflows using C# or JavaScript in Dynamics 365
 
-#### Workflows are always robust choice in Dynamics 365 to execute fail safe processes. In OOB functionality you can schedule them on some event or can run on-demand. Good news is that you can trigger them using C# as well, be it some plugns, custom workflow activity or Azure/Windows job.
+#### Workflows are always robust choice in Dynamics 365 to execute fail safe processes. In OOB functionality you can schedule them on some event or can run on-demand. Good news is that you can trigger them using C# or JavaScript as well, be it some plugns, custom workflow activities, client side scripting or Azure/Windows job.
 
 [ExecuteWorkflowRequest](https://docs.microsoft.com/en-us/dotnet/api/microsoft.crm.sdk.messages.executeworkflowrequest) is here to rescue. we will see some examples here, let's get going
 
-### Calling a workflow without parameters
+### Calling Workflow using C#
 ```csharp
 var executeWorkflowRequest = new ExecuteWorkflowRequest()
 {
@@ -13,4 +14,6 @@ var executeWorkflowRequest = new ExecuteWorkflowRequest()
 };            
 var executeWorkflowResponse =(ExecuteWorkflowResponse)orgService.Execute(executeWorkflowRequest);
 ```
+To test the above snippet, you can feel free to use [Dynamics 365 Console Caller](https://github.com/AshV/Dynamics365ConsoleCaller)
 
+### Calling Workflow using JavaScript
