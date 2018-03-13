@@ -82,3 +82,19 @@ fetch(
     .then(response => console.log('Success:', response))
     .catch(error => console.error('Error:', error));
 ```
+
+## Alright, but where can I get my Workflow GUID?
+There are many ways
+1. Execute below fetchXml using [FetchXml Formatter Online](https://www.ashishvishwakarma.com/FetchXmlTester/)
+```xml
+<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+	<entity name="workflow">
+		<filter type="and">
+			<condition attribute="name" operator="eq" value="TestWF" />
+		</filter>
+	</entity>
+</fetch>
+```
+2. It will appear in browser address bar while editing your Workflow.
+
+Hope it helps :)
