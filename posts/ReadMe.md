@@ -1,6 +1,8 @@
-## All posts
+﻿## All posts
 
-1. [Test/Execute your fetchXml with Dyanmics 365 WebAPI](https://www.ashishvishwakarma.com/test-fetchxml-with-webapi-dynamics-365-fetchxml-tester/) | Feb 27, 2018
+1. [Executing Worflows using JavaScript/C# in Dynamics 365](../executing-workflows-using-javascript-c-sharp-example-dynamics-365) | Mar 14, 2018
+
+1. [Test/Execute your fetchXml with Dyanmics 365 WebAPI](../test-fetchxml-with-webapi-dynamics-365-fetchxml-tester/) | Feb 27, 2018
 
 1. [Customize Views with Javascript in Dynamics 365](../customize-views-with-javascript-in-dynamics-365) | Jan 23, 2018
 
