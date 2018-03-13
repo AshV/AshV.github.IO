@@ -86,7 +86,8 @@ fetch(
 ## Alright, but where can I get my Workflow GUID?
 There are many ways
 1. Execute below fetchXml using [FetchXml Formatter Online](https://www.ashishvishwakarma.com/FetchXmlTester/)
-```xml
+
+```html
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
 	<entity name="workflow">
 		<filter type="and">
