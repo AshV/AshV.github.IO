@@ -1,4 +1,4 @@
-# Executing Worflows using C# or JavaScript in Dynamics 365
+# Executing Worflows using C# / JavaScript in Dynamics 365
 
 Workflows are always robust choice in Dynamics 365 to execute fail safe processes. In OOB functionality you can schedule them on some event or can run on-demand. Good news is that you can trigger them using C# or JavaScript as well, be it some plugns, custom workflow activities, client side scripting or Azure/Windows job.
 
@@ -79,8 +79,8 @@ fetch(
         },
         method: "POST"
     })
-    .then(response => console.log('Success:', response))
-    .catch(error => console.error('Error:', error));
+    .then(response => console.log("Success:", response))
+    .catch(error => console.error("Error:", error));
 ```
 
 ## Alright, but where can I get my Workflow GUID?
@@ -90,11 +90,11 @@ There are many ways
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
 	<entity name="workflow">
 		<filter type="and">
-			<condition attribute="name" operator="eq" value="TestWF" />
+			<condition attribute="name" operator="eq" value="Enter Workflow Name Here!" />
 		</filter>
 	</entity>
 </fetch>
 ```
 2. It will appear in browser address bar while editing your Workflow.
 
-Hope it helps :)
+> Hope it helps :)
