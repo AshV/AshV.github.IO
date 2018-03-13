@@ -33,7 +33,7 @@ OData-Version: 4.0
 }
 ```
 
-### Request using XmlHttpRequest
+### Making Request using XmlHttpRequest
 ```javascript
 var clientUrl = Xrm.Page.context.getClientUrl();
 var workflowId = "24dc5603-a117-4221-a7bb-5b6ed17a1810";
@@ -58,4 +58,27 @@ xhr.onreadystatechange = function () {
     }
 };
 xhr.send("{\"EntityId\":\"" + entityId + "\"}");
+```
+
+### Making Request in modern way using Fetch
+```javascript
+var clientUrl = Xrm.Page.context.getClientUrl();
+var workflowId = "24dc5603-a117-4221-a7bb-5b6ed17a1810";
+var entityId = "B0A19CDD-88DF-E311-B8E5-6C3BE5A8B200";
+
+fetch(
+    clientUrl + "/api/data/v9.0/workflows(" + workflowId + ")/Microsoft.Dynamics.CRM.ExecuteWorkflow",
+    {
+        body: "{\"EntityId\":\"" + entityId + "\"}",
+        credentials: "same-origin",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json; charset=utf-8",
+            "OData-MaxVersion": "4.0",
+            "OData-Version": "4.0"
+        },
+        method: "POST"
+    })
+    .then(response => console.log('Success:', response))
+    .catch(error => console.error('Error:', error));
 ```
