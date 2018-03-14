@@ -6,13 +6,13 @@ Sharing content for [webinar](https://www.c-sharpcorner.com/events/getting-start
 
 ![dynamics-365-101-webinar-cover](dynamics-365-101-webinar-cover.jpg)
 
-### Slides
-{% raw %}<iframe src="//slides.com/ashv/dynamics-365-101/embed?style=light" width="100%" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>{% endraw %}
+## Slides
+{% raw %}<iframe src="//slides.com/ashv/dynamics-365-101/embed?style=light" width="100%" height="500" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>{% endraw %}
 
 [Getting Started With Dynamics 365 Slides](http://slides.com/ashv/dynamics-365-101#/)
 
-### Code Used in Webinar
+## Code Used in Webinar
 [https://github.com/AshV/CrmSdkDemo](https://github.com/AshV/CrmSdkDemo)
 
-### Event URL
+## Event URL
 [Getting Started With Dynamics 365 Webinar](https://www.c-sharpcorner.com/events/getting-started-with-dynamics-crm365)
