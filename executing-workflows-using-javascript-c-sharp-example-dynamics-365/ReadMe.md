@@ -14,7 +14,7 @@ var executeWorkflowRequest = new ExecuteWorkflowRequest()
 };            
 var executeWorkflowResponse =(ExecuteWorkflowResponse)orgService.Execute(executeWorkflowRequest);
 ```
-To test the above snippet, you can feel free to use [Dynamics 365 Console Caller](https://github.com/AshV/Dynamics365ConsoleCaller)
+To test the above snippet, you can feel free to use [Dynamics 365 Console Caller](https://www.ashishvishwakarma.com/Dynamics365ConsoleCaller/)
 
 ## Calling Workflow using JavaScript Ajax
 
