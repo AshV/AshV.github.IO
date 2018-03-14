@@ -2,7 +2,7 @@
 
 Workflows are always robust choice in Dynamics 365 to execute fail safe processes. In OOB functionality you can schedule them on some event or can run on-demand. Good news is that you can trigger them using C# or JavaScript as well, be it some plugns, custom workflow activities, client side scripting or Azure/Windows job.
 
-## Calling Workflow using C-Sharp
+## Calling Workflow using C\#
 
 [ExecuteWorkflowRequest](https://docs.microsoft.com/en-us/dotnet/api/microsoft.crm.sdk.messages.executeworkflowrequest) is here to rescue to trigger workflows using C# or any other .Net language.
 
@@ -84,9 +84,7 @@ fetch(
 ```
 
 ## Alright, but where can I get my Workflow GUID?
-There are many ways
-
-1. Execute below fetchXml using [FetchXml Tester Online](https://www.ashishvishwakarma.com/FetchXmlTester/) and grab GUID form response JSON
+Execute below fetchXml using [FetchXml Tester Online](https://www.ashishvishwakarma.com/FetchXmlTester/) after replacing your Workflow name and grab GUID from response JSON
 
 ```html
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
@@ -97,6 +95,5 @@ There are many ways
   </entity>
 </fetch>
 ```
-2. It will appear in browser address bar while editing your Workflow.
 
 > Hope it helps 😊
