@@ -1,7 +1,5 @@
 # When Chrome For Android Laughs at You 😂
 
->[All Posts](https://www.ashishvishwakarma.com/posts/)
-
 I have one bad habit of keep opening links in new tab in phone without closing old ones. It becomes hectic when I need to find some previously opened link. I thought I can export all those links in some file and can find easily, but it was not a cakewalk.
 
 Once you opens 100th tab on your Chrome for Android, it would stop showing tab count and will show :D smiley instead. or in simple words it will laugh at you. because there's no easy way (at the time of writing this) to export list of open tabs so we can explore later.
@@ -16,5 +14,3 @@ Working but not quick
 ![Chrome Laughing at You](Chrome-Laughs.jpeg)
 
 Let's see if any quick and easy way is there to Export all open tabs in Chrome for Android in near future.
-
->[All Posts](https://www.ashishvishwakarma.com/posts/)
