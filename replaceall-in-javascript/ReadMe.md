@@ -1,7 +1,5 @@
 # replaceAll() in JavaScript
 
->[All Posts](https://www.ashishvishwakarma.com/posts/)
-
 When we use replace() in any string, most of the times it is not easy to predict how many occurrences we will have to replace. There can be many approaches to do it. Let's have a look at all o them and proceed to the best one.
 
 **1. Use Fail-Safe**
@@ -65,5 +63,3 @@ console.log(StrToRepalce);
 Code - https://gist.github.com/AshV/386dfe2a0e1ba22ce29a456d93258e77 
 
 Live Preview - http://codepen.io/AshV/pen/BKaONd
-
->[All Posts](https://www.ashishvishwakarma.com/posts/)
