@@ -1,7 +1,5 @@
 # Creating C# Wrapper Over Firebase API For CRUD Operations
 
->[All Posts](https://www.ashishvishwakarma.com/posts/)
-
 ![Creating C# Wrapper Over Firebase API For CRUD Operations](header.jpg) 
 
 Firebase is platform provided by Google, which provides many services, Firebase Realtime Database is one of them. Firebase provides many SDKs for different platforms as well as it provides REST api to interact with database. Here we will built wrapper in C# around REST api to easily perform CRUD operations in our C# applications.
@@ -654,4 +652,10 @@ Finally **ToString()** method prints current resource URI of Firebase Database.
 
 I will be keep adding new features to this library, you can see in further articles and repo or you can contribute at [https://github.com/AshV/Firebase.Net](https://github.com/AshV/Firebase.Net)
 
->[All Posts](https://www.ashishvishwakarma.com/posts/)
+**Update :** Further I have implemented Authentication in Firebase.Net, To use this just set **Auth!=null** in Firebase Console which we made null in **Section 2**. And in code you need to pass your **JSON** key as second parameter in constructor as given below.
+```csharp
+FirebaseDB firebaseDB = new FirebaseDB("https://YourApp.firebaseio.com","Path/To/Key.json");
+```
+To know how to grab JSON key for Google Service Account and how have I implemented, please read [Get Access Token for Google Service Account using C\#](../get-access-token-for-google-api-service-account-c-sharp/ReadMe.md) . 
+
+Let any suggestions/questions go in comments section
