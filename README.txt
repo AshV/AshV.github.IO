@@ -1,3 +1,1 @@
-Profile Page 
-
-https://www.ashishvishwakarma.com/index.html
+My thoughts @ https://www.ashishvishwakarma.com/
