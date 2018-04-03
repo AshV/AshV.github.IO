@@ -108,7 +108,10 @@ static void Main(string[] args)
 
 **Step 5**. If you don't want to keep schema as a separete file, you can keep it as string and convert it to MemeryStream, like here we are reading fetchXml string.
 
-### FetchXml Schema
+> [Find complete code here](https://github.com/AshV/validate-fetchXml-against-schema/blob/master/Program.cs)
+
+### FetchXml Schema 
+[Find raw version here](https://raw.githubusercontent.com/AshV/validate-fetchXml-against-schema/master/fetch.xsd)
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
