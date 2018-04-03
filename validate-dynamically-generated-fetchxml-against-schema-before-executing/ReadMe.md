@@ -4,18 +4,21 @@ Many times in Dynamics 365 related applications we need to work with dynamically
 
 Let's get started, here I'm using a console application.
 
-1. We need FetchXml schema which can be grabbed from SDK or can be found at the end of this article. Add this file with name **fetch.xsd** to your project and set **Copy to Output Directory** property as **Copy Always**.
+**Step 1**. We need FetchXml schema which can be grabbed from SDK or can be found at the end of this article. Add this file with name **fetch.xsd** to your project and set **Copy to Output Directory** property as **Copy Always**.
 
 ![Fetch.xsd Properties](Fetch.xsd_Properties.png)
 
-2. Add below listed namesspaces to project
+**Step 2**. Add below listed namesspaces to project
  
 using System.IO;
+
 using System.Text;
+
 using System.Xml;
+
 using System.Xml.Schema;
 
-3. Implement ProcessFetchXml() as given below which is returning 2 values, first is boolean flag **Success** indicating whether fetchXml is valid or not. and second is **Message** which will have error message if fetchXml is not valid.
+**Step 3**. Implement ProcessFetchXml() as given below which is returning 2 values, first is boolean flag **Success** indicating whether fetchXml is valid or not. and second is **Message** which will have error message if fetchXml is not valid.
 
 ```csharp
 public static (bool Success, string Message) ProcessFetchXml(string fetchXml)
@@ -58,7 +61,7 @@ public static (bool Success, string Message) ProcessFetchXml(string fetchXml)
 
 In above code first of all we are reading fetxhXml schema using XmlReader, then Initiating XmlReaderSettings object with schema. This is passed as second parameter while reading fetchXml with XmlReader. It validates fetchXml while we call Load() of XmlDocument, you can see in code.
 
-4. Let's test some fetchXml with above written function.
+**Step 4**. Let's test some fetchXml with above written function.
 
 ```csharp
 static void Main(string[] args)
@@ -103,7 +106,7 @@ static void Main(string[] args)
 ```
 ![Valid_fetchXml.png](Valid_fetchXml.png)
 
-5. If you don't want to keep schema as a separete file, you can keep it as string and convert it to MemeryStream, like here we are reading fetchXml string.
+**Step 5**. If you don't want to keep schema as a separete file, you can keep it as string and convert it to MemeryStream, like here we are reading fetchXml string.
 
 ### FetchXml Schema
 
