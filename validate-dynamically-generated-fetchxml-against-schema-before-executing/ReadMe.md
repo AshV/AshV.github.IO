@@ -1,4 +1,4 @@
-# Validating fetchXml against Schema
+# Validating fetchXml against Schema using C\#
 
 Many times in Dynamics 365 related applications we need to work with dynamically generated or user entered fetchXml, In this case it's always a good idea to verify fetcXml against schema before using. This kind of requirement  might come if you are building some awesome stuff like [FetchXML Builder](https://fxb.xrmtoolbox.com/) or [FetchXML to SQL Converter](https://github.com/abtevrythng/FetchXML-to-SQL). or Generating fetchXml query in code.
 

@@ -1,10 +1,12 @@
 ﻿## All posts
 
-1. [Executing Worflows using JavaScript / C# in Dynamics 365](../executing-workflows-using-javascript-c-sharp-example-dynamics-365) | Mar 14, 2018
+1. [Validating fetchXml against Schema using C\#](../validate-dynamically-generated-fetchxml-against-schema-before-executing) /Apr 3, 2018
 
-1. [Test / Execute your fetchXml with Dyanmics 365 WebAPI](../test-fetchxml-with-webapi-dynamics-365-fetchxml-tester/) | Feb 27, 2018
+1. [Executing Worflows using JavaScript / C# in Dynamics 365](../executing-workflows-using-javascript-c-sharp-example-dynamics-365) /Mar 14, 2018
 
-1. [Customize Views with Javascript in Dynamics 365](../customize-views-with-javascript-in-dynamics-365) | Jan 23, 2018
+1. [Test / Execute your fetchXml with Dyanmics 365 WebAPI](../test-fetchxml-with-webapi-dynamics-365-fetchxml-tester/) /Feb 27, 2018
+
+1. [Customize Views with Javascript in Dynamics 365](../customize-views-with-javascript-in-dynamics-365) /Jan 23, 2018
 
 1. [When Chrome For Android Laughs at You 😂](../when-chrome-for-android-laughs-at-you/ReadMe.md) | Jan 17, 2018
 
