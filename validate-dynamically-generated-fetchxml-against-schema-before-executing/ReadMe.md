@@ -8,7 +8,7 @@ Let's get started, here I'm using a console application.
 
 ![Fetch.xsd Properties](Fetch.xsd_Properties.png)
 
-**Step 2**. Add below listed namesspaces to project
+**Step 2**. Add below listed namespaces to project
  
 using System.IO;
 
@@ -46,7 +46,7 @@ public static (bool Success, string Message) ProcessFetchXml(string fetchXml)
             // fetchXml is validated on call of Load()
             xmldoc.Load(reader);
 
-            // Do further process here or just return sucess to calling function
+            // Do further process here or just return success to calling function
             return (true, "");
         }
     }
@@ -84,7 +84,7 @@ static void Main(string[] args)
 
 Here given fetchXml looks fine let's execute it.
 ![Invalid fetchXml](Invalid_fetchXml.png)
-No it was Invalid beacuse for **contains** fetchXml uses **like** similar to SQL, let's fix it and run again.
+No it was Invalid because for **contains** fetchXml uses **like** similar to SQL, let's fix it and run again.
 
 ```csharp
 static void Main(string[] args)
@@ -106,7 +106,7 @@ static void Main(string[] args)
 ```
 ![Valid_fetchXml.png](Valid_fetchXml.png)
 
-**Step 5**. If you don't want to keep schema as a separete file, you can keep it as string and convert it to MemeryStream, like here we are reading fetchXml string.
+**Step 5**. If you don't want to keep schema as a separate file, you can keep it as string and convert it to MemoryStream, like here we are reading fetchXml string.
 
 > [Find complete code here](https://github.com/AshV/validate-fetchXml-against-schema/blob/master/Program.cs)
 
