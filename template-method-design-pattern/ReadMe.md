@@ -117,6 +117,7 @@ class MainClass
 We have created class AbstractLogger, and moved common code(i.e. SerializeMessage here) here. All class requiring this code will be inheriting this class now to reuse code.
 
 > Source Code : [Template-Method-Design-Pattern/Logger/Approach2](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger/Approach2)
+
 ```csharp
 public abstract class AbstractLogger
 {
@@ -301,6 +302,7 @@ class MainClass
 ### Approach 4 : Let the Caller decide some of the things
 
 >Source Code : [Template-Method-Design-Pattern/Logger/Approach4](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger/Approach4)
+
 ```csharp
 public abstract class AbstractLogger
 {
