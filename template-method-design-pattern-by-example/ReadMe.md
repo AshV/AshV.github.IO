@@ -1,10 +1,12 @@
-# Template Method Design Pattern
+# Template Method Design Pattern by Example
 
 ![template-method-design-pattern](template-method-design-pattern.jpeg)
 
 This pattern falls under behavioral design patterns, as name suggests it defines template which can be used further to create something by using it. You can think it like **stencils**, you can create designs on wall or other surface without much effort, you just need to choose color and apply pigment.
 
 Let's understand this with an example. We will be implementing **Logger** which is capable of logging in multiple places like, database, file or sending logs in email. We will start with one simple solution and will refactor it gradually to see how template method pattern can be usefull for us.
+
+> Example are written in C#, but easily understandable for anyone who knows basic OOPS concept. 
 
 ### Approach 1 : Create different classes for each type of Logger
 
@@ -407,5 +409,7 @@ class MainClass
 ```
 
 This is how **Template Method** is implemented. 
+
+> Complete Source Code : [Template Method Design Pattern/Logger](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger)
 
 > Thanks for reading, let the discussions/suggestions/queries go in comments.

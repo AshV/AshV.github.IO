@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Template Method Design Pattern by Example](../template-method-design-pattern-by-example) /Apr 8, 2018
+
 1. [Validating fetchXml against Schema using C\#](../validate-dynamically-generated-fetchxml-against-schema-before-executing) /Apr 3, 2018
 
 1. [Executing Worflows using JavaScript / C# in Dynamics 365](../executing-workflows-using-javascript-c-sharp-example-dynamics-365) /Mar 14, 2018
