@@ -1,0 +1,1 @@
+http://johnstejskal.com/wp/creating-2d-animations-from-sprite-sheets-in-unity3d-pt2/
