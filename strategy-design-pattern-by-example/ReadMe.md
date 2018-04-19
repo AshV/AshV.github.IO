@@ -13,15 +13,9 @@ JSON is most popular data exchange format today, suppose there is one system whi
 Below is how our initial code looks like.
 
 ```csharp
-using static System.Console;
-
 class JsonParser {
-    private string Source { get; set; }
-
     private string JsonData { get; set; }
-
-    public JsonParser(string source, string jsonData) {
-        Source = source;
+    public JsonParser(string jsonData) {
         JsonData = jsonData;
     }
 
@@ -32,30 +26,27 @@ class JsonParser {
     }
 }
 
-class Program {
+class MainClass {
     static void Main(string[] args) {
-        var parsedData = new JsonParser(
-            "sensor",
-            "{ 'temp' : '38' }")
-            .Parse();
+        var jsonParser = new JsonParser("{ 'temp' : '38' }");
+        var parsedData = jsonParser.Parse();
     }
 }
 ```
 
 > Example are written in C#, but easily understandable for anyone who knows basic OOPS concept.
 
-### Approach 1
+### Approach 1 : Seprate method for each parser 
+
+For each type of parser, seprate methods are created in JsonParser Class. Inside Parse(), according to Source of data appropriate method in called.
+
+> Source Code : [Strategy-Design-Pattern/JsonParser/Approach1](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/----/Approach1)
 
 ```csharp
-using System;
-using static System.Console;
-
 class JsonParser {
-    private string Source { get; set; }
     private string JsonData { get; set; }
 
-    public JsonParser(string source, string jsonData) {
-        Source = source;
+    public JsonParser( string jsonData) {
         JsonData = jsonData;
     }
 
@@ -71,9 +62,8 @@ class JsonParser {
         return new { ParsedData = JsonData };
     }
 
-
-    public object Parse() {
-        switch (Source) {
+    public object Parse(string source) {
+        switch (source) {
             case "sensor":
                 return ParseSensorData();
             case "blog":
@@ -81,6 +71,116 @@ class JsonParser {
             default:
                 throw new Exception("parser not available for given type.");
         }
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        var jsonParser = new JsonParser("{ 'temp' : '38' }");
+        var parsedData = jsonParser.Parse("sensor");
+    }
+}
+```
+
+#### Problem in approach 1
+
+Single class has multiple responsibilities, for adding a new parser, JsonParser class and Parse() has to be modified, Which is not a good practice.
+
+### Approach 2
+
+```csharp
+public abstract class JsonParser {
+    public string JsonData;
+
+    public JsonParser(string jsonData) {
+        JsonData = jsonData;
+    }
+
+    public abstract object Parse();
+}
+
+class SensorDataParser : JsonParser {
+    public SensorDataParser(string jsonData) : base(jsonData) {
+    }
+
+    public override object Parse() {
+        WriteLine("Parsing Sensor Json Data");
+        // Logic optimized for parsing Sensor Data
+        return new { ParsedData = JsonData };
+    }
+}
+
+class BlogDataParser : JsonParser {
+    public BlogDataParser(string jsonData) : base(jsonData) {
+    }
+
+    public override object Parse() {
+        WriteLine("Parsing Blog Json Data");
+        // Logic optimized for parsing Blog Data
+        return new { ParsedData = JsonData };
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        JsonParser jsonParser = new SensorDataParser(
+            "{ 'temp' : '38' }");
+        var parsedData = jsonParser.Parse();
+
+        jsonParser = new SensorDataParser(
+            "{ 'title' : 'Strategy Design Pattern by Example' }");
+        parsedData = jsonParser.Parse();
+    }
+}
+```
+
+### Approach 3
+
+```csharp
+class JsonParser {
+    public IJsonParseLogic JsonParseLogic { get; set; }
+    private string JsonData { get; set; }
+
+    public JsonParser(string jsonData) {
+        JsonData = jsonData;
+    }
+
+    public object Parse() {
+        return JsonParseLogic.Parse(JsonData);
+    }
+}
+
+interface IJsonParseLogic {
+    object Parse(string jsonData);
+}
+
+class BlogDataParseLogic : IJsonParseLogic {
+    public object Parse(string jsonData) {
+        WriteLine("Parsing Blog Json Data");
+        // Logic optimized for parsing Blog Data
+        return new { ParsedData = jsonData };
+    }
+}
+
+class SensorDataParseLogic : IJsonParseLogic {
+    public object Parse(string jsonData) {
+        WriteLine("Parsing Sensor Json Data");
+        // Logic optimized for parsing Sensor Data
+        return new { ParsedData = jsonData };
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        JsonParser jsonParser = new JsonParser(
+            "{ 'temp' : '38' }");
+        jsonParser.JsonParseLogic = new SensorDataParseLogic();
+        var parsedData = jsonParser.Parse();
+
+        jsonParser = new JsonParser(
+            "{ 'title' : 'Strategy Design Pattern by Example' }");
+        jsonParser.JsonParseLogic = new BlogDataParseLogic();
+        parsedData = jsonParser.Parse();
     }
 }
 ```
