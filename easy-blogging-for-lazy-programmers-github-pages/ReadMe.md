@@ -10,19 +10,18 @@ Now, if you are a techie and planning to starts writing, so it dosen't suits you
 
 WAIT A MINUTE..... Title of this article says something EAZY , LAZY , PROGRAMMERS ???
 
-Alright! but  lemme make you clear If you are not a Programmer and don't like to delay the mess to latest way possible, Then this post is not for you, happily setup *Wordpress* or write in *Medium*.
+Alright! but  lemme make you clear If you are not a Programmer(coz it uses GitHub) and don't like to delay the mess to latest way possible, Then this post is not for you, happily setup *Wordpress* or write in *Medium*.
 
 **I am just sharing because this is how I have done.**
 
 ## Reasons I use GitHub Pages
 
 * No extra setup, It's just a GitHub repo.
-* I don't need  to open any other editor, It's markdown, I can use Visual Studio, thanks to awesome VS extension by [Name]
+* I don't need  to open any other editor, I can use Visual Studio, thanks to awesome VS extension by [Name]
 * I can correct typos online or even can write full articles.
 * No formatting headaches, it's markdown.
 * It dosen't stops me from using HTML, if I wish to. (using    `{% raw %}`)
 * Full control over website theme and appearance
-
 
 
 
