@@ -111,7 +111,7 @@ class MainClass
 }
 ```
 
-#### Problem in above Code
+#### Reviewing approach 1
  No Code reusability, SerializeMessage() has same implementation in each class.
 
 ### Approach 2 : Move duplicate code to common place
@@ -210,7 +210,8 @@ class MainClass
 }
 ```
 
-#### Problem in above Code
+#### Reviewing approach 2
+
 All loggers are having 3 kind of operations now, *Opening Connection/File*, *Writing log message* & *Closing/destroying File/object/connection*. So we can assume a typical Logger will always these kind of operation, but still a person who is implementing some new Logger in future has to remember and implement those operation. Shouldn't that be enforced?
 
 Log() is doing nothing fancy, just calling all other method in sequence, isn't it?
@@ -307,7 +308,7 @@ class MainClass
 }
 ```
 
-#### Problem in above code
+#### Reviewing approach 3
 Here all steps of our algo/program will be executed for sure, but I have some optional steps which I wish to let user choose whether to call or not.
 
 ### Approach 4 : Let the Caller decide some of the things
@@ -408,7 +409,9 @@ class MainClass
 }
 ```
 
-This is how **Template Method** is implemented. 
+## Conclusion
+
+You can see in approach 4 code looks pretty better, whenever you see your code/algo is having same steps with minor configurable changes like the given example, Template method can be useful.
 
 > Complete Source Code : [Template Method Design Pattern/Logger](https://github.com/AshV/Design-Patterns/tree/master/Article-Examples/Template-Method-Design-Pattern/Logger)
 
