@@ -1,5 +1,9 @@
 ﻿## All posts
 
+1. [Strategy Design Pattern by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/Strategy-Pattern/) /Apr 30, 2018
+
+1. [Easy Blogging for Lazy Programmers](../easy-blogging-for-lazy-programmers-github-pages) /Apr 30, 2018
+
 1. [Template Method Design Pattern by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/Template-Method-Pattern/) /Apr 8, 2018
 
 1. [Validating fetchXml against Schema using C\#](../validate-dynamically-generated-fetchxml-against-schema-before-executing) /Apr 3, 2018
