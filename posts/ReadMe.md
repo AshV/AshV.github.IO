@@ -1,6 +1,6 @@
 ﻿## All posts
 
-1. [Template Method Design Pattern by Example](../template-method-design-pattern-by-example) /Apr 8, 2018
+1. [Template Method Design Pattern by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/Template-Method-Pattern/) /Apr 8, 2018
 
 1. [Validating fetchXml against Schema using C\#](../validate-dynamically-generated-fetchxml-against-schema-before-executing) /Apr 3, 2018
 
