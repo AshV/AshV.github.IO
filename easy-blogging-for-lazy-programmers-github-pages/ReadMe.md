@@ -16,9 +16,9 @@ Alright! but  lemme make you clear If you are not a Programmer(coz it uses GitHu
 
 ## Reasons I use GitHub Pages
 
+* Can use my own Domain without extra cost.
 * No extra setup, It's just a GitHub repo.
-* Can use my own domain without extra cost.
-* I don't need  to open any other editor, I can use Visual Studio, thanks to awesome VS extension by [Name]
+* I don't need  to open any other editor, I can use Visual Studio, thanks to awesome [VS extension by madskristensen](https://github.com/madskristensen/MarkdownEditor)
 * I can correct typos online or even can write full articles.
 * No formatting headaches, it's markdown.
 * It dosen't stops me from using HTML, if I wish to.
@@ -26,7 +26,34 @@ Alright! but  lemme make you clear If you are not a Programmer(coz it uses GitHu
 * Seggregate content over multiple repos.
 * No ads like wordpress.com hosting.
 
+## Setting up GitHub Pages
 
+* Create a repository with name `user/organization name.github.io`. this is not case sensitive. Like I have created with name [AshV.github.IO](https://github.com/AshV/AshV.github.IO). Check **Initialize this repository with README** checkbox so you don't need to Create it again. 
+
+![GitHub Pages Repo](assets/GitHubPagesRepo.png)
+
+* Edit README.md file and enter some text.
+
+![Edit REDAME](assets/EditReadMe.png)
+
+* Now navigate to `https://user/organizationname.github.io`, in my case [https://AshV.github.IO](https://AshV.github.IO), You will see the content of your README.md file. 
+**Congratulations! It is Live**
+
+![Live Page](assets/LivePage.png)
+
+* If it dosen't appears immediately, try after sometime it takes few seconds to builds. If you are making page for some reposoitory, you need to manually enable GitHub Pages from settings, you can choose diffrent sources for your page whether it should load from *master branch*, *docs folder in master branch* or from *gh-pages branch*. here I have taken master branch for brevity.
+
+![Enable Github Pages](assets/EnableGithubPages.png)
+
+* Your live page is looking very plain, you can click **Choose a theme** and select from templates provided by github for GitHub Pages, to make it better looking.
+
+![Live Page With Theme](assets/LivePageWithTheme.png)
+
+## Using custom themes with Github Pages
+
+If you didn't like one of those themes which are shown after **Choose a theme**, you have option to make your own theme or use any Jekyll theme which works well with GitHub pages.
+
+> Find detailed documentation on [GitHub Help](https://help.github.com/categories/github-pages-basics/)
 
 
 
