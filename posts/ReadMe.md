@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Gang of Four Design Patterns by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/) /April, 2018
+
 1. [Strategy Design Pattern by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/Strategy-Pattern/) /Apr 30, 2018
 
 1. [Easy Blogging for Lazy Programmers](../easy-blogging-for-lazy-programmers-github-pages) /Apr 30, 2018
