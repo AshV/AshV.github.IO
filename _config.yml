@@ -1,3 +1,5 @@
 remote_theme: AshV/my-site-theme
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
