@@ -1,15 +1,15 @@
-﻿# Executing Actions using JavaScript / C# in Dynamics 365
+﻿# Executing Actions using JavaScript / C\# in Dynamics 365
 
-In Dynamics 365 Actions we have feasiblilty to triggers it from Clientside code and Serverside code both. Let's have a look how it can be achieved.
+In Dynamics 365 Actions we have feasiblilty to trigger it from Clientside code and Serverside code both. Let's have a look how it can be achieved.
 
-I have created  an action with name new_GreetAction(see images below) it's a global action and has Input and Output Argumant both. We will see how to call it programmatically.
+I have created  an action with name new_GreetAction(see images below), it's a global action and has Input and Output Argumant both. We will see how to call it programmatically.
 
 ![](assets/greetaction.png)
 ![](assets/setting_out_param.png)
 
 ## Calling Actions using C\#
 
-In C\# we can call it using **OrganizationRequest** and setting RequestName parameter or from constructor.
+In C\# we can call it using **OrganizationRequest** by setting Action Name in RequestName parameter or passing it in constructor.
 
 ```csharp
 // calling action

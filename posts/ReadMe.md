@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Executing Actions using JavaScript / C\# in Dynamics 365](../executing-actions-using-javascript-c-sharp-example-dynamics-365) /May 17, 2018
+
 1. [Gang of Four Design Patterns by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/) /April, 2018
 
 1. [Strategy Design Pattern by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/Strategy-Pattern/) /Apr 30, 2018
