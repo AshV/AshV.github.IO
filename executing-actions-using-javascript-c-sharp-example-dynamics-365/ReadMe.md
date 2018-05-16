@@ -1,4 +1,4 @@
-# Executing Actions using JavaScript / C# in Dynamics 365
+﻿# Executing Actions using JavaScript / C# in Dynamics 365
 
 In Dynamics 365 Actions we have feasiblilty to triggers it from Clientside code and Serverside code both. Let's have a look how it can be achieved.
 
@@ -39,6 +39,8 @@ var executeAction = orgService.Execute(
         ["InArgument"] = "Value"
     });
 ```
+
+To test the above snippet, you can feel free to use [Dynamics 365 Console Caller](https://www.AshishVishwakarma.com/Dynamics365ConsoleCaller/)
 
 ## Calling Actions using JavaScript Ajax
 
@@ -88,6 +90,11 @@ fetch(
         credentials: "same-origin",
         method: "POST"
     })
-    .then(response => console.log("Success:", response))
+    .then(response =>  response.json())
+    .then(data => alert(data.OutArg))
     .catch(error => console.error("Error:", error));
 ```
+
+> Hope it helps 😊
+
+Let the queries/discussions go in comments.

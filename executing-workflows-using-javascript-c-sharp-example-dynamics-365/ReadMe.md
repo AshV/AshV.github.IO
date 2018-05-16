@@ -97,3 +97,5 @@ Execute below fetchXml using [FetchXml Tester Online](https://www.ashishvishwaka
 ```
 
 > Hope it helps 😊
+
+Let the queries/discussions go in comments.
