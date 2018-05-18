@@ -1,6 +1,6 @@
 ﻿# Executing Actions using JavaScript / C\# in Dynamics 365
 
-In Dynamics 365 Actions we have feasiblilty to trigger it from Clientside code and Serverside code both. Let's have a look how it can be achieved.
+In Dynamics 365 we have feasiblilty to trigger Actions from Clientside code and Serverside code both. Let's have a look how it can be achieved.
 
 I have created  an action with name new_GreetAction(see images below), it's a global action and has Input and Output Argumant both. We will see how to call it programmatically.
 
