@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Installing XrmToolBox Plugins in No Internet OnPremises Environments](../Installing-Using-XrmToolBox-Plugins-in-No-Internet-OnPremises-Environments) / May 21, 2018
+
 1. [Executing Actions using JavaScript / C\# in Dynamics 365](../executing-actions-using-javascript-c-sharp-example-dynamics-365) /May 17, 2018
 
 1. [Gang of Four Design Patterns by Example](https://www.ashishvishwakarma.com/GoF-Design-Patterns-by-Example/) /April, 2018
