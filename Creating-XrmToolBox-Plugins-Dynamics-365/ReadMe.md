@@ -21,3 +21,40 @@ After installing, create new Project using this template. Framework version shou
 ![New_Project](assets/New_Project.png)
 
 ### Components of Project
+
+You will get 2 main files in newly created project where you need to work on.
+
+#### 1. MyPlugin.cs
+
+This file conatains metadata like name of the plugin, icons and color etc, which you can change according to purpose of your plugin. I am leaving this as it is for now.
+
+```csharp
+using System.ComponentModel.Composition;
+using XrmToolBox.Extensibility;
+using XrmToolBox.Extensibility.Interfaces;
+
+namespace XrmToolBox.WhoAmIPlugin
+{
+    // Do not forget to update version number and author (company attribute) in AssemblyInfo.cs class
+    // To generate Base64 string for Images below, you can use https://www.base64-image.de/
+    [Export(typeof(IXrmToolBoxPlugin)),
+        ExportMetadata("Name", "My First Plugin"),
+        ExportMetadata("Description", "This is a description for my first plugin"),
+        // Please specify the base64 content of a 32x32 pixels image
+        ExportMetadata("SmallImageBase64", null),
+        // Please specify the base64 content of a 80x80 pixels image
+        ExportMetadata("BigImageBase64", null),
+        ExportMetadata("BackgroundColor", "Lavender"),
+        ExportMetadata("PrimaryFontColor", "Black"),
+        ExportMetadata("SecondaryFontColor", "Gray")]
+    public class MyPlugin : PluginBase
+    {
+        public override IXrmToolBoxPluginControl GetControl()
+        {
+            return new MyPluginControl();
+        }
+    }
+}
+```
+
+#### 2. MyPluginControl.cs
