@@ -1,4 +1,4 @@
-# How To Create Your Own XrmToolBox Plugins 
+# Create Your Own XrmToolBox Plugins 
 
 [XrmToolBox](https://www.xrmtoolbox.com) has plenty of useful plugins, and awesome people like you from community keep adding new plugins to solve Dynamics 365 developer's day to day hurdles and make them more productive.
 
