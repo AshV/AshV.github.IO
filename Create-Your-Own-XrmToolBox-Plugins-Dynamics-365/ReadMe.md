@@ -2,11 +2,10 @@
 
 [XrmToolBox](https://www.xrmtoolbox.com) has plenty of useful plugins, and awesome people like you from community keep adding new plugins to solve Dynamics 365 developer's day to day hurdles and make them more productive.
 
-Recently I was working on a XrmToolBox plugin (have a look on GitHub [Dynamics 365 Bulk Solution Exporter](https://github.com/AshV/Dynamics365BulkSolutionExporter/)). I thought of sharing my learning experience. I would like to thanks [Santish Bhagat](https://github.com/santoshCRM) who has already devloped many solutions for the Dynamics Community, has helped me in connection related issues, and [Shabbir Hussain](https://www.facebook.com/shabbir.WinSoft) who is young and energetic coder, has helped me in Windows Forms related stuff.
-
+Recently I was working on a XrmToolBox plugin (have a look on GitHub [Dynamics 365 Bulk Solution Exporter](https://github.com/AshV/Dynamics365BulkSolutionExporter/)). Let me share my learning experience with you. I would like to thank [Santish Bhagat](https://github.com/santoshCRM) who has already devloped many solutions for the Dynamics Community, has helped me in connection related issues, and [Shabbir Hussain](https://www.facebook.com/shabbir.WinSoft) who is young and energetic coder, has helped me in Windows Forms related stuff.
 XrmToolBox is basically a class library, you can create your plugin in 2 ways.
 
-1. Start by taking a class library project and installing [XrmToolBoxPackage](https://www.nuget.org/packages/XrmToolBoxPackage/) using nuget. You need to create one Custom Windows Form Control in this approach. I created [Dynamics 365 Bulk Solution Exporter](https://github.com/AshV/Dynamics365BulkSolutionExporter/) in this way, because tempalte was not available back then.
+1. Start by taking a class library project and installing [XrmToolBoxPackage](https://www.nuget.org/packages/XrmToolBoxPackage/) using nuget. You need to create one Custom Windows Form Control in this approach. I created [Dynamics 365 Bulk Solution Exporter](https://github.com/AshV/Dynamics365BulkSolutionExporter/) this way, because tempalte was not available back then.
 
 2. Tanguy Touzard (Creator of XrmToolBox) has simplifed the process by creating **XrmToolBox Plugin Project Template for Visual Studio**, which configures most of the things automatically. This is preferred way of creating plugins now.
 
@@ -26,7 +25,7 @@ You will get 2 main files in newly created project where you need to work on.
 
 #### 1. MyPlugin.cs
 
-This file conatains metadata like name of the plugin, icons and color etc, which you can change according to purpose of your plugin. I am leaving this as it is for now.
+This file conatains metadata like name of the plugin, icons and color etc, which you can change according to purpose of your plugin. I am changing name of the plugin to "WhoAmI Plugin".
 
 ```csharp
 using System.ComponentModel.Composition;
@@ -38,7 +37,7 @@ namespace XrmToolBox.WhoAmIPlugin
     // Do not forget to update version number and author (company attribute) in AssemblyInfo.cs class
     // To generate Base64 string for Images below, you can use https://www.base64-image.de/
     [Export(typeof(IXrmToolBoxPlugin)),
-        ExportMetadata("Name", "My First Plugin"),
+        ExportMetadata("Name", "WhoAmI Plugin"),
         ExportMetadata("Description", "This is a description for my first plugin"),
         // Please specify the base64 content of a 32x32 pixels image
         ExportMetadata("SmallImageBase64", null),
@@ -59,7 +58,7 @@ namespace XrmToolBox.WhoAmIPlugin
 
 #### 2. Settings.cs
 
-This file help you to save/update any configuration value permanently, which will be available when you next time open the tool. How to save and retrieve, we will see further.
+This file help you to save/update any configuration value permanently, which will be available when you next time open the tool.
 
 ```csharp
 using System;
@@ -201,7 +200,7 @@ This file has few other examples too like ShowInfoNotification(), LogWarning() &
 
 ### Understanding the Framework
 
-Here in this sample we will me making WhoAmIRequest and will be showing response to user. Before that you should have a look at GetAccounts() that how it is written.
+Here in this sample we will me making WhoAmIRequest and will be showing response to user. Before that you should have a look at GetAccounts() that how it is written. We need to understand 2 main methods while getting started one is **WorkAsync(WorkAsyncInfo info)** and other is **ExecuteMethod(Action action)**.
 
 In XrmToolBox plugins all requests to server should be made **asynchronously** but here is a twist, we won't be using async & await, instead **WorkAsync(WorkAsyncInfo info)** is provided in **XrmToolBox.Extensibility** namespace, Let's look into **WorkAsyncInfo** class of framework which is main class to execute code of any plugin.
 
@@ -231,4 +230,89 @@ namespace XrmToolBox.Extensibility
 }
 ```
 
-You can look into constructors and properties yourself, let me talk about callbacks available here.
+You can look into constructors and properties yourself, let me talk about callbacks available, which are Work, PostWorkCallback & ProgressChanged.
+
+1. **Work** : Here we do our main processing, it has 2 arguments BackgroundWorker & DoWorkEventArgs.
+
+2. **PostWorkCalllBack** : Once **Work** is completed, this is triggered to show output to user. This gets the results from **RunWorkerCompletedEventArgs** parameter, which is returned from  of **Work** callback.
+
+3. **ProgressChanged** : If our process is long running, Unlike *Message = "Getting accounts";* in GetAccounts(), we must show the progress to user. We can pass progress as integer in ProgressChangedEventArgs parameter.
+
+**ExecuteMethod(Action action)** helps to get rid of connection hurdles for plugin developer, all methods which require CRM connection should be called from ExecuteMethod which accepts Action as parameter. If CRM is not connected then it will show popup to connect before executig method.
+
+### Implementing & Consuming WhoAmI()
+
+Open MyPluginControl.cs[Design] and place a Button control in panel. change change name property to btn_WhoAmI, optionaly you can change other properties and decorate.
+
+![Placing button](assets/Place_Button.png)
+
+Add one list box also with name lst_UserData below button to show current user's data.
+
+![ListBox](assets/ListBox.png)
+
+Double click on this button to create event and open codebehind file(MyPluginControl.cs) and write below code.
+
+```csharp
+private void btn_WhoAmI_Click(object sender, EventArgs e)
+{
+    // calling WhoAmI() from ExecuteMethod so connection will be smooth
+    ExecuteMethod(WhoAmI);
+}
+
+private void WhoAmI()
+{
+    WorkAsync(new WorkAsyncInfo
+    {
+        // Showing message until background work is completed
+        Message = "Retrieving WhoAmI Information",
+
+        // Main task which will be executed asynchronously
+        Work = (worker, args) =>
+        {
+            // making WhoAmIRequest
+            var whoAmIResponse = (WhoAmIResponse)Service.Execute(new WhoAmIRequest());
+
+            // retrieving details of current user
+            var user = Service.Retrieve("systemuser", whoAmIResponse.UserId, new Microsoft.Xrm.Sdk.Query.ColumnSet(true));
+
+            // placing results to args, which will be sent to PostWorkCallBack to display to user
+            var userData = new List<string>();
+            foreach (var data in user.Attributes)
+                userData.Add($"{data.Key} : {data.Value}");
+            args.Result = userData;
+        },
+
+        // Work is completed, results can be shown to user
+        PostWorkCallBack = (args) =>
+        {
+            if (args.Error != null)
+                MessageBox.Show(args.Error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                // Binding result data to ListBox Control
+                lst_UserData.DataSource = args.Result;
+        }
+    });
+}
+```
+
+Congratulations! You are done with your first XrmToolBox plugin now. Let's test it now.
+
+### Test Your Plugin
+
+Build your code and grab the DLL from bin/debug folder, and place it in %AppData%\MscrmTools\XrmToolBox\Plugins folder.
+(You may refer to my previous article [Installing XrmToolBox Plugins in No Internet OnPremises Environments](https://www.ashishvishwakarma.com/Installing-Using-XrmToolBox-Plugins-in-No-Internet-OnPremises-Environments/)).
+
+Open XrmToolBox and search for your plugin, click to open it, when it asks to connect, click No, so you can verify ExcuteMethod functionality. 
+
+![Open Plugin](assets/OpenPlugin.png)
+
+Here is your brand new plugin, all created by yourself.
+Click on *Who Am I* Button, it will ask to connect an orgnization first, because we have used **ExecuteMethod()** here.
+
+![ClickWhoAmI](assets/ClickWhoAmI.png)
+
+Connect to an organization, after connecting to CRM, it will show the retriving message which is set in our **Message** property is WhoAmI(). Finally it will show all informaion about current user in ListBox.
+
+![PluginWorking](assets/WorkingPlugin.png)
+
+This DLL can be shared with anyone and they can use it. But to make it available to everyone you need to publsh it, which I will discuss in next article.
