@@ -1,6 +1,6 @@
 # Executing Worflows using JavaScript / C# in Dynamics 365
 
-Workflows are always robust choice in Dynamics 365 to execute fail safe processes. In OOB functionality you can schedule them on some event or can run on-demand. Good news is that you can trigger them using C# or JavaScript as well, be it some plugns, custom workflow activities, client side scripting or Azure/Windows job.
+Workflows are always robust choice in Dynamics 365 to execute fail safe processes. In OOB functionality you can schedule them on some event or can run on-demand. Good news is that you can trigger them using C# or JavaScript as well, be it some plugins, custom workflow activities, client side scripting or Azure/Windows job.
 
 ## Calling Workflow using C\#
 
@@ -18,7 +18,7 @@ To test the above snippet, you can feel free to use [Dynamics 365 Console Caller
 
 ## Calling Workflow using JavaScript Ajax
 
-[ExecuteWorkflow Action](https://msdn.microsoft.com/en-us/library/mt491159.aspx) let us trigger a Worflow using WebApi, which is a Bound Acton so we have to pass guid as first parameter in URI. Our request should be in blow format
+[ExecuteWorkflow Action](https://msdn.microsoft.com/en-us/library/mt491159.aspx) let us trigger a Workflow using WebApi, which is a Bound Acton so we have to pass guid as first parameter in URI. Our request should be in blow format
 
 ### HTTP Request Format
 ```

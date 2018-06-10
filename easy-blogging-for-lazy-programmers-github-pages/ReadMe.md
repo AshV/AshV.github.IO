@@ -1,12 +1,12 @@
 # Easy Blogging for Lazy Programmers
 
-When I started web programming almost 10 years back, no one would have thought that people will go crazy some day to make their websites static. Back then it was PHP and Wordpress era even if your website is almost static ```include 'header.php'``` was always there to run at server for obvoius reasons. 
+When I started web programming almost 10 years back, no one would have thought that people will go crazy some day to make their websites static. Back then it was PHP and WordPress era even if your website is almost static ```include 'header.php'``` was always there to run at server for obvious reasons. 
 
 [Wordpress](https://wordpress.com/) is still most popular [open source CMS](https://github.com/WordPress/WordPress) today, and heaven for non tech bloggers to get started quickly.
 
 In last few years static site generators have gained popularity for various reasons (see here [7 reasons to use static site generator](https://www.sitepoint.com/7-reasons-use-static-site-generator/)).
 
-Now, if you are a techie and planning to starts writing, so it dosen't suits you to go with traditional CMS approches. There's a huge list of awesome static site generators at [StaticGen.com](https://www.staticgen.com/). You can compare and choose according to your requirements. You can set them up in your machine and get started, it will take hardly 30 minutes, and then write your post,  then build, it will generate your static site, then push it to your server.
+Now, if you are a techie and planning to starts writing, so it doesn't suits you to go with traditional CMS approaches. There's a huge list of awesome static site generators at [StaticGen.com](https://www.staticgen.com/). You can compare and choose according to your requirements. You can set them up in your machine and get started, it will take hardly 30 minutes, and then write your post,  then build, it will generate your static site, then push it to your server.
 
 WAIT A MINUTE..... Title of this article says something EAZY , LAZY , PROGRAMMERS ???
 
@@ -21,9 +21,9 @@ Alright! but  lemme make you clear If you are not a Programmer(coz it uses GitHu
 * I don't need  to open any other editor, I can use Visual Studio, thanks to awesome [VS extension by madskristensen](https://github.com/madskristensen/MarkdownEditor)
 * I can correct typos online or even can write full articles.
 * No formatting headaches, it's markdown.
-* It dosen't stops me from using HTML, if I wish to.
+* It doesn't stops me from using HTML, if I wish to.
 * Full control over website theme and appearance
-* Seggregate content over multiple repos.
+* Segregate content over multiple repos.
 * No ads like wordpress.com hosting.
 
 ## Setting up GitHub Pages
@@ -41,7 +41,7 @@ Alright! but  lemme make you clear If you are not a Programmer(coz it uses GitHu
 
 ![Live Page](assets/LivePage.png)
 
-* If it dosen't appears immediately, try after sometime it takes few seconds to builds. If you are making page for some reposoitory, you need to manually enable GitHub Pages from settings, you can choose diffrent sources for your page whether it should load from *master branch*, *docs folder in master branch* or from *gh-pages branch*. here I have taken master branch for brevity.
+* If it doesn't appears immediately, try after sometime it takes few seconds to builds. If you are making page for some repository, you need to manually enable GitHub Pages from settings, you can choose different sources for your page whether it should load from *master branch*, *docs folder in master branch* or from *gh-pages branch*. here I have taken master branch for brevity.
 
 ![Enable Github Pages](assets/EnableGithubPages.png)
 

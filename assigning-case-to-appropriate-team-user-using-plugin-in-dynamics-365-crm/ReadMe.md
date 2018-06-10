@@ -4,7 +4,7 @@
 
 >[All Posts](https://www.ashishvishwakarma.com/posts/)
 
-In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfil these three requirements.
+In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfill these three requirements.
 
 1. If the Team has no users in it, Case should be assigned to the default queue of Team.
 
@@ -546,11 +546,11 @@ namespace AssignPlugin
 
 * ![image alt text](image_5.png)
 
-* Now, a new step has to be resistered on Assign step of Case record, else this plugin will not be triggered. To regster, right click on assemly and click Register new step.
+* Now, a new step has to be registered on Assign step of Case record, else this plugin will not be triggered. To register, right click on assembly and click Register new step.
 
 * ![image alt text](image_6.png)
 
-* In dialogbox, select Message as Assign and Primary Entity as an incident (i.e. case). 
+* In dialog box, select Message as Assign and Primary Entity as an incident (i.e. case). 
 
 * ![image alt text](image_7.png) 
 
@@ -560,7 +560,7 @@ namespace AssignPlugin
 
 **Configuration in CRM & Verifying Functionality**
 
-* Create Team with Administrator priviledges by following Settings -> Security -> Teams and create new Team. I have given Team name as Quick Service Team.
+* Create Team with Administrator privileges by following Settings -> Security -> Teams and create new Team. I have given Team name as Quick Service Team.
 
 * ![image alt text](image_8.png)
 
@@ -581,5 +581,3 @@ namespace AssignPlugin
 *  To verify the rest of two conditions, create a few more users in Team and try assigning the record to Team and see how records are getting assigned.
 
 You can find this code in my GitHub repo as well https://github.com/AshV/AssignPluginDynamics365 For any query regarding this, feel free to get in touch with me. 
-
->[All Posts](https://www.ashishvishwakarma.com/posts/)

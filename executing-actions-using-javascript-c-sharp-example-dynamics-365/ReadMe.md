@@ -1,8 +1,8 @@
 ﻿# Executing Actions using JavaScript / C\# in Dynamics 365
 
-In Dynamics 365 we have feasiblilty to trigger Actions from Clientside code and Serverside code both. Let's have a look how it can be achieved.
+In Dynamics 365 we have feasibility to trigger Actions from Client-side code and Server-side code both. Let's have a look how it can be achieved.
 
-I have created  an action with name new_GreetAction(see images below), it's a global action and has Input and Output Argumant both. We will see how to call it programmatically.
+I have created  an action with name new_GreetAction(see images below), it's a global action and has Input and Output Argument both. We will see how to call it programmatically.
 
 ![](assets/greetaction.png)
 ![](assets/setting_out_param.png)
@@ -28,7 +28,7 @@ To read output arguments you can pass argument name in indexer.
 var OutArg = executeAction["OutArg"];
 ```
 
-If your action is **Not Global Action** then you can pass targettiing record in **Target** parameter, and yes you can pass parametrs as indexer also.
+If your action is **Not Global Action** then you can pass targeted record in **Target** parameter, and yes you can pass parameters as indexer also.
 
 ```csharp
 var executeAction = orgService.Execute(

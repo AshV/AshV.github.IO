@@ -20,7 +20,7 @@ For example I have this plugin installed and I want this in my no internet envir
 
 ![plugin_in_xrmtoolbox](assets/plugin_in_xrmtoolbox.png)
 
-Look for the DLL with this/similar name, may conatain author name etc. For this one DLL is **Ryr.XrmToolBox.EntityImageUpdater.dll**.
+Look for the DLL with this/similar name, may contain author name etc. For this one DLL is **Ryr.XrmToolBox.EntityImageUpdater.dll**.
 
 ### 2. Build the DLL from source code if open source
 
@@ -28,7 +28,7 @@ You can navigate to [XrmToolBox.com/plugins/](https://www.xrmtoolbox.com/plugins
 
 ![plugin_list](assets/plugin_list.png)
 
-Once you found it. check whetehr it's open source. navigate to source code location, grab it build it. Like this awesome plugin is developed by [Natraj Yegnaraman](https://github.com/rajyraman) and source code is hosted at [GitHub/rajyraman/Ryr.XrmToolBox.EntityImageUpdater](https://github.com/rajyraman/Ryr.XrmToolBox.EntityImageUpdater)
+Once you found it. check whether it's open source. navigate to source code location, grab it build it. Like this awesome plugin is developed by [Natraj Yegnaraman](https://github.com/rajyraman) and source code is hosted at [GitHub/rajyraman/Ryr.XrmToolBox.EntityImageUpdater](https://github.com/rajyraman/Ryr.XrmToolBox.EntityImageUpdater)
 
 ![open_source_plugin](assets/open_source_plugin.png)
 
@@ -36,12 +36,12 @@ After building code grab the DLL from *bin/debug* or *bin/release(preferred, bui
 
 ## Place DLL \& use plugin in No Internet enviromnet 
 
-Now move the above grabbed DLL to destination environment somehow network share or pendrive. and place the DLL to same folder i.e  **%AppData%\MscrmTools\XrmToolBox\Plugins**. And here you go. Open XrmToolBox and you will see this plugin in plugin list, you can use like any other plugin.
+Now move the above grabbed DLL to destination environment somehow network share or pen-drive. and place the DLL to same folder i.e  **%AppData%\MscrmTools\XrmToolBox\Plugins**. And here you go. Open XrmToolBox and you will see this plugin in plugin list, you can use like any other plugin.
 
 ![done](assets/done.png)
 
 ### Things to consider
 
 * Some plugins use internet to achieve functionality. those can't be used.
-* Bigger plugins may contains more data/folder other than DLL, so all data should be moved propertly.
+* Bigger plugins may contains more data/folder other than DLL, so all data should be moved property.
 * Folder location may change(rare chances) which should be taken care.

@@ -14,7 +14,7 @@ As you can see in above image, those icons in view cells were already available 
 Goto any view's property, you can see 2 new fields **Web Resource** and **Function Name**, which is very similar to Forms when you write JS.
 
 ## What to write in Web Resource?
-You need to write a JS function with 2 parameters, when you'll add it to view, first parameters will recieve **rowData**(value with metadata shown below for one cell) and **userLCID**(i.e. language code fof current user).
+You need to write a JS function with 2 parameters, when you'll add it to view, first parameters will receive **rowData**(value with metadata shown below for one cell) and **userLCID**(i.e. language code for current user).
 Based on those 2 inputs you can decide what icon to show. And name of this function goes in **Function Name:** field in View's property.
 
 ```json
@@ -94,13 +94,13 @@ function casePriorityIcons(rowData, userLCID) {
 ```
 > ![4_Icons_as_Webresource.png](4_Icons_as_Webresource.png)
 
-In above code I'm reading cell data which is priority field of case, and according to value it will show color icon in fron of it. I have added three 16x16(if you'll take different size it will be scaled back to 16x16, so better take optimized size) icons with color Red, Yellow & Green for High, Normal & Low priorities respectively.
-Function returns an array of size 2, first element tells name of image web resource to show and second is tooltip text.
+In above code I'm reading cell data which is priority field of case, and according to value it will show color icon in from of it. I have added three 16x16(if you'll take different size it will be scaled back to 16x16, so better take optimized size) icons with color Red, Yellow & Green for High, Normal & Low priorities respectively.
+Function returns an array of size 2, first element tells name of image web resource to show and second is tool-tip text.
 You can use below images in your web resource.
 
 High : ![High Red](High.png) | Normal : ![Normal Yellow](Medium.png) | Low : ![Low Green](Low.png)
 
-I've set Web resource and function name in All Cases view propery for Priority field.
+I've set Web resource and function name in All Cases view property for Priority field.
 > ![5_setting_webresource.png](5_setting_webresource.png)
 
 Publish everything and navigate to **All Cases** view.
