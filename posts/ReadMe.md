@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [State Design Pattern by Mario Example](ashishvishwakarma.com/GoF-Design-Patterns-by-Example/State-Pattern/) / June 10, 2018
+
 1. [Create your own XrmToolBox Plugins ](../Create-Your-Own-XrmToolBox-Plugins-Dynamics-365) / June 8, 2018
 
 1. [Installing XrmToolBox Plugins in No Internet OnPremises Environments](../Installing-Using-XrmToolBox-Plugins-in-No-Internet-OnPremises-Environments) / May 21, 2018
