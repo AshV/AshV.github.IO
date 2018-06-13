@@ -1,5 +1,7 @@
 # Create Your  First Smart Contract In Ethereum With Ganache & Remix IDE
 
+![Ethereum-Banner](assets/Ethereum-Banner.jpg)
+
 Let's create & test your first smart contract on Ethereum Blockchain with simplest approach possible today, we will be using [Ganache](http://truffleframework.com/ganache/), [Remix IDE](https://remix.ethereum.org/) & [MyEtherWallet](https://www.myetherwallet.com/).
 We will be using use local instance of ethereum as a private blockchain for th sake of simplicity. Before that a let's have a quick look at Smart Contracts. 
 
@@ -52,6 +54,22 @@ You can download latest release, unzip it and open index.html.
 
 ![MyEtherWallet_Local](assets/MyEtherWallet_Local.png)
 
+## Write Smart Contract in Solidity
 
-
-
+```solidity
+pragma solidity ^0.4.24;
+contract Calculator {
+    int private lastValue = 0;
+    function Add(int a, int b) public constant returns (int) {
+        lastValue=a+b;
+        return lastValue;
+    }
+    function Subtract(int a, int b) public constant returns (int) {
+        lastValue=a-b;
+        return lastValue;
+    }
+    function LastOperation() public constant returns (int) {
+        return lastValue;
+    }
+}
+```
