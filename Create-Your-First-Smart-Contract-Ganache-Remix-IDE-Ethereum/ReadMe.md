@@ -1,7 +1,13 @@
 # Create Your  First Smart Contract In Ethereum With Ganache & Remix IDE
 
 Let's create & test your first smart contract on Ethereum Blockchain with simplest approach possible today, we will be using [Ganache](http://truffleframework.com/ganache/), [Remix IDE](https://remix.ethereum.org/) & [MyEtherWallet](https://www.myetherwallet.com/).
-We will be using use local instance of ethereum as a private blockchain for th sake of simplicity.
+We will be using use local instance of ethereum as a private blockchain for th sake of simplicity. Before that a let's have a quick look at Smart Contracts. 
+
+## What is Smart Contract
+
+![SmartContract_NickSzabo](assets/SmartContract_NickSzabo.jpeg)
+
+Above image gives pretty much details about Smart Contracts and it's origin. [Nick Szabo](https://en.wikipedia.org/wiki/Nick_Szabo), who is cryptography genius & legal scholar, has coined the term [Smart Contract](https://en.wikipedia.org/wiki/Smart_contract) back in 1994. He was trying to store and execute legal contracts with the help of cryptography. Since then there has been many implementation of Smart Contract, but nothing was widely accepted and popular like Ethereum Smart Contract.
 
 ## Tools Used
 
@@ -34,7 +40,17 @@ Remix is an online IDE for solidity language, you can access it online at [https
 
 ### MyEtherWallet
 
-//https://github.com/kvhnuke/etherwallet/releases
+MyEtherWallet is an online wallet & client side interface, which can interact with Ethereum blockchain & perform operations on blockchain.
+
+![MyEtherWallet_OnLine](assets/MyEtherWallet_OnLine.png)
+
+But here we are using private blockchain running in our local, which can't be accessed by online version, so we will download it from [https://github.com/kvhnuke/etherwallet/releases](https://github.com/kvhnuke/etherwallet/releases) and run it locally.
+
+![Download_MyEtherWallet](assets/Download_MyEtherWallet.png)
+
+You can download latest release, unzip it and open index.html.
+
+![MyEtherWallet_Local](assets/MyEtherWallet_Local.png)
 
 
 
