@@ -38,7 +38,7 @@ You can see here list of accounts along with their address, balance and other in
 
 Remix is an online IDE for solidity language, you can access it online at [https://remix.ethereum.org/](https://remix.ethereum.org/). We will use it to write and compile our smart contract code.
 
-![RemixIDE](assets/RemixIDE.png)
+![RemixIDE](assets/RemixIDE.PNG)
 
 ### MyEtherWallet
 
