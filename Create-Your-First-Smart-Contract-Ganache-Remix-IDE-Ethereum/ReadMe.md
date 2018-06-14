@@ -1,4 +1,4 @@
-# Create Your  First Smart Contract In Ethereum With Ganache & Remix IDE
+# Create & Test Your  First Ethereum Smart Contract In Simplest Way Possible
 
 ![Ethereum-Banner](assets/Ethereum-Banner.jpg)
 
@@ -92,7 +92,7 @@ Your code is compiled successfully, now let's deploy & test it.
 
 ## Deploy Smart Contract to Private Ethereum Blockcahin & Test It
 
-We will deploy it to blockchain running in Ganache with the help of MyEtherWallet. Open Ganache and grab `RPC SERVER` URL.
+We will deploy it to blockchain running in Ganache with the help of MyEtherWallet. Open Ganache and grab `RPC SERVER` URL. 
 
 ![Ganache_RPC](assets/Ganache_RPC.png)
 
@@ -144,3 +144,98 @@ After adding byte code and giving wallet access, hit Sign Transaction button, th
 Let's verify in Ganache whether it's deployed successfully. Goto Transactions in Ganache, you can here one `Contract Creation` transaction created in a block. Congrats! your smart contract is deployed successfully.
 
 ![Contract_Created_Ganache](assets/Contract_Created_Ganache.png)
+
+Let's test it now, click to open above shown transaction & copy **CREATED CONTRACT ADDRESS**. Goto MyEtherWallet & under Contracts, click Interact with Contract, paste the Contract Address here. 
+
+![Interact_To_Contract](assets/Interact_To_Contract.png)
+
+For ABI interface you need to go to Remix IDE then details, get ABI form here and paste. ABI interface contains information about functions available in smart contract.
+
+![Copy_ABI](assets/Copy_ABI.png)
+
+```json
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "a",
+				"type": "int256"
+			},
+			{
+				"name": "b",
+				"type": "int256"
+			}
+		],
+		"name": "Subtract",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "a",
+				"type": "int256"
+			},
+			{
+				"name": "b",
+				"type": "int256"
+			}
+		],
+		"name": "Add",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "LastOperation",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+```
+
+After clicking Access, you can see all available functions in your smart contract.
+
+![Access_Contract](assets/Access_Contract.png)
+
+Let's call them & test.
+
+![Call_Add](assets/Call_Add.png)
+
+While calling Add or Subtract, it will show a warning before making transaction, along with gas limit.
+
+![Add_Warning](assets/Add_Warning.png)
+
+But in LastOperation no warning will appear. Because it adds no data to blockchain.
+
+![LastOperation](assets/LastOperation.png) 
+
+All those transactions you can see in Ganache, along with gas used.
+
+![Transactions](assets/Transactions.png)
+
+> Hope it helps 😀
