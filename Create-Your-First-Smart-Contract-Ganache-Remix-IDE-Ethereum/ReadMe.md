@@ -116,7 +116,7 @@ Go back to Remix IDE, click on Details & copy BYTECODE.
 
 ![Copy_ByteCode](assets/Copy_ByteCode.png)
 
-We need to pick contents of `object`, copy it & paste in **Byte Code** in Deploy Contract in MyEtheWallet.
+We need to pick contents of `object`, copy it & paste in **Byte Code** in Deploy Contract in MyEtherWallet.
 
 ```json
 {
