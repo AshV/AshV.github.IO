@@ -16,8 +16,13 @@ Git is not the only version control system, there are many, you can see a compar
 
 ![Git-Services](assets/Git-Services.png)
 
-But you don't actually need any one of them, to try out **Git**, because it is not just a Version Control System, it is a **Distributed Version Control System**, which plays major role in popularity of Git.
+But you don't actually need any one of them, to try out **Git**, because it is not just a Version Control System, it is a **Distributed Version Control System**, which plays major role for popularity of Git.
 
 ### Distributed Version Control System
+
+As I mentioned above we don't need any git service to try out **Git**, but only until we don't want to collaborate with other developers. In centralized version control systems there will be one server, which will contain repository and if we need to commit any change we have to connect to server and make the commit. SVN was very popular version control system, in this repository was central and developers will have only working copy.
+
 ![Distribute Version Control System](assets/DVCS.png)
+
+In distribute version control systems each user will have own copy of complete repository, here I'm using 2 terms "repository" and "working copy". Working copy refers to the current version of source code in a repository, which mostly will be the latest version of source code, but not always, Repository contains all the history of source code, you can traverse to any commit without contacting sever
 
