@@ -42,24 +42,156 @@ Select "Git for Windows" in Individual components & modify to install git.
 
 ![Git-Component](assets/Git-Component.png)
 
-### Verify indat
+### Verifying Installation
+
+You will get Git Bash, Git CMD & Git GUI after successful installation of git. You can use command line in either Git Bash or Git CMD according to your preference. If Windows is your preferred OS then Git CMD is better choice & if you love Linux go for Git Bash. You can also run git commands from windows command prompt if environment variable is set.
 
 ![git-installed](assets/git-installed.png)
 
+Run `git` command to verify successful installation. All git commands should be written in small letters compulsory.
+
 ![Git-Bash](assets/Git-Bash.png)
+
+![Git-CMD](assets/Git-CMD.png)
 
 
 ## Configuring Git
 
-After installing git you have to set your name and email, which will appear in your commit logs.
+After installing git you have to set your name and email, which will appear in your commit logs. If they are already set you can also verify them.
 
 ### $ git config
 
-We can set them using `git config` command.
+We can set or verify name & email using `git config` command.
 
-#### Set Username
+##### Set Username
 
 ```
 $ git config --global user.name "Ashish Vishwakarma"
 ```
 
+##### Set Email
+
+```
+$ git config --global user.email "Hello@AshishVishwakarma.com"
+```
+
+##### Verify Username
+
+```
+$ git config --global user.name
+```
+
+##### Verify Email
+
+```
+$ git config --global user.email
+```
+
+#### git config in action
+
+![git-config](assets/git-config.png)
+
+![git-config-cmd](assets/git-config-cmd.png)
+
+## Creating New Repository
+
+As explained above, repository is a place where source code is stored physically. `git init` command does this job for us. You need to goto folder which you want to make as repository and run this command, No matter folder is empty or has files, you can make that a repository. 
+
+### $ git init
+
+![folder](assets/folder.png)
+
+```
+$ git init
+```
+
+![git-init](assets/git-init.png)
+
+I created one folder in my file system with name Git-Demo & ran `git init` in this folder using command line. You can see the message **Initialized empty Git repository in A:/GitHub_AshV/Git-Demo/.git/**. Did you observe **.git** in message. Let's verify in file system.
+
+![repository](assets/repository.png)
+
+There is one hidden folder created with name `.git`, this folder is responsible for maintaining versions and other metadata related to repository. (Hidden files & folder should be visible in your OS settings to see this folder).
+
+## Status of Repository
+
+To get the current status of repository `git status` command is used. This command is very frequently used, let's see what is status of our repository after `git init`.
+
+```
+$ git status
+```
+
+![git-status](assets/git-status.png)
+
+Hmmm, ReadMe.md is untracked 🤔, Untracked file means it will be there in file system but git will not be aware of it. Let's add it to repository.
+
+## Adding/Staging Files to Repository
+
+If you have observed in message of `git init` it says "Initialized empty Git repository", `git init` initializes repository with no files even if you have files present in that folder. To add files in repository 'git add' command is used.
+
+### $ git add
+
+Let's add ReadMe.md file to git and check the status
+
+```
+$ git add ReadMe.md
+```
+
+![git-add](assets/git-add.png)
+
+If we have multiple files, then we have to run this command for each file, or we can add all files with `git add .` and remove/unstage unwanted files later.
+
+I created 3 more files in folder "file1.txt, file2.txt & unwanted.txt" and adding them to repository with `git add .`.
+
+```
+$ git add .
+```
+
+![git-add-all](assets/git-add-all.png)
+
+## Removing/Unstaging Files in Repository
+
+If you want to remove some staged file from repository 'git rm' command is used. If you wish to just unstage file from repository but want to keep in file system you need to use `--cached` in `git rm` command.
+
+```
+$ git rm --cached unwanted.txt
+```
+
+![git-rm](assets/git-rm.png)
+
+## Commiting the Changes
+
+`git add` command just add files to repository, but to log your changes/make versions you need to commit your changes using `git commit` command. So far we have created 3 files, let's commit them. While committing changes we should provide proper commit message which describes what change are made in this commit. `-m` is used to provide commit message.
+
+```
+$ git commit -m "adding 3 demo files" 
+```
+
+![git-commit](assets/git-commit.png)
+
+You can observe here before commit those 3 files were visible in green under "Changes to be committed" section, now they are committed that's why not visible here.
+
+## Making Further Changes in Code & Committing Them
+
+After commit if you make changes to existing files or new files, you need to again run `git add` to stage them & `git commit` to commit the changes. So far everything we did in repository is local in our machine. Let's see how to Push changes to server/remote repository.
+
+## Adding Remote Repository
+
+Remote repository is the one which is located in server, and different collaborators push changes to it, which can be taken by other collaborators.
+
+To have an Remote repository we can use any of the services including [GitHub](https://github.com), [GitLab](https://about.gitlab.com), [BitBucket](https://bitbucket.org) & [Visual Studio Team Services](https://www.visualstudio.com/team-services/). Basically they all work in same way, so if you are able work with one, you can wok with others too. We will take GitHub as example here. 
+
+### Private vs Public Repository
+
+Public repos are used by Open Source projects mostly, anyone can view their code and commit history e.g Selenium, .Net Core etc. Private repos are used when you don't want to make you code public e.g your client's code.
+Except GitHub above mentioned other services are providing private repositories for **Free**. By the way you won't feel any difference between both while working.
+
+### Create Repository in GitHub
+
+Navigate to (https://github.com)[https://github.com] login into your account or create one if don't have already. And click on create new repository. 
+
+![new-repo](assets/new-repo.png)
+
+You can give any name here, it could be different than your folder name in local. I have given different name `Git-Demonstration`. Don't select anything in highlighted section those are for completely new repository but here we have already created repository in local.
+
+![create-new-repo](assets/create-new-repo.png)
