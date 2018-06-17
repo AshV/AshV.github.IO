@@ -262,4 +262,6 @@ A quick recap, we have explored these commands in this article.
 8. git push
 9. git pull
 
-You can start using git with command line with them, 
+You can start using git with command line with them. Further commands will be covered in upcoming articles. You can explore commits made in this article at [https://github.com/AshV/Git-Demonstration/commits/master](https://github.com/AshV/Git-Demonstration/commits/master)
+
+Thanks for reading!
