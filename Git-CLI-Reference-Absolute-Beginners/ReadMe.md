@@ -2,7 +2,7 @@
 
 ![Git-Banner](assets/Git-Banner.png)
 
-Git is a distributed version control system, developed by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) in 2005 and currently maintained by [Junio C Hamano](https://github.com/gitster). There are many popular GUI tools and extensions are available to use git, but originally git was developed as command line tool, it is still fun to use git using command line, you will also understand under the hood magic done by GUI tools.
+[Git](https://github.com/git/git) is a distributed version control system, developed by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) in 2005 and currently maintained by [Junio C Hamano](https://github.com/gitster). There are many popular GUI tools and extensions are available to use git, but originally git was developed as command line tool, it is still fun to use git using command line, you will also understand under the hood magic done by GUI tools.
 
 ## Why Version Control ?
 
@@ -32,7 +32,9 @@ As you can see in above image, 3 workstations are working on same project, and e
 
 ## Installing Git
 
-Download appropriate version of git according to your platform from [https://git-scm.com/](https://git-scm.com/downloads) and install
+Download appropriate version of git according to your platform from [https://git-scm.com/](https://git-scm.com/downloads) and install.
+
+![git-download](assets/git-download.png)
 
 If you are using Visual Studio 2017 or higher, you can open Visual Studio Installer and click Modify.
 
