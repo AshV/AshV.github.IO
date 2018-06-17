@@ -195,3 +195,71 @@ Navigate to (https://github.com)[https://github.com] login into your account or 
 You can give any name here, it could be different than your folder name in local. I have given different name `Git-Demonstration`. Don't select anything in highlighted section those are for completely new repository but here we have already created repository in local.
 
 ![create-new-repo](assets/create-new-repo.png)
+
+After click on "Create Repository" you will see similar screen with command given.
+
+![repo-created](assets/repo-created.png)
+
+### Link Remote Repository
+
+You can observe `git remote` command in above image, copy and run it in your machine to add remote repository in your local repository.
+
+##### $ git remote
+
+```
+$ git remote add origin https://github.com/AshV/Git-Demonstration.git
+```
+
+![git-remote](assets/git-remote.png)
+
+To verify remote URL you can run this command with `-v`
+
+```
+$ git remote -v
+```
+
+![git-remote-v](assets/git-remote-v.png)
+
+## Pushing Changes To Server
+
+With `git remote` now our repository knows where is our remote server, but to push changes there we need to run `git push`, while pushing to remote for the first time we need to set remote as upstream for the current branch, which is `master` by default. (branching in git is very popular and useful feature, as this article is intended for beginners, so I will be covering them in further article). Run below command to set upstream.
+
+```
+$ git push --set-upstream origin master
+```
+
+Here is short version of above give more descriptive command.
+
+```
+$ git push -u origin master
+```
+
+![git-push](assets/git-push.png)
+
+## Taking latest from Server
+
+While working in project with multiple collaborators then it's always good idea to take latest before starting to make changes in repository to avoid conflicts and warnings while pushing. 'git pull' does this job, I'm making some change in remote repo to show demo, then I'll pull them in local.
+
+```
+$ git pull
+```
+
+![git-pull](assets/git-pull.png)
+
+You can see latest changes made `ReadMe.md` are retrieved to local.
+
+## Conclusion
+
+A quick recap, we have explored these commands in this article.
+
+1. git config
+2. git init
+3. git status
+4. git add
+5. git rm
+6. git commit
+7. git remote
+8. git push
+9. git pull
+
+You can start using git with command line with them, 
