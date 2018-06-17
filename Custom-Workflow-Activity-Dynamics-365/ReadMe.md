@@ -113,58 +113,74 @@ In Dynamics 365 it is necessary to sign the assembly before registering. To do t
 
 Open the Plugin Registration Tool and connect with your organization. If you don't already have, grab it by adding **Microsoft.CrmSdk.XrmTooling.PluginRegistrationTool** nuget package.
 
-1. Click on Register then Register New Assembly.
+**1.** Click on Register then Register New Assembly.
+
 ![Register-New-Assembly](assets/Register-New-Assembly.png)
 
-2. Register New Assembly popup will appear, select your project DLL from bin/debug folder of project.
+**2.** Register New Assembly popup will appear, select your project DLL from bin/debug folder of project.
+
 ![Load-Assembly](assets/Load-Assembly.png)
 
-3. After selecting DLL, make sure Select All is selected in Step 2.
+**3.** After selecting DLL, make sure Select All is selected in Step 2.
+
 ![Select-All](assets/Select-All.png)
 
-4. Leave rest of he options as it is and click **Register Selected Plugins**, it should register your assembly successfully.
+**4.** Leave rest of he options as it is and click **Register Selected Plugins**, it should register your assembly successfully.
+
 ![Registered](assets/Registered.png)
 
-5. You can verify the assembly after registering in Plugin Registration Tool.
+**5.** You can verify the assembly after registering in Plugin Registration Tool.
+
 ![Verify-DLL](assets/Verify-DLL.png)
 
 ### Step 8: Consuming Custom Workflow Activity in Workflow Process
 
-1. Open CRM, goto solution where you want to create Workflow, navigate to Processes & create new. Give some meaningful name, I've given "Word Counter", select Category as "Workflow" & select "Contact" in Entity. I have created as realtime workflow by unchecking "Run this workflow in the background (recommended)" checkbox, for the ease of testing.
+**1.** Open CRM, goto solution where you want to create Workflow, navigate to Processes & create new. Give some meaningful name, I've given "Word Counter", select Category as "Workflow" & select "Contact" in Entity. I have created as realtime workflow by unchecking "Run this workflow in the background (recommended)" checkbox, for the ease of testing.
+
 ![New-Workflow-Process](assets/New-Workflow-Process.png)
 
-2. After Creation check "As an on-demand process" to make as On-demand workflow.
+**2.** After Creation check "As an on-demand process" to make as On-demand workflow.
+
 ![Make-On-Demand](assets/Make-On-Demand.png)
 
-3. Click on "Add Step" and look for our assembly name i.e **WordCountWorkflow**, click on this **WordCountWorkflow.WordCount** will appear, click on this to add step.
+**3.** Click on "Add Step" and look for our assembly name i.e **WordCountWorkflow**, click on this **WordCountWorkflow.WordCount** will appear, click on this to add step.
+
 ![Add-Step](assets/Add-Step.png)
 
-4. In added step click "Set Properties", In properties set **Input Text**(Input parameter given in code) as Address field of Contact record.
+**4.** In added step click "Set Properties", In properties set **Input Text**(Input parameter given in code) as Address field of Contact record.
+
 ![Set-Input](assets/Set-Input.png)
 
-5. Add another update step, and set **Job Title** field as **Word Count**(Output Parameter given in code).
+**5.** Add another update step, and set **Job Title** field as **Word Count**(Output Parameter given in code).
+
 ![Set-Output](assets/Set-Output.png)
 
-6. Workflow is completed, Save it & Activate it.
+**6.** Workflow is completed, Save it & Activate it.
+
 ![Activate-Workflow](assets/Activate-Workflow.png)
 
 ### Testing the Workflow
 
-1. To test this, I have created one contact record with **Address** field populated which has 9 words in total. Expand top menu in form and click "Run Workflow". 
+**1.** To test this, I have created one contact record with **Address** field populated which has 9 words in total. Expand top menu in form and click "Run Workflow". 
+
 ![Run-Workflow](assets/Run-Workflow.png)
 
-2. In appearing popup, select our "Word Counter" workflow and click "Add".
+**2.** In appearing popup, select our "Word Counter" workflow and click "Add".
+
 ![Select-Workflow](assets/Select-Workflow.png)
 
-3. It will ask for confirmation to run, click "OK".
+**3.** It will ask for confirmation to run, click "OK".
+
 ![Confirm-Run](assets/Confirm-Run.png)
 
-4. Let the execution complete.
+**4.** Let the execution complete.
+
 ![Executing](assets/Executing.png)
 
-5. Refresh the form to update and verify whether **Job Title** field is updated with the Word Count of Address field. 
+**5.** Refresh the form to update and verify whether **Job Title** field is updated with the Word Count of Address field. 
+
 ![Output-Success](assets/Output-Success.png)
 
 Congrats! Your Custom Workflow Activity is running successfully.
 
-Thanks for reading!
+> Thanks for reading!
