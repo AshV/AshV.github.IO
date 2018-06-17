@@ -1,4 +1,4 @@
-# Custom Workflow Activity in Dynamics 365
+# Creating Custom Workflow Activity in Dynamics 365
 
 ![Dynamics 365 Header](../Header-Images/ms-dynamics-365-header.webp)
 

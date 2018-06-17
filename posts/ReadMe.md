@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Creating Custom Workflow Activity in Dynamics 365](../Custom-Workflow-Activity-Dynamics-365/) / June 17, 2018
+
 1. [Git CLI for Absolute Beginners](../Git-CLI-Reference-Absolute-Beginners/) / June 16, 2018
 
 1. [Create & Test Your First Ethereum Smart Contract In Simplest Way Possible](../Create-Your-First-Smart-Contract-Ganache-Remix-IDE-Ethereum) / June 14, 2018
