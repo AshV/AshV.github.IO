@@ -197,3 +197,47 @@ As I mentioned above, Custom Actions can be triggered with code only. I will be 
 You need to grab Unique Name/Logical Name of your process. Which id **new_GetMyCases** in our case.
 
 ![Unique-Name](assets/Unique-Name.png)
+
+After downloading [Dynamics 365 Console Caller](https://www.ashishvishwakarma.com/Dynamics365ConsoleCaller/) open in visual studio and open Program.cs. Provide connection details & add code to test your custom action. 
+
+```csharp
+using Microsoft.Crm.Sdk.Messages;
+using Microsoft.Xrm.Sdk;
+using System;
+using static System.Console;
+
+namespace Dynamics365ConsoleCaller
+{
+    class Program // BUILD BEFORE RUN TO RESTORE NuGet PACKAGES
+    {
+        static void Main(string[] args)
+        {
+            IOrganizationService orgService = Connect.GetOrganizationService(
+                 "Email@Org.onmicrosoft.com",
+                 "Your-Passowrd",
+                 "https://Org.crm.dynamics.com");
+            Console.WriteLine("Connected to Organization Service!");
+
+            ITracingService tracingService = Connect.GetTracingService("AshV_Log");
+
+            // Write Your Testing Code here.
+
+            var executeAction = orgService.Execute(
+                new OrganizationRequest()
+                {
+                    RequestName = "new_GetMyCases",
+                });
+
+            var caseCount = executeAction["CaseCount"];
+            var caseNames = executeAction["CaseNames"];
+
+            WriteLine($"Count of Cases : {caseCount}");
+            WriteLine($"Name Cases : {caseNames}");
+        }
+    }
+}
+```
+
+Run the above code to test and verify your custom action. To learn more about calling custom action with C# & JavaScript please refer [here](https://www.c-sharpcorner.com/article/executing-actions-using-javascript-47-c-sharp-in-dynamics-365/).
+
+> Thanks for reading, I hope it's helpful.
