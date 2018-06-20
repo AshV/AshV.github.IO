@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Creating Custom Actions for Dynamics 365 with C#](../Writing-Custom-Actions-C-Sharp-Code-Dynamics-365/) / June 20, 2018
+
 1. [Creating Custom Workflow Activity in Dynamics 365](../Custom-Workflow-Activity-Dynamics-365/) / June 17, 2018
 
 1. [Git CLI for Absolute Beginners](../Git-CLI-Reference-Absolute-Beginners/) / June 16, 2018
