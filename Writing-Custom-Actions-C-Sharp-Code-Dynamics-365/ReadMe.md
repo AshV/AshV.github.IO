@@ -1,5 +1,7 @@
 # Creating Custom Actions for Dynamics 365 with C\#
 
+Custom Actions are lesser used processes than Workflows and Plugins in Dynamics 365, but very useful also at the same time. People who have already have idea about Custom Workflow Activity or [read my previous article](https://www.c-sharpcorner.com/article/creating-word-counter-custom-workflow-activity-in-dynamics-365/) it's going to be very easy, coding part is same, only how we consume the code in dynamics 365 process is different, and use cases too, obviously. Custom Actions can be created with or without writing code, but they can be triggered only by the code. Here we will write custom code to retrieve case records assigned to calling user.
+
 ### Step 1: Create New Project
 
 In Visual Studio create new project of type Class Library & select framework version 4.5.2, this might change for future versions. Name I have given as **MyCasesAction**, which tells the purpose of the workflow.
@@ -155,3 +157,43 @@ Open the Plugin Registration Tool and connect with your organization. If you don
 **5.** You can verify the assembly after registering in Plugin Registration Tool.
 
 ![Verify-DLL](assets/Verify-DLL.png)
+
+### Step 8: Creating Custom Action in CRM and Consuming MyCasesAction
+
+**1.** Goto solution, create new process, set name as "Get My Cases", set category as "Action" & in entity I'm setting as "None (global)". If we will select some entity here, our action will get one default input parameter of type same as given entity.
+
+![New-Blank-Action](assets/New-Blank-Action.png)
+
+**2.** Add 2 output arguments with same type as output parameters given in MyCasesAction class. Name not need to be the same but you can give same to avoid confusion.
+
+![Add-Arguments](assets/Add-Arguments.png)
+
+**3.** Click on Add Step & look for your assembly i.e MyCasesAction, click on it and select **MyCasesAction.MyCasesAction** step.
+
+![Add-Step](assets/Add-Step.png)
+
+**4.** Step added from assembly will return case count and names, which should be set to output arguments, add "Assign Value" step for both arguments.
+
+![Assign-Value](assets/Assign-Value.png)
+
+**5.** Click on "Set Properties" in Assign Value to set output argument value. Do it for both "CaseCount" & "CaseNames".
+
+![Set-CaseCount](assets/Set-CaseCount.png)
+
+**6.** Save your process & Click on "Activate" to activate it.
+
+![Action-Completed](assets/Action-Completed.png)
+
+**7.** It will ask for confirmation, click "Activate" to confirm.
+
+![Confirm-Activation](assets/Confirm-Activation.png)
+
+Congratulations! You have successfully created Custom Action. Let's test it now.
+
+### Step 9: Testing Your Custom Action
+
+As I mentioned above, Custom Actions can be triggered with code only. I will be using [Dynamics 365 Console Caller](https://www.ashishvishwakarma.com/Dynamics365ConsoleCaller/) to test our code, you can download this by following [https://github.com/AshV/Dynamics365ConsoleCaller](https://github.com/AshV/Dynamics365ConsoleCaller).
+
+You need to grab Unique Name/Logical Name of your process. Which id **new_GetMyCases** in our case.
+
+![Unique-Name](assets/Unique-Name.png)
