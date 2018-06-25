@@ -275,7 +275,7 @@ Click on the URL to open it, you will see below window.
 
 ![Test-Window](assets/Test-Window.png)
 
-Press F12 to open console, click on buttons & verify the retrieved data in console or alert.
+Press F12 to open console, click on buttons to verify the retrieved data in console & alert.
 
 ![Testing](assets/Testing.png)
 

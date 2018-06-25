@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Execute fetchXML with WebAPI in Dynamics 365 using JavaScript](../Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/) / June 25, 2018
+
 1. [Creating Custom Actions for Dynamics 365 with C#](../Writing-Custom-Actions-C-Sharp-Code-Dynamics-365/) / June 20, 2018
 
 1. [Creating Custom Workflow Activity in Dynamics 365](../Custom-Workflow-Activity-Dynamics-365/) / June 17, 2018
