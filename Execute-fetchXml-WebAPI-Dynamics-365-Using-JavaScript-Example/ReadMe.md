@@ -263,8 +263,20 @@ fetch(Xrm.Page.context.getClientUrl() + "/api/data/v9.0/$batch", {
 
 ## Testing the code in Dyanmics 365
 
+To test the above code I made small tweaks to run it from HTML web resource as you can see below.
+
 <script src="https://gist.github.com/AshV/2639c65018b703457b2fe26272093774.js"></script>
+
+Create new HTML web resource with above code & publish it.
 
 ![Test-Web-Resource](assets/Test-Web-Resource.png)
 
+Click on the URL to open it, you will see below window.
+
 ![Test-Window](assets/Test-Window.png)
+
+Press F12 to open console, click on buttons & verify the retrieved data in console or alert.
+
+![Testing](assets/Testing.png)
+
+> Thanks for reading, Hope it helps!
