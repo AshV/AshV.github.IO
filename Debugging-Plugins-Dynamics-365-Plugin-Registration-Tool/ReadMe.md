@@ -15,3 +15,9 @@ Open Plugin Registration Tool, connect to your organization & click on "Register
 Browse for your assembly & click "Register Selected Plugins" to register it.
 
 ![registering](assets/registering.png)
+
+## Step 2: Registering Step
+
+![register-step](assets/register-step.png)
+
+![assign-message](assets/assign-message.png)
