@@ -117,4 +117,4 @@ Open the Plugin Registration Tool and connect with your organization. If you don
 ![Verify-DLL](assets/Verify-DLL.png)
 
 
-### Step 8: 
+### Step 8:  Register Step for Plugin
