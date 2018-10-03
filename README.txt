@@ -1,1 +1,1 @@
-My thoughts @ https://www.ashishvishwakarma.com/
+My thoughts @ https://AshishVishwakarma.com
