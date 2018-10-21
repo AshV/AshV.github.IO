@@ -1,5 +1,7 @@
 ﻿## All posts
 
+1. [Querying N:N Relationship Intersect Enity with FetchXML and Dynamics 365 WebAPI](Query-N-N-Relationship-Intersect-Entity-FetchXML-Dynamics-365-WebAPI/) / October 21, 2018
+
 1. [Execute fetchXML with WebAPI in Dynamics 365 using JavaScript](../Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/) / June 25, 2018
 
 1. [Creating Custom Actions for Dynamics 365 with C#](../Writing-Custom-Actions-C-Sharp-Code-Dynamics-365/) / June 20, 2018
