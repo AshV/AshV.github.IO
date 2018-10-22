@@ -1,4 +1,4 @@
-﻿## All posts
+# All Posts
 
 1. [Querying N:N Relationship Intersect Enity with FetchXML and Dynamics 365 WebAPI](../Query-N-N-Relationship-Intersect-Entity-FetchXML-Dynamics-365-WebAPI/) / October 21, 2018
 
