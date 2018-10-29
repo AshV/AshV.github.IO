@@ -1,4 +1,4 @@
-# Executing Worflows using JavaScript / C# in Dynamics 365
+# Executing Workflows using JavaScript / C# in Dynamics 365
 
 Workflows are always robust choice in Dynamics 365 to execute fail safe processes. In OOB functionality you can schedule them on some event or can run on-demand. Good news is that you can trigger them using C# or JavaScript as well, be it some plugins, custom workflow activities, client side scripting or Azure/Windows job.
 

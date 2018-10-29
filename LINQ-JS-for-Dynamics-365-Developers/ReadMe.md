@@ -85,4 +85,4 @@ Let's retrieve some data from CRM and query in client side javascript. First of 
 
 ![output](assets/output.png)
 
-Hope it helps.
+Hope it helps. Feel free to ask any questons.

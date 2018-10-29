@@ -1,5 +1,7 @@
 # All Posts
 
+1. [Linq.js for Dynamics 365 Developers](../LINQ-JS-for-Dynamics-365-Developers/) / October 30, 2018
+
 1. [Querying N:N Relationship Intersect Enity with FetchXML and Dynamics 365 WebAPI](../Query-N-N-Relationship-Intersect-Entity-FetchXML-Dynamics-365-WebAPI/) / October 21, 2018
 
 1. [Execute fetchXML with WebAPI in Dynamics 365 using JavaScript](../Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/) / June 25, 2018
@@ -30,7 +32,7 @@
 
 1. [Validating fetchXml against Schema using C\#](../validate-dynamically-generated-fetchxml-against-schema-before-executing) /Apr 3, 2018
 
-1. [Executing Worflows using JavaScript / C# in Dynamics 365](../executing-workflows-using-javascript-c-sharp-example-dynamics-365) /Mar 14, 2018
+1. [Executing Workflows using JavaScript / C# in Dynamics 365](../executing-workflows-using-javascript-c-sharp-example-dynamics-365) /Mar 14, 2018
 
 1. [Test / Execute your fetchXml with Dyanmics 365 WebAPI](../test-fetchxml-with-webapi-dynamics-365-fetchxml-tester/) /Feb 27, 2018
 
