@@ -83,6 +83,8 @@ Let's retrieve some data from CRM and query in client side javascript. First of 
 
  Run above HTML web resource in browser & press F12 to see output, it would be similar to below shown output, I have run this code in newly created trial instance of dynamics 365.
 
+> Go through code comments to understand it better.
+
 ![output](assets/output.png)
 
 Hope it helps. Feel free to ask any questons.
