@@ -41,3 +41,48 @@ array.Select((val, i) => new { Value = val, Index = i });
 // linq.js - object literal
 Enumerable.from(array).select((val, i) => ({ value: val, index: i}));
 ```
+
+### Example with Dynamics 365/CRM
+
+Let's retrieve some data from CRM and query in client side javascript. First of all download and save linq.min.js as a javascript webresource, and save below code as html webresource and change your linq.js webresource name accordingly.
+
+```html
+<head>
+  <title>Trying linq.js</title>
+  <script src="/WebResources/new_linq.js" type="text/javascript"></script>
+  <script src="ClientGlobalContext.js.aspx" type="text/javascript"></script>
+  <script>
+    // to bypass a product bug, ignore this
+    window["ENTITY_SET_NAMES"] = window["ENTITY_SET_NAMES"] || '{ "account" : "accounts"}';
+    
+    // retrieving accoount records
+    Xrm.WebApi.retrieveMultipleRecords("account").then(
+      function(result) {
+        debugger;
+        console.log(result);
+        // storing all the records to var accounts 
+        var accounts = result.entities;
+    
+        // build query filter all records with address1_city == "Redmond"
+        var accountsCityRedmond = Enumerable.from(accounts).where(a => a.address1_city == "Redmond");
+        // use toArray(); to evaluate the query
+        console.log(accountsCityRedmond.toArray());
+        
+        // previously built query can be filtered even further
+        var accountsCityRedmondCountryColumbia = accountsCityRedmond.where(a => a.address1_country == "Columbia").select(w => w.websiteurl);
+        // and can be evaluated anytime with .toArray()
+        console.log(accountsCityRedmondCountryColumbia.toArray());
+      },
+      function(error) {
+        console.log(error.message);
+      }
+    );
+  </script>
+</head>
+```
+
+ Run above HTML web resource in browser & press F12 to see output, it would be similar to below shown output, I have run this code in newly created trial instance of dynamics 365.
+
+![output](assets/output.png)
+
+Hope it helps.
