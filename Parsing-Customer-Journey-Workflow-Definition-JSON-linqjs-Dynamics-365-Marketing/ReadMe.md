@@ -6,7 +6,11 @@ In new Dynamics 365 Apps many configurations and data are being saved as JSON, r
 
 Sometimes we need to programatically query that which all records are participating in customer journey workflow. Then we need to parse JSON store in msdyncrm_workflowdefinition field, while doing this in client side [linq.js will make our job easy af](https://www.ashishvishwakarma.com/LINQ-JS-for-Dynamics-365-Developers/).
 
-Go through below code, where I have written a function to filter all the node reference related to provided component
+Below is the code to parse a few components which can be used as it is, or you might need to modify code a bit as per requirement or if you are adding you custom channels to your customer journey. This code snippet is stored as Github Gist at [https://gist.github.com/AshV/b0eb8aef725a8c6670d3c20f80b54029](https://gist.github.com/AshV/b0eb8aef725a8c6670d3c20f80b54029).
+
+<script src="https://gist.github.com/AshV/b0eb8aef725a8c6670d3c20f80b54029.js"></script>
+
+In above code I have written a function to filter all the node reference related to provided component, which can be queried further as per requirements. Below given is json for a typical customer journey workflow you can observe outer **ActivityTypeId** is representing type of tile in customer jorney designer while inner **ActivityTypeId** is refering to reocrds in most of the places.
 
 ```json
 [
@@ -255,6 +259,4 @@ Go through below code, where I have written a function to filter all the node re
 ]
 ```
 
-<script src="https://gist.github.com/AshV/b0eb8aef725a8c6670d3c20f80b54029.js"></script>
-
-https://gist.github.com/AshV/b0eb8aef725a8c6670d3c20f80b54029
+Hope it helps.
