@@ -1,5 +1,7 @@
 # All Posts
 
+1. [Parsing Customer Journey Workflow Definition JSON with Linq.js in Dynamics 365 for Marketing](../Parsing-Customer-Journey-Workflow-Definition-JSON-linqjs-Dynamics-365-Marketing/) / November 1, 2018
+
 1. [Linq.js for Dynamics 365 Developers](../LINQ-JS-for-Dynamics-365-Developers/) / October 30, 2018
 
 1. [Querying N:N Relationship Intersect Enity with FetchXML and Dynamics 365 WebAPI](../Query-N-N-Relationship-Intersect-Entity-FetchXML-Dynamics-365-WebAPI/) / October 21, 2018
