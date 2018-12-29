@@ -55,16 +55,121 @@ These 4 steps are involved to implement this, you can always jump to next step i
 * Navigate to Azure -> Azure Active Directory -> Users, Click on **+ New user**.
 
 ![new-app-user](assets/new-app-user.png)
-* Here Username field must be has same domain name as your org. Copy it you will need it further.
+* Here Username field must be has same domain name as your org.
 * Once this user is create, Go to your Dynamics 365 instance.
 * Navigate to Dynamics 365 -> Settings -> Security, Click on Users here.
 * Change view to Application Users & click on **+ NEW** to create new Application User.
 ![set-view-as-application-user](assets/set-view-as-application-user.png)
 
-* You may need to set from also as Application User if it's not coming by default.
+* You may need to set form also as Application User if it's not coming by default.
 ![set-form-as-application-user](assets/set-form-as-application-user.png)
 
+* Here Application ID must be the same as Azure AD App created in previous step. Username & email you can keep same as the one created in Azure AD. Though it's not necessary to be the same, I have tried with different name also. Once you save it Application ID URI & Azure AD Object ID will auto populate.
+![new-app-user-d365](assets/new-app-user-d365.png)
+
+* Now you need to assign **security role** to this user to perform operation on desired records, I've seen in many blogs that this user must have a custom security role, so you can copy some existing role and assign it. But when I tried with **OOB security role** it was still working.
 
 ## Step 3: Get Access Token with ADAL
 
+* Create new project in Visual Studio and add ADAL package via NuGet.
+![ADAL-NuGet.png](assets/ADAL-NuGet.png)
+
+* Create below shown method and replace Application Id, Client Secret, Tenant Id & your organization Url in appropriate place.
+
+<script src="https://gist.github.com/AshV/45a8ed0c86a99d4e485f8d8bc7d843e1.js"></script>
+
+
 ## Step 4: Consuming Access Token
+
+* You have access token now, you can make request to your Dynamics 365 by including this to your HTTP requests, see below method.
+
+```csharp
+public static async Task<HttpResponseMessage> CrmRequest(HttpMethod httpMethod, string requestUri, string body = null)
+{
+    var accessToken = await AccessTokenGenerator();
+    var client = new HttpClient();
+    var msg = new HttpRequestMessage(httpMethod, requestUri);
+    msg.Headers.Add("OData-MaxVersion", "4.0");
+    msg.Headers.Add("OData-Version", "4.0");
+    msg.Headers.Add("Prefer", "odata.include-annotations=\"*\"");
+
+    // Passing AccessToken in Authentication header
+    msg.Headers.Add("Authentication", $"Bearer {accessToken}");
+
+    if (body != null)
+        msg.Content = new StringContent(body, UnicodeEncoding.UTF8, "application/json");
+
+    return await client.SendAsync(msg);
+}
+```
+
+* You can make different requests using above method, here is an example for retrieving all contacts with GET.
+
+```csharp
+var contacts = CrmRequest(
+    HttpMethod.Get, 
+    "https://efrig.api.crm8.dynamics.com/api/data/v9.1/contacts")
+    .Result.Content.ReadAsStringAsync();
+```
+
+## Full Code (Replace your Azure Credentials before executing)
+
+```csharp
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace D365S2S
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var contacts = CrmRequest(
+                HttpMethod.Get,
+                "https://efrig.api.crm8.dynamics.com/api/data/v9.1/contacts")
+                .Result.Content.ReadAsStringAsync();
+            // Similarly you can make POST, PATCH & DELETE requests
+        }
+
+        public static async Task<string> AccessTokenGenerator()
+        {
+            string clientId = "13950f0e-0000-4e2f-0000-b923302c4338"; // Your Azure AD Application ID
+            string clientSecret = "0^C#%0000DR7/#Z[-.m5aYO00000000$"; // Client secret generated in your App
+            string authority = "https://login.microsoftonline.com/ceb48f70-0000-1111-0000-9170f6a706a6"; // Azure AD App Tenant ID
+            string resourceUrl = "https://efrig.crm8.dynamics.com"; // Your Dynamics 365 Organization URL
+
+            var credentials = new ClientCredential(clientId, clientSecret);
+            var authContext = new Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext(authority);
+            var result = await authContext.AcquireTokenAsync(resourceUrl, credentials);
+            return result.AccessToken;
+        }
+
+        public static async Task<HttpResponseMessage> CrmRequest(HttpMethod httpMethod, string requestUri, string body = null)
+        {
+            // Acquiring Access Token
+            var accessToken = await AccessTokenGenerator();
+
+            var client = new HttpClient();
+            var message = new HttpRequestMessage(httpMethod, requestUri);
+
+            // OData related headers
+            message.Headers.Add("OData-MaxVersion", "4.0");
+            message.Headers.Add("OData-Version", "4.0");
+            message.Headers.Add("Prefer", "odata.include-annotations=\"*\"");
+
+            // Passing AccessToken in Authentication header
+            message.Headers.Add("Authorization", $"Bearer {accessToken}");
+            
+            // Adding body content in HTTP request 
+            if (body != null)
+                message.Content = new StringContent(body, UnicodeEncoding.UTF8, "application/json");
+
+            return await client.SendAsync(message);
+        }
+    }
+}
+```
+
+> Hope it helps, feel free to get in touch for any query/suggestions. 
