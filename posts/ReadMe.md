@@ -1,5 +1,7 @@
 # All Posts
 
+1. [Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication](../Dynamics-365-Single-Tenant-Server-2-Server-Authentication-Azure-Active-Directory-Access-Token/) / December 29, 2018
+
 1. [Parsing Customer Journey Workflow Definition JSON with Linq.js in Dynamics 365 for Marketing](../Parsing-Customer-Journey-Workflow-Definition-JSON-linqjs-Dynamics-365-Marketing/) / November 1, 2018
 
 1. [Linq.js for Dynamics 365 Developers](../LINQ-JS-for-Dynamics-365-Developers/) / October 30, 2018
