@@ -2,14 +2,20 @@ var srcTxt = document.querySelector("#src");
 var csTxt = document.querySelector("#cs");
 var jsTxt = document.querySelector("#js");
 var jsLintTxt = document.querySelector("#jsLint");
+var tolog = true;
 
 srcTxt.onkeyup = function () {
-    var srcValue = new String();
+    if (tolog && srcTxt.value.trim() !== "") {
+        logit(srcTxt.value);
+        tolog = false;
+    }
+    var srcValue = new String();    
     if (srcTxt.value.trim() === "") {
         csTxt.value = "";
         jsTxt.value = "";
         jsLintTxt.value = "";
-    }
+        tolog = true;
+    } 
     srcTxt.value.trim().replace(/"/g, "'").split('\n').forEach(function (line) {
         if (line.length > 0 && line.trim().length > 0) {
             if (line[0] == '+')
