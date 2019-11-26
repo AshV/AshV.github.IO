@@ -1,6 +1,6 @@
 # Get Specific Field Change History from AuditDetail in Dynamics 365
 
-In a requirement we were asked to show one specific field change history in a custom portal written in PHP, our imeediate action was to call **RetrieveAttributeChangeHistory** via WebApi but if was just returning the list of value history without ChangedOn date but getiing this field was our requirement. (see details in github issue [here](https://github.com/MicrosoftDocs/dynamics-365-customer-engagement/issues/1183)).
+In a requirement we were asked to show one specific field change history in a custom portal written in PHP, our imeediate action was to call **RetrieveAttributeChangeHistory** via WebApi but if was just returning the list of value history without any other fields but geting CahngedOn and ChangedBy field was our requirement. (see details in github issue [here](https://github.com/MicrosoftDocs/dynamics-365-customer-engagement/issues/1183)).
 
 We finally headed to our good old CRM SDK libraries and written code in C# then access this via Dyanmics 365 WebApi using Dynamics 365 Custom Action.
 
