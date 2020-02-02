@@ -1,6 +1,10 @@
 # All Posts
 
+<<<<<<< HEAD
 1. [Exploring Power Apps Dataflows and Migrating Data from a WebAPI](../Data-Migration-Power-Apps-Dataflows-WebAPI-Dynamics365-CDS/) / February 2, 2020
+=======
+1. [Get Specific Field Change History from AuditDetail in Dynamics 365](../Retrieve-Field-Change-History-AuditDetail-Dynamics-365-RetrieveAttributeChangeHistory/) / November 26, 2019
+>>>>>>> 81e407336db0131fe4b7776b7a2443774e630586
 
 1. [Quickly Generate Access Token For Dynamics 365 To Be Used  With Postman Without Configuring Azure AD App](../Easily-Generate-Dynamics-365-Access-Token-Postman-Without-Configuring-Azure/) / January 5, 2019
 
