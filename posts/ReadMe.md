@@ -1,5 +1,7 @@
 # All Posts
 
+1. [Connect CrmServiceClient using Azure AD App Client ID & Client Secret for C# SDK](../Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret/) / March 2, 2020
+
 1. [Exploring Power Apps Dataflows and Migrating Data from a WebAPI](../Data-Migration-Power-Apps-Dataflows-WebAPI-Dynamics365-CDS/) / February 2, 2020
 
 1. [Get Specific Field Change History from AuditDetail in Dynamics 365](../Retrieve-Field-Change-History-AuditDetail-Dynamics-365-RetrieveAttributeChangeHistory/) / November 26, 2019
