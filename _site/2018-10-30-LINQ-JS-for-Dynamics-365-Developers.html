@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    
+    <title>Linq.js for Dynamics 365 Developers</title>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Place this data between the <head> tags of your website -->
+
+<meta name="description" content="Recently I was working in some large JSON objects in client side javascript where I had to query through it several times as per requirement I was using javascript array’s functions. Then I thought why not use lodash.js or underscore.js I checked over github they are really feature rich and trust..." />
+
+
+
+  <meta name="keywords" itemprop="categories" content="Dynamics-365, PowerApps" />
+
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+<meta name="twitter:title" content="Linq.js for Dynamics 365 Developers" />
+<meta name="twitter:description" content="Recently I was working in some large JSON objects in client side javascript where I had to query through it several times as per requirement I was using javascript array’s functions. Then I thought why not use lodash.js or underscore.js I checked over github they are really feature rich and trust..." />
+
+
+
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+<meta name="twitter:url" content="http://localhost:4000//2018-10-30-LINQ-JS-for-Dynamics-365-Developers" />
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Linq.js for Dynamics 365 Developers" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:4000//2018-10-30-LINQ-JS-for-Dynamics-365-Developers" />
+
+
+<meta property="og:description" content="Recently I was working in some large JSON objects in client side javascript where I had to query through it several times as per requirement I was using javascript array’s functions. Then I thought why not use lodash.js or underscore.js I checked over github they are really feature rich and trust..." />
+<meta property="og:site_name" content="Ashish Vishwakarma" />
+
+
+<meta property="og:locale" content="" />
+
+
+  <meta property="article:published_time" content="2018-10-30T00:00:00+05:30" />
+
+
+
+
+  
+
+
+
+
+
+  
+    <meta property="article:tag" content="Dynamics-365" />
+  
+    <meta property="article:tag" content="PowerApps" />
+  
+
+
+
+
+    
+    
+    <link rel="canonical" href="http://localhost:4000/2018-10-30-LINQ-JS-for-Dynamics-365-Developers">
+    
+    
+    
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta name="robots" content="noarchive">
+    
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
+        <link rel="alternate" media="handheld" href=""> -->
+        
+        
+        <link rel="stylesheet" href="http://localhost:4000/assets/css/style.css?v=">
+    </head>
+    <body>
+        
+        <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+
+    
+      <a class="site-title" href="http://localhost:4000/posts">Ashish Vishwakarma</a>
+    
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/contact.html">Contact</a>
+              
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/now.html">Now</a>
+              
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+        
+        
+        
+        
+        
+        <section class="page-header">
+            <h1 class="project-name">Linq.js for Dynamics 365 Developers</h1>
+            <h2 class="project-tagline"></h2>
+            
+            <!-- Post tagline -->
+            
+            <h2 class="project-date">
+                <time datetime="2018-10-30T00:00:00+05:30" itemprop="datePublished">
+                    
+                    Oct 30, 2018
+                </time>
+                
+                
+            </h2>
+            
+            <!-- End: Post tagline -->
+        </section>
+        
+        <section class="main-content">
+            
+            <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <!-- <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Linq.js for Dynamics 365 Developers</h1>
+    <p class="post-meta">
+      <time datetime="2018-10-30T00:00:00+05:30" itemprop="datePublished">
+        
+        Oct 30, 2018
+      </time>
+      </p>
+  </header> -->
+
+  <div itemprop="articleBody">
+    <p>Recently I was working in some large JSON objects in client side javascript where I had to query through it several times as per requirement I was using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype">javascript array’s functions</a>. Then I thought why not use <a href="https://github.com/lodash/lodash/">lodash.js</a> or <a href="https://github.com/jashkenas/underscore">underscore.js</a> I checked over github they are really feature rich and trustworthy, but there was a whole new list of functions and syntax to learn.</p>
+
+<p>Then after few more google search I got sevearal <a href="https://dzone.com/articles/5-linq-javascript-libraries">javascript libraries with LINQ like syntax</a>, after comparing I found <a href="https://github.com/mihaifm/linq">linq.js</a> most promising and even size is lesser when comparing to lodash and underscore.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Library</th>
+      <th>GZipped size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lodash</td>
+      <td>~ 24 KB</td>
+    </tr>
+    <tr>
+      <td><strong>linq.js</strong></td>
+      <td><strong>~ 7 KB</strong></td>
+    </tr>
+    <tr>
+      <td>underscore</td>
+      <td>~ 6.6 KB</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>linq.js github project link -&gt; <a href="https://github.com/mihaifm/linq">https://github.com/mihaifm/linq</a></p>
+</blockquote>
+
+<p>With Linq.js dynamics 365 developers can use their existing knowledge of LINQ in javascript code whith nominal changes. see below examples from their github</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C# LINQ - delegate</span>
+<span class="nx">Enumerable</span><span class="p">.</span><span class="nx">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">Where</span><span class="p">(</span><span class="nx">delegate</span><span class="p">(</span><span class="nx">int</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">Select</span><span class="p">(</span><span class="nx">delegate</span><span class="p">(</span><span class="nx">int</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span> <span class="p">});</span>
+
+<span class="c1">// linq.js - anonymous function</span>
+<span class="nx">Enumerable</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C# LINQ - lambda</span>
+<span class="nx">Enumerable</span><span class="p">.</span><span class="nx">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nx">Where</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">).</span><span class="nx">Select</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+
+<span class="c1">// linq.js - arrow function</span>
+<span class="nx">Enumerable</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nx">where</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C# LINQ - anonymous type</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">Select</span><span class="p">((</span><span class="nx">val</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="p">{</span> <span class="nx">Value</span> <span class="o">=</span> <span class="nx">val</span><span class="p">,</span> <span class="nx">Index</span> <span class="o">=</span> <span class="nx">i</span> <span class="p">});</span>
+
+<span class="c1">// linq.js - object literal</span>
+<span class="nx">Enumerable</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">array</span><span class="p">).</span><span class="nx">select</span><span class="p">((</span><span class="nx">val</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">value</span><span class="p">:</span> <span class="nx">val</span><span class="p">,</span> <span class="na">index</span><span class="p">:</span> <span class="nx">i</span><span class="p">}));</span>
+</code></pre></div></div>
+
+<h3 id="example-with-dynamics-365crm">Example with Dynamics 365/CRM</h3>
+
+<p>Let’s retrieve some data from CRM and query in client side javascript. First of all download and save linq.min.js as a javascript webresource, and save below code as html webresource and change your linq.js webresource name accordingly.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Trying linq.js<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/WebResources/new_linq.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"ClientGlobalContext.js.aspx"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="c1">// to bypass a product bug, ignore this</span>
+    <span class="nb">window</span><span class="p">[</span><span class="dl">"</span><span class="s2">ENTITY_SET_NAMES</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">window</span><span class="p">[</span><span class="dl">"</span><span class="s2">ENTITY_SET_NAMES</span><span class="dl">"</span><span class="p">]</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">{ "account" : "accounts"}</span><span class="dl">'</span><span class="p">;</span>
+    
+    <span class="c1">// retrieving accoount records</span>
+    <span class="nx">Xrm</span><span class="p">.</span><span class="nx">WebApi</span><span class="p">.</span><span class="nx">retrieveMultipleRecords</span><span class="p">(</span><span class="dl">"</span><span class="s2">account</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+      <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">debugger</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+        <span class="c1">// storing all the records to var accounts </span>
+        <span class="kd">var</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">entities</span><span class="p">;</span>
+    
+        <span class="c1">// build query filter all records with address1_city == "Redmond"</span>
+        <span class="kd">var</span> <span class="nx">accountsCityRedmond</span> <span class="o">=</span> <span class="nx">Enumerable</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">accounts</span><span class="p">).</span><span class="nx">where</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">address1_city</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">Redmond</span><span class="dl">"</span><span class="p">);</span>
+        <span class="c1">// use toArray(); to evaluate the query</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">accountsCityRedmond</span><span class="p">.</span><span class="nx">toArray</span><span class="p">());</span>
+        
+        <span class="c1">// previously built query can be filtered even further</span>
+        <span class="kd">var</span> <span class="nx">accountsCityRedmondCountryColumbia</span> <span class="o">=</span> <span class="nx">accountsCityRedmond</span><span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">address1_country</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">Columbia</span><span class="dl">"</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="nx">w</span> <span class="o">=&gt;</span> <span class="nx">w</span><span class="p">.</span><span class="nx">websiteurl</span><span class="p">);</span>
+        <span class="c1">// and can be evaluated anytime with .toArray()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">accountsCityRedmondCountryColumbia</span><span class="p">.</span><span class="nx">toArray</span><span class="p">());</span>
+      <span class="p">},</span>
+      <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>Run above HTML web resource in browser &amp; press F12 to see output, it would be similar to below shown output, I have run this code in newly created trial instance of dynamics 365.</p>
+
+<blockquote>
+  <p>Go through code comments to understand it better.</p>
+</blockquote>
+
+<p><img src="assets/2018-10-30/output.png" alt="output" /></p>
+
+<p>Hope it helps. Feel free to ask any questons.</p>
+
+  </div>
+
+  
+</article>
+
+            
+            <footer class="site-footer">
+                <!-- SVG icons from https://iconmonstr.com -->
+                
+                <!-- Github icon -->
+                <span class="my-span-icon">
+                    <a href="" aria-label="'s GitHub" title="'s GitHub">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- Twitter icon -->
+                <span class="my-span-icon">
+                    <a href="https://twitter.com/" aria-label="'s Twitter" title="'s Twitter">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- RSS icon -->
+                
+                
+                <!-- Contact icon -->
+                
+                
+                <span class="my-span-icon">
+                    <a href="http://localhost:4000/contact.html" aria-label="Contact" title="Contact ">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+                    </a>
+                </span>
+                
+                
+            </footer>
+        </section>
+        
+        <script>
+            var menu = document.querySelector("nav.site-nav");
+            var checkbox = document.getElementById("nav-trigger");
+            
+            // close menu if click outside menu
+            document.addEventListener("click", function(e) {
+                if (menu != e.target &&
+                        !isDescendant(menu, e.target)) {
+                    checkbox.checked = false;
+                }
+            }, false);
+            
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }  
+        </script>
+        
+    </body>
+    </html>
+    

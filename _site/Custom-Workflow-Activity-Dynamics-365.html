@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    
+    <title>Creating Custom Workflow Activity in Dynamics 365</title>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Place this data between the <head> tags of your website -->
+
+<meta name="description" content="" />
+
+
+
+  <meta name="keywords" itemprop="categories" content="Dynamics-365, PowerApps" />
+
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+<meta name="twitter:title" content="Creating Custom Workflow Activity in Dynamics 365" />
+<meta name="twitter:description" content="" />
+
+
+
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+<meta name="twitter:url" content="http://localhost:4000//Custom-Workflow-Activity-Dynamics-365" />
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Creating Custom Workflow Activity in Dynamics 365" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:4000//Custom-Workflow-Activity-Dynamics-365" />
+
+
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="Ashish Vishwakarma" />
+
+
+<meta property="og:locale" content="" />
+
+
+  <meta property="article:published_time" content="2018-06-17T00:00:00+05:30" />
+
+
+
+
+  
+
+
+
+
+
+  
+    <meta property="article:tag" content="Dynamics-365" />
+  
+    <meta property="article:tag" content="PowerApps" />
+  
+
+
+
+
+    
+    
+    <link rel="canonical" href="http://localhost:4000/Custom-Workflow-Activity-Dynamics-365">
+    
+    
+    
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta name="robots" content="noarchive">
+    
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
+        <link rel="alternate" media="handheld" href=""> -->
+        
+        
+        <link rel="stylesheet" href="http://localhost:4000/assets/css/style.css?v=">
+    </head>
+    <body>
+        
+        <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+
+    
+      <a class="site-title" href="http://localhost:4000/posts">Ashish Vishwakarma</a>
+    
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/contact.html">Contact</a>
+              
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/now.html">Now</a>
+              
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+        
+        
+        
+        
+        
+        <section class="page-header">
+            <h1 class="project-name">Creating Custom Workflow Activity in Dynamics 365</h1>
+            <h2 class="project-tagline"></h2>
+            
+            <!-- Post tagline -->
+            
+            <h2 class="project-date">
+                <time datetime="2018-06-17T00:00:00+05:30" itemprop="datePublished">
+                    
+                    Jun 17, 2018
+                </time>
+                
+                
+            </h2>
+            
+            <!-- End: Post tagline -->
+        </section>
+        
+        <section class="main-content">
+            
+            <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <!-- <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Creating Custom Workflow Activity in Dynamics 365</h1>
+    <p class="post-meta">
+      <time datetime="2018-06-17T00:00:00+05:30" itemprop="datePublished">
+        
+        Jun 17, 2018
+      </time>
+      </p>
+  </header> -->
+
+  <div itemprop="articleBody">
+    <p><img src="../Header-Images/ms-dynamics-365-header.webp" alt="Dynamics 365 Header" /></p>
+
+<p>In Dynamics 365 Workflows if some functionality is not available in out of the box features, we have option to write Custom Workflow Activity and consume that in workflow processes. Let’s see how to create Custom Workflow Activities for Dynamics 365. Here for example we will write an activity which will take text as input and return work count as output.</p>
+
+<h3 id="step-1-create-new-project">Step 1: Create New Project</h3>
+
+<p>In Visual Studio create new project of type Class Library &amp; select framework version 4.5.2, this might change for future versions. Name I have given as <strong>WordCountWorkflow</strong>, which tells the purpose of the workflow.</p>
+
+<p><img src="assets/2018-06-17/New-Workflow.png" alt="New-Workflow" /></p>
+
+<h3 id="step-2-add-required-packags">Step 2: Add Required Packags</h3>
+
+<p>Goto manage nugget packages and install <strong>Microssoft.CrmSdk.CoreAssemblies</strong>(for Microsoft.Xrm.Sdk namespace) &amp; <strong>Microssoft.CrmSdk.Workflow</strong>(for Microsoft.Xrm.Sdk.Workflow namespace).</p>
+
+<p><img src="assets/2018-06-17/nugget-packages.png" alt="nugget-packages" /></p>
+
+<h3 id="step-3-create-wordcount-class">Step 3: Create WordCount Class</h3>
+
+<p>Create class <strong>WordCount</strong> and inherited from <strong>CodeActivity</strong>, it would require to add <strong>System.Activities</strong> namespace.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Activities</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">WordCountWorkflow</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">WordCount</span> <span class="p">:</span> <span class="n">CodeActivity</span>
+    <span class="p">{</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">CodeActivityContext</span> <span class="n">context</span><span class="p">)</span>
+        <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="step-4-add-inputoutput-parameters">Step 4: Add Input/Output Parameters</h3>
+
+<p>Our workflow activity will require one input parameter of type text and one output parameter of type number to return word count. Let’s add them to the class, it would require <strong>Microsoft.Xrm.Sdk.Workflow</strong> to be added.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk.Workflow</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Activities</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">WordCountWorkflow</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">WordCount</span> <span class="p">:</span> <span class="n">CodeActivity</span>
+    <span class="p">{</span>
+        <span class="p">[</span><span class="n">RequiredArgument</span><span class="p">]</span>
+        <span class="p">[</span><span class="nf">Input</span><span class="p">(</span><span class="s">"Input Text"</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">InArgument</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">InputText</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[</span><span class="nf">Output</span><span class="p">(</span><span class="s">"Word Count"</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">OutArgument</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">CountOfWords</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">CodeActivityContext</span> <span class="n">context</span><span class="p">)</span>
+        <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="step-5-add-word-count-logic--getset-parameters">Step 5: Add Word Count Logic &amp; Get/Set Parameters</h3>
+
+<p>Inside <strong>Execute</strong> method we are getting <strong>InputText</strong> parameter value and applying <strong>Split()</strong> to split into words then <strong>.Length</strong> property to get the count of words. Finally setting this value to <strong>CountOfWords</strong> parameter.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk.Workflow</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Activities</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">WordCountWorkflow</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">WordCount</span> <span class="p">:</span> <span class="n">CodeActivity</span>
+    <span class="p">{</span>
+        <span class="p">[</span><span class="n">RequiredArgument</span><span class="p">]</span>
+        <span class="p">[</span><span class="nf">Input</span><span class="p">(</span><span class="s">"Input Text"</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">InArgument</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">InputText</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="p">[</span><span class="nf">Output</span><span class="p">(</span><span class="s">"Word Count"</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">OutArgument</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">CountOfWords</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">CodeActivityContext</span> <span class="n">context</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">CountOfWords</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span>
+                <span class="n">context</span><span class="p">,</span>
+                <span class="k">this</span><span class="p">.</span><span class="n">InputText</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">context</span><span class="p">).</span><span class="nf">Split</span><span class="p">(</span>
+                    <span class="k">new</span> <span class="kt">char</span><span class="p">[]</span> <span class="p">{</span> <span class="sc">' '</span><span class="p">,</span> <span class="sc">'\r'</span><span class="p">,</span> <span class="sc">'\n'</span> <span class="p">},</span>
+                    <span class="n">StringSplitOptions</span><span class="p">.</span><span class="n">RemoveEmptyEntries</span><span class="p">).</span><span class="n">Length</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="step-6-signing-the-assembly">Step 6: Signing the Assembly</h3>
+
+<p>In Dynamics 365 it is necessary to sign the assembly before registering. To do this</p>
+<ol>
+  <li>Right click on project, click on properties to open.</li>
+  <li>On left pane, click on Signing.</li>
+  <li>Check Sign the assembly checkbox.</li>
+  <li>In Choose a strong name key file dropdown click New…</li>
+  <li>Crete Strong Name Key popup will appear.</li>
+  <li>Give some name.</li>
+  <li>Optionally you can protect this key file with password.</li>
+  <li>Click Ok to generate key and sign the assembly.</li>
+  <li>Build the solution</li>
+</ol>
+
+<p><img src="assets/2018-06-17/Sign-Assembly.png" alt="Sign-Assembly" /></p>
+
+<h3 id="step-7-register-the-assembly-in-dynamics-365">Step 7: Register the Assembly in Dynamics 365</h3>
+
+<p>Open the Plugin Registration Tool and connect with your organization. If you don’t already have, grab it by adding <strong>Microsoft.CrmSdk.XrmTooling.PluginRegistrationTool</strong> nuget package.</p>
+
+<p><strong>1.</strong> Click on Register then Register New Assembly.</p>
+
+<p><img src="assets/2018-06-17/Register-New-Assembly.png" alt="Register-New-Assembly" /></p>
+
+<p><strong>2.</strong> Register New Assembly popup will appear, select your project DLL from bin/debug folder of project.</p>
+
+<p><img src="assets/2018-06-17/Load-Assembly.png" alt="Load-Assembly" /></p>
+
+<p><strong>3.</strong> After selecting DLL, make sure Select All is selected in Step 2.</p>
+
+<p><img src="assets/2018-06-17/Select-All.png" alt="Select-All" /></p>
+
+<p><strong>4.</strong> Leave rest of he options as it is and click <strong>Register Selected Plugins</strong>, it should register your assembly successfully.</p>
+
+<p><img src="assets/2018-06-17/Registered.png" alt="Registered" /></p>
+
+<p><strong>5.</strong> You can verify the assembly after registering in Plugin Registration Tool.</p>
+
+<p><img src="assets/2018-06-17/Verify-DLL.png" alt="Verify-DLL" /></p>
+
+<h3 id="step-8-consuming-custom-workflow-activity-in-workflow-process">Step 8: Consuming Custom Workflow Activity in Workflow Process</h3>
+
+<p><strong>1.</strong> Open CRM, goto solution where you want to create Workflow, navigate to Processes &amp; create new. Give some meaningful name, I’ve given “Word Counter”, select Category as “Workflow” &amp; select “Contact” in Entity. I have created as realtime workflow by unchecking “Run this workflow in the background (recommended)” checkbox, for the ease of testing.</p>
+
+<p><img src="assets/2018-06-17/New-Workflow-Process.png" alt="New-Workflow-Process" /></p>
+
+<p><strong>2.</strong> After Creation check “As an on-demand process” to make as On-demand workflow.</p>
+
+<p><img src="assets/2018-06-17/Make-On-Demand.png" alt="Make-On-Demand" /></p>
+
+<p><strong>3.</strong> Click on “Add Step” and look for our assembly name i.e <strong>WordCountWorkflow</strong>, click on this <strong>WordCountWorkflow.WordCount</strong> will appear, click on this to add step.</p>
+
+<p><img src="assets/2018-06-17/Add-Step.png" alt="Add-Step" /></p>
+
+<p><strong>4.</strong> In added step click “Set Properties”, In properties set <strong>Input Text</strong>(Input parameter given in code) as Address field of Contact record.</p>
+
+<p><img src="assets/2018-06-17/Set-Input.png" alt="Set-Input" /></p>
+
+<p><strong>5.</strong> Add another update step, and set <strong>Job Title</strong> field as <strong>Word Count</strong>(Output Parameter given in code).</p>
+
+<p><img src="assets/2018-06-17/Set-Output.png" alt="Set-Output" /></p>
+
+<p><strong>6.</strong> Workflow is completed, Save it &amp; Activate it.</p>
+
+<p><img src="assets/2018-06-17/Activate-Workflow.png" alt="Activate-Workflow" /></p>
+
+<h3 id="testing-the-workflow">Testing the Workflow</h3>
+
+<p><strong>1.</strong> To test this, I have created one contact record with <strong>Address</strong> field populated which has 9 words in total. Expand top menu in form and click “Run Workflow”.</p>
+
+<p><img src="assets/2018-06-17/Run-Workflow.png" alt="Run-Workflow" /></p>
+
+<p><strong>2.</strong> In appearing popup, select our “Word Counter” workflow and click “Add”.</p>
+
+<p><img src="assets/2018-06-17/Select-Workflow.png" alt="Select-Workflow" /></p>
+
+<p><strong>3.</strong> It will ask for confirmation to run, click “OK”.</p>
+
+<p><img src="assets/2018-06-17/Confirm-Run.png" alt="Confirm-Run" /></p>
+
+<p><strong>4.</strong> Let the execution complete.</p>
+
+<p><img src="assets/2018-06-17/Executing.png" alt="Executing" /></p>
+
+<p><strong>5.</strong> Refresh the form to update and verify whether <strong>Job Title</strong> field is updated with the Word Count of Address field.</p>
+
+<p><img src="assets/2018-06-17/Output-Success.png" alt="Output-Success" /></p>
+
+<p>Congrats! Your Custom Workflow Activity is running successfully.</p>
+
+<p>Grab complete source code here <a href="https://github.com/AshV/Custom-Workflows-Dynamics-365">https://github.com/AshV/Custom-Workflows-Dynamics-365</a>.</p>
+
+<blockquote>
+  <p>Thanks for reading!</p>
+</blockquote>
+
+  </div>
+
+  
+</article>
+
+            
+            <footer class="site-footer">
+                <!-- SVG icons from https://iconmonstr.com -->
+                
+                <!-- Github icon -->
+                <span class="my-span-icon">
+                    <a href="" aria-label="'s GitHub" title="'s GitHub">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- Twitter icon -->
+                <span class="my-span-icon">
+                    <a href="https://twitter.com/" aria-label="'s Twitter" title="'s Twitter">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- RSS icon -->
+                
+                
+                <!-- Contact icon -->
+                
+                
+                <span class="my-span-icon">
+                    <a href="http://localhost:4000/contact.html" aria-label="Contact" title="Contact ">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+                    </a>
+                </span>
+                
+                
+            </footer>
+        </section>
+        
+        <script>
+            var menu = document.querySelector("nav.site-nav");
+            var checkbox = document.getElementById("nav-trigger");
+            
+            // close menu if click outside menu
+            document.addEventListener("click", function(e) {
+                if (menu != e.target &&
+                        !isDescendant(menu, e.target)) {
+                    checkbox.checked = false;
+                }
+            }, false);
+            
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }  
+        </script>
+        
+    </body>
+    </html>
+    
