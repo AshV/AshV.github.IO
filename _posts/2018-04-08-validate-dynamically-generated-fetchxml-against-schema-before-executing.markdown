@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Validating fetchXml against Schema using C#"
-date: 2018-04-08 00:12:01 +0530
+date: 2018-04-08 00:18:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: validate-dynamically-generated-fetchxml-against-schema-before-executing
 ---

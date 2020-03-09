@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Installing XrmToolBox Plugins in No Internet OnPremises Environments"
-date: 2018-05-21 00:12:01 +0530
+date: 2018-05-21 00:18:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: Installing-Using-XrmToolBox-Plugins-in-No-Internet-OnPremises-Environments
 ---
