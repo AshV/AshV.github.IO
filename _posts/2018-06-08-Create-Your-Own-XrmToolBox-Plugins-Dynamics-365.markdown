@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Create Your Own XrmToolBox Plugins "
-date: 2018-06-08 00:00:01 +0530
+date: 2018-06-08 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: Create-Your-Own-XrmToolBox-Plugins-Dynamics-365
 ---

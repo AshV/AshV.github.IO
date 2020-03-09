@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When Chrome For Android Laughs at You 😂"
-date: 2018-01-17 00:00:01 +0530
+date: 2018-01-17 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: when-chrome-for-android-laughs-at-you
 ---

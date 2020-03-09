@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting Started With Dynamics 365 - Webinar Content"
-date: 2017-09-03 00:00:01 +0530
+date: 2017-09-03 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: dynamics-365-101-webinar
 ---

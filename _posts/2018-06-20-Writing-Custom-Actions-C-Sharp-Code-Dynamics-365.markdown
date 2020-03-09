@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating Custom Actions for Dynamics 365 with C#"
-date: 2018-06-20 00:00:01 +0530
+date: 2018-06-20 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: Writing-Custom-Actions-C-Sharp-Code-Dynamics-365
 ---

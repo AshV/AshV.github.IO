@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Test/Execute your fetchXml with Dyanmics 365 WebAPI"
-date: 2018-02-27 00:00:01 +0530
+date: 2018-02-27 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: test-fetchxml-with-webapi-dynamics-365-fetchxml-tester
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Get Specific Field Change History from AuditDetail in Dynamics 365"
-date:   2019-11-26 00:00:01 +0530
+date:   2019-11-26 00:12:01 +0530
 categories: CRM-SDK AuditDetail Dynamics-365
 permalink: Retrieve-Field-Change-History-AuditDetail-Dynamics-365-RetrieveAttributeChangeHistory
 ---

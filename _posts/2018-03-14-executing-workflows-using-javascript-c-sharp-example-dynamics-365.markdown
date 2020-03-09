@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Executing Workflows using JavaScript / C# in Dynamics 365"
-date: 2018-03-14 00:00:01 +0530
+date: 2018-03-14 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: executing-workflows-using-javascript-c-sharp-example-dynamics-365
 ---

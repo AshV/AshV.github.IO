@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "Exploring Power Apps Dataflows and Migrating Data from a WebAPI"
-date:   2020-02-02 00:00:01 +0530
+date:   2020-02-02 00:12:01 +0530
 categories: CRM-SDK Data Migration Dataflow
 permalink: Data-Migration-Power-Apps-Dataflows-WebAPI-Dynamics365-CDS
 ---

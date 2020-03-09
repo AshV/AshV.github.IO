@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Business Process Flow Import Error"
-date: 2017-11-03 00:00:01 +0530
+date: 2017-11-03 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: bpf-import-error-this-process-cannot-be-imported-because-it-cannot-be-updated-or-does-not-have-a-unique-name-dynamics-365
 ---

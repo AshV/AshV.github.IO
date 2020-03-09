@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Set Lookup View with JavaScript in Dynamics CRM/365"
-date: 2017-09-22 00:00:01 +0530
+date: 2017-09-22 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: set-lookup-view-with-javascript-dynamics-crm-365
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Connect CrmServiceClient using Azure AD App Client ID & Client Secret for C# SDK"
-date:   2020-03-02 00:00:01 +0530
+date:   2020-03-02 00:12:01 +0530
 categories: CRM-SDK AzureAD CrmServiceClient
 permalink: Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret
 ---

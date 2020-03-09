@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git with Command Line For Absolute Beginners"
-date: 2018-06-16 00:00:01 +0530
+date: 2018-06-16 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: Git-CLI-Reference-Absolute-Beginners
 ---

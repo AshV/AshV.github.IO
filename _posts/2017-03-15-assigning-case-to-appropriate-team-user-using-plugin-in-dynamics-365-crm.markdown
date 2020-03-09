@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM"
-date: 2017-03-15 00:00:01 +0530
+date: 2017-03-15 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Parsing Customer Journey Workflow Definition JSON with Linq.js in Dynamics 365 for Marketing"
-date: 2018-11-01 00:00:01 +0530
+date: 2018-11-01 00:12:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: Parsing-Customer-Journey-Workflow-Definition-JSON-linqjs-Dynamics-365-Marketing
 ---
