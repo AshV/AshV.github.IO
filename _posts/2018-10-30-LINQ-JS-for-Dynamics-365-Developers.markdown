@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linq.js for Dynamics 365 Developers"
-date: 2018-10-30 00:00:00 +0530
+date: 2018-10-30 00:00:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: 2018-10-30-LINQ-JS-for-Dynamics-365-Developers
 ---

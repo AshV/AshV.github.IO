@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Easy Blogging for Lazy Programmers"
-date: 2018-04-30 00:00:00 +0530
+date: 2018-04-30 00:00:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: easy-blogging-for-lazy-programmers-github-pages
 ---

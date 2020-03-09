@@ -1,4 +1,10 @@
-# Customize Views with Javascript in Dynamics 365
+---
+layout: post
+title: "Customize Views with Javascript in Dynamics 365"
+date: 2018-01-23 00:00:01 +0530
+categories: Dynamics-365 PowerApps
+permalink: customize-views-with-javascript-in-dynamics-365
+---
 
 >[All Posts](https://www.ashishvishwakarma.com/posts/)
 

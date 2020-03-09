@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Quickly Generate Access Token For Dynamics 365 To Be Used  With Postman Without Configuring Azure AD App"
-date:   2019-01-05 00:00:00 +0530
+date:   2019-01-05 00:00:01 +0530
 categories: CRM-SDK AuditDetail Dynamics-365
 permalink: Easily-Generate-Dynamics-365-Access-Token-Postman-Without-Configuring-Azure
 ---

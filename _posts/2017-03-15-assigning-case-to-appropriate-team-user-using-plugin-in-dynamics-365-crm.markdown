@@ -1,14 +1,12 @@
 ---
 layout: post
 title: "Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM"
-date: 2017-03-15 00:00:00 +0530
+date: 2017-03-15 00:00:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm
 ---
 
-![Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM](https://github.com/AshV/AshV.github.io/raw/master/Header-Images/ms-dynamics-365-header.webp)
-
->[All Posts](https://www.ashishvishwakarma.com/posts/)
+![Dynamics 365 Header](assets/2018-06-25/ms-dynamics-365-header.webp)
 
 In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfill these three requirements.
 

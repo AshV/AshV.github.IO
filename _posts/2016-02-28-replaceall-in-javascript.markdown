@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "replaceAll() in JavaScript"
-date: 2016-02-28 00:00:00 +0530
+date: 2016-02-28 00:00:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: replaceall-in-javascript
 ---

@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Executing Actions using JavaScript / C# in Dynamics 365"
-date: 2018-05-17 00:00:00 +0530
+date: 2018-05-17 00:00:01 +0530
 categories: Dynamics-365 PowerApps
 permalink: executing-actions-using-javascript-c-sharp-example-dynamics-365
 ---
