@@ -1,0 +1,160 @@
+<h1 id="customize-views-with-javascript-in-dynamics-365">Customize Views with Javascript in Dynamics 365</h1>
+
+<blockquote>
+  <p><a href="https://www.ashishvishwakarma.com/posts/">All Posts</a></p>
+</blockquote>
+
+<p>Dynamics 365 v9.0 onwards JavaScript scripting is not only limited to Forms, you can even customize views. More specifically you can just add icon in cells as of now, I was expecting more features actually but it didn’t have.</p>
+
+<h2 id="what-is-offered">What is Offered?</h2>
+<blockquote>
+  <p><img src="assets/2018-01-23/1_OOB_Icons.png" alt="1_OOB_Icons.png" /></p>
+</blockquote>
+
+<p>As you can see in above image, those icons in view cells were already available in some OOB views, now you can use in custom view as well.</p>
+
+<h2 id="where-to-customize">Where to customize?</h2>
+<blockquote>
+  <p><img src="assets/2018-01-23/2_View_Properties.png" alt="2_View_Properties.png" />
+Goto any view’s property, you can see 2 new fields <strong>Web Resource</strong> and <strong>Function Name</strong>, which is very similar to Forms when you write JS.</p>
+</blockquote>
+
+<h2 id="what-to-write-in-web-resource">What to write in Web Resource?</h2>
+<p>You need to write a JS function with 2 parameters, when you’ll add it to view, first parameters will receive <strong>rowData</strong>(value with metadata shown below for one cell) and <strong>userLCID</strong>(i.e. language code for current user).
+Based on those 2 inputs you can decide what icon to show. And name of this function goes in <strong>Function Name:</strong> field in View’s property.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">///</span><span class="w"> </span><span class="err">rowData</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">just</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">cell</span><span class="w">
+</span><span class="p">{</span><span class="w">
+   </span><span class="nl">"RowId"</span><span class="p">:</span><span class="s2">"{B69E62A8-90DF-E311-9565-A45D36FC5FE8}"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"RowType"</span><span class="p">:</span><span class="s2">"112"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"Average order shipment time"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"title_Value"</span><span class="p">:</span><span class="s2">"Average order shipment time"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"ticketnumber"</span><span class="p">:</span><span class="s2">"CAS-01213-P8B3X0"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"ticketnumber_Value"</span><span class="p">:</span><span class="s2">"CAS-01213-P8B3X0"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"prioritycode"</span><span class="p">:</span><span class="s2">"Normal"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"prioritycode_Value"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"caseorigincode"</span><span class="p">:</span><span class="s2">"Web"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"caseorigincode_Value"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customerid"</span><span class="p">:</span><span class="s2">"Litware"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customerid_Value"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"Data"</span><span class="p">:{</span><span class="w">
+         </span><span class="nl">"Type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"Name"</span><span class="p">:</span><span class="s2">"Litware"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"ID"</span><span class="p">:</span><span class="s2">"{BCA19CDD-88DF-E311-B8E5-6C3BE5A8B200}"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"Dsc"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"NeedsIconRendering"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"ownerid"</span><span class="p">:</span><span class="s2">"Christa Geller (Sample Data)"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"ownerid_Value"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"Data"</span><span class="p">:{</span><span class="w">
+         </span><span class="nl">"Type"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"Name"</span><span class="p">:</span><span class="s2">"Christa Geller (Sample Data)"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"ID"</span><span class="p">:</span><span class="s2">"{C02D43FF-16A8-4E1E-8DD1-0B78EB058AB4}"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"Dsc"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"NeedsIconRendering"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"statecode"</span><span class="p">:</span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"statecode_Value"</span><span class="p">:</span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdon"</span><span class="p">:</span><span class="s2">"1/21/2017 4:20 AM"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdon_Value"</span><span class="p">:</span><span class="s2">"2017-01-21T04:20:45+00:00"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"processid"</span><span class="p">:</span><span class="s2">"{0FFBCDE4-61C1-4355-AA89-AA1D7B2B8792}"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"processid_Value"</span><span class="p">:</span><span class="s2">"0ffbcde4-61c1-4355-aa89-aa1d7b2b8792"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"processts"</span><span class="p">:</span><span class="s2">"424505"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"processts_Value"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"processid_Hidden"</span><span class="p">:</span><span class="s2">"0ffbcde4-61c1-4355-aa89-aa1d7b2b8792"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"processts_Hidden"</span><span class="p">:</span><span class="s2">"424505"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h2 id="lets-implement">Let’s Implement</h2>
+<p>I’ll be doing all the customizations in <strong>All Cases</strong> view of <strong>Case</strong> entity. So you can try it right away in new trial instance without creating any custom entity/view.</p>
+
+<p>Add one JS web resource</p>
+<blockquote>
+  <p><img src="assets/2018-01-23/3_Add_Web_Resource.png" alt="Add one JS web resource" /></p>
+</blockquote>
+
+<p>And write below code in it</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">casePriorityIcons</span><span class="p">(</span><span class="nx">rowData</span><span class="p">,</span> <span class="nx">userLCID</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">rowData</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">priority</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">prioritycode</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">imgWebResource</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">imgTooltip</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">priority</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">High</span><span class="dl">"</span><span class="p">:</span>
+      <span class="nx">imgWebResource</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ashv_high</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nx">imgTooltip</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">High Priority Case</span><span class="dl">"</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">Low</span><span class="dl">"</span><span class="p">:</span>
+      <span class="nx">imgWebResource</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ashv_low</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nx">imgTooltip</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Low Priority Case</span><span class="dl">"</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="nx">imgWebResource</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ashv_normal</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nx">imgTooltip</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Normal Priority Case</span><span class="dl">"</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">imgWebResource</span><span class="p">,</span> <span class="nx">imgTooltip</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<blockquote>
+  <p><img src="assets/2018-01-23/4_Icons_as_Webresource.png" alt="4_Icons_as_Webresource.png" /></p>
+</blockquote>
+
+<p>In above code I’m reading cell data which is priority field of case, and according to value it will show color icon in from of it. I have added three 16x16(if you’ll take different size it will be scaled back to 16x16, so better take optimized size) icons with color Red, Yellow &amp; Green for High, Normal &amp; Low priorities respectively.
+Function returns an array of size 2, first element tells name of image web resource to show and second is tool-tip text.
+You can use below images in your web resource.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>High : <img src="assets/2018-01-23/High.png" alt="High Red" /></td>
+      <td>Normal : <img src="assets/2018-01-23/Medium.png" alt="Normal Yellow" /></td>
+      <td>Low : <img src="assets/2018-01-23/Low.png" alt="Low Green" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I’ve set Web resource and function name in All Cases view property for Priority field.</p>
+<blockquote>
+  <p><img src="assets/2018-01-23/5_setting_webresource.png" alt="5_setting_webresource.png" /></p>
+</blockquote>
+
+<p>Publish everything and navigate to <strong>All Cases</strong> view.</p>
+<blockquote>
+  <p><img src="assets/2018-01-23/6_hooray.png" alt="Final Output Working!" /></p>
+</blockquote>
+
+<p>Hooray! It’s working!
+I didn’t play anything with second parameter i.e. LCID, you can explore usecases and try.</p>
+
+<h2 id="looks-good-but-what-happen-behind-the-scenes">Looks Good, but what happen behind the scenes</h2>
+
+<p>All this magic happens in <strong>layoutxml</strong> of view you can see below.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;grid</span> <span class="na">name=</span><span class="s">"resultset"</span> <span class="na">object=</span><span class="s">"112"</span> <span class="na">jump=</span><span class="s">"title"</span> <span class="na">select=</span><span class="s">"1"</span> <span class="na">icon=</span><span class="s">"1"</span> <span class="na">preview=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;row</span> <span class="na">name=</span><span class="s">"result"</span> <span class="na">id=</span><span class="s">"incidentid"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"ticketnumber"</span> <span class="na">width=</span><span class="s">"125"</span> <span class="na">imageproviderfunctionname=</span><span class="s">""</span> <span class="na">imageproviderwebresource=</span><span class="s">"$webresource:"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"prioritycode"</span> <span class="na">width=</span><span class="s">"150"</span> <span class="na">imageproviderfunctionname=</span><span class="s">"casePriorityIcons"</span> <span class="na">imageproviderwebresource=</span><span class="s">"$webresource:ashv_ViewCustomizations"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"caseorigincode"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"customerid"</span> <span class="na">width=</span><span class="s">"150"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"ownerid"</span> <span class="na">width=</span><span class="s">"150"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"statecode"</span> <span class="na">width=</span><span class="s">"150"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;cell</span> <span class="na">name=</span><span class="s">"createdon"</span> <span class="na">width=</span><span class="s">"150"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/row&gt;</span>
+<span class="nt">&lt;/grid&gt;</span>
+</code></pre></div></div>
+<p>Here <code class="highlighter-rouge">&lt;cell name="prioritycode" width="150" imageproviderfunctionname="casePriorityIcons" imageproviderwebresource="$webresource:ashv_ViewCustomizations" /&gt;</code> got 2 extra attributes with name of web resource and function, they set image source and title while rendering view(see image below).
+<img src="assets/2018-01-23/7_in_html.png" alt="7_in_html.png" /></p>
+
+<p>You can download this as unmanaged solution <a href="assets/2018-01-23/CaseViewCustomizations_1_0_0_0.zip">here.</a></p>
+
+<p>Feel free to get in touch for any query regarding this.</p>
+
+<p>Cheers!</p>
+
+<blockquote>
+  <p><a href="https://www.ashishvishwakarma.com/posts/">All Posts</a></p>
+</blockquote>

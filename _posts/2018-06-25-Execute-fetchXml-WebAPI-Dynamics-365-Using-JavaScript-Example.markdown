@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example
 ---
 
-![Dynamics 365 Header](../Header-Images/ms-dynamics-365-header.webp)
+![Dynamics 365 Header](assets/2018-06-25/ms-dynamics-365-header.webp)
 
 In Dynamics 365 WebAPI we can retrieve data using OData queries, but if there is some complex requirement it's better to query using fetchXML, and good news is Dynamics 365 WebAPI supports querying using fetchXML. With fetchXML we have 2 main advantage, it can be easily generated using Advanced Find & It's more readable. You can even use Joins & Aggregate function in fetchXML queries which are not possible using Advanced Find(refer http://msxrmtools.com/fetchxml/reference). Let's see how can we query fetchXML with WebAPI.
 

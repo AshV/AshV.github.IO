@@ -364,7 +364,7 @@
 
 <p>Change it to ‘text’ manually.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Table.TransformColumnTypes(#</span><span class="s2">"Expanded Column1"</span><span class="err">,</span><span class="w"> </span><span class="err">isbn</span><span class="mi">13</span><span class="err">)</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Table.TransformColumnTypes(#</span><span class="s2">"Expanded Column1"</span><span class="err">,</span><span class="w"> </span><span class="err">\</span><span class="p">{</span><span class="err">\</span><span class="p">{</span><span class="s2">"isbn13"</span><span class="p">,</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">text\</span><span class="p">}</span><span class="err">\</span><span class="p">}</span><span class="err">)</span><span class="w">
 </span></code></pre></div></div>
 
 <p>You may observe all the transformations are being recorded on the right pane. Now the transformation part is completed, click on Next to proceed to load.</p>

@@ -160,7 +160,7 @@ You can see on Query that it is detected as Int64.
 Change it to 'text' manually.
 
 ```json
-Table.TransformColumnTypes(#"Expanded Column1", {{"isbn13", type text}})
+Table.TransformColumnTypes(#"Expanded Column1", \{\{"isbn13", type text\}\})
 ```
 
 You may observe all the transformations are being recorded on the right pane. Now the transformation part is completed, click on Next to proceed to load.

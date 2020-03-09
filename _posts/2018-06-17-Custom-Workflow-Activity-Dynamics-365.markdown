@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: Custom-Workflow-Activity-Dynamics-365
 ---
 
-![Dynamics 365 Header](../Header-Images/ms-dynamics-365-header.webp)
+![Dynamics 365 Header](assets/2018-06-25/ms-dynamics-365-header.webp)
 
 In Dynamics 365 Workflows if some functionality is not available in out of the box features, we have option to write Custom Workflow Activity and consume that in workflow processes. Let's see how to create Custom Workflow Activities for Dynamics 365. Here for example we will write an activity which will take text as input and return work count as output.
 
