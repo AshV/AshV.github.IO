@@ -15,7 +15,9 @@
 # in the templates via {{ site.myvariable }}.
 title: Ashish Vishwakarma
 email: Hello@AshishVishwakarma.com
-description: Devited To Code
+description: Devoted To Code
+site.github.owner_url : https://github.com/AshV
+site.github.owner_name : AshV
 baseurl: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: aryanroyal
