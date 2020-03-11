@@ -3,7 +3,7 @@ layout: post
 title: "Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication"
 date: 2018-12-29 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Dynamics-365-Single-Tenant-Server-2-Server-Authentication-Azure-Active-Directory-Access-Token
+permalink: Dynamics-365-Single-Tenant-Server-2-Server-Authentication-Azure-Active-Directory-Access-Token/
 ---
 
 ![Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication](assets/2018-12-29/microsoft-dynamics-365-banner.jpg)

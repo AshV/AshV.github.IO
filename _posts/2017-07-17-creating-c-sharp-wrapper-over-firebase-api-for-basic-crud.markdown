@@ -3,7 +3,7 @@ layout: post
 title: "Creating C# Wrapper Over Firebase API For CRUD Operations"
 date: 2017-07-17 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: creating-c-sharp-wrapper-over-firebase-api-for-basic-crud
+permalink: creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/
 ---
 
 ![Creating C# Wrapper Over Firebase API For CRUD Operations](assets/2017-07-17/header.jpg) 

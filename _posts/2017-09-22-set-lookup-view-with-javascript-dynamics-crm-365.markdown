@@ -3,7 +3,7 @@ layout: post
 title: "Set Lookup View with JavaScript in Dynamics CRM/365"
 date: 2017-09-22 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: set-lookup-view-with-javascript-dynamics-crm-365
+permalink: set-lookup-view-with-javascript-dynamics-crm-365/
 ---
 
 ![Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM](https://github.com/AshV/AshV.github.io/raw/master/Header-Images/ms-dynamics-365-header.webp)

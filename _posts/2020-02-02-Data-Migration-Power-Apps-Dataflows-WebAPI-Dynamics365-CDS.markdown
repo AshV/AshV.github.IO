@@ -3,7 +3,7 @@ layout: post
 title:  "Exploring Power Apps Dataflows and Migrating Data from a WebAPI"
 date:   2020-02-02 00:18:01 +0530
 categories: CRM-SDK Data Migration Dataflow
-permalink: Data-Migration-Power-Apps-Dataflows-WebAPI-Dynamics365-CDS
+permalink: Data-Migration-Power-Apps-Dataflows-WebAPI-Dynamics365-CDS/
 ---
 
 Finally, Dynamics 365/Power Platform has it's own no code ETL tool. It is called **Data Flows**(formerly Data Integration). Let's explore and try it out.

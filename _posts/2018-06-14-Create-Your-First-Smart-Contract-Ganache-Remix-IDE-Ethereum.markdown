@@ -3,7 +3,7 @@ layout: post
 title: "Create & Test Your  First Ethereum Smart Contract In Simplest Way Possible"
 date: 2018-06-14 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Create-Your-First-Smart-Contract-Ganache-Remix-IDE-Ethereum
+permalink: Create-Your-First-Smart-Contract-Ganache-Remix-IDE-Ethereum/
 ---
 
 ![Ethereum-Banner](assets/2018-06-14/Ethereum-Banner.jpg)

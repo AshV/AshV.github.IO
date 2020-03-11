@@ -3,7 +3,7 @@ layout: post
 title: "Easy Blogging for Lazy Programmers"
 date: 2018-04-30 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: easy-blogging-for-lazy-programmers-github-pages
+permalink: easy-blogging-for-lazy-programmers-github-pages/
 ---
 
 When I started web programming almost 10 years back, no one would have thought that people will go crazy some day to make their websites static. Back then it was PHP and WordPress era even if your website is almost static ```include 'header.php'``` was always there to run at server for obvious reasons. 

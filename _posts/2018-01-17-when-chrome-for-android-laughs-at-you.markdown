@@ -3,7 +3,7 @@ layout: post
 title: "When Chrome For Android Laughs at You 😂"
 date: 2018-01-17 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: when-chrome-for-android-laughs-at-you
+permalink: when-chrome-for-android-laughs-at-you/
 ---
 
 I have one bad habit of keep opening links in new tab in phone without closing old ones. It becomes hectic when I need to find some previously opened link. I thought I can export all those links in some file and can find easily, but it was not a cakewalk.

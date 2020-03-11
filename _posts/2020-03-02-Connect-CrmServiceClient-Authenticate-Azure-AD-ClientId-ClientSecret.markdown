@@ -3,7 +3,7 @@ layout: post
 title:  "Connect CrmServiceClient using Azure AD App Client ID & Client Secret for C# SDK"
 date:   2020-03-02 00:18:01 +0530
 categories: CRM-SDK AzureAD CrmServiceClient
-permalink: Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret
+permalink: Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret/
 ---
 
 After depecation announcemnt of Dynamics 2011 Organization Service Endpoint in late 2018 and recommendation on using OAuth authentication & Dynamics 365 WebAPI, there was uncertainity for developers who were using/planning to use 3rd party integartion using C# SDK. 

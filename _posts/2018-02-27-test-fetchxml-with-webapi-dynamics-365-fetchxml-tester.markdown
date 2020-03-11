@@ -3,7 +3,7 @@ layout: post
 title: "Test/Execute your fetchXml with Dyanmics 365 WebAPI"
 date: 2018-02-27 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: test-fetchxml-with-webapi-dynamics-365-fetchxml-tester
+permalink: test-fetchxml-with-webapi-dynamics-365-fetchxml-tester/
 ---
 
 Dynamics 365/CRM WebAPI has unleashed many capabilities to it's REST endpoint, Executing fetchXml is one of them.

@@ -3,7 +3,7 @@ layout: post
 title: "Creating Custom Workflow Activity in Dynamics 365"
 date: 2018-06-17 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Custom-Workflow-Activity-Dynamics-365
+permalink: Custom-Workflow-Activity-Dynamics-365/
 ---
 
 ![Dynamics 365 Header](assets/2018-06-25/ms-dynamics-365-header.webp)

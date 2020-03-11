@@ -3,7 +3,7 @@ layout: post
 title: "Linq.js for Dynamics 365 Developers"
 date: 2018-10-30 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: LINQ-JS-for-Dynamics-365-Developers
+permalink: LINQ-JS-for-Dynamics-365-Developers/
 ---
 
 Recently I was working in some large JSON objects in client side javascript where I had to query through it several times as per requirement I was using [javascript array's functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype). Then I thought why not use [lodash.js](https://github.com/lodash/lodash/) or [underscore.js](https://github.com/jashkenas/underscore) I checked over github they are really feature rich and trustworthy, but there was a whole new list of functions and syntax to learn.

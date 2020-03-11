@@ -3,7 +3,7 @@ layout: post
 title: "Getting Started With Dynamics 365 - Webinar Content"
 date: 2017-09-03 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: dynamics-365-101-webinar
+permalink: dynamics-365-101-webinar/
 ---
 
 Sharing content for [webinar](https://www.c-sharpcorner.com/events/getting-started-with-dynamics-crm365) organized by [C# Corner](http://c-sharpcorner.com/) on September 3, 2017

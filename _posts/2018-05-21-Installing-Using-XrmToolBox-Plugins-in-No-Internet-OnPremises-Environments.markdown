@@ -3,7 +3,7 @@ layout: post
 title: "Installing XrmToolBox Plugins in No Internet OnPremises Environments"
 date: 2018-05-21 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Installing-Using-XrmToolBox-Plugins-in-No-Internet-OnPremises-Environments
+permalink: Installing-Using-XrmToolBox-Plugins-in-No-Internet-OnPremises-Environments/
 ---
 
 **TL;DR :** Place the XrmToolBox plugin DLL in **%AppData%\MscrmTools\XrmToolBox\Plugins** folder and get going.

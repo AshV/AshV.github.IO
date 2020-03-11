@@ -3,7 +3,7 @@ layout: post
 title: "Get Access Token for Google Service Account using C#"
 date: 2017-10-11 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: get-access-token-for-google-api-service-account-c-sharp
+permalink: get-access-token-for-google-api-service-account-c-sharp/
 ---
 
 Service Accounts are used for server to server communication so user don’t need to interact for Authentication.

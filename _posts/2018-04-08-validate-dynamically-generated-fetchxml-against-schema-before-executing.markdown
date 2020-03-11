@@ -3,7 +3,7 @@ layout: post
 title: "Validating fetchXml against Schema using C#"
 date: 2018-04-08 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: validate-dynamically-generated-fetchxml-against-schema-before-executing
+permalink: validate-dynamically-generated-fetchxml-against-schema-before-executing/
 ---
 
 Many times in Dynamics 365 related applications we need to work with dynamically generated or user entered fetchXml, In this case it's always a good idea to verify fetcXml against schema before using. This kind of requirement  might come if you are building some awesome stuff like [FetchXML Builder](https://fxb.xrmtoolbox.com/) or [FetchXML to SQL Converter](https://github.com/abtevrythng/FetchXML-to-SQL). or Generating fetchXml query in code.

@@ -3,7 +3,7 @@ layout: post
 title: "Execute fetchXML with WebAPI in Dynamics 365 using JavaScript"
 date: 2018-06-25 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example
+permalink: Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/
 ---
 
 ![Dynamics 365 Header](assets/2018-06-25/ms-dynamics-365-header.webp)

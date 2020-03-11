@@ -3,7 +3,7 @@ layout: post
 title:  "Quickly Generate Access Token For Dynamics 365 To Be Used  With Postman Without Configuring Azure AD App"
 date:   2019-01-05 00:18:01 +0530
 categories: CRM-SDK AuditDetail Dynamics-365
-permalink: Easily-Generate-Dynamics-365-Access-Token-Postman-Without-Configuring-Azure
+permalink: Easily-Generate-Dynamics-365-Access-Token-Postman-Without-Configuring-Azure/
 ---
 
 Since [Microsoft recommended to prefer WebApi](https://docs.microsoft.com/en-us/previous-versions/dynamicscrm-2016/developers-guide/dn281891(v=crm.8)#microsoft-dynamics-crm-2011-endpoint) over Organization Service, [Postman](https://www.getpostman.com/) became a saviour to Dynamics 365 developers and [Microsoft's documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/webapi/use-postman-web-api) was always helpful to setup and use postman with Dynamics 365 WebApi.

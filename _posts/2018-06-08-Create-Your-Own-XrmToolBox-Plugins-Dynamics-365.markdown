@@ -3,7 +3,7 @@ layout: post
 title: "Create Your Own XrmToolBox Plugins "
 date: 2018-06-08 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Create-Your-Own-XrmToolBox-Plugins-Dynamics-365
+permalink: Create-Your-Own-XrmToolBox-Plugins-Dynamics-365/
 ---
 
 [XrmToolBox](https://www.xrmtoolbox.com) has plenty of useful plugins, and awesome people like you from community keep adding new plugins to solve Dynamics 365 developer's day to day hurdles and make them more productive.

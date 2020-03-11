@@ -3,7 +3,7 @@ layout: post
 title: "Git with Command Line For Absolute Beginners"
 date: 2018-06-16 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Git-CLI-Reference-Absolute-Beginners
+permalink: Git-CLI-Reference-Absolute-Beginners/
 ---
 
 ![Git-Banner](assets/2018-06-16/Git-Banner.png)

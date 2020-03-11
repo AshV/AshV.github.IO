@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "replaceAll() in JavaScript"
-date: 2016-02-28 00:00:01 +0530
+date: 2016-02-28 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: replaceall-in-javascript
+permalink: replaceall-in-javascript/
 ---
 
 When we use replace() in any string, most of the times it is not easy to predict how many occurrences we will have to replace. There can be many approaches to do it. Let's have a look at all o them and proceed to the best one.

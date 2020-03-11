@@ -3,7 +3,7 @@ layout: post
 title: "Creating Custom Actions for Dynamics 365 with C#"
 date: 2018-06-20 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Writing-Custom-Actions-C-Sharp-Code-Dynamics-365
+permalink: Writing-Custom-Actions-C-Sharp-Code-Dynamics-365/
 ---
 
 Custom Actions are lesser used processes than Workflows and Plugins in Dynamics 365, but very useful also at the same time. People who have already have idea about Custom Workflow Activity or [read my previous article](https://www.c-sharpcorner.com/article/creating-word-counter-custom-workflow-activity-in-dynamics-365/) it's going to be very easy, coding part is same, only how we consume the code in dynamics 365 process is different, and use cases too, obviously. Custom Actions can be created with or without writing code, but they can be triggered only by the code. Here we will write custom code to retrieve case records assigned to calling user.

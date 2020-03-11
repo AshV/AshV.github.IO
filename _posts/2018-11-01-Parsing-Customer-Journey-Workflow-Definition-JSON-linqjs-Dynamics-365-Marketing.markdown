@@ -3,7 +3,7 @@ layout: post
 title: "Parsing Customer Journey Workflow Definition JSON with Linq.js in Dynamics 365 for Marketing"
 date: 2018-11-01 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Parsing-Customer-Journey-Workflow-Definition-JSON-linqjs-Dynamics-365-Marketing
+permalink: Parsing-Customer-Journey-Workflow-Definition-JSON-linqjs-Dynamics-365-Marketing/
 ---
 
 In new Dynamics 365 Apps many configurations and data are being saved as JSON, rather than creating relationships between entities or saving as XML. Customer Journey is one of those entity, this provides visual designer like shown below to design workflow and this is saved as JSON behind the scenes in **msdyncrm_workflowdefinition** column. This workflow has data related to all the components of customer journey and interacton between them.

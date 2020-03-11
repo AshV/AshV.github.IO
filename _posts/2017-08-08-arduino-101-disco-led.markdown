@@ -3,7 +3,7 @@ layout: post
 title: "Arduino 101 with Blinking Disco LED"
 date: 2017-08-08 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: arduino-101-disco-led
+permalink: arduino-101-disco-led/
 ---
 
 ![Arduino 101 with Blinking Disco LED](assets/2017-08-08/banner.png)

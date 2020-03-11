@@ -3,7 +3,7 @@ layout: post
 title: "Executing Actions using JavaScript / C# in Dynamics 365"
 date: 2018-05-17 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: executing-actions-using-javascript-c-sharp-example-dynamics-365
+permalink: executing-actions-using-javascript-c-sharp-example-dynamics-365/
 ---
 
 In Dynamics 365 we have feasibility to trigger Actions from Client-side code and Server-side code both. Let's have a look how it can be achieved.

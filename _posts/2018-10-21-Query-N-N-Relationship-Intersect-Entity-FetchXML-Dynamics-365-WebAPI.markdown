@@ -3,7 +3,7 @@ layout: post
 title: "Querying N:N Relationship Intersect Enity with FetchXML and Dynamics 365 WebAPI"
 date: 2018-10-21 00:18:01 +0530
 categories: Dynamics-365 PowerApps
-permalink: Query-N-N-Relationship-Intersect-Entity-FetchXML-Dynamics-365-WebAPI
+permalink: Query-N-N-Relationship-Intersect-Entity-FetchXML-Dynamics-365-WebAPI/
 ---
 
 In a recent requirement I had to query some data from N:N relationship in client side javascript. I achieved it with fetch XML & WebAPI here for example I'll be using **User** & **Security Role** entity.
