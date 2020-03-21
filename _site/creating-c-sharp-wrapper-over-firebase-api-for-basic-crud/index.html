@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    
+    <title>Creating C# Wrapper Over Firebase API For CRUD Operations</title>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Place this data between the <head> tags of your website -->
+
+<meta name="description" content="" />
+
+
+
+  <meta name="keywords" itemprop="categories" content="Dynamics-365, PowerApps" />
+
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+<meta name="twitter:title" content="Creating C# Wrapper Over Firebase API For CRUD Operations" />
+<meta name="twitter:description" content="" />
+
+
+
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+<meta name="twitter:url" content="http://localhost:4000//creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/" />
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Creating C# Wrapper Over Firebase API For CRUD Operations" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:4000//creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/" />
+
+
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="Ashish Vishwakarma" />
+
+
+<meta property="og:locale" content="" />
+
+
+  <meta property="article:published_time" content="2017-07-17T00:18:01+05:30" />
+
+
+
+
+  
+
+
+
+
+
+  
+    <meta property="article:tag" content="Dynamics-365" />
+  
+    <meta property="article:tag" content="PowerApps" />
+  
+
+
+
+
+    
+    
+    <link rel="canonical" href="http://localhost:4000/creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/">
+    
+    
+    
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta name="robots" content="noarchive">
+    
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
+        <link rel="alternate" media="handheld" href=""> -->
+        
+        
+        <link rel="stylesheet" href="http://localhost:4000/assets/css/style.css?v=">
+    </head>
+    <body>
+        
+        <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+
+    
+      <a class="site-title" href="http://localhost:4000/posts">Ashish Vishwakarma</a>
+    
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/contact.html">Contact Me</a>
+              
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+        
+        
+        
+        
+        
+        <section class="page-header">
+            <h1 class="project-name">Creating C# Wrapper Over Firebase API For CRUD Operations</h1>
+            <h2 class="project-tagline"></h2>
+            
+            <!-- Post tagline -->
+            
+            <h2 class="project-date">
+                <time datetime="2017-07-17T00:18:01+05:30" itemprop="datePublished">
+                    
+                    Jul 17, 2017
+                </time>
+                
+                
+            </h2>
+            
+            <!-- End: Post tagline -->
+        </section>
+        
+        <section class="main-content">
+            
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+
+        <!-- <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Creating C# Wrapper Over Firebase API For CRUD Operations</h1>
+      <p class="post-meta">
+        <time datetime="2017-07-17T00:18:01+05:30" itemprop="datePublished">
+          
+          Jul 17, 2017
+        </time>
+        </p>
+    </header> -->
+
+        <article itemprop="articleBody">
+            <p><img src="/assets/2017-07-17/header.jpg" alt="Creating C# Wrapper Over Firebase API For CRUD Operations" /></p>
+
+<blockquote>
+  <p><a href="https://github.com/AshV/Firebase.Net/">Source Code on GitHub</a></p>
+</blockquote>
+
+<p>Firebase is platform provided by Google, which provides many services, Firebase Realtime Database is one of them. Firebase provides many SDKs for different platforms as well as it provides REST api to interact with database. Here we will built wrapper in C# around REST api to easily perform CRUD operations in our C# applications.</p>
+
+<p><strong>Section 1: Create App in Firebase Console</strong></p>
+
+<p>Login to your Firebase account and click on <strong>GO TO CONSOLE</strong> to access console</p>
+
+<p><img src="/assets/2017-07-17/image_0.png" alt="image alt text" /></p>
+
+<p>Click on Add Project to add New Firebase Project</p>
+
+<p><img src="/assets/2017-07-17/image_1.png" alt="image alt text" /></p>
+
+<p>Give Project Name of your choice, your Country/Region and hit <strong>CREATE PROJECT</strong></p>
+
+<p><img src="/assets/2017-07-17/image_2.png" alt="image alt text" /></p>
+
+<p>Now you will be navigated to you newly created App Dashboard with all the Firebase features listed, Click on <strong>Database</strong> on left pane</p>
+
+<p><img src="/assets/2017-07-17/image_3.png" alt="image alt text" /></p>
+
+<p>You can see your service plan as Spark which is Free. All data stored is represented as JSON tree. You have Database URL along with root of JSON tree which is null as of now. This database URL will be used to make HTTP request later in article.</p>
+
+<p><strong>Section 2: Explore Firebase REST API with Postman</strong></p>
+
+<p>Before making wrapper let’s get comfortable with Firebase REST API with Postman. You can get postman here(https://www.getpostman.com/apps).</p>
+
+<p>Firebase read/write access is secured by default as you can see in <strong>RULES.</strong></p>
+
+<p><img src="/assets/2017-07-17/image_4.png" alt="image alt text" /></p>
+
+<p>For sake of simplicity in making HTTP requests we will remove authentication for this article.</p>
+
+<p>In upcoming articles we will use with authentication. Make <strong>auth==null;</strong> and hit <strong>PUBLISH</strong> to remove authentication.</p>
+
+<p><img src="/assets/2017-07-17/image_5.png" alt="image alt text" /></p>
+
+<p>If you are already familiar with Firebase REST API, you can directly jump to Section 3.</p>
+
+<p><strong>Writing Data with PUT</strong></p>
+
+<p>I have some data about a team and it’s members as follows, we are writing this data to root node of our database JSON tree.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">Team-Awesome</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">Members</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">M1</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hyderabad</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ashish</span><span class="dl">"</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">M2</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Cyberabad</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Vivek</span><span class="dl">"</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">M3</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">City</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Secunderabad</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Pradeep</span><span class="dl">"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In Postman window set method as <strong>PUT,</strong> in URL enter your database URL appended with <strong>.json</strong> as we are writing to root node. <strong>.json suffix</strong> is always required if we are making REST calls. In <strong>Body</strong> select <strong>raw</strong> and paste your JSON data there, hit <strong>Send</strong> now to make the request.</p>
+
+<p><img src="/assets/2017-07-17/image_6.png" alt="image alt text" /></p>
+
+<p>You can see response code <strong>200 OK</strong> in Postman instead of 201 Created, but this is how Firebase returns it, every request will return 200 OK if successful irrespective of Request method.</p>
+
+<p><img src="/assets/2017-07-17/image_7.png" alt="image alt text" /></p>
+
+<p>Created data will be immediately reflect to your app console, you can verify it.</p>
+
+<p><img src="/assets/2017-07-17/image_8.png" alt="image alt text" /></p>
+
+<p><strong>Reading Data with GET</strong></p>
+
+<p>To read data we can give path to specific node which we wish to read, here I just want details of Member M1 so I have given specific path in URL. Set method as GET and hit Send to retrieve data.</p>
+
+<p><img src="/assets/2017-07-17/image_9.png" alt="image alt text" /></p>
+
+<p>It would return the details of specific member.</p>
+
+<p><img src="/assets/2017-07-17/image_10.png" alt="image alt text" /></p>
+
+<p><strong>Pushing Data with POST</strong></p>
+
+<p>In Firebase POST pushes data to specific node with auto-generated key, it never replaces existing data.</p>
+
+<p>Here we are adding scores for all team members, so our node is <strong>Scores</strong> here which is not already available in JSON tree. Firebase will automatically create it.</p>
+
+<p><img src="/assets/2017-07-17/image_11.png" alt="image alt text" /></p>
+
+<p>You can see in console <strong>Scores</strong> node is created and data is added along with random keys.</p>
+
+<p><img src="/assets/2017-07-17/image_12.png" alt="image alt text" /></p>
+
+<p><strong>Updating Data with PATCH</strong></p>
+
+<p>To update data in a node we have to use PATCH, it can be used to add new fields also. Here we will update city of a member.</p>
+
+<p><img src="/assets/2017-07-17/image_13.png" alt="image alt text" /></p>
+
+<p>You can observe in console whether value is updated.<img src="/assets/2017-07-17/image_14.png" alt="image alt text" /></p>
+
+<p><strong>Removing Data with DELETE</strong></p>
+
+<p>To remove a resource <strong>DELETE</strong> is used. Let’s delete Member M3.</p>
+
+<p><img src="/assets/2017-07-17/image_15.png" alt="image alt text" /></p>
+
+<p>Member M3 is removed, can be seen in console.</p>
+
+<p><img src="/assets/2017-07-17/image_16.png" alt="image alt text" /></p>
+
+<p><strong>Section 3: Building C# wrapper</strong></p>
+
+<p>Add new project of type Class Library with name <strong>FirebaseNet</strong>, or name of your choice.</p>
+
+<p>I have taken .Net Standard here for broader compatibility, you can take .Net framework class library is it’s not available.</p>
+
+<p><img src="/assets/2017-07-17/image_17.png" alt="image alt text" /></p>
+
+<p>Create folder Database, and Add 4 classes as follows.</p>
+
+<ol>
+  <li>
+    <p>FirebaseDB.cs</p>
+  </li>
+  <li>
+    <p>FirebaseRequest.cs</p>
+  </li>
+  <li>
+    <p>FirebaseResponse.cs</p>
+  </li>
+  <li>
+    <p>UtilityHelper.cs</p>
+  </li>
+</ol>
+
+<p>Let’s look into each file one by one.</p>
+
+<p><strong>FirebaseDB.cs</strong></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">FirebaseNet.Database</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+    <span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// FirebasDB Class is reference of a Firebase Database</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">FirebaseDB</span>
+    <span class="p">{</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Initializes a new instance of the &lt;see cref="FirebaseDB"/&gt; class with base url of Firebase Database</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="baseURL"&gt;Firebase Database URL&lt;/param&gt;</span>
+        <span class="k">public</span> <span class="nf">FirebaseDB</span><span class="p">(</span><span class="kt">string</span> <span class="n">baseURL</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">RootNode</span> <span class="p">=</span> <span class="n">baseURL</span><span class="p">;</span>
+        <span class="p">}</span>
+		
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets Represents current full path of a Firebase Database resource</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="kt">string</span> <span class="n">RootNode</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Adds more node to base URL</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="node"&gt;Single node of Firebase DB&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Instance of FirebaseDB&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseDB</span> <span class="nf">Node</span><span class="p">(</span><span class="kt">string</span> <span class="n">node</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"/"</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">FormatException</span><span class="p">(</span><span class="s">"Node must not contain '/', use NodePath instead."</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseDB</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">RootNode</span> <span class="p">+</span> <span class="sc">'/'</span> <span class="p">+</span> <span class="n">node</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Adds more nodes to base URL</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="nodePath"&gt;Nodepath of Firebase DB&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Instance of FirebaseDB&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseDB</span> <span class="nf">NodePath</span><span class="p">(</span><span class="kt">string</span> <span class="n">nodePath</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseDB</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">RootNode</span> <span class="p">+</span> <span class="sc">'/'</span> <span class="p">+</span> <span class="n">nodePath</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Make Get request</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Firebase Response&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseResponse</span> <span class="nf">Get</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseRequest</span><span class="p">(</span><span class="n">HttpMethod</span><span class="p">.</span><span class="n">Get</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">RootNode</span><span class="p">).</span><span class="nf">Execute</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Make Put request</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="jsonData"&gt;JSON string to PUT&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Firebase Response&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseResponse</span> <span class="nf">Put</span><span class="p">(</span><span class="kt">string</span> <span class="n">jsonData</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseRequest</span><span class="p">(</span><span class="n">HttpMethod</span><span class="p">.</span><span class="n">Put</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">RootNode</span><span class="p">,</span> <span class="n">jsonData</span><span class="p">).</span><span class="nf">Execute</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Make Post request</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="jsonData"&gt;JSON string to POST&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Firebase Response&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseResponse</span> <span class="nf">Post</span><span class="p">(</span><span class="kt">string</span> <span class="n">jsonData</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseRequest</span><span class="p">(</span><span class="n">HttpMethod</span><span class="p">.</span><span class="n">Post</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">RootNode</span><span class="p">,</span> <span class="n">jsonData</span><span class="p">).</span><span class="nf">Execute</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Make Patch request</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="jsonData"&gt;JSON sting to PATCH&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Firebase Response&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseResponse</span> <span class="nf">Patch</span><span class="p">(</span><span class="kt">string</span> <span class="n">jsonData</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseRequest</span><span class="p">(</span><span class="k">new</span> <span class="nf">HttpMethod</span><span class="p">(</span><span class="s">"PATCH"</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="n">RootNode</span><span class="p">,</span> <span class="n">jsonData</span><span class="p">).</span><span class="nf">Execute</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Make Delete request</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Firebase Response&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseResponse</span> <span class="nf">Delete</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseRequest</span><span class="p">(</span><span class="n">HttpMethod</span><span class="p">.</span><span class="n">Delete</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">RootNode</span><span class="p">).</span><span class="nf">Execute</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// To String</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Current resource URL as string&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="k">override</span> <span class="kt">string</span> <span class="nf">ToString</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">RootNode</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>FirebaseDB</strong> is main class user interacts with, it exposes the API to be consumed by user of library.</p>
+
+<p>It’s constructor takes baseURI of Firebase Database as parameter and assigns to RootNode private property.</p>
+
+<p>Class is using <strong>Method Chaining</strong> to maintain resource URI with the help of <strong>Node</strong> &amp; <strong>NodePath</strong> methods. They are taking string as input and appending to <strong>RootNode</strong> and returns FirebaseDB object with combined URI. Here <strong>Node</strong> can take only single node whether <strong>NodePath</strong> is for multiple Nodes.</p>
+
+<p>Class has methods for each Firebase supported method which are returning <strong>FirebaseResponse</strong> object. <strong>Put, Post</strong> &amp; <strong>Patch</strong> methods are having parameter to accept JSON data as string. They all are instantiating <strong>FirebaseRequest</strong> with HttpMethod object according to method, resource URI as RootNode and optional parameter jsonData  as string.</p>
+
+<p><strong>ToString()</strong> is overridden here to return current resource URI.</p>
+
+<p><strong>FirebaseRequest.cs</strong></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">FirebaseNet.Database</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+    <span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
+	
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Firebase Request</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="k">class</span> <span class="nc">FirebaseRequest</span>
+    <span class="p">{</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Suffix to be added in each resource URI</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">JSON_SUFFIX</span> <span class="p">=</span> <span class="s">".json"</span><span class="p">;</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Initializes a new instance of the &lt;see cref="FirebaseRequest"/&gt; class</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="method"&gt;HTTP Method&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="uri"&gt;URI of resource&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="jsonString"&gt;JSON string&lt;/param&gt;</span>
+        <span class="k">public</span> <span class="nf">FirebaseRequest</span><span class="p">(</span><span class="n">HttpMethod</span> <span class="n">method</span><span class="p">,</span> <span class="kt">string</span> <span class="n">uri</span><span class="p">,</span> <span class="kt">string</span> <span class="n">jsonString</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">Method</span> <span class="p">=</span> <span class="n">method</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">JSON</span> <span class="p">=</span> <span class="n">jsonString</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">).</span><span class="nf">EndsWith</span><span class="p">(</span><span class="s">"firebaseio.com"</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="n">Uri</span> <span class="p">=</span> <span class="n">uri</span> <span class="p">+</span> <span class="sc">'/'</span> <span class="p">+</span> <span class="n">JSON_SUFFIX</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="n">Uri</span> <span class="p">=</span> <span class="n">uri</span> <span class="p">+</span> <span class="n">JSON_SUFFIX</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+		
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets HTTP Method</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="n">HttpMethod</span> <span class="n">Method</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets JSON string</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="kt">string</span> <span class="n">JSON</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets URI</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="kt">string</span> <span class="n">Uri</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Executes a HTTP requests</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;returns&gt;Firebase Response&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="n">FirebaseResponse</span> <span class="nf">Execute</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Uri</span> <span class="n">requestURI</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">UtilityHelper</span><span class="p">.</span><span class="nf">ValidateURI</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Uri</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">requestURI</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Uri</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseResponse</span><span class="p">(</span><span class="k">false</span><span class="p">,</span> <span class="s">"Proided Firebase path is not a valid HTTP/S URL"</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">JSON</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(!</span><span class="n">UtilityHelper</span><span class="p">.</span><span class="nf">TryParseJSON</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">JSON</span><span class="p">,</span> <span class="k">out</span> <span class="n">json</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="k">new</span> <span class="nf">FirebaseResponse</span><span class="p">(</span><span class="k">false</span><span class="p">,</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"Invalid JSON : {0}"</span><span class="p">,</span> <span class="n">json</span><span class="p">));</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">UtilityHelper</span><span class="p">.</span><span class="nf">RequestHelper</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Method</span><span class="p">,</span> <span class="n">requestURI</span><span class="p">,</span> <span class="n">json</span><span class="p">);</span>
+            <span class="n">response</span><span class="p">.</span><span class="nf">Wait</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+            <span class="kt">var</span> <span class="n">firebaseResponse</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FirebaseResponse</span><span class="p">()</span>
+            <span class="p">{</span>
+                <span class="n">HttpResponse</span> <span class="p">=</span> <span class="n">result</span><span class="p">,</span>
+                <span class="n">ErrorMessage</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">" : "</span> <span class="p">+</span> <span class="n">result</span><span class="p">.</span><span class="n">ReasonPhrase</span><span class="p">,</span>
+                <span class="n">Success</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Result</span><span class="p">.</span><span class="n">IsSuccessStatusCode</span>
+            <span class="p">};</span>
+			
+             <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Method</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">HttpMethod</span><span class="p">.</span><span class="n">Get</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">content</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="nf">ReadAsStringAsync</span><span class="p">();</span>
+                <span class="n">content</span><span class="p">.</span><span class="nf">Wait</span><span class="p">();</span>
+                <span class="n">firebaseResponse</span><span class="p">.</span><span class="n">JSONContent</span> <span class="p">=</span> <span class="n">content</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="n">firebaseResponse</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>FirebaseRequet</strong> class is where actual business happen. <strong>Constructor</strong> takes HTTP Method, Firebase URI and optional JSON data as parameter. As well as append <strong>.json</strong> to URI which is necessary to make REST calls, In base URI it should be <strong>/.json</strong> while URI with any Node needs only <strong>.json</strong> to be appended.</p>
+
+<p><strong>Execute()</strong> is responsible for making HTTP calls with help of <strong>RequestHelper</strong> method of <strong>UtilityHelper</strong> class. It validates URI and JSON data, if invalid it returns <strong>FirebaseResponse</strong> with <strong>Success=False</strong> and proper <strong>ErrorMessage.</strong></p>
+
+<p>If all parameters are valid, it makes HTTP calls, and forms FirebaseResponse object and returns it. If Request if of type GET then it parses response to string and appends it to FirebaseResponse object to be returned to caller.</p>
+
+<p><strong>RequestHelper()</strong> is an Asynchronous method, which is returning Task<HttpResponseMessage>, but in Execute method with use of **Wait()** and **Result** we are handling it synchronously. In further enhancement Asynchronous API will also be exposed to consumer.</HttpResponseMessage></p>
+
+<p><strong>FirebaseResponse.cs</strong></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">FirebaseNet.Database</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Firebase Response</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">FirebaseResponse</span>
+    <span class="p">{</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Initializes a new instance of the &lt;see cref="FirebaseResponse"/&gt; class</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">public</span> <span class="nf">FirebaseResponse</span><span class="p">()</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Initializes a new instance of the &lt;see cref="FirebaseResponse"/&gt; class</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="success"&gt;If Success&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="errorMessage"&gt;Error Message&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="httpResponse"&gt;HTTP Response&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="jsonContent"&gt;JSON Content&lt;/param&gt;</span>
+        <span class="k">public</span> <span class="nf">FirebaseResponse</span><span class="p">(</span><span class="kt">bool</span> <span class="n">success</span><span class="p">,</span> <span class="kt">string</span> <span class="n">errorMessage</span><span class="p">,</span> <span class="n">HttpResponseMessage</span> <span class="n">httpResponse</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="kt">string</span> <span class="n">jsonContent</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">Success</span> <span class="p">=</span> <span class="n">success</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">JSONContent</span> <span class="p">=</span> <span class="n">jsonContent</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">ErrorMessage</span> <span class="p">=</span> <span class="n">errorMessage</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">HttpResponse</span> <span class="p">=</span> <span class="n">httpResponse</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets Boolean status of Success</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">public</span> <span class="kt">bool</span> <span class="n">Success</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets JSON content returned by the Request</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">JSONContent</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets Error Message if Any</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">ErrorMessage</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Gets or sets full Http Response</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">public</span> <span class="n">HttpResponseMessage</span> <span class="n">HttpResponse</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>FirebaseResponse</strong> represents output of API calls against <strong>FirebaseDB</strong>. It contains 4 public properties as follows.</p>
+
+<ol>
+  <li>
+    <p>Success</p>
+  </li>
+  <li>
+    <p>JSONContent</p>
+  </li>
+  <li>
+    <p>ErrorMessage</p>
+  </li>
+  <li>
+    <p>HttpResponse</p>
+  </li>
+</ol>
+
+<p>In Firebase.Net I have tried to not surprise the consumer by throwing any unexpected error, so FirebaseResponse has boolean property <strong>Success</strong>, which tells you whether call is successful or not along with proper message with <strong>ErrorMessage</strong> property.</p>
+
+<p>Error will not always be a HTTP Error, it could be related to invalid JSON or improper URI also, they both are handled here.</p>
+
+<p>If HTTP call is successful <strong>Success</strong> will have True, ErrorMessage will be null, <strong>HttpResponse</strong> will contain complete <strong>HttpResponseMessage</strong> and if request type is <strong>GET</strong> then <strong>JSONContent</strong> will contain the response as string.</p>
+
+<p><strong>UtilityHelper.cs</strong></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">FirebaseNet.Database</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+    <span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
+    <span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+    <span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+    <span class="k">using</span> <span class="nn">Newtonsoft.Json.Linq</span><span class="p">;</span>
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Utility Helper Class</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="k">class</span> <span class="nc">UtilityHelper</span>
+    <span class="p">{</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// User Agent Header in HTTP Request</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">USER_AGENT</span> <span class="p">=</span> <span class="s">"firebase-net/1.0"</span><span class="p">;</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Validates a URI</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="url"&gt;URI as string&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;True if valid&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">ValidateURI</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Uri</span> <span class="n">locurl</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">Uri</span><span class="p">.</span><span class="nf">TryCreate</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">UriKind</span><span class="p">.</span><span class="n">RelativeOrAbsolute</span><span class="p">,</span> <span class="k">out</span> <span class="n">locurl</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="p">!(</span><span class="n">locurl</span><span class="p">.</span><span class="n">IsAbsoluteUri</span> <span class="p">&amp;&amp;</span>
+                      <span class="p">(</span><span class="n">locurl</span><span class="p">.</span><span class="n">Scheme</span> <span class="p">==</span> <span class="s">"http"</span> <span class="p">||</span> <span class="n">locurl</span><span class="p">.</span><span class="n">Scheme</span> <span class="p">==</span> <span class="s">"https"</span><span class="p">))</span> <span class="p">||</span>
+                    <span class="p">!</span><span class="n">locurl</span><span class="p">.</span><span class="n">IsAbsoluteUri</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
+			
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Validates JSON string</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="inJSON"&gt;JSON to be validatedd&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="output"&gt;Valid JSON or Error Message&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;True if valid&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">TryParseJSON</span><span class="p">(</span><span class="kt">string</span> <span class="n">inJSON</span><span class="p">,</span> <span class="k">out</span> <span class="kt">string</span> <span class="n">output</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">try</span>
+            <span class="p">{</span>
+                <span class="n">JToken</span> <span class="n">parsedJSON</span> <span class="p">=</span> <span class="n">JToken</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span class="n">inJSON</span><span class="p">);</span>
+                <span class="n">output</span> <span class="p">=</span> <span class="n">parsedJSON</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+                <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">output</span> <span class="p">=</span> <span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">;</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+		
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Makes Asynchronus HTTP requests</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="c1">/// &lt;param name="method"&gt;HTTP method&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="uri"&gt;URI of resource&lt;/param&gt;</span>
+        <span class="c1">/// &lt;param name="json"&gt;JSON string&lt;/param&gt;</span>
+        <span class="c1">/// &lt;returns&gt;HTTP Responce as Task&lt;/returns&gt;</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">HttpResponseMessage</span><span class="p">&gt;</span> <span class="nf">RequestHelper</span><span class="p">(</span><span class="n">HttpMethod</span> <span class="n">method</span><span class="p">,</span> <span class="n">Uri</span> <span class="n">uri</span><span class="p">,</span> <span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HttpClient</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">msg</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HttpRequestMessage</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">uri</span><span class="p">);</span>
+            <span class="n">msg</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"user-agent"</span><span class="p">,</span> <span class="n">USER_AGENT</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">json</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">msg</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringContent</span><span class="p">(</span>
+                    <span class="n">json</span><span class="p">,</span>
+                    <span class="n">UnicodeEncoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">,</span>
+                    <span class="s">"application/json"</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="nf">SendAsync</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>UtilityHelper</strong> contains 3 static methods to keep our keep running.</p>
+
+<p><strong>ValidateURI()</strong> takes URI as string and validates it using <strong>TryCreate()</strong> of <strong>Uri</strong> class and returns Boolean.</p>
+
+<p><strong>TryParseJSON()</strong> validates and <strong>format</strong> JSON string, Firebase does not allow JSON which uses single quotes instead of double quotes, but in C# most people will pass in single quotes because of multiline support, very few will use escape character for double quotes. That’s why I’m parsing it which validates JSON as well as calling ToString() on JToken object will returns me well formatted JSON in double quotes.</p>
+
+<p>If valid returns <strong>True</strong> and out parameter output contains <strong>Formatted JSON</strong>.</p>
+
+<p>If invalid then returns <strong>False</strong> and out parameter output contains <strong>Error Message.</strong></p>
+
+<p><strong>Section 4: Library in Action</strong></p>
+
+<p>Let’s consume our newly created library and see how it works. Create New Console App and give name of your choice.</p>
+
+<p><img src="image_18.png" alt="image alt text" /></p>
+
+<p>Now update your Program.cs with following code.</p>
+
+<p><strong>Program.cs</strong></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">Examples.NetCore</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="nn">FirebaseNet.Database</span><span class="p">;</span>
+    <span class="k">using</span> <span class="nn">static</span> <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">;</span>
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Examples</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Main Method</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// Instanciating with base URL</span>
+            <span class="n">FirebaseDB</span> <span class="n">firebaseDB</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FirebaseDB</span><span class="p">(</span><span class="s">"https://c-sharpcorner-2d7ae.firebaseio.com"</span><span class="p">);</span>
+            
+			<span class="c1">// Referring to Node with name "Teams"</span>
+            <span class="n">FirebaseDB</span> <span class="n">firebaseDBTeams</span> <span class="p">=</span> <span class="n">firebaseDB</span><span class="p">.</span><span class="nf">Node</span><span class="p">(</span><span class="s">"Teams"</span><span class="p">);</span>
+
+            <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="s">@"{
+                            'Team-Awesome': {
+                                'Members': {
+                                    'M1': {
+                                        'City': 'Hyderabad',
+                                        'Name': 'Ashish'
+                                        },
+                                    'M2': {
+                                        'City': 'Cyberabad',
+                                        'Name': 'Vivek'
+                                        },
+                                    'M3': {
+                                        'City': 'Secunderabad',
+                                        'Name': 'Pradeep'
+                                        }
+                                   }
+                               }
+                          }"</span><span class="p">;</span>
+
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="s">"GET Request"</span><span class="p">);</span>
+            <span class="n">FirebaseResponse</span> <span class="n">getResponse</span> <span class="p">=</span> <span class="n">firebaseDBTeams</span><span class="p">.</span><span class="nf">Get</span><span class="p">();</span>
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="n">getResponse</span><span class="p">.</span><span class="n">Success</span><span class="p">);</span>
+			<span class="k">if</span><span class="p">(</span><span class="n">getResponse</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+            	<span class="nf">WriteLine</span><span class="p">(</span><span class="n">getResponse</span><span class="p">.</span><span class="n">JSONContent</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">();</span>
+
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="s">"PUT Request"</span><span class="p">);</span>
+            <span class="n">FirebaseResponse</span> <span class="n">putResponse</span> <span class="p">=</span> <span class="n">firebaseDBTeams</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="n">putResponse</span><span class="p">.</span><span class="n">Success</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">();</span>
+
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="s">"POST Request"</span><span class="p">);</span>
+            <span class="n">FirebaseResponse</span> <span class="n">postResponse</span> <span class="p">=</span> <span class="n">firebaseDBTeams</span><span class="p">.</span><span class="nf">Post</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="n">postResponse</span><span class="p">.</span><span class="n">Success</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">();</span>
+
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="s">"PATCH Request"</span><span class="p">);</span>
+            <span class="n">FirebaseResponse</span> <span class="n">patchResponse</span> <span class="p">=</span> <span class="n">firebaseDBTeams</span>
+                <span class="c1">// Use of NodePath to refer path lnager than a single Node</span>
+                <span class="p">.</span><span class="nf">NodePath</span><span class="p">(</span><span class="s">"Team-Awesome/Members/M1"</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">Patch</span><span class="p">(</span><span class="s">"{\"Designation\":\"CRM Consultant\"}"</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="n">patchResponse</span><span class="p">.</span><span class="n">Success</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">();</span>
+
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="s">"DELETE Request"</span><span class="p">);</span>
+            <span class="n">FirebaseResponse</span> <span class="n">deleteResponse</span> <span class="p">=</span> <span class="n">firebaseDBTeams</span><span class="p">.</span><span class="nf">Delete</span><span class="p">();</span>
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="n">deleteResponse</span><span class="p">.</span><span class="n">Success</span><span class="p">);</span>
+            <span class="nf">WriteLine</span><span class="p">();</span>
+
+            <span class="nf">WriteLine</span><span class="p">(</span><span class="n">firebaseDBTeams</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+
+            <span class="nf">ReadLine</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Execution</strong></p>
+
+<p><img src="https://raw.githubusercontent.com/AshV/Firebase.Net/master/docs/Firebase.NetExecution.gif" alt="image alt text" /></p>
+
+<p>Here I am calling all the methods in API. First I am instantiating <strong>FirebaseDB</strong> object with base URI of my Firebase App, you may replace it with your App URI. Then in next line <strong>Node(“Teams”)</strong> is used to point object to a different resource URI. “Teams” don’t need to be already available in your Firebase database.</p>
+
+<p>Then we have some JSON data in which is a multiline JSON string using single quotes, It is supported in Library but not by Firebase. So you can use it here.</p>
+
+<p>Next we have <strong>Get()</strong> call, which is returning <strong>FirebaseResponse</strong> in <strong>getResponse</strong> it is always a good idea to verify <strong>getResponse.Success</strong> before calling <strong>getResponse.JSONContent.</strong></p>
+
+<p>Now we are calling <strong>Put()</strong> &amp; <strong>Post()</strong> with given data, behaviour of these HTTP calls is already described in Section 2.</p>
+
+<p><strong>Patch()</strong> is interesting here because of 2 reasons, First it is used along with <strong>NodePath()</strong> which is accessing 3 nodes depth. And second JSON data is passed using escape characters for double quotes, which is how Firebase actually accepts data.</p>
+
+<p>Now <strong>Delete()</strong> getting called method which deletes complete JSON tree at given URI.</p>
+
+<p>Finally <strong>ToString()</strong> method prints current resource URI of Firebase Database.</p>
+
+<p>I will be keep adding new features to this library, you can see in further articles and repo or you can contribute at <a href="https://github.com/AshV/Firebase.Net">https://github.com/AshV/Firebase.Net</a></p>
+
+<p><strong>Update :</strong> Further I have implemented Authentication in Firebase.Net, To use this just set <strong>Auth!=null</strong> in Firebase Console which we made null in <strong>Section 2</strong>. And in code you need to pass your <strong>JSON</strong> key as second parameter in constructor as given below.</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FirebaseDB</span> <span class="n">firebaseDB</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FirebaseDB</span><span class="p">(</span><span class="s">"https://YourApp.firebaseio.com"</span><span class="p">,</span><span class="s">"Path/To/Key.json"</span><span class="p">);</span>
+</code></pre></div></div>
+<p>To know how to grab JSON key for Google Service Account and how have I implemented, please read <a href="../get-access-token-for-google-api-service-account-c-sharp/ReadMe.md">Get Access Token for Google Service Account using C#</a> .</p>
+
+<p>Let any suggestions/questions go in comments section</p>
+
+            <hr />
+            <center><a href="https://www.buymeacoffee.com/AshV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;"></a></center>
+            <footer class="site-footer">
+                <div id="disqus_thread"></div>
+                <script>(function () { var d = document, s = d.createElement('script'); s.src = 'https://ashish-vishwakarma.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();</script>
+                <span class="site-footer-credits">©<a href="https://www.ashishvishwakarma.com/">Ashish Vishwakarma</a>. | <a href="https://www.ashishvishwakarma.com/posts">Read More Posts</a></span>
+            </footer>
+        </article>
+        <script>(function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-88171590-1', 'auto'); ga('send', 'pageview');</script>
+    </article>
+
+            
+            <footer class="site-footer">
+                <!-- SVG icons from https://iconmonstr.com -->
+                
+                <!-- Github icon -->
+                <span class="my-span-icon">
+                    <a href="" aria-label="'s GitHub" title="'s GitHub">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- Twitter icon -->
+                <span class="my-span-icon">
+                    <a href="https://twitter.com/" aria-label="'s Twitter" title="'s Twitter">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- RSS icon -->
+                
+                
+                <!-- Contact icon -->
+                
+                
+                <span class="my-span-icon">
+                    <a href="http://localhost:4000/contact.html" aria-label="Contact" title="Contact ">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+                    </a>
+                </span>
+                
+                
+            </footer>
+        </section>
+        
+        <script>
+            var menu = document.querySelector("nav.site-nav");
+            var checkbox = document.getElementById("nav-trigger");
+            
+            // close menu if click outside menu
+            document.addEventListener("click", function(e) {
+                if (menu != e.target &&
+                        !isDescendant(menu, e.target)) {
+                    checkbox.checked = false;
+                }
+            }, false);
+            
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }  
+        </script>
+        
+    </body>
+    </html>
+    

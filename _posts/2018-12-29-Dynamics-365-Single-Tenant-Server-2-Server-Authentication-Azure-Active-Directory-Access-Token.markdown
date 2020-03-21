@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: Dynamics-365-Single-Tenant-Server-2-Server-Authentication-Azure-Active-Directory-Access-Token/
 ---
 
-![Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication](assets/2018-12-29/microsoft-dynamics-365-banner.jpg)
+![Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication](/assets/2018-12-29/microsoft-dynamics-365-banner.jpg)
 
 In Dynamics 365 integration scenarios most of the times we need to authenticate only single tenant. Since now Dynamics 365 authentication only through Azure AD (for online instances) is recommended let's see how to do it. To achieve this first of all we need to create App in Azure Active Directory and good news is that you don't need Azure subscription to try this out, your Dynamics 365 free trial is enough.
 

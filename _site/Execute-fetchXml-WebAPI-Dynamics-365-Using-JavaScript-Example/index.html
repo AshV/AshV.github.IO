@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    
+    <title>Execute fetchXML with WebAPI in Dynamics 365 using JavaScript</title>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Place this data between the <head> tags of your website -->
+
+<meta name="description" content="" />
+
+
+
+  <meta name="keywords" itemprop="categories" content="Dynamics-365, PowerApps" />
+
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+<meta name="twitter:title" content="Execute fetchXML with WebAPI in Dynamics 365 using JavaScript" />
+<meta name="twitter:description" content="" />
+
+
+
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+<meta name="twitter:url" content="http://localhost:4000//Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/" />
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Execute fetchXML with WebAPI in Dynamics 365 using JavaScript" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:4000//Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/" />
+
+
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="Ashish Vishwakarma" />
+
+
+<meta property="og:locale" content="" />
+
+
+  <meta property="article:published_time" content="2018-06-25T00:18:01+05:30" />
+
+
+
+
+  
+
+
+
+
+
+  
+    <meta property="article:tag" content="Dynamics-365" />
+  
+    <meta property="article:tag" content="PowerApps" />
+  
+
+
+
+
+    
+    
+    <link rel="canonical" href="http://localhost:4000/Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/">
+    
+    
+    
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta name="robots" content="noarchive">
+    
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
+        <link rel="alternate" media="handheld" href=""> -->
+        
+        
+        <link rel="stylesheet" href="http://localhost:4000/assets/css/style.css?v=">
+    </head>
+    <body>
+        
+        <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+
+    
+      <a class="site-title" href="http://localhost:4000/posts">Ashish Vishwakarma</a>
+    
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/contact.html">Contact Me</a>
+              
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+        
+        
+        
+        
+        
+        <section class="page-header">
+            <h1 class="project-name">Execute fetchXML with WebAPI in Dynamics 365 using JavaScript</h1>
+            <h2 class="project-tagline"></h2>
+            
+            <!-- Post tagline -->
+            
+            <h2 class="project-date">
+                <time datetime="2018-06-25T00:18:01+05:30" itemprop="datePublished">
+                    
+                    Jun 25, 2018
+                </time>
+                
+                
+            </h2>
+            
+            <!-- End: Post tagline -->
+        </section>
+        
+        <section class="main-content">
+            
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+
+        <!-- <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Execute fetchXML with WebAPI in Dynamics 365 using JavaScript</h1>
+      <p class="post-meta">
+        <time datetime="2018-06-25T00:18:01+05:30" itemprop="datePublished">
+          
+          Jun 25, 2018
+        </time>
+        </p>
+    </header> -->
+
+        <article itemprop="articleBody">
+            <p><img src="/assets/2018-06-25/ms-dynamics-365-header.webp" alt="Dynamics 365 Header" /></p>
+
+<p>In Dynamics 365 WebAPI we can retrieve data using OData queries, but if there is some complex requirement it’s better to query using fetchXML, and good news is Dynamics 365 WebAPI supports querying using fetchXML. With fetchXML we have 2 main advantage, it can be easily generated using Advanced Find &amp; It’s more readable. You can even use Joins &amp; Aggregate function in fetchXML queries which are not possible using Advanced Find(refer http://msxrmtools.com/fetchxml/reference). Let’s see how can we query fetchXML with WebAPI.</p>
+
+<h2 id="generate-fetchxml-using-advanced-find">Generate fetchXML using Advanced Find</h2>
+
+<p>Click on funnel icon to open Advanced Find window.</p>
+
+<p><img src="/assets/2018-06-25/Filter-Button.png" alt="Filter-Button" /></p>
+
+<p>I have created a simple fetchXML query to retrieve all the active cases with few columns.</p>
+
+<p><img src="/assets/2018-06-25/Advanced-Find.png" alt="Advanced-Find" /></p>
+
+<p>Click on “Download Fetch XML” button to get the below fetchXML query.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fetch</span> <span class="na">version=</span><span class="s">"1.0"</span> <span class="na">output-format=</span><span class="s">"xml-platform"</span> <span class="na">mapping=</span><span class="s">"logical"</span> <span class="na">distinct=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"incident"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"title"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"ticketnumber"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"createdon"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"incidentid"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"caseorigincode"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;order</span> <span class="na">attribute=</span><span class="s">"title"</span> <span class="na">descending=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;filter</span> <span class="na">type=</span><span class="s">"and"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;condition</span> <span class="na">attribute=</span><span class="s">"statecode"</span> <span class="na">operator=</span><span class="s">"eq"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/filter&gt;</span>
+  <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/fetch&gt;</span>
+</code></pre></div></div>
+
+<h2 id="executing-fetchxml-with-get-method">Executing fetchXML with GET method</h2>
+
+<p>To execute fetchXML you need to simply append entity’s plural name in WebAPI endpoint and pass fetchXml in query string, and make http/ajax request</p>
+
+<blockquote>
+  <h4 id="syntax-webapi-endpoint----entity-plural-name--fetchxml--your-fetchxml-here">Syntax: WebAPI Endpoint + / + Entity Plural Name + ?fetchXml= + Your fetchXml here</h4>
+</blockquote>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> https://AshV.crm.dynamics.com/api/data/v9.0/incidents?fetchXml=<span class="nt">&lt;fetch</span> <span class="na">version=</span><span class="s">"1.0"</span> <span class="na">output-format=</span><span class="s">"xml-platform"</span> <span class="na">mapping=</span><span class="s">"logical"</span> <span class="na">distinct=</span><span class="s">"false"</span><span class="nt">&gt;&lt;entity</span> <span class="na">name=</span><span class="s">"incident"</span><span class="nt">&gt;&lt;attribute</span> <span class="na">name=</span><span class="s">"title"</span> <span class="nt">/&gt;&lt;attribute</span> <span class="na">name=</span><span class="s">"ticketnumber"</span> <span class="nt">/&gt;</span>    <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"createdon"</span> <span class="nt">/&gt;&lt;attribute</span> <span class="na">name=</span><span class="s">"incidentid"</span> <span class="nt">/&gt;&lt;attribute</span> <span class="na">name=</span><span class="s">"caseorigincode"</span> <span class="nt">/&gt;&lt;order</span> <span class="na">attribute=</span><span class="s">"title"</span> <span class="na">descending=</span><span class="s">"false"</span> <span class="nt">/&gt;&lt;filter</span> <span class="na">type=</span><span class="s">"and"</span><span class="nt">&gt;&lt;condition</span> <span class="na">attribute=</span><span class="s">"statecode"</span> <span class="na">operator=</span><span class="s">"eq"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;&lt;/filter&gt;&lt;/entity&gt;&lt;/fetch&gt;</span>
+</code></pre></div></div>
+
+<p>Response of this request would be similar to one give below. As this is simple GET call, you can even execute this in browser and test, you can check out one of my tool <a href="https://www.ashishvishwakarma.com/FetchXmlTester/">FetchXmlTester</a>, which let’s you test your fetchXML without sharing your credentials. While running in browser we can’t set header <strong>Prefer: odata.include-annotations=”*“</strong> to see formatted value.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
+   </span><span class="nl">"@odata.context"</span><span class="p">:</span><span class="s2">"https://abnai.crm.dynamics.com/api/data/v9.0/$metadata#incidents(title,ticketnumber,createdon,incidentid,caseorigincode)"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"value"</span><span class="p">:[</span><span class="w">  
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nl">"@odata.etag"</span><span class="p">:</span><span class="s2">"W/</span><span class="se">\"</span><span class="s2">1095635</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"Average order shipment time"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"ticketnumber"</span><span class="p">:</span><span class="s2">"CAS-01213-P8B3X0"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"createdon"</span><span class="p">:</span><span class="s2">"2017-01-20T22:50:45Z"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"incidentid"</span><span class="p">:</span><span class="s2">"b69e62a8-90df-e311-9565-a45d36fc5fe8"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"caseorigincode"</span><span class="p">:</span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nl">"@odata.etag"</span><span class="p">:</span><span class="s2">"W/</span><span class="se">\"</span><span class="s2">1092817</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"Shipping time information resend"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"ticketnumber"</span><span class="p">:</span><span class="s2">"CAS-01261-N0C8H9"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"createdon"</span><span class="p">:</span><span class="s2">"2017-01-20T22:51:13Z"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"incidentid"</span><span class="p">:</span><span class="s2">"169f62a8-90df-e311-9565-a45d36fc5fe8"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"caseorigincode"</span><span class="p">:</span><span class="mi">2</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="making-get-request-with-xmlhttprequest">Making GET request with XMLHttpRequest</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fetchXmlQuery</span> <span class="o">=</span> <span class="s2">`
+&lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
+  &lt;entity name="incident"&gt;
+    &lt;attribute name="title" /&gt;
+    &lt;attribute name="ticketnumber" /&gt;
+    &lt;attribute name="createdon" /&gt;
+    &lt;attribute name="incidentid" /&gt;
+    &lt;attribute name="caseorigincode" /&gt;
+    &lt;order attribute="title" descending="false" /&gt;
+    &lt;filter type="and"&gt;
+      &lt;condition attribute="statecode" operator="eq" value="0" /&gt;
+    &lt;/filter&gt;
+  &lt;/entity&gt;
+&lt;/fetch&gt;`</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">Xrm</span><span class="p">.</span><span class="nx">Page</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">getClientUrl</span><span class="p">()</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">/api/data/v9.0/incidents?fetchXml=</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">fetchXmlQuery</span><span class="p">),</span>
+  <span class="kc">true</span>
+<span class="p">);</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Prefer</span><span class="dl">"</span><span class="p">,</span> <span class="dl">'</span><span class="s1">odata.include-annotations="*"</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="making-get-request-with-javascript-fetch-api">Making GET request with JavaScript Fetch API</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fetchXmlQuery</span> <span class="o">=</span> <span class="s2">`
+&lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
+  &lt;entity name="incident"&gt;
+    &lt;attribute name="title" /&gt;
+    &lt;attribute name="ticketnumber" /&gt;
+    &lt;attribute name="createdon" /&gt;
+    &lt;attribute name="incidentid" /&gt;
+    &lt;attribute name="caseorigincode" /&gt;
+    &lt;order attribute="title" descending="false" /&gt;
+    &lt;filter type="and"&gt;
+      &lt;condition attribute="statecode" operator="eq" value="0" /&gt;
+    &lt;/filter&gt;
+  &lt;/entity&gt;
+&lt;/fetch&gt;`</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span>
+  <span class="nx">Xrm</span><span class="p">.</span><span class="nx">Page</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">getClientUrl</span><span class="p">()</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">/api/data/v9.0/incidents?fetchXml=</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">fetchXmlQuery</span><span class="p">),</span>
+  <span class="p">{</span>
+    <span class="na">credentials</span><span class="p">:</span> <span class="dl">"</span><span class="s2">same-origin</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">Prefer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">odata.include-annotations="*"</span><span class="dl">'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h2 id="executing-large-fetchxml-using-post-method-with-batch">Executing Large fetchXML using POST method with $batch</h2>
+
+<p>As I mentioned in starting we can choose to use fetchXML over OData query for complex queries which will be obviously bigger in size. But we have URL length limit, which is around 2000 characters roughly(varies in different browsers) so if our URL extends this, <strong>Bad Gateway</strong> exception is thrown.</p>
+
+<p><strong>$batch</strong> is solution for this. In Dynamics 365 webapi we can execute bigger GET request using $batch, we need to set header <strong>Content-Type: multipart/mixed;boundary=batch_fetchquery</strong> and content of GET request should go in body enclosed within value given in <strong>boundary</strong>, which is <strong>batch_fetchquery</strong> in our case. To learn more about $batch, you can refer <a href="https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/webapi/execute-batch-operations-using-web-api">https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/webapi/execute-batch-operations-using-web-api</a>.</p>
+
+<h3 id="making-post-request-with-xmlhttprequest">Making POST request with XMLHttpRequest</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fetchXmlQuery</span> <span class="o">=</span> <span class="s2">`
+&lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
+  &lt;entity name="incident"&gt;
+    &lt;attribute name="title" /&gt;
+    &lt;attribute name="ticketnumber" /&gt;
+    &lt;attribute name="createdon" /&gt;
+    &lt;attribute name="incidentid" /&gt;
+    &lt;attribute name="caseorigincode" /&gt;
+    &lt;order attribute="title" descending="false" /&gt;
+    &lt;filter type="and"&gt;
+      &lt;condition attribute="statecode" operator="eq" value="0" /&gt;
+    &lt;/filter&gt;
+  &lt;/entity&gt;
+&lt;/fetch&gt;`</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">Xrm</span><span class="p">.</span><span class="nx">Page</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">getClientUrl</span><span class="p">()</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/api/data/v9.0/$batch</span><span class="dl">"</span><span class="p">,</span>
+  <span class="kc">true</span>
+<span class="p">);</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">multipart/mixed;boundary=batch_fetchquery</span><span class="dl">"</span>
+<span class="p">);</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">{</span><span class="dl">"</span><span class="p">),</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">}</span><span class="dl">"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="p">)</span>
+      <span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span>
+  <span class="dl">"</span><span class="s2">--batch_fetchquery</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="s2">Content-Type: application/http</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="s2">Content-Transfer-Encoding: binary</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="s2">GET </span><span class="dl">"</span> <span class="o">+</span>
+  <span class="nx">Xrm</span><span class="p">.</span><span class="nx">Page</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">getClientUrl</span><span class="p">()</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="s2">/api/data/v9.0/incidents?fetchXml=</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">fetchXmlQuery</span><span class="p">)</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="s2"> HTTP/1.1</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="dl">'</span><span class="s1">Prefer: odata.include-annotations="*"</span><span class="se">\n</span><span class="dl">'</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="dl">"</span><span class="s2">--batch_fetchquery--</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="making-post-request-with-javascript-fetch-api">Making POST request with JavaScript Fetch API</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fetchXmlQuery</span> <span class="o">=</span> <span class="s2">`
+&lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
+  &lt;entity name="incident"&gt;
+    &lt;attribute name="title" /&gt;
+    &lt;attribute name="ticketnumber" /&gt;
+    &lt;attribute name="createdon" /&gt;
+    &lt;attribute name="incidentid" /&gt;
+    &lt;attribute name="caseorigincode" /&gt;
+    &lt;order attribute="title" descending="false" /&gt;
+    &lt;filter type="and"&gt;
+      &lt;condition attribute="statecode" operator="eq" value="0" /&gt;
+    &lt;/filter&gt;
+  &lt;/entity&gt;
+&lt;/fetch&gt;`</span><span class="p">;</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Page</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">getClientUrl</span><span class="p">()</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/api/data/v9.0/$batch</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">body</span><span class="p">:</span>
+    <span class="dl">"</span><span class="s2">--batch_fetchquery</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">Content-Type: application/http</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">Content-Transfer-Encoding: binary</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">GET </span><span class="dl">"</span> <span class="o">+</span>
+    <span class="nx">Xrm</span><span class="p">.</span><span class="nx">Page</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">getClientUrl</span><span class="p">()</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">/api/data/v9.0/incidents?fetchXml=</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">fetchXmlQuery</span><span class="p">)</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2"> HTTP/1.1</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">'</span><span class="s1">Prefer: odata.include-annotations="*"</span><span class="se">\n</span><span class="dl">'</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">--batch_fetchquery--</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">multipart/mixed;boundary=batch_fetchquery</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="na">credentials</span><span class="p">:</span> <span class="dl">"</span><span class="s2">same-origin</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span>
+<span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
+      <span class="nx">data</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">{</span><span class="dl">"</span><span class="p">),</span> <span class="nx">data</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">}</span><span class="dl">"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h2 id="testing-the-code-in-dyanmics-365">Testing the code in Dyanmics 365</h2>
+
+<p>To test the above code I made small tweaks to run it from HTML web resource as you can see below.</p>
+
+<script src="https://gist.github.com/AshV/2639c65018b703457b2fe26272093774.js"></script>
+
+<p>Create new HTML web resource with above code &amp; publish it.</p>
+
+<p><img src="/assets/2018-06-25/Test-Web-Resource.png" alt="Test-Web-Resource" /></p>
+
+<p>Click on the URL to open it, you will see below window.</p>
+
+<p><img src="/assets/2018-06-25/Test-Window.png" alt="Test-Window" /></p>
+
+<p>Press F12 to open console, click on buttons to verify the retrieved data in console &amp; alert.</p>
+
+<p><img src="/assets/2018-06-25/Testing.png" alt="Testing" /></p>
+
+<blockquote>
+  <p>Thanks for reading, Hope it helps!</p>
+</blockquote>
+
+            <hr />
+            <center><a href="https://www.buymeacoffee.com/AshV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;"></a></center>
+            <footer class="site-footer">
+                <div id="disqus_thread"></div>
+                <script>(function () { var d = document, s = d.createElement('script'); s.src = 'https://ashish-vishwakarma.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();</script>
+                <span class="site-footer-credits">©<a href="https://www.ashishvishwakarma.com/">Ashish Vishwakarma</a>. | <a href="https://www.ashishvishwakarma.com/posts">Read More Posts</a></span>
+            </footer>
+        </article>
+        <script>(function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-88171590-1', 'auto'); ga('send', 'pageview');</script>
+    </article>
+
+            
+            <footer class="site-footer">
+                <!-- SVG icons from https://iconmonstr.com -->
+                
+                <!-- Github icon -->
+                <span class="my-span-icon">
+                    <a href="" aria-label="'s GitHub" title="'s GitHub">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- Twitter icon -->
+                <span class="my-span-icon">
+                    <a href="https://twitter.com/" aria-label="'s Twitter" title="'s Twitter">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- RSS icon -->
+                
+                
+                <!-- Contact icon -->
+                
+                
+                <span class="my-span-icon">
+                    <a href="http://localhost:4000/contact.html" aria-label="Contact" title="Contact ">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+                    </a>
+                </span>
+                
+                
+            </footer>
+        </section>
+        
+        <script>
+            var menu = document.querySelector("nav.site-nav");
+            var checkbox = document.getElementById("nav-trigger");
+            
+            // close menu if click outside menu
+            document.addEventListener("click", function(e) {
+                if (menu != e.target &&
+                        !isDescendant(menu, e.target)) {
+                    checkbox.checked = false;
+                }
+            }, false);
+            
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }  
+        </script>
+        
+    </body>
+    </html>
+    

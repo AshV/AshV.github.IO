@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    
+    <title>Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM</title>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Place this data between the <head> tags of your website -->
+
+<meta name="description" content="" />
+
+
+
+  <meta name="keywords" itemprop="categories" content="Dynamics-365, PowerApps" />
+
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+<meta name="twitter:title" content="Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM" />
+<meta name="twitter:description" content="" />
+
+
+
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+<meta name="twitter:url" content="http://localhost:4000//assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm/" />
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:4000//assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm/" />
+
+
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="Ashish Vishwakarma" />
+
+
+<meta property="og:locale" content="" />
+
+
+  <meta property="article:published_time" content="2017-03-15T00:18:01+05:30" />
+
+
+
+
+  
+
+
+
+
+
+  
+    <meta property="article:tag" content="Dynamics-365" />
+  
+    <meta property="article:tag" content="PowerApps" />
+  
+
+
+
+
+    
+    
+    <link rel="canonical" href="http://localhost:4000/assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm/">
+    
+    
+    
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta name="robots" content="noarchive">
+    
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
+        <link rel="alternate" media="handheld" href=""> -->
+        
+        
+        <link rel="stylesheet" href="http://localhost:4000/assets/css/style.css?v=">
+    </head>
+    <body>
+        
+        <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+
+    
+      <a class="site-title" href="http://localhost:4000/posts">Ashish Vishwakarma</a>
+    
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/contact.html">Contact Me</a>
+              
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+        
+        
+        
+        
+        
+        <section class="page-header">
+            <h1 class="project-name">Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM</h1>
+            <h2 class="project-tagline"></h2>
+            
+            <!-- Post tagline -->
+            
+            <h2 class="project-date">
+                <time datetime="2017-03-15T00:18:01+05:30" itemprop="datePublished">
+                    
+                    Mar 15, 2017
+                </time>
+                
+                
+            </h2>
+            
+            <!-- End: Post tagline -->
+        </section>
+        
+        <section class="main-content">
+            
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+
+        <!-- <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Assigning Case To Appropriate Team User Using Plugin In Dynamics 365/ CRM</h1>
+      <p class="post-meta">
+        <time datetime="2017-03-15T00:18:01+05:30" itemprop="datePublished">
+          
+          Mar 15, 2017
+        </time>
+        </p>
+    </header> -->
+
+        <article itemprop="articleBody">
+            <p><img src="/assets/2018-06-25/ms-dynamics-365-header.webp" alt="Dynamics 365 Header" /></p>
+
+<p>In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfill these three requirements.</p>
+
+<ol>
+  <li>
+    <p>If the Team has no users in it, Case should be assigned to the default queue of Team.</p>
+  </li>
+  <li>
+    <p>If the Team has users, the Case should be assigned to the user with the least number of cases.</p>
+  </li>
+  <li>
+    <p>If more than one user in the Team have the same number of cases, then the case should be randomly assigned to one of them.</p>
+  </li>
+</ol>
+
+<p>Here, I will show you how to implement the above functionality. To simplify, I am not using any custom attribute or an entity; you can just create an online trial instance of Dynamics CRM/365 and try it out.</p>
+
+<p><strong>Section 1 : Code</strong></p>
+
+<p><strong>Step 1</strong></p>
+
+<p>Create a new project in Visual Studio of type Class Library and give the name. I have given the name as AssignPlugin and don’t forget to set the framework version to 4.5.2.</p>
+
+<p><img src="/assets/2017-03-15/image_0.png" alt="image alt text" /></p>
+
+<p><strong>Step 2</strong></p>
+
+<p>Add the required references to project from CRM SDK.</p>
+
+<p><img src="/assets/2017-03-15/image_1.png" alt="image alt text" /></p>
+
+<p><strong>Step 3</strong></p>
+
+<p>Remove the existing class from the project and add a new class to the project with some name like AssignTeamToUser.cs.</p>
+
+<p>Open this class, make it public, add namespace “Microsoft.Xrm.Sdk” and inherit “IPlugin” interface, which is required for the plugin.</p>
+
+<p>IPlugin requires Execute method to be implemented, so add it to our class.</p>
+
+<p>Now, the code should look, as shown below.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>  
+  
+<span class="k">namespace</span> <span class="nn">AssignPlugin</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">AssignTeamToUser</span> <span class="p">:</span> <span class="n">IPlugin</span>  
+    <span class="p">{</span>  
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">IServiceProvider</span> <span class="n">serviceProvider</span><span class="p">)</span>  
+        <span class="p">{</span>  
+             
+        <span class="p">}</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<p><strong>Step 4</strong></p>
+
+<p>Now, we need to add some boilerplate code for some null checks and obtain plugin context and organization Service reference. It’s a good idea to maintain business logic separately, so BusinessLogic method in it will contain our Business Logic.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>  
+  
+<span class="k">namespace</span> <span class="nn">AssignPlugin</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">AssignTeamToUser</span> <span class="p">:</span> <span class="n">IPlugin</span>  
+    <span class="p">{</span>  
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">IServiceProvider</span> <span class="n">serviceProvider</span><span class="p">)</span>  
+        <span class="p">{</span>  
+            <span class="k">if</span> <span class="p">(</span><span class="n">serviceProvider</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// Obtain the Plugin Execution Context  </span>
+            <span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="p">(</span><span class="n">IPluginExecutionContext</span><span class="p">)</span><span class="n">serviceProvider</span><span class="p">.</span><span class="nf">GetService</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IPluginExecutionContext</span><span class="p">));</span>  
+  
+            <span class="c1">// Obtain the organization service reference.  </span>
+            <span class="kt">var</span> <span class="n">serviceFactory</span> <span class="p">=</span> <span class="p">(</span><span class="n">IOrganizationServiceFactory</span><span class="p">)</span><span class="n">serviceProvider</span><span class="p">.</span><span class="nf">GetService</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IOrganizationServiceFactory</span><span class="p">));</span>  
+            <span class="kt">var</span> <span class="n">service</span> <span class="p">=</span> <span class="n">serviceFactory</span><span class="p">.</span><span class="nf">CreateOrganizationService</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">UserId</span><span class="p">);</span>  
+  
+            <span class="c1">// To check depth   </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">Depth</span> <span class="p">&gt;</span> <span class="m">2</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// The InputParameters collection contains all the data passed in the message request.  </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"Target"</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Target"</span><span class="p">]</span> <span class="k">is</span> <span class="n">EntityReference</span><span class="p">)</span>  
+            <span class="p">{</span>  
+                <span class="c1">// Business logic goes here  </span>
+                <span class="k">new</span> <span class="nf">AssignTeamToUser</span><span class="p">().</span><span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">context</span><span class="p">);</span>  
+            <span class="p">}</span>  
+        <span class="p">}</span>  
+  
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">,</span> <span class="n">IExecutionContext</span> <span class="n">context</span><span class="p">)</span>  
+        <span class="p">{</span>  
+            <span class="c1">// Business Logic  </span>
+        <span class="p">}</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Step 5</strong></p>
+
+<p>While registering plugin in Assign step, it will have two Input parameters in context with the name Target &amp; Assignee, we will pick them in the variable for further use. See the code given below.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">,</span> <span class="n">IExecutionContext</span> <span class="n">context</span><span class="p">)</span>    
+<span class="p">{</span>    
+    <span class="c1">// We are hitting Assign button on a Case record so Target will be a Case record    </span>
+    <span class="kt">var</span> <span class="n">caseEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Target"</span><span class="p">];</span>    
+    
+    <span class="c1">// Assignee could be a User or Team    </span>
+    <span class="kt">var</span> <span class="n">teamEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Assignee"</span><span class="p">];</span>    
+    
+    <span class="c1">// In our requirement it should be a Team, otherwise return    </span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">teamEntityReference</span><span class="p">.</span><span class="n">LogicalName</span> <span class="p">!=</span> <span class="s">"team"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>    
+  
+<span class="p">}</span>   
+</code></pre></div></div>
+
+<p><strong>Step 6</strong></p>
+
+<p>Now, let’s jump into the main game. We will retrieve all the users in the given team, using fetchXml. Add namespace Microsoft.Xrm.Sdk.Query in our class, so FetchExpression will be available for the user.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">,</span> <span class="n">IExecutionContext</span> <span class="n">context</span><span class="p">)</span>  
+      <span class="p">{</span>  
+          <span class="c1">// We are hitting Assign button on a Case record so Target will be a Case record  </span>
+          <span class="kt">var</span> <span class="n">caseEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Target"</span><span class="p">];</span>  
+  
+          <span class="c1">// Assignee could be a User or Team  </span>
+          <span class="kt">var</span> <span class="n">teamEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Assignee"</span><span class="p">];</span>  
+  
+          <span class="c1">// In our requirement it should be a Team, if user it should return  </span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">teamEntityReference</span><span class="p">.</span><span class="n">LogicalName</span> <span class="p">!=</span> <span class="s">"team"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+          <span class="c1">// fetchXml to retrieve all the users in a given Team  </span>
+          <span class="kt">var</span> <span class="n">fetchXmlLoggedUserInTeam</span> <span class="p">=</span> <span class="s">@"  
+          &lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true'&gt;  
+            &lt;entity name='systemuser'&gt;  
+              &lt;attribute name='systemuserid' /&gt;  
+              &lt;link-entity name='teammembership' from='systemuserid' to='systemuserid' visible='false' intersect='true'&gt;  
+                &lt;link-entity name='team' from='teamid' to='teamid' alias='ac'&gt;  
+                  &lt;filter type='and'&gt;  
+                    &lt;condition attribute='teamid' operator='eq' uitype='team' value='{0}' /&gt;  
+                  &lt;/filter&gt;  
+                &lt;/link-entity&gt;  
+              &lt;/link-entity&gt;  
+            &lt;/entity&gt;  
+          &lt;/fetch&gt;"</span><span class="p">;</span>  
+  
+          <span class="c1">// Passing current Team is fetchXml and retrieving Team's user  </span>
+          <span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="k">new</span> <span class="nf">FetchExpression</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span>  
+              <span class="n">fetchXmlLoggedUserInTeam</span><span class="p">,</span>  
+              <span class="n">teamEntityReference</span><span class="p">.</span><span class="n">Id</span><span class="p">))).</span><span class="n">Entities</span><span class="p">;</span>  
+         
+      <span class="p">}</span> 
+</code></pre></div></div>
+
+<p><strong>Step 7</strong></p>
+
+<p><strong>(Implement Condition 1)</strong></p>
+
+<p>If FetchExpression` in the last step returns no users, then we will assign case record for the default queue of the Team, using AddToQueueRequest, add namespace Microsoft.Crm.Sdk.Messages in order to use the same.</p>
+
+<p>Here, we are retrieving Id of default Queue of Team, which is used in DestinationQueueId parameter of AddToQueueRequest and in Target parameter, our case record is given.</p>
+
+<p>Now, complete the code for the given condition and it should look, as shown below.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.Crm.Sdk.Messages</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk.Query</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>  
+  
+<span class="k">namespace</span> <span class="nn">AssignPlugin</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">AssignTeamToUser</span> <span class="p">:</span> <span class="n">IPlugin</span>  
+    <span class="p">{</span>  
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">IServiceProvider</span> <span class="n">serviceProvider</span><span class="p">)</span>  
+        <span class="p">{</span>  
+            <span class="k">if</span> <span class="p">(</span><span class="n">serviceProvider</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// Obtain the Plugin Execution Context  </span>
+            <span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="p">(</span><span class="n">IPluginExecutionContext</span><span class="p">)</span><span class="n">serviceProvider</span><span class="p">.</span><span class="nf">GetService</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IPluginExecutionContext</span><span class="p">));</span>  
+  
+            <span class="c1">// Obtain the organization service reference.  </span>
+            <span class="kt">var</span> <span class="n">serviceFactory</span> <span class="p">=</span> <span class="p">(</span><span class="n">IOrganizationServiceFactory</span><span class="p">)</span><span class="n">serviceProvider</span><span class="p">.</span><span class="nf">GetService</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IOrganizationServiceFactory</span><span class="p">));</span>  
+            <span class="kt">var</span> <span class="n">service</span> <span class="p">=</span> <span class="n">serviceFactory</span><span class="p">.</span><span class="nf">CreateOrganizationService</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">UserId</span><span class="p">);</span>  
+  
+            <span class="c1">// To check depth   </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">Depth</span> <span class="p">&gt;</span> <span class="m">2</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// The InputParameters collection contains all the data passed in the message request.  </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"Target"</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Target"</span><span class="p">]</span> <span class="k">is</span> <span class="n">EntityReference</span><span class="p">)</span>  
+            <span class="p">{</span>  
+                <span class="c1">// Business logic goes here  </span>
+                <span class="k">new</span> <span class="nf">AssignTeamToUser</span><span class="p">().</span><span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">context</span><span class="p">);</span>  
+            <span class="p">}</span>  
+        <span class="p">}</span>  
+  
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">,</span> <span class="n">IExecutionContext</span> <span class="n">context</span><span class="p">)</span>  
+        <span class="p">{</span>  
+            <span class="c1">// We are hitting Assign button on a Case record so Target will be a Case record  </span>
+            <span class="kt">var</span> <span class="n">caseEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Target"</span><span class="p">];</span>  
+  
+            <span class="c1">// Assignee could be a User or Team  </span>
+            <span class="kt">var</span> <span class="n">teamEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Assignee"</span><span class="p">];</span>  
+  
+            <span class="c1">// In our requirement it should be a Team, if user it should return  </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">teamEntityReference</span><span class="p">.</span><span class="n">LogicalName</span> <span class="p">!=</span> <span class="s">"team"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// fetchXml to retrieve all the users in a given Team  </span>
+            <span class="kt">var</span> <span class="n">fetchXmlLoggedUserInTeam</span> <span class="p">=</span> <span class="s">@"  
+            &lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true'&gt;  
+              &lt;entity name='systemuser'&gt;  
+                &lt;attribute name='systemuserid' /&gt;  
+                &lt;link-entity name='teammembership' from='systemuserid' to='systemuserid' visible='false' intersect='true'&gt;  
+                  &lt;link-entity name='team' from='teamid' to='teamid' alias='ac'&gt;  
+                    &lt;filter type='and'&gt;  
+                      &lt;condition attribute='teamid' operator='eq' uitype='team' value='{0}' /&gt;  
+                    &lt;/filter&gt;  
+                  &lt;/link-entity&gt;  
+                &lt;/link-entity&gt;  
+              &lt;/entity&gt;  
+            &lt;/fetch&gt;"</span><span class="p">;</span>  
+  
+            <span class="c1">// Passing current Team is fetchXml and retrieving Team's user  </span>
+            <span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="k">new</span> <span class="nf">FetchExpression</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span>  
+                <span class="n">fetchXmlLoggedUserInTeam</span><span class="p">,</span>  
+                <span class="n">teamEntityReference</span><span class="p">.</span><span class="n">Id</span><span class="p">))).</span><span class="n">Entities</span><span class="p">;</span>  
+  
+            <span class="c1">// Condition 1  </span>
+            <span class="c1">// If user count is zero case should be assigned to Team's default Queue  </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>  
+            <span class="p">{</span>  
+                <span class="kt">var</span> <span class="n">team</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">Retrieve</span><span class="p">(</span><span class="s">"team"</span><span class="p">,</span> <span class="n">teamEntityReference</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="k">new</span> <span class="nf">ColumnSet</span><span class="p">(</span><span class="s">"queueid"</span><span class="p">));</span>  
+  
+                <span class="kt">var</span> <span class="n">addToQueueRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AddToQueueRequest</span>  
+                <span class="p">{</span>  
+                    <span class="n">Target</span> <span class="p">=</span> <span class="n">caseEntityReference</span><span class="p">,</span>  
+                    <span class="n">DestinationQueueId</span> <span class="p">=</span> <span class="n">team</span><span class="p">.</span><span class="n">GetAttributeValue</span><span class="p">&lt;</span><span class="n">EntityReference</span><span class="p">&gt;(</span><span class="s">"queueid"</span><span class="p">).</span><span class="n">Id</span>  
+                <span class="p">};</span>  
+                <span class="n">service</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">addToQueueRequest</span><span class="p">);</span>  
+            <span class="p">}</span>  
+  
+        <span class="p">}</span>      <span class="p">}</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<p>Our first condition is done. You can directly jump to further sections to quickly test it. Follow the steps further to implement the rest of the conditions.</p>
+
+<p><strong>Step 8</strong></p>
+
+<p><strong>(Implement Condition 2)</strong></p>
+
+<p>If the Team has users available in it, then cases should be assigned to the user. With the least number of cases, follow the else part in the code given below.</p>
+
+<p>Namespaces System.Collections.Generic &amp; System.Linq needs to be added.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Condition 1  </span>
+<span class="c1">// If user count is zero case should be assigned to Team's default Queue  </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="kt">var</span> <span class="n">team</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">Retrieve</span><span class="p">(</span><span class="s">"team"</span><span class="p">,</span> <span class="n">teamEntityReference</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="k">new</span> <span class="nf">ColumnSet</span><span class="p">(</span><span class="s">"queueid"</span><span class="p">));</span>  
+  
+    <span class="kt">var</span> <span class="n">addToQueueRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AddToQueueRequest</span>  
+    <span class="p">{</span>  
+        <span class="n">Target</span> <span class="p">=</span> <span class="n">caseEntityReference</span><span class="p">,</span>  
+        <span class="n">DestinationQueueId</span> <span class="p">=</span> <span class="n">team</span><span class="p">.</span><span class="n">GetAttributeValue</span><span class="p">&lt;</span><span class="n">EntityReference</span><span class="p">&gt;(</span><span class="s">"queueid"</span><span class="p">).</span><span class="n">Id</span>  
+    <span class="p">};</span>  
+    <span class="n">service</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">addToQueueRequest</span><span class="p">);</span>  
+<span class="p">}</span>  
+<span class="k">else</span>  
+<span class="p">{</span>  
+    <span class="kt">var</span> <span class="n">caseCountAssignedToUser</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;();</span>  
+  
+    <span class="n">users</span><span class="p">.</span><span class="nf">ToList</span><span class="p">().</span><span class="nf">ForEach</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span>  
+    <span class="p">{</span>  
+        <span class="kt">var</span> <span class="n">fetchXmlCaseAssignedToUser</span> <span class="p">=</span> <span class="s">@"  
+        &lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&gt;  
+          &lt;entity name='incident'&gt;  
+            &lt;attribute name='incidentid' /&gt;  
+            &lt;link-entity name='systemuser' from='systemuserid' to='owninguser' alias='ab'&gt;  
+              &lt;filter type='and'&gt;  
+                &lt;condition attribute='systemuserid' operator='eq' uitype='systemuser' value='{0}' /&gt;  
+              &lt;/filter&gt;  
+            &lt;/link-entity&gt;  
+          &lt;/entity&gt;  
+        &lt;/fetch&gt;"</span><span class="p">;</span>  
+        <span class="kt">var</span> <span class="n">cases</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="k">new</span> <span class="nf">FetchExpression</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span>  
+            <span class="n">fetchXmlCaseAssignedToUser</span><span class="p">,</span>  
+            <span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">))).</span><span class="n">Entities</span><span class="p">.</span><span class="nf">ToList</span><span class="p">();</span>  
+        <span class="n">caseCountAssignedToUser</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="n">cases</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>  
+    <span class="p">});</span>  
+  
+    <span class="kt">var</span> <span class="n">sortedCaseCount</span> <span class="p">=</span> <span class="k">from</span> <span class="n">entry</span> <span class="k">in</span> <span class="n">caseCountAssignedToUser</span>  
+                          <span class="k">orderby</span> <span class="n">entry</span><span class="p">.</span><span class="n">Value</span> <span class="k">ascending</span>  
+                          <span class="k">select</span> <span class="n">entry</span><span class="p">;</span>  
+    <span class="kt">var</span> <span class="n">allUserWithSameLeastNumberOfCases</span> <span class="p">=</span> <span class="n">sortedCaseCount</span>  
+        <span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">w</span> <span class="p">=&gt;</span> <span class="n">w</span><span class="p">.</span><span class="n">Value</span> <span class="p">==</span> <span class="n">sortedCaseCount</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Value</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>  
+  
+    <span class="kt">var</span> <span class="n">targetUser</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Guid</span><span class="p">();</span>  
+  
+    <span class="c1">// Condition 1  </span>
+    <span class="c1">// Assign the case to user with least number of case assigned  </span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">allUserWithSameLeastNumberOfCases</span><span class="p">.</span><span class="nf">Count</span><span class="p">()</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>  
+    <span class="p">{</span>  
+        <span class="n">targetUser</span> <span class="p">=</span> <span class="n">sortedCaseCount</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>  
+    <span class="p">}</span>  
+  
+    <span class="kt">var</span> <span class="n">assign</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AssignRequest</span>  
+    <span class="p">{</span>  
+        <span class="n">Assignee</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EntityReference</span><span class="p">(</span><span class="s">"systemuser"</span><span class="p">,</span> <span class="n">targetUser</span><span class="p">),</span>  
+        <span class="n">Target</span> <span class="p">=</span> <span class="n">caseEntityReference</span>  
+    <span class="p">};</span>  
+  
+    <span class="n">service</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">assign</span><span class="p">);</span>  
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<p><strong>Step 9</strong></p>
+
+<p><strong>(Implement Condition 3)</strong></p>
+
+<p>If more than one user has the same number of cases, then it should be assigned randomly, else follow the part in the code given below.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Condition 1  </span>
+<span class="c1">// Assign case to user with least number of case assigned  </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">allUserWithSameLeastNumberOfCases</span><span class="p">.</span><span class="nf">Count</span><span class="p">()</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="n">targetUser</span> <span class="p">=</span> <span class="n">sortedCaseCount</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>  
+<span class="p">}</span>  
+<span class="c1">// Condition 2  </span>
+<span class="c1">// If more than one users are having same least number of users, then it be assigned randomly  </span>
+<span class="k">else</span>  
+<span class="p">{</span>  
+    <span class="kt">var</span> <span class="n">randomUser</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Random</span><span class="p">().</span><span class="nf">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">allUserWithSameLeastNumberOfCases</span><span class="p">.</span><span class="nf">Count</span><span class="p">()</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>  
+    <span class="n">targetUser</span> <span class="p">=</span> <span class="n">allUserWithSameLeastNumberOfCases</span><span class="p">[</span><span class="n">randomUser</span><span class="p">].</span><span class="n">Key</span><span class="p">;</span>  
+<span class="p">}</span>  
+  
+<span class="kt">var</span> <span class="n">assign</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AssignRequest</span>  
+<span class="p">{</span>  
+    <span class="n">Assignee</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EntityReference</span><span class="p">(</span><span class="s">"systemuser"</span><span class="p">,</span> <span class="n">targetUser</span><span class="p">),</span>  
+    <span class="n">Target</span> <span class="p">=</span> <span class="n">caseEntityReference</span>  
+<span class="p">};</span>  
+<span class="n">service</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">assign</span><span class="p">);</span> 
+</code></pre></div></div>
+
+<p><strong>Step 10</strong></p>
+
+<p><strong>(Sign the Assembly)</strong></p>
+
+<p>In order to use the plugin in Dynamics 365/CRM assembly has to be signed.</p>
+
+<ul>
+  <li>
+    <p>To sign, right click on the project and click Properties.</p>
+  </li>
+  <li>
+    <p>Click on signing on the left pane</p>
+  </li>
+  <li>
+    <p>Check Sign the assembly checkbox.</p>
+  </li>
+  <li>
+    <p>In Choose a strong name key file dropdown, select new.</p>
+  </li>
+  <li>
+    <p>In dialog box, give some name for the key.</p>
+  </li>
+  <li>
+    <p>Uncheck Protect my key file with a password (Optional).</p>
+  </li>
+  <li>
+    <p>Hit OK to save.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_2.png" alt="image alt text" /></p>
+  </li>
+</ul>
+
+<p>Now, our final code looks, as shown below.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.Crm.Sdk.Messages</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">Microsoft.Xrm.Sdk.Query</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>  
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>  
+  
+<span class="k">namespace</span> <span class="nn">AssignPlugin</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">AssignTeamToUser</span> <span class="p">:</span> <span class="n">IPlugin</span>  
+    <span class="p">{</span>  
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">IServiceProvider</span> <span class="n">serviceProvider</span><span class="p">)</span>  
+        <span class="p">{</span>  
+            <span class="k">if</span> <span class="p">(</span><span class="n">serviceProvider</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// Obtain the Plugin Execution Context  </span>
+            <span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="p">(</span><span class="n">IPluginExecutionContext</span><span class="p">)</span><span class="n">serviceProvider</span><span class="p">.</span><span class="nf">GetService</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IPluginExecutionContext</span><span class="p">));</span>  
+  
+            <span class="c1">// Obtain the organization service reference.  </span>
+            <span class="kt">var</span> <span class="n">serviceFactory</span> <span class="p">=</span> <span class="p">(</span><span class="n">IOrganizationServiceFactory</span><span class="p">)</span><span class="n">serviceProvider</span><span class="p">.</span><span class="nf">GetService</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IOrganizationServiceFactory</span><span class="p">));</span>  
+            <span class="kt">var</span> <span class="n">service</span> <span class="p">=</span> <span class="n">servicefonFactory</span><span class="p">.</span><span class="nf">CreateOrganizationService</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">UserId</span><span class="p">);</span>  
+  
+            <span class="c1">// To check depth   </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">Depth</span> <span class="p">&gt;</span> <span class="m">2</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// The InputParameters collection contains all the data passed in the message request.  </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"Target"</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Target"</span><span class="p">]</span> <span class="k">is</span> <span class="n">EntityReference</span><span class="p">)</span>  
+            <span class="p">{</span>  
+                <span class="c1">// Business logic goes here  </span>
+                <span class="k">new</span> <span class="nf">AssignTeamToUser</span><span class="p">().</span><span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">context</span><span class="p">);</span>  
+            <span class="p">}</span>  
+        <span class="p">}</span>  
+  
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">BusinessLogic</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">,</span> <span class="n">IExecutionContext</span> <span class="n">context</span><span class="p">)</span>  
+        <span class="p">{</span>  
+            <span class="c1">// We are hitting Assign button on a Case record so Target will be a Case record  </span>
+            <span class="kt">var</span> <span class="n">caseEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Target"</span><span class="p">];</span>  
+  
+            <span class="c1">// Assignee could be a User or Team  </span>
+            <span class="kt">var</span> <span class="n">teamEntityReference</span> <span class="p">=</span> <span class="p">(</span><span class="n">EntityReference</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="n">InputParameters</span><span class="p">[</span><span class="s">"Assignee"</span><span class="p">];</span>  
+  
+            <span class="c1">// In our requirement it should be a Team, if user it should return  </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">teamEntityReference</span><span class="p">.</span><span class="n">LogicalName</span> <span class="p">!=</span> <span class="s">"team"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  
+  
+            <span class="c1">// fetchXml to retrieve all the users in a given Team  </span>
+            <span class="kt">var</span> <span class="n">fetchXmlLoggedUserInTeam</span> <span class="p">=</span> <span class="s">@"  
+            &lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true'&gt;  
+              &lt;entity name='systemuser'&gt;  
+                &lt;attribute name='systemuserid' /&gt;  
+                &lt;link-entity name='teammembership' from='systemuserid' to='systemuserid' visible='false' intersect='true'&gt;  
+                  &lt;link-entity name='team' from='teamid' to='teamid' alias='ac'&gt;  
+                    &lt;filter type='and'&gt;  
+                      &lt;condition attribute='teamid' operator='eq' uitype='team' value='{0}' /&gt;  
+                    &lt;/filter&gt;  
+                  &lt;/link-entity&gt;  
+                &lt;/link-entity&gt;  
+              &lt;/entity&gt;  
+            &lt;/fetch&gt;"</span><span class="p">;</span>  
+  
+            <span class="c1">// Passing current Team is fetchXml and retrieving Team's user  </span>
+            <span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="k">new</span> <span class="nf">FetchExpression</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span>  
+                <span class="n">fetchXmlLoggedUserInTeam</span><span class="p">,</span>  
+                <span class="n">teamEntityReference</span><span class="p">.</span><span class="n">Id</span><span class="p">))).</span><span class="n">Entities</span><span class="p">;</span>  
+  
+            <span class="c1">// Condition 1  </span>
+            <span class="c1">// If user count is zero case should be assigned to Team's default Queue  </span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">users</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>  
+            <span class="p">{</span>  
+                <span class="c1">// Retrieving Team's default Queue  </span>
+                <span class="kt">var</span> <span class="n">team</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">Retrieve</span><span class="p">(</span><span class="s">"team"</span><span class="p">,</span> <span class="n">teamEntityReference</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="k">new</span> <span class="nf">ColumnSet</span><span class="p">(</span><span class="s">"queueid"</span><span class="p">));</span>  
+  
+                <span class="kt">var</span> <span class="n">addToQueueRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AddToQueueRequest</span>  
+                <span class="p">{</span>  
+                    <span class="c1">// Case record  </span>
+                    <span class="n">Target</span> <span class="p">=</span> <span class="n">caseEntityReference</span><span class="p">,</span>  
+                    <span class="c1">// Team's default Queue Id  </span>
+                    <span class="n">DestinationQueueId</span> <span class="p">=</span> <span class="n">team</span><span class="p">.</span><span class="n">GetAttributeValue</span><span class="p">&lt;</span><span class="n">EntityReference</span><span class="p">&gt;(</span><span class="s">"queueid"</span><span class="p">).</span><span class="n">Id</span>  
+                <span class="p">};</span>  
+                <span class="n">service</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">addToQueueRequest</span><span class="p">);</span>  
+            <span class="p">}</span>  
+            <span class="k">else</span>  
+            <span class="p">{</span>  
+                <span class="c1">// Dictionary to save UserId and number of case assigned pair  </span>
+                <span class="kt">var</span> <span class="n">caseCountAssignedToUser</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;();</span>  
+  
+                <span class="n">users</span><span class="p">.</span><span class="nf">ToList</span><span class="p">().</span><span class="nf">ForEach</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span>  
+                <span class="p">{</span>  
+                    <span class="c1">// FetchXml query to retrieve number cases assigned to each user  </span>
+                    <span class="kt">var</span> <span class="n">fetchXmlCaseAssignedToUser</span> <span class="p">=</span> <span class="s">@"  
+                    &lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&gt;  
+                      &lt;entity name='incident'&gt;  
+                        &lt;attribute name='incidentid' /&gt;  
+                        &lt;link-entity name='systemuser' from='systemuserid' to='owninguser' alias='ab'&gt;  
+                          &lt;filter type='and'&gt;  
+                            &lt;condition attribute='systemuserid' operator='eq' uitype='systemuser' value='{0}' /&gt;  
+                          &lt;/filter&gt;  
+                        &lt;/link-entity&gt;  
+                      &lt;/entity&gt;  
+                    &lt;/fetch&gt;"</span><span class="p">;</span>  
+  
+                    <span class="kt">var</span> <span class="n">cases</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="k">new</span> <span class="nf">FetchExpression</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span>  
+                        <span class="n">fetchXmlCaseAssignedToUser</span><span class="p">,</span>  
+                        <span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">))).</span><span class="n">Entities</span><span class="p">.</span><span class="nf">ToList</span><span class="p">();</span>  
+  
+                    <span class="c1">// Adding user id with number of cases assigned to Dictionay defined above  </span>
+                    <span class="n">caseCountAssignedToUser</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span> <span class="n">cases</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>  
+                <span class="p">});</span>  
+  
+                <span class="c1">// Sorting in ascending order by number of cases  </span>
+                <span class="kt">var</span> <span class="n">sortedCaseCount</span> <span class="p">=</span> <span class="k">from</span> <span class="n">entry</span> <span class="k">in</span> <span class="n">caseCountAssignedToUser</span>  
+                                      <span class="k">orderby</span> <span class="n">entry</span><span class="p">.</span><span class="n">Value</span> <span class="k">ascending</span>  
+                                      <span class="k">select</span> <span class="n">entry</span><span class="p">;</span>  
+  
+                <span class="c1">// Getting all the users with least sae number of cases  </span>
+                <span class="kt">var</span> <span class="n">allUserWithSameLeastNumberOfCases</span> <span class="p">=</span> <span class="n">sortedCaseCount</span>  
+                    <span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">w</span> <span class="p">=&gt;</span> <span class="n">w</span><span class="p">.</span><span class="n">Value</span> <span class="p">==</span> <span class="n">sortedCaseCount</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Value</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>  
+  
+                <span class="kt">var</span> <span class="n">targetUser</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Guid</span><span class="p">();</span>  
+  
+                <span class="c1">// Condition 1  </span>
+                <span class="c1">// Assign case to user with least number of case assigned  </span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">allUserWithSameLeastNumberOfCases</span><span class="p">.</span><span class="nf">Count</span><span class="p">()</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>  
+                <span class="p">{</span>  
+                    <span class="n">targetUser</span> <span class="p">=</span> <span class="n">sortedCaseCount</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Key</span><span class="p">;</span>  
+                <span class="p">}</span>  
+                <span class="c1">// Condition 2  </span>
+                <span class="c1">// If more than one users are having same least number of users, then it be assigned randomly  </span>
+                <span class="k">else</span>  
+                <span class="p">{</span>  
+                    <span class="kt">var</span> <span class="n">randomUser</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Random</span><span class="p">().</span><span class="nf">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">allUserWithSameLeastNumberOfCases</span><span class="p">.</span><span class="nf">Count</span><span class="p">()</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>  
+                    <span class="n">targetUser</span> <span class="p">=</span> <span class="n">allUserWithSameLeastNumberOfCases</span><span class="p">[</span><span class="n">randomUser</span><span class="p">].</span><span class="n">Key</span><span class="p">;</span>  
+                <span class="p">}</span>  
+  
+                <span class="kt">var</span> <span class="n">assign</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AssignRequest</span>  
+                <span class="p">{</span>  
+                    <span class="n">Assignee</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EntityReference</span><span class="p">(</span><span class="s">"systemuser"</span><span class="p">,</span> <span class="n">targetUser</span><span class="p">),</span>  
+                    <span class="n">Target</span> <span class="p">=</span> <span class="n">caseEntityReference</span>  
+                <span class="p">};</span>  
+  
+                <span class="n">service</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">assign</span><span class="p">);</span>  
+            <span class="p">}</span>  
+  
+        <span class="p">}</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<p>**Section 2  **</p>
+
+<p><strong>Deploying in Dynamics 365/CRM</strong></p>
+
+<p>To deploy the plugin to CRM</p>
+
+<ul>
+  <li>
+    <p>Build the project.</p>
+  </li>
+  <li>
+    <p>Open Plugin Registration tool and connect it to your Dynamics CRM instance.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_3.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>Click Register, followed by clicking Register new assembly.</p>
+  </li>
+  <li>
+    <p>In popup Step 1, select your DLL from the debug folder, which we have just created and the location will be similar to this</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     "C:\Users\AshV\Documents\Visual Studio 2017\Projects\AssignPlugin\AssignPlugin\bin\Debug\AssignPlugin.dll"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In Step 2, check select all and hit Register Selected Plugin button.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_4.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>After success, you will see the message given below.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_5.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>Now, a new step has to be registered on Assign step of Case record, else this plugin will not be triggered. To register, right click on assembly and click Register new step.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_6.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>In dialog box, select Message as Assign and Primary Entity as an incident (i.e. case).</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_7.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>Hit Register</p>
+  </li>
+</ul>
+
+<p><strong>Section 3</strong></p>
+
+<p><strong>Configuration in CRM &amp; Verifying Functionality</strong></p>
+
+<ul>
+  <li>
+    <p>Create Team with Administrator privileges by following Settings -&gt; Security -&gt; Teams and create new Team. I have given Team name as Quick Service Team.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_8.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>Assign System Administrator Role to the newly created Team.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_9.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>Now, this Team has no users. If any case is assigned to this Team it will go to the default queue, let’s try it out.</p>
+  </li>
+  <li>
+    <p>Hit Assign, select Assign To as a User or Team, select Quick Service Team and hit Asssign.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_10.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>After assigning hit Queue Item Details to verify whether it is assigned to the Queue or not.</p>
+  </li>
+  <li>
+    <p><img src="/assets/2017-03-15/image_11.png" alt="image alt text" /></p>
+  </li>
+  <li>
+    <p>To verify the rest of two conditions, create a few more users in Team and try assigning the record to Team and see how records are getting assigned.</p>
+  </li>
+</ul>
+
+<p>You can find this code in my GitHub repo as well https://github.com/AshV/AssignPluginDynamics365 For any query regarding this, feel free to get in touch with me.</p>
+
+            <hr />
+            <center><a href="https://www.buymeacoffee.com/AshV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;"></a></center>
+            <footer class="site-footer">
+                <div id="disqus_thread"></div>
+                <script>(function () { var d = document, s = d.createElement('script'); s.src = 'https://ashish-vishwakarma.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();</script>
+                <span class="site-footer-credits">©<a href="https://www.ashishvishwakarma.com/">Ashish Vishwakarma</a>. | <a href="https://www.ashishvishwakarma.com/posts">Read More Posts</a></span>
+            </footer>
+        </article>
+        <script>(function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-88171590-1', 'auto'); ga('send', 'pageview');</script>
+    </article>
+
+            
+            <footer class="site-footer">
+                <!-- SVG icons from https://iconmonstr.com -->
+                
+                <!-- Github icon -->
+                <span class="my-span-icon">
+                    <a href="" aria-label="'s GitHub" title="'s GitHub">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- Twitter icon -->
+                <span class="my-span-icon">
+                    <a href="https://twitter.com/" aria-label="'s Twitter" title="'s Twitter">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- RSS icon -->
+                
+                
+                <!-- Contact icon -->
+                
+                
+                <span class="my-span-icon">
+                    <a href="http://localhost:4000/contact.html" aria-label="Contact" title="Contact ">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+                    </a>
+                </span>
+                
+                
+            </footer>
+        </section>
+        
+        <script>
+            var menu = document.querySelector("nav.site-nav");
+            var checkbox = document.getElementById("nav-trigger");
+            
+            // close menu if click outside menu
+            document.addEventListener("click", function(e) {
+                if (menu != e.target &&
+                        !isDescendant(menu, e.target)) {
+                    checkbox.checked = false;
+                }
+            }, false);
+            
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }  
+        </script>
+        
+    </body>
+    </html>
+    

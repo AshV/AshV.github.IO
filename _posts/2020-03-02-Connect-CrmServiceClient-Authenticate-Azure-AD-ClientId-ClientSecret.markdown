@@ -52,7 +52,7 @@ var response = orgService.Execute(new WhoAmIRequest());
 
 All the necessary packages should be installed, package **Microsoft.CrmSdk.XrmTooling.CoreAssembly** version should be 9.1.0.13 or higher in order to connect using ClientSecret. [see release notes.](https://www.nuget.org/packages/Microsoft.CrmSdk.XrmTooling.CoreAssembly/9.1.0.38/)
 
-![nuget-packages](assets/2020-03-02/packages.png)
+![nuget-packages](/assets/2020-03-02/packages.png)
 
 You can find this code on my [GitHub.](https://github.com/AshV/Dynamics365ConsoleCaller)
 

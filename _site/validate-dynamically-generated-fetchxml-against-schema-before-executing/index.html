@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    
+    <title>Validating fetchXml against Schema using C#</title>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Place this data between the <head> tags of your website -->
+
+<meta name="description" content="Many times in Dynamics 365 related applications we need to work with dynamically generated or user entered fetchXml, In this case it’s always a good idea to verify fetcXml against schema before using. This kind of requirement might come if you are building some awesome stuff like FetchXML Builder..." />
+
+
+
+  <meta name="keywords" itemprop="categories" content="Dynamics-365, PowerApps" />
+
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+<meta name="twitter:title" content="Validating fetchXml against Schema using C#" />
+<meta name="twitter:description" content="Many times in Dynamics 365 related applications we need to work with dynamically generated or user entered fetchXml, In this case it’s always a good idea to verify fetcXml against schema before using. This kind of requirement might come if you are building some awesome stuff like FetchXML Builder..." />
+
+
+
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+<meta name="twitter:url" content="http://localhost:4000//validate-dynamically-generated-fetchxml-against-schema-before-executing/" />
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Validating fetchXml against Schema using C#" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:4000//validate-dynamically-generated-fetchxml-against-schema-before-executing/" />
+
+
+<meta property="og:description" content="Many times in Dynamics 365 related applications we need to work with dynamically generated or user entered fetchXml, In this case it’s always a good idea to verify fetcXml against schema before using. This kind of requirement might come if you are building some awesome stuff like FetchXML Builder..." />
+<meta property="og:site_name" content="Ashish Vishwakarma" />
+
+
+<meta property="og:locale" content="" />
+
+
+  <meta property="article:published_time" content="2018-04-08T00:18:01+05:30" />
+
+
+
+
+  
+
+
+
+
+
+  
+    <meta property="article:tag" content="Dynamics-365" />
+  
+    <meta property="article:tag" content="PowerApps" />
+  
+
+
+
+
+    
+    
+    <link rel="canonical" href="http://localhost:4000/validate-dynamically-generated-fetchxml-against-schema-before-executing/">
+    
+    
+    
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta name="robots" content="noarchive">
+    
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
+        <link rel="alternate" media="handheld" href=""> -->
+        
+        
+        <link rel="stylesheet" href="http://localhost:4000/assets/css/style.css?v=">
+    </head>
+    <body>
+        
+        <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+
+    
+      <a class="site-title" href="http://localhost:4000/posts">Ashish Vishwakarma</a>
+    
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+              
+                <a class="page-link" href="http://localhost:4000/contact.html">Contact Me</a>
+              
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+        
+        
+        
+        
+        
+        <section class="page-header">
+            <h1 class="project-name">Validating fetchXml against Schema using C#</h1>
+            <h2 class="project-tagline"></h2>
+            
+            <!-- Post tagline -->
+            
+            <h2 class="project-date">
+                <time datetime="2018-04-08T00:18:01+05:30" itemprop="datePublished">
+                    
+                    Apr 8, 2018
+                </time>
+                
+                
+            </h2>
+            
+            <!-- End: Post tagline -->
+        </section>
+        
+        <section class="main-content">
+            
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+
+        <!-- <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Validating fetchXml against Schema using C#</h1>
+      <p class="post-meta">
+        <time datetime="2018-04-08T00:18:01+05:30" itemprop="datePublished">
+          
+          Apr 8, 2018
+        </time>
+        </p>
+    </header> -->
+
+        <article itemprop="articleBody">
+            <p>Many times in Dynamics 365 related applications we need to work with dynamically generated or user entered fetchXml, In this case it’s always a good idea to verify fetcXml against schema before using. This kind of requirement  might come if you are building some awesome stuff like <a href="https://fxb.xrmtoolbox.com/">FetchXML Builder</a> or <a href="https://github.com/abtevrythng/FetchXML-to-SQL">FetchXML to SQL Converter</a>. or Generating fetchXml query in code.</p>
+
+<p>Let’s get started, here I’m using a console application.</p>
+
+<p><strong>Step 1</strong>. We need FetchXml schema which can be grabbed from SDK or can be found at the end of this article. Add this file with name <strong>fetch.xsd</strong> to your project and set <strong>Copy to Output Directory</strong> property as <strong>Copy Always</strong>.</p>
+
+<p><img src="/assets/2018-04-08/Fetch.xsd_Properties.png" alt="Fetch.xsd Properties" /></p>
+
+<p><strong>Step 2</strong>. Add below listed namespaces to project</p>
+
+<p>using System.IO;</p>
+
+<p>using System.Text;</p>
+
+<p>using System.Xml;</p>
+
+<p>using System.Xml.Schema;</p>
+
+<p><strong>Step 3</strong>. Implement ProcessFetchXml() as given below which is returning 2 values, first is boolean flag <strong>Success</strong> indicating whether fetchXml is valid or not. and second is <strong>Message</strong> which will have error message if fetchXml is not valid.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">Success</span><span class="p">,</span> <span class="kt">string</span> <span class="n">Message</span><span class="p">)</span> <span class="nf">ProcessFetchXml</span><span class="p">(</span><span class="kt">string</span> <span class="n">fetchXml</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="c1">// Loading fetchXml schema</span>
+        <span class="n">XmlSchema</span> <span class="n">schema</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+        <span class="k">using</span> <span class="p">(</span><span class="n">XmlReader</span> <span class="n">reader</span> <span class="p">=</span> <span class="n">XmlReader</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"fetch.xsd"</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">schema</span> <span class="p">=</span> <span class="n">XmlSchema</span><span class="p">.</span><span class="nf">Read</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Initiating XmlReaderSettings with schema to validate fetchXml</span>
+        <span class="n">XmlReaderSettings</span> <span class="n">settings</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XmlReaderSettings</span><span class="p">();</span>
+        <span class="n">settings</span><span class="p">.</span><span class="n">ValidationType</span> <span class="p">=</span> <span class="n">ValidationType</span><span class="p">.</span><span class="n">Schema</span><span class="p">;</span>
+        <span class="n">settings</span><span class="p">.</span><span class="n">Schemas</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">schema</span><span class="p">);</span>
+
+        <span class="c1">// Reading and Validating fetchXml</span>
+        <span class="kt">byte</span><span class="p">[]</span> <span class="n">byteArray</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">ASCII</span><span class="p">.</span><span class="nf">GetBytes</span><span class="p">(</span><span class="n">fetchXml</span><span class="p">);</span>
+        <span class="n">MemoryStream</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MemoryStream</span><span class="p">(</span><span class="n">byteArray</span><span class="p">);</span>
+        <span class="k">using</span> <span class="p">(</span><span class="n">XmlReader</span> <span class="n">reader</span> <span class="p">=</span> <span class="n">XmlReader</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">settings</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">XmlDocument</span> <span class="n">xmldoc</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XmlDocument</span><span class="p">();</span>
+            <span class="c1">// fetchXml is validated on call of Load()</span>
+            <span class="n">xmldoc</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="n">reader</span><span class="p">);</span>
+
+            <span class="c1">// Do further process here or just return success to calling function</span>
+            <span class="k">return</span> <span class="p">(</span><span class="k">true</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Log error message or return to calling function.</span>
+        <span class="k">return</span> <span class="p">(</span><span class="k">false</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In above code first of all we are reading fetxhXml schema using XmlReader, then Initiating XmlReaderSettings object with schema. This is passed as second parameter while reading fetchXml with XmlReader. It validates fetchXml while we call Load() of XmlDocument, you can see in code.</p>
+
+<p><strong>Step 4</strong>. Let’s test some fetchXml with above written function.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">validateFetchXml</span> <span class="p">=</span> <span class="nf">ProcessFetchXml</span><span class="p">(</span><span class="s">@"
+    &lt;fetch mapping='logical'&gt;
+      &lt;entity name='myentity'&gt;
+        &lt;filter type='and'&gt; 
+          &lt;condition attribute='lastname' operator='contains' value='AshV' /&gt; 
+        &lt;/filter&gt; 
+      &lt;/entity&gt; 
+    &lt;/fetch&gt;"</span><span class="p">);</span>
+
+    <span class="nf">WriteLine</span><span class="p">(</span>
+        <span class="n">validateFetchXml</span><span class="p">.</span><span class="n">Success</span> <span class="p">?</span> 
+        <span class="s">"fetchXml is valid"</span> <span class="p">:</span>
+        <span class="s">$"fetchXml is invalid because </span><span class="p">{</span><span class="n">validateFetchXml</span><span class="p">.</span><span class="n">Message</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here given fetchXml looks fine let’s execute it.
+<img src="/assets/2018-04-08/Invalid_fetchXml.png" alt="Invalid fetchXml" />
+No it was Invalid because for <strong>contains</strong> fetchXml uses <strong>like</strong> similar to SQL, let’s fix it and run again.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">validateFetchXml</span> <span class="p">=</span> <span class="nf">ProcessFetchXml</span><span class="p">(</span><span class="s">@"
+    &lt;fetch mapping='logical'&gt;
+      &lt;entity name='myentity'&gt;
+        &lt;filter type='and'&gt; 
+          &lt;condition attribute='lastname' operator='like' value='%AshV%' /&gt; 
+        &lt;/filter&gt; 
+      &lt;/entity&gt; 
+    &lt;/fetch&gt;"</span><span class="p">);</span>
+
+    <span class="nf">WriteLine</span><span class="p">(</span>
+        <span class="n">validateFetchXml</span><span class="p">.</span><span class="n">Success</span> <span class="p">?</span> 
+        <span class="s">"fetchXml is valid"</span> <span class="p">:</span>
+        <span class="s">$"fetchXml is invalid because </span><span class="p">{</span><span class="n">validateFetchXml</span><span class="p">.</span><span class="n">Message</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><img src="/assets/2018-04-08/Valid_fetchXml.png" alt="Valid_fetchXml.png" /></p>
+
+<p><strong>Step 5</strong>. If you don’t want to keep schema as a separate file, you can keep it as string and convert it to MemoryStream, like here we are reading fetchXml string.</p>
+
+<blockquote>
+  <p><a href="https://github.com/AshV/validate-fetchXml-against-schema/blob/master/Program.cs">Find complete code here</a></p>
+</blockquote>
+
+<h3 id="fetchxml-schema">FetchXml Schema</h3>
+<p><a href="https://raw.githubusercontent.com/AshV/validate-fetchXml-against-schema/master/fetch.xsd">Find raw version here</a></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="nt">&lt;xs:schema</span> <span class="na">id=</span><span class="s">"fetch"</span>
+           <span class="na">elementFormDefault=</span><span class="s">"qualified"</span>
+           <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span>
+           <span class="na">xmlns:mstns=</span><span class="s">"http://tempuri.org/fetch/unique"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>Schema name: fetch-schema<span class="nt">&lt;/xs:documentation&gt;</span>
+  <span class="nt">&lt;/xs:annotation&gt;</span>
+  <span class="c">&lt;!--
+
+condition element - used for capturing entity and link-entity
+"where" clause criteria
+
+--&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "value" element  --&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"value"</span>
+              <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:element&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "condition" element  --&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"condition"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:complexType&gt;</span>
+      <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                 <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- --&gt;</span>
+        <span class="c">&lt;!--
+The attribute "value" is used for all operators that compare to a single value (for example, eq).
+The element "value" is used for operators that compare to multiple values (for example, in).
+Some operators require neither the attribute "value" or the element "value" (for example, null).
+--&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"value"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:complexType&gt;</span>
+            <span class="nt">&lt;xs:simpleContent&gt;</span>
+              <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"uiname"</span>
+                              <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"uitype"</span>
+                              <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+              <span class="nt">&lt;/xs:extension&gt;</span>
+            <span class="nt">&lt;/xs:simpleContent&gt;</span>
+          <span class="nt">&lt;/xs:complexType&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+      <span class="nt">&lt;/xs:choice&gt;</span>
+      <span class="c">&lt;!-- --&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"column"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"attribute"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"entityname"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"operator"</span>
+                    <span class="na">use=</span><span class="s">"required"</span>
+                    <span class="na">type=</span><span class="s">"operator"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+      <span class="c">&lt;!--
+The attribute "value" is used for all operators that compare to a single value (for example, eq).
+The element "value" is used for operators that compare to multiple values (for example, in).
+Some operators require neither the attribute "value" or the element "value" (for example, null).
+--&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"value"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"aggregate"</span>
+                    <span class="na">type=</span><span class="s">"AggregateType"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"rowaggregate"</span>
+                    <span class="na">type=</span><span class="s">"RowAggregateType"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"alias"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"uiname"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"uitype"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"uihidden"</span>
+                    <span class="na">type=</span><span class="s">"TrueFalse01Type"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;/xs:element&gt;</span>
+  <span class="c">&lt;!--
+
+filter element - used for constructing complex conditionals
+ legal on entity and link-entity
+
+--&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "filter" element  --&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"filter"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:complexType&gt;</span>
+      <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                 <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- --&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">ref=</span><span class="s">"condition"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"500"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">ref=</span><span class="s">"filter"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/xs:choice&gt;</span>
+      <span class="c">&lt;!-- --&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"type"</span>
+                    <span class="na">default=</span><span class="s">"and"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:simpleType&gt;</span>
+          <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"and"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"or"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/xs:restriction&gt;</span>
+        <span class="nt">&lt;/xs:simpleType&gt;</span>
+      <span class="nt">&lt;/xs:attribute&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"isquickfindfields"</span>
+                    <span class="na">type=</span><span class="s">"xs:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;/xs:element&gt;</span>
+  <span class="c">&lt;!--
+
+attribute elements - used for selecting attributes from the
+ surrounding entity / link-entity, these
+ values are returned as part of the fetch
+
+--&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "all-attributes" element  --&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"all-attributes"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:complexType&gt;&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;/xs:element&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "attribute" element  --&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"FetchAttributeType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"name"</span>
+                  <span class="na">use=</span><span class="s">"required"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"build"</span>
+                  <span class="na">type=</span><span class="s">"build"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"addedby"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"alias"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"aggregate"</span>
+                  <span class="na">type=</span><span class="s">"AggregateType"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"groupby"</span>
+                  <span class="na">type=</span><span class="s">"FetchBoolType"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"dategrouping"</span>
+                  <span class="na">type=</span><span class="s">"DateGroupingType"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"usertimezone"</span>
+                  <span class="na">type=</span><span class="s">"FetchBoolType"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="c">&lt;!--
+
+order element - used to specify a sort order
+
+--&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "order" element  --&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"FetchOrderType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+               <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- --&gt;</span>
+    <span class="nt">&lt;/xs:choice&gt;</span>
+    <span class="c">&lt;!-- --&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"attribute"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"alias"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"descending"</span>
+                  <span class="na">default=</span><span class="s">"false"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="c">&lt;!--
+
+link-entity element - used for joining one entity to its "parent"
+
+--&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "link-entity" element  --&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"FetchLinkEntityType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+               <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- --&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">ref=</span><span class="s">"all-attributes"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"attribute"</span>
+                  <span class="na">type=</span><span class="s">"FetchAttributeType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"order"</span>
+                  <span class="na">type=</span><span class="s">"FetchOrderType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">ref=</span><span class="s">"filter"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"link-entity"</span>
+                  <span class="na">type=</span><span class="s">"FetchLinkEntityType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:choice&gt;</span>
+    <span class="c">&lt;!-- --&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"name"</span>
+                  <span class="na">use=</span><span class="s">"required"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"to"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"from"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"alias"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"link-type"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"visible"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"intersect"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="c">&lt;!--
+
+entity element - used for specifying the root element for a fetch, only
+ one root entity is allowed in a given fetch, all others
+ are dependent on this entity and are marked as
+ link-entity
+
+--&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "entity" element  --&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"FetchEntityType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+               <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- --&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">ref=</span><span class="s">"all-attributes"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"attribute"</span>
+                  <span class="na">type=</span><span class="s">"FetchAttributeType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"order"</span>
+                  <span class="na">type=</span><span class="s">"FetchOrderType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"link-entity"</span>
+                  <span class="na">type=</span><span class="s">"FetchLinkEntityType"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">ref=</span><span class="s">"filter"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:choice&gt;</span>
+    <span class="c">&lt;!-- --&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"name"</span>
+                  <span class="na">use=</span><span class="s">"required"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="c">&lt;!--
+
+fetch element - root element for the query
+
+--&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] "fetch" element  --&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"fetch"</span>
+              <span class="na">type=</span><span class="s">"FetchType"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"FetchType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+               <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- --&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"entity"</span>
+                  <span class="na">type=</span><span class="s">"FetchEntityType"</span> <span class="nt">/&gt;</span>
+      <span class="c">&lt;!-- This is for the Reports view only --&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"order"</span>
+                  <span class="na">type=</span><span class="s">"FetchOrderType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"1"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:choice&gt;</span>
+    <span class="c">&lt;!-- --&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"version"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"count"</span>
+                  <span class="na">type=</span><span class="s">"xs:integer"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"page"</span>
+                  <span class="na">type=</span><span class="s">"xs:integer"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"paging-cookie"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"utc-offset"</span>
+                  <span class="na">type=</span><span class="s">"IntOrEmpty"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"aggregate"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"distinct"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"top"</span>
+                  <span class="na">type=</span><span class="s">"xs:integer"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"mapping"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:simpleType&gt;</span>
+        <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"internal"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"logical"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xs:restriction&gt;</span>
+      <span class="nt">&lt;/xs:simpleType&gt;</span>
+    <span class="nt">&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"min-active-row-version"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span>
+                  <span class="na">use=</span><span class="s">"optional"</span>
+                  <span class="na">default=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"output-format"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:simpleType&gt;</span>
+        <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"xml-ado"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"xml-auto"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"xml-elements"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"xml-raw"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"xml-platform"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xs:restriction&gt;</span>
+      <span class="nt">&lt;/xs:simpleType&gt;</span>
+    <span class="nt">&lt;/xs:attribute&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"returntotalrecordcount"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span>
+                  <span class="na">use=</span><span class="s">"optional"</span>
+                  <span class="na">default=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"no-lock"</span>
+                  <span class="na">type=</span><span class="s">"xs:boolean"</span>
+                  <span class="na">use=</span><span class="s">"optional"</span>
+                  <span class="na">default=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="c">&lt;!-- [XDR-XSD] XDR datatype derivations --&gt;</span>
+  <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"savedquery"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:complexType&gt;</span>
+      <span class="nt">&lt;xs:all&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"name"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span>
+                    <span class="na">minOccurs=</span><span class="s">"1"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"savedqueryid"</span>
+                    <span class="na">type=</span><span class="s">"guid"</span>
+                    <span class="na">minOccurs=</span><span class="s">"1"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"returnedtypecode"</span>
+                    <span class="na">type=</span><span class="s">"SerializedInteger"</span>
+                    <span class="na">minOccurs=</span><span class="s">"1"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"description"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"querytype"</span>
+                    <span class="na">type=</span><span class="s">"SerializedInteger"</span>
+                    <span class="na">minOccurs=</span><span class="s">"1"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"IsCustomizable"</span>
+                    <span class="na">type=</span><span class="s">"SerializedTrueFalse01Type"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"CanBeDeleted"</span>
+                    <span class="na">type=</span><span class="s">"SerializedTrueFalse01Type"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"IntroducedVersion"</span>
+                    <span class="na">type=</span><span class="s">"VersionType"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"isquickfindquery"</span>
+                    <span class="na">type=</span><span class="s">"SerializedTrueFalse01Type"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"isuserdefined"</span>
+                    <span class="na">type=</span><span class="s">"SerializedTrueFalse01Type"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"isdefault"</span>
+                    <span class="na">type=</span><span class="s">"SerializedTrueFalse01Type"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"isprivate"</span>
+                    <span class="na">type=</span><span class="s">"xs:boolean"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"queryapi"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"fetchxml"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:complexType&gt;</span>
+            <span class="nt">&lt;xs:sequence&gt;</span>
+              <span class="nt">&lt;xs:element</span> <span class="na">ref=</span><span class="s">"fetch"</span>
+                          <span class="na">minOccurs=</span><span class="s">"0"</span>
+                          <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/xs:sequence&gt;</span>
+          <span class="nt">&lt;/xs:complexType&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"columnsetxml"</span>
+                    <span class="na">minOccurs=</span><span class="s">"1"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:complexType&gt;</span>
+            <span class="nt">&lt;xs:sequence&gt;</span>
+              <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"columnset"</span>
+                          <span class="na">minOccurs=</span><span class="s">"0"</span>
+                          <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:complexType&gt;</span>
+                  <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span>
+                             <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+                    <span class="c">&lt;!-- Because &lt;column&gt; contains text and one attribute we cannot specify its type. We have to define it as a complexType with a simple content. --&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"column"</span>
+                                <span class="na">minOccurs=</span><span class="s">"0"</span>
+                                <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;xs:complexType&gt;</span>
+                        <span class="nt">&lt;xs:simpleContent&gt;</span>
+                          <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"build"</span>
+                                          <span class="na">type=</span><span class="s">"build"</span> <span class="nt">/&gt;</span>
+                            <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"addedby"</span>
+                                          <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+                          <span class="nt">&lt;/xs:extension&gt;</span>
+                        <span class="nt">&lt;/xs:simpleContent&gt;</span>
+                      <span class="nt">&lt;/xs:complexType&gt;</span>
+                    <span class="nt">&lt;/xs:element&gt;</span>
+                    <span class="nt">&lt;xs:choice&gt;</span>
+                      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ascend"</span>
+                                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                                  <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+                      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"descend"</span>
+                                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                                  <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/xs:choice&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"filter"</span>
+                                <span class="na">minOccurs=</span><span class="s">"0"</span>
+                                <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                      <span class="c">&lt;!-- Allow support for v1.5 format --&gt;</span>
+                      <span class="nt">&lt;xs:complexType&gt;</span>
+                        <span class="nt">&lt;xs:sequence&gt;</span>
+                          <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"condition"</span>
+                                      <span class="na">minOccurs=</span><span class="s">"1"</span>
+                                      <span class="na">maxOccurs=</span><span class="s">"500"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;xs:complexType&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"column"</span>
+                                            <span class="na">type=</span><span class="s">"xs:string"</span>
+                                            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"operator"</span>
+                                            <span class="na">type=</span><span class="s">"operator"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"value"</span>
+                                            <span class="na">type=</span><span class="s">"xs:string"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span><span class="nt">/&gt;</span>
+                            <span class="nt">&lt;/xs:complexType&gt;</span>
+                          <span class="nt">&lt;/xs:element&gt;</span>
+                        <span class="nt">&lt;/xs:sequence&gt;</span>
+
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"column"</span>
+                                      <span class="na">type=</span><span class="s">"xs:string"</span>
+                                      <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"operator"</span>
+                                      <span class="na">type=</span><span class="s">"operator"</span>
+                                      <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"value"</span>
+                                      <span class="na">type=</span><span class="s">"xs:string"</span>
+                                      <span class="na">use=</span><span class="s">"optional"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"type"</span>
+                                      <span class="na">type=</span><span class="s">"xs:string"</span>
+                                      <span class="na">use=</span><span class="s">"optional"</span><span class="nt">/&gt;</span>
+
+                      <span class="nt">&lt;/xs:complexType&gt;</span>
+                    <span class="nt">&lt;/xs:element&gt;</span>
+                  <span class="nt">&lt;/xs:choice&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"version"</span><span class="nt">&gt;&lt;/xs:attribute&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"distinct"</span>
+                                <span class="na">type=</span><span class="s">"xs:boolean"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xs:complexType&gt;</span>
+              <span class="nt">&lt;/xs:element&gt;</span>
+            <span class="nt">&lt;/xs:sequence&gt;</span>
+          <span class="nt">&lt;/xs:complexType&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"layoutxml"</span>
+                    <span class="na">minOccurs=</span><span class="s">"0"</span>
+                    <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:complexType&gt;</span>
+            <span class="nt">&lt;xs:sequence&gt;</span>
+              <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"grid"</span>
+                          <span class="na">minOccurs=</span><span class="s">"0"</span>
+                          <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:complexType&gt;</span>
+                  <span class="nt">&lt;xs:sequence&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"row"</span>
+                                <span class="na">minOccurs=</span><span class="s">"1"</span>
+                                <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;xs:complexType&gt;</span>
+                        <span class="nt">&lt;xs:sequence&gt;</span>
+                          <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"cell"</span>
+                                      <span class="na">minOccurs=</span><span class="s">"1"</span>
+                                      <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;xs:complexType&gt;</span>
+                              <span class="nt">&lt;xs:sequence&gt;&lt;/xs:sequence&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"name"</span>
+                                            <span class="na">type=</span><span class="s">"xs:string"</span>
+                                            <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"width"</span>
+                                            <span class="na">type=</span><span class="s">"xs:integer"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"LabelId"</span>
+                                            <span class="na">type=</span><span class="s">"xs:string"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"label"</span>
+                                            <span class="na">type=</span><span class="s">"xs:string"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"desc"</span>
+                                            <span class="na">type=</span><span class="s">"xs:string"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"ishidden"</span>
+                                            <span class="na">type=</span><span class="s">"xs:integer"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"disableSorting"</span>
+                                            <span class="na">type=</span><span class="s">"xs:integer"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"disableMetaDataBinding"</span>
+                                            <span class="na">type=</span><span class="s">"xs:integer"</span>
+                                            <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                              <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"cellType"</span>
+                                            <span class="na">type =</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+                            <span class="nt">&lt;/xs:complexType&gt;</span>
+                          <span class="nt">&lt;/xs:element&gt;</span>
+                        <span class="nt">&lt;/xs:sequence&gt;</span>
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"name"</span>
+                                      <span class="na">type=</span><span class="s">"xs:string"</span>
+                                      <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"id"</span>
+                                      <span class="na">type=</span><span class="s">"xs:string"</span>
+                                      <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"multiobjectidfield"</span>
+                                      <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"layoutstyle"</span>
+                                      <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+                      <span class="nt">&lt;/xs:complexType&gt;</span>
+                    <span class="nt">&lt;/xs:element&gt;</span>
+                  <span class="nt">&lt;/xs:sequence&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"name"</span>
+                                <span class="na">type=</span><span class="s">"xs:string"</span>
+                                <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"select"</span>
+                                <span class="na">type=</span><span class="s">"xs:boolean"</span>
+                                <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"preview"</span>
+                                <span class="na">type=</span><span class="s">"BoolOrEmpty"</span>
+                                <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"icon"</span>
+                                <span class="na">type=</span><span class="s">"BoolOrEmpty"</span>
+                                <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"jump"</span>
+                                <span class="na">type=</span><span class="s">"xs:string"</span>
+                                <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"object"</span>
+                                <span class="na">type=</span><span class="s">"xs:integer"</span>
+                                <span class="na">use=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"disableInlineEditing"</span>
+                                <span class="na">type=</span><span class="s">"xs:integer"</span>
+                                <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"iconrenderer"</span>
+                                <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+                  <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"multilinerows"</span>
+                                <span class="na">type=</span><span class="s">"BoolOrEmpty"</span>
+                                <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/xs:complexType&gt;</span>
+              <span class="nt">&lt;/xs:element&gt;</span>
+            <span class="nt">&lt;/xs:sequence&gt;</span>
+          <span class="nt">&lt;/xs:complexType&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+      <span class="nt">&lt;/xs:all&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"donotuseinLCID"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span>
+                    <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"useinLCID"</span>
+                    <span class="na">type=</span><span class="s">"xs:string"</span>
+                    <span class="na">use=</span><span class="s">"optional"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;/xs:element&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"SerializedInteger"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+      <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:nonNegativeInteger"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"formattedvalue"</span>
+                      <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/xs:extension&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"build"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"1.504021"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"1.003017"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"operator"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"neq"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"ne"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"gt"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"ge"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"le"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"lt"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"like"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"not-like"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"in"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"not-in"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"between"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"not-between"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"null"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"not-null"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"yesterday"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"today"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"tomorrow"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-seven-days"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-seven-days"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-week"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"this-week"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-week"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-month"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"this-month"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-month"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"on"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"on-or-before"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"on-or-after"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"this-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-x-hours"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-x-hours"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-x-days"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-x-days"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-x-weeks"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-x-weeks"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-x-months"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-x-months"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"olderthan-x-months"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"olderthan-x-years"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"olderthan-x-weeks"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"olderthan-x-days"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"olderthan-x-hours"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"olderthan-x-minutes"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-x-years"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-x-years"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-userid"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"ne-userid"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-userteams"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-useroruserteams"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-useroruserhierarchy"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-useroruserhierarchyandteams"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-businessid"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"ne-businessid"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-userlanguage"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"this-fiscal-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"this-fiscal-period"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-fiscal-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-fiscal-period"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-fiscal-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-fiscal-period"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-x-fiscal-years"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"last-x-fiscal-periods"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-x-fiscal-years"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"next-x-fiscal-periods"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"in-fiscal-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"in-fiscal-period"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"in-fiscal-period-and-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"in-or-before-fiscal-period-and-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"in-or-after-fiscal-period-and-year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"begins-with"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"not-begin-with"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"ends-with"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"not-end-with"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"under"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-or-under"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"not-under"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"above"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"eq-or-above"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"VersionType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+      <span class="nt">&lt;xs:documentation</span> <span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+        The representation of a Version number.
+      <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"^[0-9]+(\.[0-9]+){1,3}$"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"guid"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"\{?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}?"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"BoolOrEmpty"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:union</span> <span class="na">memberTypes=</span><span class="s">"xs:boolean"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:simpleType&gt;</span>
+        <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xs:restriction&gt;</span>
+      <span class="nt">&lt;/xs:simpleType&gt;</span>
+    <span class="nt">&lt;/xs:union&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"IntOrEmpty"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:union</span> <span class="na">memberTypes=</span><span class="s">"xs:integer"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:simpleType&gt;</span>
+        <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/xs:restriction&gt;</span>
+      <span class="nt">&lt;/xs:simpleType&gt;</span>
+    <span class="nt">&lt;/xs:union&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"TrueFalse01Type"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"AggregateType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"count"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"countcolumn"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"sum"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"avg"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"min"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"max"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"RowAggregateType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"countchildren"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"DateGroupingType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"day"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"week"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"month"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"quarter"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"year"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"fiscal-period"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"fiscal-year"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"FetchBoolType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:NMTOKEN"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:enumeration</span> <span class="na">value=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+  <span class="nt">&lt;/xs:simpleType&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"SerializedTrueFalse01Type"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+      <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"TrueFalse01Type"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"name"</span>
+                      <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/xs:extension&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"LocalizedNamesType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"LocalizedName"</span>
+                  <span class="na">type=</span><span class="s">"FieldXmlFieldUIType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"DescriptionsType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Description"</span>
+                  <span class="na">type=</span><span class="s">"FieldXmlFieldUIType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"ColorsType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Color"</span>
+                  <span class="na">type=</span><span class="s">"FieldXmlFieldUIType"</span>
+                  <span class="na">minOccurs=</span><span class="s">"0"</span>
+                  <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+  <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"FieldXmlFieldUIType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"id"</span>
+                  <span class="na">type=</span><span class="s">"guid"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"description"</span>
+                  <span class="na">use=</span><span class="s">"required"</span>
+                  <span class="na">type=</span><span class="s">"xs:string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"languagecode"</span>
+                  <span class="na">use=</span><span class="s">"required"</span>
+                  <span class="na">type=</span><span class="s">"xs:positiveInteger"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</code></pre></div></div>
+
+            <hr />
+            <center><a href="https://www.buymeacoffee.com/AshV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;"></a></center>
+            <footer class="site-footer">
+                <div id="disqus_thread"></div>
+                <script>(function () { var d = document, s = d.createElement('script'); s.src = 'https://ashish-vishwakarma.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();</script>
+                <span class="site-footer-credits">©<a href="https://www.ashishvishwakarma.com/">Ashish Vishwakarma</a>. | <a href="https://www.ashishvishwakarma.com/posts">Read More Posts</a></span>
+            </footer>
+        </article>
+        <script>(function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-88171590-1', 'auto'); ga('send', 'pageview');</script>
+    </article>
+
+            
+            <footer class="site-footer">
+                <!-- SVG icons from https://iconmonstr.com -->
+                
+                <!-- Github icon -->
+                <span class="my-span-icon">
+                    <a href="" aria-label="'s GitHub" title="'s GitHub">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- Twitter icon -->
+                <span class="my-span-icon">
+                    <a href="https://twitter.com/" aria-label="'s Twitter" title="'s Twitter">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+                    </a>
+                </span>
+                
+                <!-- RSS icon -->
+                
+                
+                <!-- Contact icon -->
+                
+                
+                <span class="my-span-icon">
+                    <a href="http://localhost:4000/contact.html" aria-label="Contact" title="Contact ">
+                        <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+                    </a>
+                </span>
+                
+                
+            </footer>
+        </section>
+        
+        <script>
+            var menu = document.querySelector("nav.site-nav");
+            var checkbox = document.getElementById("nav-trigger");
+            
+            // close menu if click outside menu
+            document.addEventListener("click", function(e) {
+                if (menu != e.target &&
+                        !isDescendant(menu, e.target)) {
+                    checkbox.checked = false;
+                }
+            }, false);
+            
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }  
+        </script>
+        
+    </body>
+    </html>
+    

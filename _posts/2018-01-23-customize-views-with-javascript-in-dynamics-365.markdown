@@ -11,12 +11,12 @@ permalink: customize-views-with-javascript-in-dynamics-365/
 Dynamics 365 v9.0 onwards JavaScript scripting is not only limited to Forms, you can even customize views. More specifically you can just add icon in cells as of now, I was expecting more features actually but it didn’t have.
 
 ## What is Offered?
-> ![1_OOB_Icons.png](assets/2018-01-23/1_OOB_Icons.png)
+> ![1_OOB_Icons.png](/assets/2018-01-23/1_OOB_Icons.png)
 
 As you can see in above image, those icons in view cells were already available in some OOB views, now you can use in custom view as well.
 
 ## Where to customize?
-> ![2_View_Properties.png](assets/2018-01-23/2_View_Properties.png)
+> ![2_View_Properties.png](/assets/2018-01-23/2_View_Properties.png)
 Goto any view's property, you can see 2 new fields **Web Resource** and **Function Name**, which is very similar to Forms when you write JS.
 
 ## What to write in Web Resource?
@@ -72,7 +72,7 @@ Based on those 2 inputs you can decide what icon to show. And name of this funct
 I’ll be doing all the customizations in **All Cases** view of **Case** entity. So you can try it right away in new trial instance without creating any custom entity/view.
 
 Add one JS web resource 
-> ![Add one JS web resource](assets/2018-01-23/3_Add_Web_Resource.png)
+> ![Add one JS web resource](/assets/2018-01-23/3_Add_Web_Resource.png)
 
 And write below code in it
 ```javascript
@@ -98,19 +98,19 @@ function casePriorityIcons(rowData, userLCID) {
   return [imgWebResource, imgTooltip];
 }
 ```
-> ![4_Icons_as_Webresource.png](assets/2018-01-23/4_Icons_as_Webresource.png)
+> ![4_Icons_as_Webresource.png](/assets/2018-01-23/4_Icons_as_Webresource.png)
 
 In above code I'm reading cell data which is priority field of case, and according to value it will show color icon in from of it. I have added three 16x16(if you'll take different size it will be scaled back to 16x16, so better take optimized size) icons with color Red, Yellow & Green for High, Normal & Low priorities respectively.
 Function returns an array of size 2, first element tells name of image web resource to show and second is tool-tip text.
 You can use below images in your web resource.
 
-High : ![High Red](assets/2018-01-23/High.png) | Normal : ![Normal Yellow](assets/2018-01-23/Medium.png) | Low : ![Low Green](assets/2018-01-23/Low.png)
+High : ![High Red](/assets/2018-01-23/High.png) | Normal : ![Normal Yellow](/assets/2018-01-23/Medium.png) | Low : ![Low Green](/assets/2018-01-23/Low.png)
 
 I've set Web resource and function name in All Cases view property for Priority field.
-> ![5_setting_webresource.png](assets/2018-01-23/5_setting_webresource.png)
+> ![5_setting_webresource.png](/assets/2018-01-23/5_setting_webresource.png)
 
 Publish everything and navigate to **All Cases** view.
-> ![Final Output Working!](assets/2018-01-23/6_hooray.png)
+> ![Final Output Working!](/assets/2018-01-23/6_hooray.png)
 
 Hooray! It's working!
 I didn't play anything with second parameter i.e. LCID, you can explore usecases and try.
@@ -134,9 +134,9 @@ All this magic happens in **layoutxml** of view you can see below.
 </grid>
 ```
 Here `<cell name="prioritycode" width="150" imageproviderfunctionname="casePriorityIcons" imageproviderwebresource="$webresource:ashv_ViewCustomizations" />` got 2 extra attributes with name of web resource and function, they set image source and title while rendering view(see image below).
-![7_in_html.png](assets/2018-01-23/7_in_html.png)
+![7_in_html.png](/assets/2018-01-23/7_in_html.png)
 
-You can download this as unmanaged solution [here.](assets/2018-01-23/CaseViewCustomizations_1_0_0_0.zip)
+You can download this as unmanaged solution [here.](/assets/2018-01-23/CaseViewCustomizations_1_0_0_0.zip)
 
 Feel free to get in touch for any query regarding this.
 

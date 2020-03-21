@@ -10,7 +10,7 @@ Sharing content for [webinar](https://www.c-sharpcorner.com/events/getting-start
 
 > Targetted audience for this webinar were .Net developers who wanted to get started with Dynamics 365/CRM Development
 
-![dynamics-365-101-webinar-cover](assets/2017-09-03/dynamics-365-101-webinar-cover.jpg)
+![dynamics-365-101-webinar-cover](/assets/2017-09-03/dynamics-365-101-webinar-cover.jpg)
 
 ## Slides
 {% raw %}<iframe src="//slides.com/ashv/dynamics-365-101/embed?style=light" width="100%" height="500" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>{% endraw %}

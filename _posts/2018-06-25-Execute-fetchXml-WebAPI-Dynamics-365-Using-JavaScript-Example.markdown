@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: Execute-fetchXml-WebAPI-Dynamics-365-Using-JavaScript-Example/
 ---
 
-![Dynamics 365 Header](assets/2018-06-25/ms-dynamics-365-header.webp)
+![Dynamics 365 Header](/assets/2018-06-25/ms-dynamics-365-header.webp)
 
 In Dynamics 365 WebAPI we can retrieve data using OData queries, but if there is some complex requirement it's better to query using fetchXML, and good news is Dynamics 365 WebAPI supports querying using fetchXML. With fetchXML we have 2 main advantage, it can be easily generated using Advanced Find & It's more readable. You can even use Joins & Aggregate function in fetchXML queries which are not possible using Advanced Find(refer http://msxrmtools.com/fetchxml/reference). Let's see how can we query fetchXML with WebAPI.
 
@@ -14,11 +14,11 @@ In Dynamics 365 WebAPI we can retrieve data using OData queries, but if there is
 
 Click on funnel icon to open Advanced Find window.
 
-![Filter-Button](assets/2018-06-25/Filter-Button.png)
+![Filter-Button](/assets/2018-06-25/Filter-Button.png)
 
 I have created a simple fetchXML query to retrieve all the active cases with few columns.
 
-![Advanced-Find](assets/2018-06-25/Advanced-Find.png)
+![Advanced-Find](/assets/2018-06-25/Advanced-Find.png)
 
 Click on "Download Fetch XML" button to get the below fetchXML query.
 
@@ -275,14 +275,14 @@ To test the above code I made small tweaks to run it from HTML web resource as y
 
 Create new HTML web resource with above code & publish it.
 
-![Test-Web-Resource](assets/2018-06-25/Test-Web-Resource.png)
+![Test-Web-Resource](/assets/2018-06-25/Test-Web-Resource.png)
 
 Click on the URL to open it, you will see below window.
 
-![Test-Window](assets/2018-06-25/Test-Window.png)
+![Test-Window](/assets/2018-06-25/Test-Window.png)
 
 Press F12 to open console, click on buttons to verify the retrieved data in console & alert.
 
-![Testing](assets/2018-06-25/Testing.png)
+![Testing](/assets/2018-06-25/Testing.png)
 
 > Thanks for reading, Hope it helps!
