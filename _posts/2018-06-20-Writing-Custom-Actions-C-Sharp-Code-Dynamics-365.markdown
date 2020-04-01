@@ -12,13 +12,13 @@ Custom Actions are lesser used processes than Workflows and Plugins in Dynamics 
 
 In Visual Studio create new project of type Class Library & select framework version 4.5.2, this might change for future versions. Name I have given as **MyCasesAction**, which tells the purpose of the workflow.
 
-![new-project](/assets/2018-06-20/new-project.png)
+![new-project](../assets/2018-06-20/new-project.png)
 
 ### Step 2: Add Required Packags
 
 Goto manage nugget packages and install **Microssoft.CrmSdk.CoreAssemblies**(for Microsoft.Xrm.Sdk namespace) & **Microssoft.CrmSdk.Workflow**(for Microsoft.Xrm.Sdk.Workflow namespace).
 
-![nugget-packages](/assets/2018-06-20/nugget-packages.png)
+![nugget-packages](../assets/2018-06-20/nugget-packages.png)
 
 ### Step 3: Create MyCasesAction Class
 
@@ -138,7 +138,7 @@ In Dynamics 365 it is necessary to sign the assembly before registering. To do t
 8. Click Ok to generate key and sign the assembly.
 9. Build the solution
 
-![sign-assembly](/assets/2018-06-20/sign-assembly.png)
+![sign-assembly](../assets/2018-06-20/sign-assembly.png)
 
 ### Step 7: Register the Assembly in Dynamics 365
 
@@ -146,53 +146,53 @@ Open the Plugin Registration Tool and connect with your organization. If you don
 
 **1.** Click on Register then Register New Assembly.
 
-![Register-New-Assembly](/assets/2018-06-20/Register-New-Assembly.png)
+![Register-New-Assembly](../assets/2018-06-20/Register-New-Assembly.png)
 
 **2.** Register New Assembly popup will appear, select your project DLL from bin/debug folder of project.
 
-![Load-Assembly](/assets/2018-06-20/Load-Assembly.png)
+![Load-Assembly](../assets/2018-06-20/Load-Assembly.png)
 
 **3.** After selecting DLL, make sure Select All is selected in Step 2.
 
-![Select-All](/assets/2018-06-20/Select-All.png)
+![Select-All](../assets/2018-06-20/Select-All.png)
 
 **4.** Leave rest of he options as it is and click **Register Selected Plugins**, it should register your assembly successfully.
 
-![Registered](/assets/2018-06-20/Registered.png)
+![Registered](../assets/2018-06-20/Registered.png)
 
 **5.** You can verify the assembly after registering in Plugin Registration Tool.
 
-![Verify-DLL](/assets/2018-06-20/Verify-DLL.png)
+![Verify-DLL](../assets/2018-06-20/Verify-DLL.png)
 
 ### Step 8: Creating Custom Action in CRM and Consuming MyCasesAction
 
 **1.** Goto solution, create new process, set name as "Get My Cases", set category as "Action" & in entity I'm setting as "None (global)". If we will select some entity here, our action will get one default input parameter of type same as given entity.
 
-![New-Blank-Action](/assets/2018-06-20/New-Blank-Action.png)
+![New-Blank-Action](../assets/2018-06-20/New-Blank-Action.png)
 
 **2.** Add 2 output arguments with same type as output parameters given in MyCasesAction class. Name not need to be the same but you can give same to avoid confusion.
 
-![Add-Arguments](/assets/2018-06-20/Add-Arguments.png)
+![Add-Arguments](../assets/2018-06-20/Add-Arguments.png)
 
 **3.** Click on Add Step & look for your assembly i.e MyCasesAction, click on it and select **MyCasesAction.MyCasesAction** step.
 
-![Add-Step](/assets/2018-06-20/Add-Step.png)
+![Add-Step](../assets/2018-06-20/Add-Step.png)
 
 **4.** Step added from assembly will return case count and names, which should be set to output arguments, add "Assign Value" step for both arguments.
 
-![Assign-Value](/assets/2018-06-20/Assign-Value.png)
+![Assign-Value](../assets/2018-06-20/Assign-Value.png)
 
 **5.** Click on "Set Properties" in Assign Value to set output argument value. Do it for both "CaseCount" & "CaseNames".
 
-![Set-CaseCount](/assets/2018-06-20/Set-CaseCount.png)
+![Set-CaseCount](../assets/2018-06-20/Set-CaseCount.png)
 
 **6.** Save your process & Click on "Activate" to activate it.
 
-![Action-Completed](/assets/2018-06-20/Action-Completed.png)
+![Action-Completed](../assets/2018-06-20/Action-Completed.png)
 
 **7.** It will ask for confirmation, click "Activate" to confirm.
 
-![Confirm-Activation](/assets/2018-06-20/Confirm-Activation.png)
+![Confirm-Activation](../assets/2018-06-20/Confirm-Activation.png)
 
 Congratulations! You have successfully created Custom Action. Let's test it now.
 
@@ -202,7 +202,7 @@ As I mentioned above, Custom Actions can be triggered with code only. I will be 
 
 You need to grab Unique Name/Logical Name of your process. Which id **new_GetMyCases** in our case.
 
-![Unique-Name](/assets/2018-06-20/Unique-Name.png)
+![Unique-Name](../assets/2018-06-20/Unique-Name.png)
 
 After downloading [Dynamics 365 Console Caller](https://www.ashishvishwakarma.com/Dynamics365ConsoleCaller/) open in visual studio and open Program.cs. Provide connection details & add code to test your custom action. 
 

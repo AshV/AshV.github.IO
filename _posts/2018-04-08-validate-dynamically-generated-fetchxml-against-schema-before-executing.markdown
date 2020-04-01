@@ -12,7 +12,7 @@ Let's get started, here I'm using a console application.
 
 **Step 1**. We need FetchXml schema which can be grabbed from SDK or can be found at the end of this article. Add this file with name **fetch.xsd** to your project and set **Copy to Output Directory** property as **Copy Always**.
 
-![Fetch.xsd Properties](/assets/2018-04-08/Fetch.xsd_Properties.png)
+![Fetch.xsd Properties](../assets/2018-04-08/Fetch.xsd_Properties.png)
 
 **Step 2**. Add below listed namespaces to project
  
@@ -89,7 +89,7 @@ static void Main(string[] args)
 ```
 
 Here given fetchXml looks fine let's execute it.
-![Invalid fetchXml](/assets/2018-04-08/Invalid_fetchXml.png)
+![Invalid fetchXml](../assets/2018-04-08/Invalid_fetchXml.png)
 No it was Invalid because for **contains** fetchXml uses **like** similar to SQL, let's fix it and run again.
 
 ```csharp
@@ -110,7 +110,7 @@ static void Main(string[] args)
         $"fetchXml is invalid because {validateFetchXml.Message}");
 }
 ```
-![Valid_fetchXml.png](/assets/2018-04-08/Valid_fetchXml.png)
+![Valid_fetchXml.png](../assets/2018-04-08/Valid_fetchXml.png)
 
 **Step 5**. If you don't want to keep schema as a separate file, you can keep it as string and convert it to MemoryStream, like here we are reading fetchXml string.
 

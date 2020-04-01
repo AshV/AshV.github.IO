@@ -17,6 +17,6 @@ This solution in superuser just shows recent tabs not all
 2. [How can I export the list of open Chrome tabs?](https://android.stackexchange.com/questions/56635/how-can-i-export-the-list-of-open-chrome-tabs)
 Working but not quick
 
-![Chrome Laughing at You](/assets/2018-01-17/Chrome-Laughs.jpeg)
+![Chrome Laughing at You](../assets/2018-01-17/Chrome-Laughs.jpeg)
 
 Let's see if any quick and easy way is there to Export all open tabs in Chrome for Android in near future.

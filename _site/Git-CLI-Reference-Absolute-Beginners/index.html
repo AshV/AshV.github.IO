@@ -202,7 +202,7 @@
     </header> -->
 
         <article itemprop="articleBody">
-            <p><img src="/assets/2018-06-16/Git-Banner.png" alt="Git-Banner" /></p>
+            <p><img src="../assets/2018-06-16/Git-Banner.png" alt="Git-Banner" /></p>
 
 <p><a href="https://github.com/git/git">Git</a> is a distributed version control system, developed by <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> in 2005 and currently maintained by <a href="https://github.com/gitster">Junio C Hamano</a>. There are many popular GUI tools and extensions are available to use git, but originally git was developed as command line tool, it is still fun to use git using command line, you will also understand under the hood magic done by GUI tools.</p>
 
@@ -212,13 +212,13 @@
   <p>Version Control Systems are used for Time Travel by <del>Astronaults</del> Developers.</p>
 </blockquote>
 
-<p><img src="/assets/2018-06-16/VCS-Problem.jpg" alt="VCS Problem" /></p>
+<p><img src="../assets/2018-06-16/VCS-Problem.jpg" alt="VCS Problem" /></p>
 
 <p>If you ever had your project copies likes above image, definitely you need a Version Control System. Version Control Systems maintains version of files without creating multiple copies, you need to commit the changes to store versions, you can go travel back and forth in commit history and get your files at any desired point of time. Now you can relate why I used the word “Time Travel”.</p>
 
 <p>Git is not the only version control system, there are many, you can see a comparison in <a href="https://en.wikipedia.org/wiki/Comparison_of_version_control_software">Wikipedia</a>, There are many online services which provide git services, popular ones are <a href="https://github.com">GitHub</a>, <a href="https://about.gitlab.com">GitLab</a>, <a href="https://bitbucket.org">BitBucket</a> &amp; <a href="https://www.visualstudio.com/team-services/">Visual Studio Team Services</a>(Yes, they do provide git, along with VSTS)</p>
 
-<p><img src="/assets/2018-06-16/Git-Services.png" alt="Git-Services" /></p>
+<p><img src="../assets/2018-06-16/Git-Services.png" alt="Git-Services" /></p>
 
 <p>But you don’t actually need any one of them, to try out <strong>Git</strong>, because it is not just a Version Control System, it is a <strong>Distributed Version Control System</strong>, which plays major role for popularity of Git.</p>
 
@@ -228,7 +228,7 @@
 
 <p>In distribute version control systems each user will have own copy of complete repository, here I’m using 2 terms  “working copy” &amp; “repository”. Working copy refers to the current version of source code in a repository, which mostly will be the latest version of source code, but not necessarily. Repository contains all the history of source code, you can traverse to any commit without contacting sever.</p>
 
-<p><img src="/assets/2018-06-16/DVCS.png" alt="Distribute Version Control System" /></p>
+<p><img src="../assets/2018-06-16/DVCS.png" alt="Distribute Version Control System" /></p>
 
 <p>As you can see in above image, 3 workstations are working on same project, and each one of them has their own repository, which talks to one remote repository located in some server. Here each developer can work independently and can commit the source code in their local repository, he needs to push the code in remote repository only when he wants to share the code with other collaborators of the project. Once code is pushed in remote repository other can pull this into their local repository.</p>
 
@@ -240,27 +240,27 @@
 
 <p>Download appropriate version of git according to your platform from <a href="https://git-scm.com/downloads">https://git-scm.com/</a> and install.</p>
 
-<p><img src="/assets/2018-06-16/git-download.png" alt="git-download" /></p>
+<p><img src="../assets/2018-06-16/git-download.png" alt="git-download" /></p>
 
 <p>If you are using Visual Studio 2017 or higher, you can open Visual Studio Installer and click Modify.</p>
 
-<p><img src="/assets/2018-06-16/VS-Installer.png" alt="VS-Installer" /></p>
+<p><img src="../assets/2018-06-16/VS-Installer.png" alt="VS-Installer" /></p>
 
 <p>Select “Git for Windows” in Individual components &amp; modify to install git.</p>
 
-<p><img src="/assets/2018-06-16/Git-Component.png" alt="Git-Component" /></p>
+<p><img src="../assets/2018-06-16/Git-Component.png" alt="Git-Component" /></p>
 
 <h3 id="verifying-installation">Verifying Installation</h3>
 
 <p>You will get Git Bash, Git CMD &amp; Git GUI after successful installation of git. You can use command line in either Git Bash or Git CMD according to your preference. If Windows is your preferred OS then Git CMD is better choice &amp; if you love Linux go for Git Bash. You can also run git commands from windows command prompt if environment variable is set.</p>
 
-<p><img src="/assets/2018-06-16/git-installed.png" alt="git-installed" /></p>
+<p><img src="../assets/2018-06-16/git-installed.png" alt="git-installed" /></p>
 
 <p>Run <code class="highlighter-rouge">git</code> command to verify successful installation. All git commands should be written in small letters compulsory.</p>
 
-<p><img src="/assets/2018-06-16/Git-Bash.png" alt="Git-Bash" /></p>
+<p><img src="../assets/2018-06-16/Git-Bash.png" alt="Git-Bash" /></p>
 
-<p><img src="/assets/2018-06-16/Git-CMD.png" alt="Git-CMD" /></p>
+<p><img src="../assets/2018-06-16/Git-CMD.png" alt="Git-CMD" /></p>
 
 <h2 id="configuring-git">Configuring Git</h2>
 
@@ -292,9 +292,9 @@
 
 <h4 id="git-config-in-action">git config in action</h4>
 
-<p><img src="/assets/2018-06-16/git-config.png" alt="git-config" /></p>
+<p><img src="../assets/2018-06-16/git-config.png" alt="git-config" /></p>
 
-<p><img src="/assets/2018-06-16/git-config-cmd.png" alt="git-config-cmd" /></p>
+<p><img src="../assets/2018-06-16/git-config-cmd.png" alt="git-config-cmd" /></p>
 
 <h2 id="creating-new-repository">Creating New Repository</h2>
 
@@ -302,16 +302,16 @@
 
 <h3 id="-git-init">$ git init</h3>
 
-<p><img src="/assets/2018-06-16/folder.png" alt="folder" /></p>
+<p><img src="../assets/2018-06-16/folder.png" alt="folder" /></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-init.png" alt="git-init" /></p>
+<p><img src="../assets/2018-06-16/git-init.png" alt="git-init" /></p>
 
 <p>I created one folder in my file system with name Git-Demo &amp; ran <code class="highlighter-rouge">git init</code> in this folder using command line. You can see the message <strong>Initialized empty Git repository in A:/GitHub_AshV/Git-Demo/.git/</strong>. Did you observe <strong>.git</strong> in message. Let’s verify in file system.</p>
 
-<p><img src="/assets/2018-06-16/repository.png" alt="repository" /></p>
+<p><img src="../assets/2018-06-16/repository.png" alt="repository" /></p>
 
 <p>There is one hidden folder created with name <code class="highlighter-rouge">.git</code>, this folder is responsible for maintaining versions and other metadata related to repository. (Hidden files &amp; folder should be visible in your OS settings to see this folder).</p>
 
@@ -322,7 +322,7 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-status.png" alt="git-status" /></p>
+<p><img src="../assets/2018-06-16/git-status.png" alt="git-status" /></p>
 
 <p>Hmmm, ReadMe.md is untracked 🤔, Untracked file means it will be there in file system but git will not be aware of it. Let’s add it to repository.</p>
 
@@ -337,7 +337,7 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add ReadMe.md
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-add.png" alt="git-add" /></p>
+<p><img src="../assets/2018-06-16/git-add.png" alt="git-add" /></p>
 
 <p>If we have multiple files, then we have to run this command for each file, or we can add all files with <code class="highlighter-rouge">git add .</code> and remove/unstage unwanted files later.</p>
 
@@ -346,7 +346,7 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add .
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-add-all.png" alt="git-add-all" /></p>
+<p><img src="../assets/2018-06-16/git-add-all.png" alt="git-add-all" /></p>
 
 <h2 id="removingunstaging-files-in-repository">Removing/Unstaging Files in Repository</h2>
 
@@ -355,7 +355,7 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rm --cached unwanted.txt
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-rm.png" alt="git-rm" /></p>
+<p><img src="../assets/2018-06-16/git-rm.png" alt="git-rm" /></p>
 
 <h2 id="commiting-the-changes">Commiting the Changes</h2>
 
@@ -364,7 +364,7 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -m "adding 3 demo files" 
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-commit.png" alt="git-commit" /></p>
+<p><img src="../assets/2018-06-16/git-commit.png" alt="git-commit" /></p>
 
 <p>You can observe here before commit those 3 files were visible in green under “Changes to be committed” section, now they are committed that’s why not visible here.</p>
 
@@ -387,15 +387,15 @@ Except GitHub above mentioned other services are providing private repositories 
 
 <p>Navigate to (https://github.com)[https://github.com] login into your account or create one if don’t have already. And click on create new repository.</p>
 
-<p><img src="/assets/2018-06-16/new-repo.png" alt="new-repo" /></p>
+<p><img src="../assets/2018-06-16/new-repo.png" alt="new-repo" /></p>
 
 <p>You can give any name here, it could be different than your folder name in local. I have given different name <code class="highlighter-rouge">Git-Demonstration</code>. Don’t select anything in highlighted section those are for completely new repository but here we have already created repository in local.</p>
 
-<p><img src="/assets/2018-06-16/create-new-repo.png" alt="create-new-repo" /></p>
+<p><img src="../assets/2018-06-16/create-new-repo.png" alt="create-new-repo" /></p>
 
 <p>After click on “Create Repository” you will see similar screen with command given.</p>
 
-<p><img src="/assets/2018-06-16/repo-created.png" alt="repo-created" /></p>
+<p><img src="../assets/2018-06-16/repo-created.png" alt="repo-created" /></p>
 
 <h3 id="link-remote-repository">Link Remote Repository</h3>
 
@@ -406,14 +406,14 @@ Except GitHub above mentioned other services are providing private repositories 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add origin https://github.com/AshV/Git-Demonstration.git
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-remote.png" alt="git-remote" /></p>
+<p><img src="../assets/2018-06-16/git-remote.png" alt="git-remote" /></p>
 
 <p>To verify remote URL you can run this command with <code class="highlighter-rouge">-v</code></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote -v
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-remote-v.png" alt="git-remote-v" /></p>
+<p><img src="../assets/2018-06-16/git-remote-v.png" alt="git-remote-v" /></p>
 
 <h2 id="pushing-changes-to-server">Pushing Changes To Server</h2>
 
@@ -427,7 +427,7 @@ Except GitHub above mentioned other services are providing private repositories 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push -u origin master
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-push.png" alt="git-push" /></p>
+<p><img src="../assets/2018-06-16/git-push.png" alt="git-push" /></p>
 
 <h2 id="taking-latest-from-server">Taking latest from Server</h2>
 
@@ -436,7 +436,7 @@ Except GitHub above mentioned other services are providing private repositories 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git pull
 </code></pre></div></div>
 
-<p><img src="/assets/2018-06-16/git-pull.png" alt="git-pull" /></p>
+<p><img src="../assets/2018-06-16/git-pull.png" alt="git-pull" /></p>
 
 <p>You can see latest changes made <code class="highlighter-rouge">ReadMe.md</code> are retrieved to local.</p>
 

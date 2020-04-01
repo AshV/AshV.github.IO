@@ -12,7 +12,7 @@ permalink: bpf-import-error-this-process-cannot-be-imported-because-it-cannot-be
 
 Have you ever faced this error while importing Dynamics 365 solution containing Business Process Flow
 
-![Import Solution Error](/assets/2017-11-03/Import_Solution_Error.png)
+![Import Solution Error](../assets/2017-11-03/Import_Solution_Error.png)
 
 This occurs because BPF implementation is different in Dynamics 365(version 8.2) than previous, you can read more here [https://support.microsoft.com/en-in/help/4020021/after-updating-to-dynamics-365-mismatched-business-process-flow-entity](https://support.microsoft.com/en-in/help/4020021/after-updating-to-dynamics-365-mismatched-business-process-flow-entity)
 

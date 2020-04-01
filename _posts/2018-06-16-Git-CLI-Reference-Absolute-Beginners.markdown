@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: Git-CLI-Reference-Absolute-Beginners/
 ---
 
-![Git-Banner](/assets/2018-06-16/Git-Banner.png)
+![Git-Banner](../assets/2018-06-16/Git-Banner.png)
 
 [Git](https://github.com/git/git) is a distributed version control system, developed by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) in 2005 and currently maintained by [Junio C Hamano](https://github.com/gitster). There are many popular GUI tools and extensions are available to use git, but originally git was developed as command line tool, it is still fun to use git using command line, you will also understand under the hood magic done by GUI tools.
 
@@ -14,13 +14,13 @@ permalink: Git-CLI-Reference-Absolute-Beginners/
 
 > Version Control Systems are used for Time Travel by ~~Astronaults~~ Developers.
 
-![VCS Problem](/assets/2018-06-16/VCS-Problem.jpg)
+![VCS Problem](../assets/2018-06-16/VCS-Problem.jpg)
 
 If you ever had your project copies likes above image, definitely you need a Version Control System. Version Control Systems maintains version of files without creating multiple copies, you need to commit the changes to store versions, you can go travel back and forth in commit history and get your files at any desired point of time. Now you can relate why I used the word "Time Travel".
 
 Git is not the only version control system, there are many, you can see a comparison in [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_version_control_software), There are many online services which provide git services, popular ones are [GitHub](https://github.com), [GitLab](https://about.gitlab.com), [BitBucket](https://bitbucket.org) & [Visual Studio Team Services](https://www.visualstudio.com/team-services/)(Yes, they do provide git, along with VSTS)
 
-![Git-Services](/assets/2018-06-16/Git-Services.png)
+![Git-Services](../assets/2018-06-16/Git-Services.png)
 
 But you don't actually need any one of them, to try out **Git**, because it is not just a Version Control System, it is a **Distributed Version Control System**, which plays major role for popularity of Git.
 
@@ -30,7 +30,7 @@ As I mentioned above we don't need any git service to try out **Git**, but only 
 
 In distribute version control systems each user will have own copy of complete repository, here I'm using 2 terms  "working copy" & "repository". Working copy refers to the current version of source code in a repository, which mostly will be the latest version of source code, but not necessarily. Repository contains all the history of source code, you can traverse to any commit without contacting sever.
 
-![Distribute Version Control System](/assets/2018-06-16/DVCS.png)
+![Distribute Version Control System](../assets/2018-06-16/DVCS.png)
 
 As you can see in above image, 3 workstations are working on same project, and each one of them has their own repository, which talks to one remote repository located in some server. Here each developer can work independently and can commit the source code in their local repository, he needs to push the code in remote repository only when he wants to share the code with other collaborators of the project. Once code is pushed in remote repository other can pull this into their local repository.
 
@@ -40,27 +40,27 @@ As you can see in above image, 3 workstations are working on same project, and e
 
 Download appropriate version of git according to your platform from [https://git-scm.com/](https://git-scm.com/downloads) and install.
 
-![git-download](/assets/2018-06-16/git-download.png)
+![git-download](../assets/2018-06-16/git-download.png)
 
 If you are using Visual Studio 2017 or higher, you can open Visual Studio Installer and click Modify.
 
-![VS-Installer](/assets/2018-06-16/VS-Installer.png)
+![VS-Installer](../assets/2018-06-16/VS-Installer.png)
 
 Select "Git for Windows" in Individual components & modify to install git.
 
-![Git-Component](/assets/2018-06-16/Git-Component.png)
+![Git-Component](../assets/2018-06-16/Git-Component.png)
 
 ### Verifying Installation
 
 You will get Git Bash, Git CMD & Git GUI after successful installation of git. You can use command line in either Git Bash or Git CMD according to your preference. If Windows is your preferred OS then Git CMD is better choice & if you love Linux go for Git Bash. You can also run git commands from windows command prompt if environment variable is set.
 
-![git-installed](/assets/2018-06-16/git-installed.png)
+![git-installed](../assets/2018-06-16/git-installed.png)
 
 Run `git` command to verify successful installation. All git commands should be written in small letters compulsory.
 
-![Git-Bash](/assets/2018-06-16/Git-Bash.png)
+![Git-Bash](../assets/2018-06-16/Git-Bash.png)
 
-![Git-CMD](/assets/2018-06-16/Git-CMD.png)
+![Git-CMD](../assets/2018-06-16/Git-CMD.png)
 
 
 ## Configuring Git
@@ -97,9 +97,9 @@ $ git config --global user.email
 
 #### git config in action
 
-![git-config](/assets/2018-06-16/git-config.png)
+![git-config](../assets/2018-06-16/git-config.png)
 
-![git-config-cmd](/assets/2018-06-16/git-config-cmd.png)
+![git-config-cmd](../assets/2018-06-16/git-config-cmd.png)
 
 ## Creating New Repository
 
@@ -107,17 +107,17 @@ As explained above, repository is a place where source code is stored physically
 
 ### $ git init
 
-![folder](/assets/2018-06-16/folder.png)
+![folder](../assets/2018-06-16/folder.png)
 
 ```
 $ git init
 ```
 
-![git-init](/assets/2018-06-16/git-init.png)
+![git-init](../assets/2018-06-16/git-init.png)
 
 I created one folder in my file system with name Git-Demo & ran `git init` in this folder using command line. You can see the message **Initialized empty Git repository in A:/GitHub_AshV/Git-Demo/.git/**. Did you observe **.git** in message. Let's verify in file system.
 
-![repository](/assets/2018-06-16/repository.png)
+![repository](../assets/2018-06-16/repository.png)
 
 There is one hidden folder created with name `.git`, this folder is responsible for maintaining versions and other metadata related to repository. (Hidden files & folder should be visible in your OS settings to see this folder).
 
@@ -129,7 +129,7 @@ To get the current status of repository `git status` command is used. This comma
 $ git status
 ```
 
-![git-status](/assets/2018-06-16/git-status.png)
+![git-status](../assets/2018-06-16/git-status.png)
 
 Hmmm, ReadMe.md is untracked 🤔, Untracked file means it will be there in file system but git will not be aware of it. Let's add it to repository.
 
@@ -145,7 +145,7 @@ Let's add ReadMe.md file to git and check the status
 $ git add ReadMe.md
 ```
 
-![git-add](/assets/2018-06-16/git-add.png)
+![git-add](../assets/2018-06-16/git-add.png)
 
 If we have multiple files, then we have to run this command for each file, or we can add all files with `git add .` and remove/unstage unwanted files later.
 
@@ -155,7 +155,7 @@ I created 3 more files in folder "file1.txt, file2.txt & unwanted.txt" and addin
 $ git add .
 ```
 
-![git-add-all](/assets/2018-06-16/git-add-all.png)
+![git-add-all](../assets/2018-06-16/git-add-all.png)
 
 ## Removing/Unstaging Files in Repository
 
@@ -165,7 +165,7 @@ If you want to remove some staged file from repository 'git rm' command is used.
 $ git rm --cached unwanted.txt
 ```
 
-![git-rm](/assets/2018-06-16/git-rm.png)
+![git-rm](../assets/2018-06-16/git-rm.png)
 
 ## Commiting the Changes
 
@@ -175,7 +175,7 @@ $ git rm --cached unwanted.txt
 $ git commit -m "adding 3 demo files" 
 ```
 
-![git-commit](/assets/2018-06-16/git-commit.png)
+![git-commit](../assets/2018-06-16/git-commit.png)
 
 You can observe here before commit those 3 files were visible in green under "Changes to be committed" section, now they are committed that's why not visible here.
 
@@ -198,15 +198,15 @@ Except GitHub above mentioned other services are providing private repositories 
 
 Navigate to (https://github.com)[https://github.com] login into your account or create one if don't have already. And click on create new repository. 
 
-![new-repo](/assets/2018-06-16/new-repo.png)
+![new-repo](../assets/2018-06-16/new-repo.png)
 
 You can give any name here, it could be different than your folder name in local. I have given different name `Git-Demonstration`. Don't select anything in highlighted section those are for completely new repository but here we have already created repository in local.
 
-![create-new-repo](/assets/2018-06-16/create-new-repo.png)
+![create-new-repo](../assets/2018-06-16/create-new-repo.png)
 
 After click on "Create Repository" you will see similar screen with command given.
 
-![repo-created](/assets/2018-06-16/repo-created.png)
+![repo-created](../assets/2018-06-16/repo-created.png)
 
 ### Link Remote Repository
 
@@ -218,7 +218,7 @@ You can observe `git remote` command in above image, copy and run it in your mac
 $ git remote add origin https://github.com/AshV/Git-Demonstration.git
 ```
 
-![git-remote](/assets/2018-06-16/git-remote.png)
+![git-remote](../assets/2018-06-16/git-remote.png)
 
 To verify remote URL you can run this command with `-v`
 
@@ -226,7 +226,7 @@ To verify remote URL you can run this command with `-v`
 $ git remote -v
 ```
 
-![git-remote-v](/assets/2018-06-16/git-remote-v.png)
+![git-remote-v](../assets/2018-06-16/git-remote-v.png)
 
 ## Pushing Changes To Server
 
@@ -242,7 +242,7 @@ Here is short version of above give more descriptive command.
 $ git push -u origin master
 ```
 
-![git-push](/assets/2018-06-16/git-push.png)
+![git-push](../assets/2018-06-16/git-push.png)
 
 ## Taking latest from Server
 
@@ -252,7 +252,7 @@ While working in project with multiple collaborators then it's always good idea 
 $ git pull
 ```
 
-![git-pull](/assets/2018-06-16/git-pull.png)
+![git-pull](../assets/2018-06-16/git-pull.png)
 
 You can see latest changes made `ReadMe.md` are retrieved to local.
 

@@ -91,6 +91,6 @@ Let's retrieve some data from CRM and query in client side javascript. First of 
 
 > Go through code comments to understand it better.
 
-![output](/assets/2018-10-30/output.png)
+![output](../assets/2018-10-30/output.png)
 
 Hope it helps. Feel free to ask any questons.

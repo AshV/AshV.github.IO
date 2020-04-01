@@ -210,14 +210,14 @@
 
 <h2 id="what-is-offered">What is Offered?</h2>
 <blockquote>
-  <p><img src="/assets/2018-01-23/1_OOB_Icons.png" alt="1_OOB_Icons.png" /></p>
+  <p><img src="../assets/2018-01-23/1_OOB_Icons.png" alt="1_OOB_Icons.png" /></p>
 </blockquote>
 
 <p>As you can see in above image, those icons in view cells were already available in some OOB views, now you can use in custom view as well.</p>
 
 <h2 id="where-to-customize">Where to customize?</h2>
 <blockquote>
-  <p><img src="/assets/2018-01-23/2_View_Properties.png" alt="2_View_Properties.png" />
+  <p><img src="../assets/2018-01-23/2_View_Properties.png" alt="2_View_Properties.png" />
 Goto any view’s property, you can see 2 new fields <strong>Web Resource</strong> and <strong>Function Name</strong>, which is very similar to Forms when you write JS.</p>
 </blockquote>
 
@@ -274,7 +274,7 @@ Based on those 2 inputs you can decide what icon to show. And name of this funct
 
 <p>Add one JS web resource</p>
 <blockquote>
-  <p><img src="/assets/2018-01-23/3_Add_Web_Resource.png" alt="Add one JS web resource" /></p>
+  <p><img src="../assets/2018-01-23/3_Add_Web_Resource.png" alt="Add one JS web resource" /></p>
 </blockquote>
 
 <p>And write below code in it</p>
@@ -301,7 +301,7 @@ Based on those 2 inputs you can decide what icon to show. And name of this funct
 <span class="p">}</span>
 </code></pre></div></div>
 <blockquote>
-  <p><img src="/assets/2018-01-23/4_Icons_as_Webresource.png" alt="4_Icons_as_Webresource.png" /></p>
+  <p><img src="../assets/2018-01-23/4_Icons_as_Webresource.png" alt="4_Icons_as_Webresource.png" /></p>
 </blockquote>
 
 <p>In above code I’m reading cell data which is priority field of case, and according to value it will show color icon in from of it. I have added three 16x16(if you’ll take different size it will be scaled back to 16x16, so better take optimized size) icons with color Red, Yellow &amp; Green for High, Normal &amp; Low priorities respectively.
@@ -311,21 +311,21 @@ You can use below images in your web resource.</p>
 <table>
   <tbody>
     <tr>
-      <td>High : <img src="/assets/2018-01-23/High.png" alt="High Red" /></td>
-      <td>Normal : <img src="/assets/2018-01-23/Medium.png" alt="Normal Yellow" /></td>
-      <td>Low : <img src="/assets/2018-01-23/Low.png" alt="Low Green" /></td>
+      <td>High : <img src="../assets/2018-01-23/High.png" alt="High Red" /></td>
+      <td>Normal : <img src="../assets/2018-01-23/Medium.png" alt="Normal Yellow" /></td>
+      <td>Low : <img src="../assets/2018-01-23/Low.png" alt="Low Green" /></td>
     </tr>
   </tbody>
 </table>
 
 <p>I’ve set Web resource and function name in All Cases view property for Priority field.</p>
 <blockquote>
-  <p><img src="/assets/2018-01-23/5_setting_webresource.png" alt="5_setting_webresource.png" /></p>
+  <p><img src="../assets/2018-01-23/5_setting_webresource.png" alt="5_setting_webresource.png" /></p>
 </blockquote>
 
 <p>Publish everything and navigate to <strong>All Cases</strong> view.</p>
 <blockquote>
-  <p><img src="/assets/2018-01-23/6_hooray.png" alt="Final Output Working!" /></p>
+  <p><img src="../assets/2018-01-23/6_hooray.png" alt="Final Output Working!" /></p>
 </blockquote>
 
 <p>Hooray! It’s working!
@@ -349,9 +349,9 @@ I didn’t play anything with second parameter i.e. LCID, you can explore usecas
 <span class="nt">&lt;/grid&gt;</span>
 </code></pre></div></div>
 <p>Here <code class="highlighter-rouge">&lt;cell name="prioritycode" width="150" imageproviderfunctionname="casePriorityIcons" imageproviderwebresource="$webresource:ashv_ViewCustomizations" /&gt;</code> got 2 extra attributes with name of web resource and function, they set image source and title while rendering view(see image below).
-<img src="/assets/2018-01-23/7_in_html.png" alt="7_in_html.png" /></p>
+<img src="../assets/2018-01-23/7_in_html.png" alt="7_in_html.png" /></p>
 
-<p>You can download this as unmanaged solution <a href="/assets/2018-01-23/CaseViewCustomizations_1_0_0_0.zip">here.</a></p>
+<p>You can download this as unmanaged solution <a href="../assets/2018-01-23/CaseViewCustomizations_1_0_0_0.zip">here.</a></p>
 
 <p>Feel free to get in touch for any query regarding this.</p>
 

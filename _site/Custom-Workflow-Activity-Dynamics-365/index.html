@@ -202,7 +202,7 @@
     </header> -->
 
         <article itemprop="articleBody">
-            <p><img src="/assets/2018-06-25/ms-dynamics-365-header.webp" alt="Dynamics 365 Header" /></p>
+            <p><img src="../assets/2018-06-25/ms-dynamics-365-header.webp" alt="Dynamics 365 Header" /></p>
 
 <p>In Dynamics 365 Workflows if some functionality is not available in out of the box features, we have option to write Custom Workflow Activity and consume that in workflow processes. Let’s see how to create Custom Workflow Activities for Dynamics 365. Here for example we will write an activity which will take text as input and return work count as output.</p>
 
@@ -210,13 +210,13 @@
 
 <p>In Visual Studio create new project of type Class Library &amp; select framework version 4.5.2, this might change for future versions. Name I have given as <strong>WordCountWorkflow</strong>, which tells the purpose of the workflow.</p>
 
-<p><img src="/assets/2018-06-17/New-Workflow.png" alt="New-Workflow" /></p>
+<p><img src="../assets/2018-06-17/New-Workflow.png" alt="New-Workflow" /></p>
 
 <h3 id="step-2-add-required-packags">Step 2: Add Required Packags</h3>
 
 <p>Goto manage nugget packages and install <strong>Microssoft.CrmSdk.CoreAssemblies</strong>(for Microsoft.Xrm.Sdk namespace) &amp; <strong>Microssoft.CrmSdk.Workflow</strong>(for Microsoft.Xrm.Sdk.Workflow namespace).</p>
 
-<p><img src="/assets/2018-06-17/nugget-packages.png" alt="nugget-packages" /></p>
+<p><img src="../assets/2018-06-17/nugget-packages.png" alt="nugget-packages" /></p>
 
 <h3 id="step-3-create-wordcount-class">Step 3: Create WordCount Class</h3>
 
@@ -308,7 +308,7 @@
   <li>Build the solution</li>
 </ol>
 
-<p><img src="/assets/2018-06-17/Sign-Assembly.png" alt="Sign-Assembly" /></p>
+<p><img src="../assets/2018-06-17/Sign-Assembly.png" alt="Sign-Assembly" /></p>
 
 <h3 id="step-7-register-the-assembly-in-dynamics-365">Step 7: Register the Assembly in Dynamics 365</h3>
 
@@ -316,71 +316,71 @@
 
 <p><strong>1.</strong> Click on Register then Register New Assembly.</p>
 
-<p><img src="/assets/2018-06-17/Register-New-Assembly.png" alt="Register-New-Assembly" /></p>
+<p><img src="../assets/2018-06-17/Register-New-Assembly.png" alt="Register-New-Assembly" /></p>
 
 <p><strong>2.</strong> Register New Assembly popup will appear, select your project DLL from bin/debug folder of project.</p>
 
-<p><img src="/assets/2018-06-17/Load-Assembly.png" alt="Load-Assembly" /></p>
+<p><img src="../assets/2018-06-17/Load-Assembly.png" alt="Load-Assembly" /></p>
 
 <p><strong>3.</strong> After selecting DLL, make sure Select All is selected in Step 2.</p>
 
-<p><img src="/assets/2018-06-17/Select-All.png" alt="Select-All" /></p>
+<p><img src="../assets/2018-06-17/Select-All.png" alt="Select-All" /></p>
 
 <p><strong>4.</strong> Leave rest of he options as it is and click <strong>Register Selected Plugins</strong>, it should register your assembly successfully.</p>
 
-<p><img src="/assets/2018-06-17/Registered.png" alt="Registered" /></p>
+<p><img src="../assets/2018-06-17/Registered.png" alt="Registered" /></p>
 
 <p><strong>5.</strong> You can verify the assembly after registering in Plugin Registration Tool.</p>
 
-<p><img src="/assets/2018-06-17/Verify-DLL.png" alt="Verify-DLL" /></p>
+<p><img src="../assets/2018-06-17/Verify-DLL.png" alt="Verify-DLL" /></p>
 
 <h3 id="step-8-consuming-custom-workflow-activity-in-workflow-process">Step 8: Consuming Custom Workflow Activity in Workflow Process</h3>
 
 <p><strong>1.</strong> Open CRM, goto solution where you want to create Workflow, navigate to Processes &amp; create new. Give some meaningful name, I’ve given “Word Counter”, select Category as “Workflow” &amp; select “Contact” in Entity. I have created as realtime workflow by unchecking “Run this workflow in the background (recommended)” checkbox, for the ease of testing.</p>
 
-<p><img src="/assets/2018-06-17/New-Workflow-Process.png" alt="New-Workflow-Process" /></p>
+<p><img src="../assets/2018-06-17/New-Workflow-Process.png" alt="New-Workflow-Process" /></p>
 
 <p><strong>2.</strong> After Creation check “As an on-demand process” to make as On-demand workflow.</p>
 
-<p><img src="/assets/2018-06-17/Make-On-Demand.png" alt="Make-On-Demand" /></p>
+<p><img src="../assets/2018-06-17/Make-On-Demand.png" alt="Make-On-Demand" /></p>
 
 <p><strong>3.</strong> Click on “Add Step” and look for our assembly name i.e <strong>WordCountWorkflow</strong>, click on this <strong>WordCountWorkflow.WordCount</strong> will appear, click on this to add step.</p>
 
-<p><img src="/assets/2018-06-17/Add-Step.png" alt="Add-Step" /></p>
+<p><img src="../assets/2018-06-17/Add-Step.png" alt="Add-Step" /></p>
 
 <p><strong>4.</strong> In added step click “Set Properties”, In properties set <strong>Input Text</strong>(Input parameter given in code) as Address field of Contact record.</p>
 
-<p><img src="/assets/2018-06-17/Set-Input.png" alt="Set-Input" /></p>
+<p><img src="../assets/2018-06-17/Set-Input.png" alt="Set-Input" /></p>
 
 <p><strong>5.</strong> Add another update step, and set <strong>Job Title</strong> field as <strong>Word Count</strong>(Output Parameter given in code).</p>
 
-<p><img src="/assets/2018-06-17/Set-Output.png" alt="Set-Output" /></p>
+<p><img src="../assets/2018-06-17/Set-Output.png" alt="Set-Output" /></p>
 
 <p><strong>6.</strong> Workflow is completed, Save it &amp; Activate it.</p>
 
-<p><img src="/assets/2018-06-17/Activate-Workflow.png" alt="Activate-Workflow" /></p>
+<p><img src="../assets/2018-06-17/Activate-Workflow.png" alt="Activate-Workflow" /></p>
 
 <h3 id="testing-the-workflow">Testing the Workflow</h3>
 
 <p><strong>1.</strong> To test this, I have created one contact record with <strong>Address</strong> field populated which has 9 words in total. Expand top menu in form and click “Run Workflow”.</p>
 
-<p><img src="/assets/2018-06-17/Run-Workflow.png" alt="Run-Workflow" /></p>
+<p><img src="../assets/2018-06-17/Run-Workflow.png" alt="Run-Workflow" /></p>
 
 <p><strong>2.</strong> In appearing popup, select our “Word Counter” workflow and click “Add”.</p>
 
-<p><img src="/assets/2018-06-17/Select-Workflow.png" alt="Select-Workflow" /></p>
+<p><img src="../assets/2018-06-17/Select-Workflow.png" alt="Select-Workflow" /></p>
 
 <p><strong>3.</strong> It will ask for confirmation to run, click “OK”.</p>
 
-<p><img src="/assets/2018-06-17/Confirm-Run.png" alt="Confirm-Run" /></p>
+<p><img src="../assets/2018-06-17/Confirm-Run.png" alt="Confirm-Run" /></p>
 
 <p><strong>4.</strong> Let the execution complete.</p>
 
-<p><img src="/assets/2018-06-17/Executing.png" alt="Executing" /></p>
+<p><img src="../assets/2018-06-17/Executing.png" alt="Executing" /></p>
 
 <p><strong>5.</strong> Refresh the form to update and verify whether <strong>Job Title</strong> field is updated with the Word Count of Address field.</p>
 
-<p><img src="/assets/2018-06-17/Output-Success.png" alt="Output-Success" /></p>
+<p><img src="../assets/2018-06-17/Output-Success.png" alt="Output-Success" /></p>
 
 <p>Congrats! Your Custom Workflow Activity is running successfully.</p>
 

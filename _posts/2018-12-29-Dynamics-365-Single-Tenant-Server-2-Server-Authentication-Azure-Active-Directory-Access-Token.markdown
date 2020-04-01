@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: Dynamics-365-Single-Tenant-Server-2-Server-Authentication-Azure-Active-Directory-Access-Token/
 ---
 
-![Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication](/assets/2018-12-29/microsoft-dynamics-365-banner.jpg)
+![Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication](../assets/2018-12-29/microsoft-dynamics-365-banner.jpg)
 
 In Dynamics 365 integration scenarios most of the times we need to authenticate only single tenant. Since now Dynamics 365 authentication only through Azure AD (for online instances) is recommended let's see how to do it. To achieve this first of all we need to create App in Azure Active Directory and good news is that you don't need Azure subscription to try this out, your Dynamics 365 free trial is enough.
 
@@ -21,22 +21,22 @@ These 4 steps are involved to implement this, you can always jump to next step i
 
 * Navigate to Azure(https://portal.azure.com).
 * On left menu click on **Azure Active Directory** -> App registrations(Preview) => **+ New registration**, We will use Preview version only because it has more straight forward options and going forward this only is going to be default option.
-![create-azure-ad-app](assets/2018-12-29/create-azure-ad-app.png)
+![create-azure-ad-app](../assets/2018-12-29/create-azure-ad-app.png)
 
 * Give some Name to your App, and for account type select *Accounts in this organizational directory only* because we need it for single tenant only.
-![single-tenant-app](assets/2018-12-29/single-tenant-app.png)
+![single-tenant-app](../assets/2018-12-29/single-tenant-app.png)
 
 * Once App is created, click on API permissions to add new permission for your app.
-![adding-new-permissions](assets/2018-12-29/adding-new-permissions.png)
+![adding-new-permissions](../assets/2018-12-29/adding-new-permissions.png)
 
 * Select Dynamics CRM here.
-![dynamics-crm-permission](assets/2018-12-29/dynamics-crm-permission.png)
+![dynamics-crm-permission](../assets/2018-12-29/dynamics-crm-permission.png)
 
 * Check user_impersonation box in upcoming screen and click *Add permissions*
-![user-impersonation](assets/2018-12-29/user-impersonation.png)
+![user-impersonation](../assets/2018-12-29/user-impersonation.png)
 
 * These permission require admin consent, click on **Grant admin consent for your-org** button and confirm it. You need administrator role to do it.
-* ![grant-admin-consent](assets/2018-12-29/grant-admin-consent.png)
+* ![grant-admin-consent](../assets/2018-12-29/grant-admin-consent.png)
 
 **Now your App is created, we need three things to use further from here.**
 
@@ -45,13 +45,13 @@ These 4 steps are involved to implement this, you can always jump to next step i
 3. Client Secret
 
 * Application Id & Tenant Id you can grab from App Overview.
-![app-overview](assets/2018-12-29/app-overview.png)
+![app-overview](../assets/2018-12-29/app-overview.png)
 
 * To generate Client Secret go to **Certificates & secrets** and then **+ New client secret**, Give some description and select validity of your secret, click **Add**.
-![client-secret](assets/2018-12-29/client-secret.png)
+![client-secret](../assets/2018-12-29/client-secret.png)
 
 * Client Secret is something which you should keep secret, that why you can see this only once after generation, copy it and keep it safe to use later.
-* ![generated-secret](assets/2018-12-29/generated-secret.png)
+* ![generated-secret](../assets/2018-12-29/generated-secret.png)
 
 ## Step 2: Create Application User
 
@@ -60,25 +60,25 @@ These 4 steps are involved to implement this, you can always jump to next step i
 * This user should be created from Azure(https://portal.azure.com), not from Office Portal(https://admin.microsoft.com)
 * Navigate to Azure -> Azure Active Directory -> Users, Click on **+ New user**.
 
-![new-app-user](assets/2018-12-29/new-app-user.png)
+![new-app-user](../assets/2018-12-29/new-app-user.png)
 * Here Username field must be has same domain name as your org.
 * Once this user is create, Go to your Dynamics 365 instance.
 * Navigate to Dynamics 365 -> Settings -> Security, Click on Users here.
 * Change view to Application Users & click on **+ NEW** to create new Application User.
-![set-view-as-application-user](assets/2018-12-29/set-view-as-application-user.png)
+![set-view-as-application-user](../assets/2018-12-29/set-view-as-application-user.png)
 
 * You may need to set form also as Application User if it's not coming by default.
-![set-form-as-application-user](assets/2018-12-29/set-form-as-application-user.png)
+![set-form-as-application-user](../assets/2018-12-29/set-form-as-application-user.png)
 
 * Here Application ID must be the same as Azure AD App created in previous step. Username & email you can keep same as the one created in Azure AD. Though it's not necessary to be the same, I have tried with different name also. Once you save it Application ID URI & Azure AD Object ID will auto populate.
-![new-app-user-d365](assets/2018-12-29/new-app-user-d365.png)
+![new-app-user-d365](../assets/2018-12-29/new-app-user-d365.png)
 
 * Now you need to assign **security role** to this user to perform operation on desired records, I've seen in many blogs that this user must have a custom security role, so you can copy some existing role and assign it. But when I tried with **OOB security role** it was still working.
 
 ## Step 3: Get Access Token with ADAL
 
 * Create new project in Visual Studio and add ADAL package via NuGet.
-![ADAL-NuGet.png](assets/2018-12-29/ADAL-NuGet.png)
+![ADAL-NuGet.png](../assets/2018-12-29/ADAL-NuGet.png)
 
 * Create below shown method and replace Application Id, Client Secret, Tenant Id & your organization Url in appropriate place.
 

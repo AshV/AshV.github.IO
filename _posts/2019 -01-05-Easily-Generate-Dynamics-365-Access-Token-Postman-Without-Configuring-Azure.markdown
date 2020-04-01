@@ -8,7 +8,7 @@ permalink: Easily-Generate-Dynamics-365-Access-Token-Postman-Without-Configuring
 
 Since [Microsoft recommended to prefer WebApi](https://docs.microsoft.com/en-us/previous-versions/dynamicscrm-2016/developers-guide/dn281891(v=crm.8)#microsoft-dynamics-crm-2011-endpoint) over Organization Service, [Postman](https://www.getpostman.com/) became a saviour to Dynamics 365 developers and [Microsoft's documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/webapi/use-postman-web-api) was always helpful to setup and use postman with Dynamics 365 WebApi.
 
-[![Dynamics 365 Access Token Generator](/assets/2019 -01-05/Dynamics-365-Access-Token-Generator.png)](https://www.ashishvishwakarma.com/Dynamics-365-Access-Token-Generator/)
+[![Dynamics 365 Access Token Generator](../assets/2019 -01-05/Dynamics-365-Access-Token-Generator.png)](https://www.ashishvishwakarma.com/Dynamics-365-Access-Token-Generator/)
 
 With organization service it used to be very easy by making [console app and debugging our logic](https://github.com/AshV/Dynamics365ConsoleCaller) by just using our login credentials. But with WebApi some steps involved to create Azure AD app then generating Access Token and using this token to make HTTP calls to WebApi using Postman.
 

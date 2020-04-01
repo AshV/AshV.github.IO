@@ -220,11 +220,11 @@ XrmToolBox is basically a class library, you can create your plugin in 2 ways.</
 
 <p>You won’t be getting this project template by default in Visual Studio, to install goto new project dialog, navigate to <code class="highlighter-rouge">online</code> section in left pane and search for <code class="highlighter-rouge">XrmToolBox</code> in right pane, template will appear in result. install it, Visual Studio need to be restarted in order to install the template.</p>
 
-<p><img src="/assets/2018-06-08/XrmToolBox_Project_Template.png" alt="XrmToolBox_Project_Template" /></p>
+<p><img src="../assets/2018-06-08/XrmToolBox_Project_Template.png" alt="XrmToolBox_Project_Template" /></p>
 
 <p>After installing, create new Project using this template. Framework version should be selected as 4.6.2.</p>
 
-<p><img src="/assets/2018-06-08/New_Project.png" alt="New_Project" /></p>
+<p><img src="../assets/2018-06-08/New_Project.png" alt="New_Project" /></p>
 
 <h3 id="components-of-project">Components of Project</h3>
 
@@ -455,11 +455,11 @@ XrmToolBox is basically a class library, you can create your plugin in 2 ways.</
 
 <p>Open MyPluginControl.cs[Design] and place a Button control in panel. change name property to btn_WhoAmI, optionally you can change other properties and decorate.</p>
 
-<p><img src="/assets/2018-06-08/Place_Button.png" alt="Placing button" /></p>
+<p><img src="../assets/2018-06-08/Place_Button.png" alt="Placing button" /></p>
 
 <p>Add one list box also with name lst_UserData below button to show current user’s data.</p>
 
-<p><img src="/assets/2018-06-08/ListBox.png" alt="ListBox" /></p>
+<p><img src="../assets/2018-06-08/ListBox.png" alt="ListBox" /></p>
 
 <p>Double click on this button to create event and open code-behind file(MyPluginControl.cs) and write below code.</p>
 
@@ -514,16 +514,16 @@ XrmToolBox is basically a class library, you can create your plugin in 2 ways.</
 
 <p>Open XrmToolBox and search for your plugin, click to open it, when it asks to connect, click No, so you can verify ExcuteMethod functionality.</p>
 
-<p><img src="/assets/2018-06-08/OpenPlugin.png" alt="Open Plugin" /></p>
+<p><img src="../assets/2018-06-08/OpenPlugin.png" alt="Open Plugin" /></p>
 
 <p>Here is your brand new plugin, all created by yourself.
 Click on <em>Who Am I</em> Button, it will ask to connect an organization first, because we have used <strong>ExecuteMethod()</strong> here.</p>
 
-<p><img src="/assets/2018-06-08/ClickWhoAmI.png" alt="ClickWhoAmI" /></p>
+<p><img src="../assets/2018-06-08/ClickWhoAmI.png" alt="ClickWhoAmI" /></p>
 
 <p>Connect to an organization, after connecting to CRM, it will show the retrieving message which is set in our <strong>Message</strong> property is WhoAmI(). Finally it will show all information about current user in ListBox.</p>
 
-<p><img src="/assets/2018-06-08/WorkingPlugin.png" alt="PluginWorking" /></p>
+<p><img src="../assets/2018-06-08/WorkingPlugin.png" alt="PluginWorking" /></p>
 
 <blockquote>
   <p>Get complete source code <a href="https://github.com/AshV/XrmToolBox.WhoAmIPlugin">here</a></p>

@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: assigning-case-to-appropriate-team-user-using-plugin-in-dynamics-365-crm/
 ---
 
-![Dynamics 365 Header](/assets/2018-06-25/ms-dynamics-365-header.webp)
+![Dynamics 365 Header](../assets/2018-06-25/ms-dynamics-365-header.webp)
 
 In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfill these three requirements.
 
@@ -24,13 +24,13 @@ Here, I will show you how to implement the above functionality. To simplify, I a
 
 Create a new project in Visual Studio of type Class Library and give the name. I have given the name as AssignPlugin and don't forget to set the framework version to 4.5.2.
 
-![image alt text](/assets/2017-03-15/image_0.png)
+![image alt text](../assets/2017-03-15/image_0.png)
 
 **Step 2**
 
 Add the required references to project from CRM SDK.
 
-![image alt text](/assets/2017-03-15/image_1.png) 
+![image alt text](../assets/2017-03-15/image_1.png) 
 
 **Step 3**
 
@@ -370,7 +370,7 @@ In order to use the plugin in Dynamics 365/CRM assembly has to be signed.
 
 * Hit OK to save.
 
-* ![image alt text](/assets/2017-03-15/image_2.png) 
+* ![image alt text](../assets/2017-03-15/image_2.png) 
 
  
 
@@ -534,7 +534,7 @@ namespace AssignPlugin
 
 * Open Plugin Registration tool and connect it to your Dynamics CRM instance.
 
-* ![image alt text](/assets/2017-03-15/image_3.png)
+* ![image alt text](../assets/2017-03-15/image_3.png)
 
 * Click Register, followed by clicking Register new assembly.
 
@@ -544,19 +544,19 @@ namespace AssignPlugin
 
 * In Step 2, check select all and hit Register Selected Plugin button.
 
-* ![image alt text](/assets/2017-03-15/image_4.png) 
+* ![image alt text](../assets/2017-03-15/image_4.png) 
 
 * After success, you will see the message given below.
 
-* ![image alt text](/assets/2017-03-15/image_5.png)
+* ![image alt text](../assets/2017-03-15/image_5.png)
 
 * Now, a new step has to be registered on Assign step of Case record, else this plugin will not be triggered. To register, right click on assembly and click Register new step.
 
-* ![image alt text](/assets/2017-03-15/image_6.png)
+* ![image alt text](../assets/2017-03-15/image_6.png)
 
 * In dialog box, select Message as Assign and Primary Entity as an incident (i.e. case). 
 
-* ![image alt text](/assets/2017-03-15/image_7.png) 
+* ![image alt text](../assets/2017-03-15/image_7.png) 
 
 *  Hit Register
 
@@ -566,21 +566,21 @@ namespace AssignPlugin
 
 * Create Team with Administrator privileges by following Settings -> Security -> Teams and create new Team. I have given Team name as Quick Service Team.
 
-* ![image alt text](/assets/2017-03-15/image_8.png)
+* ![image alt text](../assets/2017-03-15/image_8.png)
 
 *  Assign System Administrator Role to the newly created Team.
 
-* ![image alt text](/assets/2017-03-15/image_9.png)
+* ![image alt text](../assets/2017-03-15/image_9.png)
 
 * Now, this Team has no users. If any case is assigned to this Team it will go to the default queue, let's try it out.
 
 * Hit Assign, select Assign To as a User or Team, select Quick Service Team and hit Asssign.
 
-* ![image alt text](/assets/2017-03-15/image_10.png) 
+* ![image alt text](../assets/2017-03-15/image_10.png) 
 
 *  After assigning hit Queue Item Details to verify whether it is assigned to the Queue or not.
 
-* ![image alt text](/assets/2017-03-15/image_11.png)
+* ![image alt text](../assets/2017-03-15/image_11.png)
 
 *  To verify the rest of two conditions, create a few more users in Team and try assigning the record to Team and see how records are getting assigned.
 

@@ -202,7 +202,7 @@
     </header> -->
 
         <article itemprop="articleBody">
-            <p><img src="/assets/2017-07-17/header.jpg" alt="Creating C# Wrapper Over Firebase API For CRUD Operations" /></p>
+            <p><img src="../assets/2017-07-17/header.jpg" alt="Creating C# Wrapper Over Firebase API For CRUD Operations" /></p>
 
 <blockquote>
   <p><a href="https://github.com/AshV/Firebase.Net/">Source Code on GitHub</a></p>
@@ -214,19 +214,19 @@
 
 <p>Login to your Firebase account and click on <strong>GO TO CONSOLE</strong> to access console</p>
 
-<p><img src="/assets/2017-07-17/image_0.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_0.png" alt="image alt text" /></p>
 
 <p>Click on Add Project to add New Firebase Project</p>
 
-<p><img src="/assets/2017-07-17/image_1.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_1.png" alt="image alt text" /></p>
 
 <p>Give Project Name of your choice, your Country/Region and hit <strong>CREATE PROJECT</strong></p>
 
-<p><img src="/assets/2017-07-17/image_2.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_2.png" alt="image alt text" /></p>
 
 <p>Now you will be navigated to you newly created App Dashboard with all the Firebase features listed, Click on <strong>Database</strong> on left pane</p>
 
-<p><img src="/assets/2017-07-17/image_3.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_3.png" alt="image alt text" /></p>
 
 <p>You can see your service plan as Spark which is Free. All data stored is represented as JSON tree. You have Database URL along with root of JSON tree which is null as of now. This database URL will be used to make HTTP request later in article.</p>
 
@@ -236,13 +236,13 @@
 
 <p>Firebase read/write access is secured by default as you can see in <strong>RULES.</strong></p>
 
-<p><img src="/assets/2017-07-17/image_4.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_4.png" alt="image alt text" /></p>
 
 <p>For sake of simplicity in making HTTP requests we will remove authentication for this article.</p>
 
 <p>In upcoming articles we will use with authentication. Make <strong>auth==null;</strong> and hit <strong>PUBLISH</strong> to remove authentication.</p>
 
-<p><img src="/assets/2017-07-17/image_5.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_5.png" alt="image alt text" /></p>
 
 <p>If you are already familiar with Firebase REST API, you can directly jump to Section 3.</p>
 
@@ -272,25 +272,25 @@
 
 <p>In Postman window set method as <strong>PUT,</strong> in URL enter your database URL appended with <strong>.json</strong> as we are writing to root node. <strong>.json suffix</strong> is always required if we are making REST calls. In <strong>Body</strong> select <strong>raw</strong> and paste your JSON data there, hit <strong>Send</strong> now to make the request.</p>
 
-<p><img src="/assets/2017-07-17/image_6.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_6.png" alt="image alt text" /></p>
 
 <p>You can see response code <strong>200 OK</strong> in Postman instead of 201 Created, but this is how Firebase returns it, every request will return 200 OK if successful irrespective of Request method.</p>
 
-<p><img src="/assets/2017-07-17/image_7.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_7.png" alt="image alt text" /></p>
 
 <p>Created data will be immediately reflect to your app console, you can verify it.</p>
 
-<p><img src="/assets/2017-07-17/image_8.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_8.png" alt="image alt text" /></p>
 
 <p><strong>Reading Data with GET</strong></p>
 
 <p>To read data we can give path to specific node which we wish to read, here I just want details of Member M1 so I have given specific path in URL. Set method as GET and hit Send to retrieve data.</p>
 
-<p><img src="/assets/2017-07-17/image_9.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_9.png" alt="image alt text" /></p>
 
 <p>It would return the details of specific member.</p>
 
-<p><img src="/assets/2017-07-17/image_10.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_10.png" alt="image alt text" /></p>
 
 <p><strong>Pushing Data with POST</strong></p>
 
@@ -298,29 +298,29 @@
 
 <p>Here we are adding scores for all team members, so our node is <strong>Scores</strong> here which is not already available in JSON tree. Firebase will automatically create it.</p>
 
-<p><img src="/assets/2017-07-17/image_11.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_11.png" alt="image alt text" /></p>
 
 <p>You can see in console <strong>Scores</strong> node is created and data is added along with random keys.</p>
 
-<p><img src="/assets/2017-07-17/image_12.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_12.png" alt="image alt text" /></p>
 
 <p><strong>Updating Data with PATCH</strong></p>
 
 <p>To update data in a node we have to use PATCH, it can be used to add new fields also. Here we will update city of a member.</p>
 
-<p><img src="/assets/2017-07-17/image_13.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_13.png" alt="image alt text" /></p>
 
-<p>You can observe in console whether value is updated.<img src="/assets/2017-07-17/image_14.png" alt="image alt text" /></p>
+<p>You can observe in console whether value is updated.<img src="../assets/2017-07-17/image_14.png" alt="image alt text" /></p>
 
 <p><strong>Removing Data with DELETE</strong></p>
 
 <p>To remove a resource <strong>DELETE</strong> is used. Let’s delete Member M3.</p>
 
-<p><img src="/assets/2017-07-17/image_15.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_15.png" alt="image alt text" /></p>
 
 <p>Member M3 is removed, can be seen in console.</p>
 
-<p><img src="/assets/2017-07-17/image_16.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_16.png" alt="image alt text" /></p>
 
 <p><strong>Section 3: Building C# wrapper</strong></p>
 
@@ -328,7 +328,7 @@
 
 <p>I have taken .Net Standard here for broader compatibility, you can take .Net framework class library is it’s not available.</p>
 
-<p><img src="/assets/2017-07-17/image_17.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-07-17/image_17.png" alt="image alt text" /></p>
 
 <p>Create folder Database, and Add 4 classes as follows.</p>
 

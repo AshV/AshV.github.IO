@@ -19,11 +19,11 @@ XrmToolBox is basically a class library, you can create your plugin in 2 ways.
 
 You won't be getting this project template by default in Visual Studio, to install goto new project dialog, navigate to `online` section in left pane and search for `XrmToolBox` in right pane, template will appear in result. install it, Visual Studio need to be restarted in order to install the template.
 
-![XrmToolBox_Project_Template](/assets/2018-06-08/XrmToolBox_Project_Template.png)
+![XrmToolBox_Project_Template](../assets/2018-06-08/XrmToolBox_Project_Template.png)
 
 After installing, create new Project using this template. Framework version should be selected as 4.6.2.
 
-![New_Project](/assets/2018-06-08/New_Project.png)
+![New_Project](../assets/2018-06-08/New_Project.png)
 
 ### Components of Project
 
@@ -250,11 +250,11 @@ You can look into constructors and properties yourself, let me talk about callba
 
 Open MyPluginControl.cs[Design] and place a Button control in panel. change name property to btn_WhoAmI, optionally you can change other properties and decorate.
 
-![Placing button](/assets/2018-06-08/Place_Button.png)
+![Placing button](../assets/2018-06-08/Place_Button.png)
 
 Add one list box also with name lst_UserData below button to show current user's data.
 
-![ListBox](/assets/2018-06-08/ListBox.png)
+![ListBox](../assets/2018-06-08/ListBox.png)
 
 Double click on this button to create event and open code-behind file(MyPluginControl.cs) and write below code.
 
@@ -310,16 +310,16 @@ Build your code and grab the DLL from bin/debug folder, and place it in %AppData
 
 Open XrmToolBox and search for your plugin, click to open it, when it asks to connect, click No, so you can verify ExcuteMethod functionality. 
 
-![Open Plugin](/assets/2018-06-08/OpenPlugin.png)
+![Open Plugin](../assets/2018-06-08/OpenPlugin.png)
 
 Here is your brand new plugin, all created by yourself.
 Click on *Who Am I* Button, it will ask to connect an organization first, because we have used **ExecuteMethod()** here.
 
-![ClickWhoAmI](/assets/2018-06-08/ClickWhoAmI.png)
+![ClickWhoAmI](../assets/2018-06-08/ClickWhoAmI.png)
 
 Connect to an organization, after connecting to CRM, it will show the retrieving message which is set in our **Message** property is WhoAmI(). Finally it will show all information about current user in ListBox.
 
-![PluginWorking](/assets/2018-06-08/WorkingPlugin.png)
+![PluginWorking](../assets/2018-06-08/WorkingPlugin.png)
 
 > Get complete source code [here](https://github.com/AshV/XrmToolBox.WhoAmIPlugin)
 

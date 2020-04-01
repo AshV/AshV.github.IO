@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: arduino-101-disco-led/
 ---
 
-![Arduino 101 with Blinking Disco LED](/assets/2017-08-08/banner.png)
+![Arduino 101 with Blinking Disco LED](../assets/2017-08-08/banner.png)
 
 >[All Posts](https://www.ashishvishwakarma.com/posts/)
 
@@ -15,12 +15,12 @@ This is a beginner level Arduino DIY. I have tweaked Arduino blinking LED exampl
 ## Environment
 You need Arduino environment setup, Install Arduino IDE in your machine(if not already) and connect your Arduino board (I’m using Arduino UNO). Along with board you need 4 jumper wires, 1 tri-color LED (or 3 LEDs, you need to connect 330Ω if it is a normal LED) and breadboard(optional, I not using).
 
-![components](/assets/2017-08-08/components.png)
+![components](../assets/2017-08-08/components.png)
 
 ## Connecting components
 Now connect your Arduino pins 5, 6 & 7 to R, G & B pins of LED respectively, and  connect Ground to any GND pin of Arduino. Follow image below.
 
-![LED_Connection](/assets/2017-08-08/LED_Connection.png)
+![LED_Connection](../assets/2017-08-08/LED_Connection.png)
 
 ## Code
 Let’s look into code now
@@ -66,17 +66,17 @@ While **loop()** is for code which will run repeatedly, I have written code here
 ## Deploy
 Open Arduino IDE, and connect your Arduino board with USB.
 
-![Arduino_IDE_Splash](/assets/2017-08-08/Arduino_IDE_Splash.png)
+![Arduino_IDE_Splash](../assets/2017-08-08/Arduino_IDE_Splash.png)
 
 Write or copy/paste above code in IDE, now **Compile** it by clicking tick button below File, after successful compiling click **Upload** button to push code into Arduino board.
 
-![code](/assets/2017-08-08/code.png)
+![code](../assets/2017-08-08/code.png)
 
 Congratulations! You are done. You can see you Arduino Disco LED blinking now. You can tweak it further to make it more interesting.
 
 ## Showtime
 
-![Arduino_Disco_LED.webp might not be visible in older browsers](/assets/2017-08-08/Arduino_Disco_LED.webp)
+![Arduino_Disco_LED.webp might not be visible in older browsers](../assets/2017-08-08/Arduino_Disco_LED.webp)
 
 **Cheers!** 
 

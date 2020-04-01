@@ -6,7 +6,7 @@ categories: Dynamics-365 PowerApps
 permalink: creating-c-sharp-wrapper-over-firebase-api-for-basic-crud/
 ---
 
-![Creating C# Wrapper Over Firebase API For CRUD Operations](/assets/2017-07-17/header.jpg) 
+![Creating C# Wrapper Over Firebase API For CRUD Operations](../assets/2017-07-17/header.jpg) 
 
 > [Source Code on GitHub](https://github.com/AshV/Firebase.Net/)
 
@@ -16,19 +16,19 @@ Firebase is platform provided by Google, which provides many services, Firebase 
 
 Login to your Firebase account and click on **GO TO CONSOLE** to access console
 
-![image alt text](/assets/2017-07-17/image_0.png) 
+![image alt text](../assets/2017-07-17/image_0.png) 
 
 Click on Add Project to add New Firebase Project
 
-![image alt text](/assets/2017-07-17/image_1.png)
+![image alt text](../assets/2017-07-17/image_1.png)
 
 Give Project Name of your choice, your Country/Region and hit **CREATE PROJECT**
 
-![image alt text](/assets/2017-07-17/image_2.png)
+![image alt text](../assets/2017-07-17/image_2.png)
 
 Now you will be navigated to you newly created App Dashboard with all the Firebase features listed, Click on **Database** on left pane
 
-![image alt text](/assets/2017-07-17/image_3.png)
+![image alt text](../assets/2017-07-17/image_3.png)
 
 You can see your service plan as Spark which is Free. All data stored is represented as JSON tree. You have Database URL along with root of JSON tree which is null as of now. This database URL will be used to make HTTP request later in article.
 
@@ -38,13 +38,13 @@ Before making wrapper let’s get comfortable with Firebase REST API with Postma
 
 Firebase read/write access is secured by default as you can see in **RULES.**
 
-![image alt text](/assets/2017-07-17/image_4.png)
+![image alt text](../assets/2017-07-17/image_4.png)
 
 For sake of simplicity in making HTTP requests we will remove authentication for this article.
 
 In upcoming articles we will use with authentication. Make **auth==null;** and hit **PUBLISH** to remove authentication.
 
-![image alt text](/assets/2017-07-17/image_5.png)
+![image alt text](../assets/2017-07-17/image_5.png)
 
 If you are already familiar with Firebase REST API, you can directly jump to Section 3. 
 
@@ -75,25 +75,25 @@ I have some data about a team and it’s members as follows, we are writing this
 
 In Postman window set method as **PUT,** in URL enter your database URL appended with **.json** as we are writing to root node. **.json suffix** is always required if we are making REST calls. In **Body** select **raw** and paste your JSON data there, hit **Send** now to make the request.
 
-![image alt text](/assets/2017-07-17/image_6.png)
+![image alt text](../assets/2017-07-17/image_6.png)
 
  You can see response code **200 OK** in Postman instead of 201 Created, but this is how Firebase returns it, every request will return 200 OK if successful irrespective of Request method.
 
-![image alt text](/assets/2017-07-17/image_7.png)
+![image alt text](../assets/2017-07-17/image_7.png)
 
 Created data will be immediately reflect to your app console, you can verify it.
 
-![image alt text](/assets/2017-07-17/image_8.png)
+![image alt text](../assets/2017-07-17/image_8.png)
 
 **Reading Data with GET**
 
 To read data we can give path to specific node which we wish to read, here I just want details of Member M1 so I have given specific path in URL. Set method as GET and hit Send to retrieve data.
 
-![image alt text](/assets/2017-07-17/image_9.png)
+![image alt text](../assets/2017-07-17/image_9.png)
 
 It would return the details of specific member.
 
-![image alt text](/assets/2017-07-17/image_10.png)
+![image alt text](../assets/2017-07-17/image_10.png)
 
 **Pushing Data with POST**
 
@@ -101,29 +101,29 @@ In Firebase POST pushes data to specific node with auto-generated key, it never 
 
 Here we are adding scores for all team members, so our node is **Scores** here which is not already available in JSON tree. Firebase will automatically create it. 
 
-![image alt text](/assets/2017-07-17/image_11.png)
+![image alt text](../assets/2017-07-17/image_11.png)
 
 You can see in console **Scores** node is created and data is added along with random keys.
 
-![image alt text](/assets/2017-07-17/image_12.png)
+![image alt text](../assets/2017-07-17/image_12.png)
 
 **Updating Data with PATCH**
 
 To update data in a node we have to use PATCH, it can be used to add new fields also. Here we will update city of a member.
 
-![image alt text](/assets/2017-07-17/image_13.png)
+![image alt text](../assets/2017-07-17/image_13.png)
 
-You can observe in console whether value is updated.![image alt text](/assets/2017-07-17/image_14.png)
+You can observe in console whether value is updated.![image alt text](../assets/2017-07-17/image_14.png)
 
 **Removing Data with DELETE**
 
 To remove a resource **DELETE** is used. Let’s delete Member M3.
 
-![image alt text](/assets/2017-07-17/image_15.png)
+![image alt text](../assets/2017-07-17/image_15.png)
 
 Member M3 is removed, can be seen in console.
 
-![image alt text](/assets/2017-07-17/image_16.png)
+![image alt text](../assets/2017-07-17/image_16.png)
 
 **Section 3: Building C# wrapper**
 
@@ -131,7 +131,7 @@ Add new project of type Class Library with name **FirebaseNet**, or name of your
 
 I have taken .Net Standard here for broader compatibility, you can take .Net framework class library is it’s not available. 
 
-![image alt text](/assets/2017-07-17/image_17.png)
+![image alt text](../assets/2017-07-17/image_17.png)
 
 Create folder Database, and Add 4 classes as follows.
 

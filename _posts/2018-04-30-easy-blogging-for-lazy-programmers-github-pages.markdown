@@ -36,24 +36,24 @@ Alright! but  lemme make you clear If you are not a Programmer(coz it uses GitHu
 
 * Create a repository with name `user/organization name.github.io`. this is not case sensitive. Like I have created with name [AshV.github.IO](https://github.com/AshV/AshV.github.IO). Check **Initialize this repository with README** checkbox so you don't need to Create it again. 
 
-![GitHub Pages Repo](/assets/2018-04-30/GitHubPagesRepo.png)
+![GitHub Pages Repo](../assets/2018-04-30/GitHubPagesRepo.png)
 
 * Edit README.md file and enter some text.
 
-![Edit REDAME](/assets/2018-04-30/EditReadMe.png)
+![Edit REDAME](../assets/2018-04-30/EditReadMe.png)
 
 * Now navigate to `https://user/organizationname.github.io`, in my case [https://AshV.github.IO](https://AshV.github.IO), You will see the content of your README.md file. 
 **Congratulations! It is Live**
 
-![Live Page](/assets/2018-04-30/LivePage.png)
+![Live Page](../assets/2018-04-30/LivePage.png)
 
 * If it doesn't appears immediately, try after sometime it takes few seconds to builds. If you are making page for some repository, you need to manually enable GitHub Pages from settings, you can choose different sources for your page whether it should load from *master branch*, *docs folder in master branch* or from *gh-pages branch*. here I have taken master branch for brevity.
 
-![Enable Github Pages](/assets/2018-04-30/EnableGithubPages.png)
+![Enable Github Pages](../assets/2018-04-30/EnableGithubPages.png)
 
 * Your live page is looking very plain, you can click **Choose a theme** and select from templates provided by github for GitHub Pages, to make it better looking.
 
-![Live Page With Theme](/assets/2018-04-30/LivePageWithTheme.png)
+![Live Page With Theme](../assets/2018-04-30/LivePageWithTheme.png)
 
 ## Using custom themes with Github Pages
 

@@ -10,8 +10,8 @@ In Dynamics 365 we have feasibility to trigger Actions from Client-side code and
 
 I have created  an action with name new_GreetAction(see images below), it's a global action and has Input and Output Argument both. We will see how to call it programmatically.
 
-![](/assets/2018-05-17/greetaction.png)
-![](/assets/2018-05-17/setting_out_param.png)
+![](../assets/2018-05-17/greetaction.png)
+![](../assets/2018-05-17/setting_out_param.png)
 
 ## Calling Actions using C\#
 

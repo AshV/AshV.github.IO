@@ -10,15 +10,15 @@ permalink: set-lookup-view-with-javascript-dynamics-crm-365/
 
 Lookup Views are shown when user clicks on Look Up More Records in any Lookup Field. In Dynamics CRM/365, Lookup Views are available in almost all entities, In newly created custom entities also it will be available by default. Lookup View of Account Entity is shown.
 
-![image alt text](/assets/2017-09-22/image_0.png)
+![image alt text](../assets/2017-09-22/image_0.png)
 
-![image alt text](/assets/2017-09-22/image_1.png)
+![image alt text](../assets/2017-09-22/image_1.png)
 
 Parent Account field is a Lookup in Account, you can see Lookup View here
 
-![image alt text](/assets/2017-09-22/image_2.png)
+![image alt text](../assets/2017-09-22/image_2.png)
 
-![image alt text](/assets/2017-09-22/image_3.png)
+![image alt text](../assets/2017-09-22/image_3.png)
 
 Now If we want to show some other view here by default, **setDeafautView()** method does our job. See the syntax below.
 
@@ -30,15 +30,15 @@ Now the question is how to get View Id, well Advanced Find is here to rescue.
 
 Select Look for as **View** and condition as **Equals.**
 
-![image alt text](/assets/2017-09-22/image_4.png)
+![image alt text](../assets/2017-09-22/image_4.png)
 
 Select your desired View from Lookup. It must belong to your Entity otherwise it won’t show any error but won’t work also, I am taking **Active Accounts** view Here.
 
-![image alt text](/assets/2017-09-22/image_5.png)
+![image alt text](../assets/2017-09-22/image_5.png)
 
 Download and Open Fetch XML
 
-![image alt text](/assets/2017-09-22/image_6.png)
+![image alt text](../assets/2017-09-22/image_6.png)
 
 You can find View ID here. Which is {00000000-0000-0000-00AA-000010001002} for me.
 
@@ -66,13 +66,13 @@ Xrm.Page.getControl("parentaccountid").setDefaultView("{00000000-0000-0000-00AA-
 
 Attach function to Form OnLoad event, Then Save & Publish it.
 
-![image alt text](/assets/2017-09-22/image_7.png) 
+![image alt text](../assets/2017-09-22/image_7.png) 
 
 Now go back to Account Form, refresh it to Load JavaScript, and in **Parent Account** click **Look Up More Records**. 
 
 Congrats! Your default Lookup View is **Active Accounts** now.
 
-![image alt text](/assets/2017-09-22/image_8.png)
+![image alt text](../assets/2017-09-22/image_8.png)
 
 Let’s make it more generic and useful by retrieving View Id from name with WebApi Ajax call.
 
@@ -112,7 +112,7 @@ function setLookupViewByName(fieldName, viewName, asynchronous) {
 ```
 Find Gist here https://gist.github.com/AshV/90aa2dc8f2733384306b5f5dcfbbf95b
 
-![image alt text](/assets/2017-09-22/image_9.png)
+![image alt text](../assets/2017-09-22/image_9.png)
 
 I have given **Customers** as view name, so it is coming as default view. See in screenshot.
 

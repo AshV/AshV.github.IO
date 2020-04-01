@@ -14,37 +14,37 @@ If you haven’t generated keys yet follow steps to generate one or skip to next
 
 Go to [https://console.developers.google.com/permissions/serviceaccounts](https://console.developers.google.com/permissions/serviceaccounts)
 
-![image alt text](/assets/2017-10-11/image_0.png)
+![image alt text](../assets/2017-10-11/image_0.png)
 
 Select project for which you want service account.
 
-![image alt text](/assets/2017-10-11/image_1.png)
+![image alt text](../assets/2017-10-11/image_1.png)
 
 Create new service account here, roles and permission you can ad as per your use cases.
 
-![image alt text](/assets/2017-10-11/image_2.png)
+![image alt text](../assets/2017-10-11/image_2.png)
 
 Now beside your account name click options and then Create Key
 
-![image alt text](/assets/2017-10-11/image_3.png)
+![image alt text](../assets/2017-10-11/image_3.png)
 
 Select your desired format and hit Create
 
-![image alt text](/assets/2017-10-11/image_4.png)
+![image alt text](../assets/2017-10-11/image_4.png)
 
 I have generated both keys for demo
 
-![image alt text](/assets/2017-10-11/image_5.png)
+![image alt text](../assets/2017-10-11/image_5.png)
 
 ## Section 2: Generate Access Tokens
 
 I have taken Console Application here, Install Google.Apis.Auth NuGet package. It will add all required dependencies.
 
-![image alt text](/assets/2017-10-11/image_6.png)
+![image alt text](../assets/2017-10-11/image_6.png)
 
 Add key files to your project and set Copy to Output Directory as Copy Always or Copy if newer
 
-![image alt text](/assets/2017-10-11/image_7.png)
+![image alt text](../assets/2017-10-11/image_7.png)
 
 ### Generate token form JSON key
 
@@ -109,7 +109,7 @@ static void Main(string[] args)
 
 You will get response like this
 
-![image alt text](/assets/2017-10-11/image_8.png)
+![image alt text](../assets/2017-10-11/image_8.png)
 
 ### Generate token form P12 key
 
@@ -182,7 +182,7 @@ static void Main(string[] args)
 
 You will get response like this
 
-![image alt text](/assets/2017-10-11/image_9.png)
+![image alt text](../assets/2017-10-11/image_9.png)
 
 You can change the scopes and use access token according to your need, before making API call make sure to enable the same in Google Developer Console for given project.
 

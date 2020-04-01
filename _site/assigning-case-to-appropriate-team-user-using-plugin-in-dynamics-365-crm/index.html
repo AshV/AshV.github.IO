@@ -202,7 +202,7 @@
     </header> -->
 
         <article itemprop="articleBody">
-            <p><img src="/assets/2018-06-25/ms-dynamics-365-header.webp" alt="Dynamics 365 Header" /></p>
+            <p><img src="../assets/2018-06-25/ms-dynamics-365-header.webp" alt="Dynamics 365 Header" /></p>
 
 <p>In a recent project, I have worked on one interesting functionality, where I have written a plugin for a Case record to be triggered while assigning it to a Team, and it should fulfill these three requirements.</p>
 
@@ -226,13 +226,13 @@
 
 <p>Create a new project in Visual Studio of type Class Library and give the name. I have given the name as AssignPlugin and don’t forget to set the framework version to 4.5.2.</p>
 
-<p><img src="/assets/2017-03-15/image_0.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-03-15/image_0.png" alt="image alt text" /></p>
 
 <p><strong>Step 2</strong></p>
 
 <p>Add the required references to project from CRM SDK.</p>
 
-<p><img src="/assets/2017-03-15/image_1.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-03-15/image_1.png" alt="image alt text" /></p>
 
 <p><strong>Step 3</strong></p>
 
@@ -574,7 +574,7 @@
     <p>Hit OK to save.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_2.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_2.png" alt="image alt text" /></p>
   </li>
 </ul>
 
@@ -741,7 +741,7 @@
     <p>Open Plugin Registration tool and connect it to your Dynamics CRM instance.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_3.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_3.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>Click Register, followed by clicking Register new assembly.</p>
@@ -756,25 +756,25 @@
     <p>In Step 2, check select all and hit Register Selected Plugin button.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_4.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_4.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>After success, you will see the message given below.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_5.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_5.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>Now, a new step has to be registered on Assign step of Case record, else this plugin will not be triggered. To register, right click on assembly and click Register new step.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_6.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_6.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>In dialog box, select Message as Assign and Primary Entity as an incident (i.e. case).</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_7.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_7.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>Hit Register</p>
@@ -790,13 +790,13 @@
     <p>Create Team with Administrator privileges by following Settings -&gt; Security -&gt; Teams and create new Team. I have given Team name as Quick Service Team.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_8.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_8.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>Assign System Administrator Role to the newly created Team.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_9.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_9.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>Now, this Team has no users. If any case is assigned to this Team it will go to the default queue, let’s try it out.</p>
@@ -805,13 +805,13 @@
     <p>Hit Assign, select Assign To as a User or Team, select Quick Service Team and hit Asssign.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_10.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_10.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>After assigning hit Queue Item Details to verify whether it is assigned to the Queue or not.</p>
   </li>
   <li>
-    <p><img src="/assets/2017-03-15/image_11.png" alt="image alt text" /></p>
+    <p><img src="../assets/2017-03-15/image_11.png" alt="image alt text" /></p>
   </li>
   <li>
     <p>To verify the rest of two conditions, create a few more users in Team and try assigning the record to Team and see how records are getting assigned.</p>

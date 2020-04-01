@@ -33,9 +33,9 @@ You need to form fetchXML like this, here entity could be either of **User** or 
 
 > Images:Find Relationship Entity Name
 
-![N:N Relationships](/assets/2018-10-21/N-N.png)
+![N:N Relationships](../assets/2018-10-21/N-N.png)
 
-![Relationship Name](/assets/2018-10-21/Relationship.png)
+![Relationship Name](../assets/2018-10-21/Relationship.png)
 
 > Create FetchXML
 

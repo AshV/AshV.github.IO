@@ -202,7 +202,7 @@
     </header> -->
 
         <article itemprop="articleBody">
-            <p><img src="/assets/2018-12-29/microsoft-dynamics-365-banner.jpg" alt="Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication" /></p>
+            <p><img src="../assets/2018-12-29/microsoft-dynamics-365-banner.jpg" alt="Generate Access Token for Dynamics 365 Single Tenant Server to Server Authentication" /></p>
 
 <p>In Dynamics 365 integration scenarios most of the times we need to authenticate only single tenant. Since now Dynamics 365 authentication only through Azure AD (for online instances) is recommended let’s see how to do it. To achieve this first of all we need to create App in Azure Active Directory and good news is that you don’t need Azure subscription to try this out, your Dynamics 365 free trial is enough.</p>
 
@@ -221,26 +221,26 @@
   <li>Navigate to Azure(https://portal.azure.com).</li>
   <li>
     <p>On left menu click on <strong>Azure Active Directory</strong> -&gt; App registrations(Preview) =&gt; <strong>+ New registration</strong>, We will use Preview version only because it has more straight forward options and going forward this only is going to be default option.
-<img src="assets/2018-12-29/create-azure-ad-app.png" alt="create-azure-ad-app" /></p>
+<img src="../assets/2018-12-29/create-azure-ad-app.png" alt="create-azure-ad-app" /></p>
   </li>
   <li>
     <p>Give some Name to your App, and for account type select <em>Accounts in this organizational directory only</em> because we need it for single tenant only.
-<img src="assets/2018-12-29/single-tenant-app.png" alt="single-tenant-app" /></p>
+<img src="../assets/2018-12-29/single-tenant-app.png" alt="single-tenant-app" /></p>
   </li>
   <li>
     <p>Once App is created, click on API permissions to add new permission for your app.
-<img src="assets/2018-12-29/adding-new-permissions.png" alt="adding-new-permissions" /></p>
+<img src="../assets/2018-12-29/adding-new-permissions.png" alt="adding-new-permissions" /></p>
   </li>
   <li>
     <p>Select Dynamics CRM here.
-<img src="assets/2018-12-29/dynamics-crm-permission.png" alt="dynamics-crm-permission" /></p>
+<img src="../assets/2018-12-29/dynamics-crm-permission.png" alt="dynamics-crm-permission" /></p>
   </li>
   <li>
     <p>Check user_impersonation box in upcoming screen and click <em>Add permissions</em>
-<img src="assets/2018-12-29/user-impersonation.png" alt="user-impersonation" /></p>
+<img src="../assets/2018-12-29/user-impersonation.png" alt="user-impersonation" /></p>
   </li>
   <li>These permission require admin consent, click on <strong>Grant admin consent for your-org</strong> button and confirm it. You need administrator role to do it.</li>
-  <li><img src="assets/2018-12-29/grant-admin-consent.png" alt="grant-admin-consent" /></li>
+  <li><img src="../assets/2018-12-29/grant-admin-consent.png" alt="grant-admin-consent" /></li>
 </ul>
 
 <p><strong>Now your App is created, we need three things to use further from here.</strong></p>
@@ -254,14 +254,14 @@
 <ul>
   <li>
     <p>Application Id &amp; Tenant Id you can grab from App Overview.
-<img src="assets/2018-12-29/app-overview.png" alt="app-overview" /></p>
+<img src="../assets/2018-12-29/app-overview.png" alt="app-overview" /></p>
   </li>
   <li>
     <p>To generate Client Secret go to <strong>Certificates &amp; secrets</strong> and then <strong>+ New client secret</strong>, Give some description and select validity of your secret, click <strong>Add</strong>.
-<img src="assets/2018-12-29/client-secret.png" alt="client-secret" /></p>
+<img src="../assets/2018-12-29/client-secret.png" alt="client-secret" /></p>
   </li>
   <li>Client Secret is something which you should keep secret, that why you can see this only once after generation, copy it and keep it safe to use later.</li>
-  <li><img src="assets/2018-12-29/generated-secret.png" alt="generated-secret" /></li>
+  <li><img src="../assets/2018-12-29/generated-secret.png" alt="generated-secret" /></li>
 </ul>
 
 <h2 id="step-2-create-application-user">Step 2: Create Application User</h2>
@@ -273,22 +273,22 @@
   <li>Navigate to Azure -&gt; Azure Active Directory -&gt; Users, Click on <strong>+ New user</strong>.</li>
 </ul>
 
-<p><img src="assets/2018-12-29/new-app-user.png" alt="new-app-user" /></p>
+<p><img src="../assets/2018-12-29/new-app-user.png" alt="new-app-user" /></p>
 <ul>
   <li>Here Username field must be has same domain name as your org.</li>
   <li>Once this user is create, Go to your Dynamics 365 instance.</li>
   <li>Navigate to Dynamics 365 -&gt; Settings -&gt; Security, Click on Users here.</li>
   <li>
     <p>Change view to Application Users &amp; click on <strong>+ NEW</strong> to create new Application User.
-<img src="assets/2018-12-29/set-view-as-application-user.png" alt="set-view-as-application-user" /></p>
+<img src="../assets/2018-12-29/set-view-as-application-user.png" alt="set-view-as-application-user" /></p>
   </li>
   <li>
     <p>You may need to set form also as Application User if it’s not coming by default.
-<img src="assets/2018-12-29/set-form-as-application-user.png" alt="set-form-as-application-user" /></p>
+<img src="../assets/2018-12-29/set-form-as-application-user.png" alt="set-form-as-application-user" /></p>
   </li>
   <li>
     <p>Here Application ID must be the same as Azure AD App created in previous step. Username &amp; email you can keep same as the one created in Azure AD. Though it’s not necessary to be the same, I have tried with different name also. Once you save it Application ID URI &amp; Azure AD Object ID will auto populate.
-<img src="assets/2018-12-29/new-app-user-d365.png" alt="new-app-user-d365" /></p>
+<img src="../assets/2018-12-29/new-app-user-d365.png" alt="new-app-user-d365" /></p>
   </li>
   <li>Now you need to assign <strong>security role</strong> to this user to perform operation on desired records, I’ve seen in many blogs that this user must have a custom security role, so you can copy some existing role and assign it. But when I tried with <strong>OOB security role</strong> it was still working.</li>
 </ul>
@@ -298,7 +298,7 @@
 <ul>
   <li>
     <p>Create new project in Visual Studio and add ADAL package via NuGet.
-<img src="assets/2018-12-29/ADAL-NuGet.png" alt="ADAL-NuGet.png" /></p>
+<img src="../assets/2018-12-29/ADAL-NuGet.png" alt="ADAL-NuGet.png" /></p>
   </li>
   <li>
     <p>Create below shown method and replace Application Id, Client Secret, Tenant Id &amp; your organization Url in appropriate place.</p>

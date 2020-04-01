@@ -208,7 +208,7 @@
 
 <p><a href="https://www.xrmtoolbox.com/">XrmToolBox</a> is undoubtedly the best productivity tool for D365 developer. Few days back, one person in forum was trying to use third party XrmToolBox plugin in On-Premises environment where internet was not available for some reason. Let’s see how to handle this situation.</p>
 
-<p><img src="/assets/2018-05-21/offline_xrmtoolbox_plugin.png" alt="question in forum" /></p>
+<p><img src="../assets/2018-05-21/offline_xrmtoolbox_plugin.png" alt="question in forum" /></p>
 
 <p>To use any XrmToolBox plugin without internet we have to grab the DLL of the plugin, which you can get in two ways.</p>
 
@@ -216,11 +216,11 @@
 
 <p>Navigate to <strong>%AppData%\MscrmTools\XrmToolBox\Plugins</strong> in machine where you have already installed desired XrmToolBox plugin and find for the DLL.</p>
 
-<p><img src="/assets/2018-05-21/run.png" alt="run" /></p>
+<p><img src="../assets/2018-05-21/run.png" alt="run" /></p>
 
 <p>For example I have this plugin installed and I want this in my no internet environment.</p>
 
-<p><img src="/assets/2018-05-21/plugin_in_xrmtoolbox.png" alt="plugin_in_xrmtoolbox" /></p>
+<p><img src="../assets/2018-05-21/plugin_in_xrmtoolbox.png" alt="plugin_in_xrmtoolbox" /></p>
 
 <p>Look for the DLL with this/similar name, may contain author name etc. For this one DLL is <strong>Ryr.XrmToolBox.EntityImageUpdater.dll</strong>.</p>
 
@@ -228,11 +228,11 @@
 
 <p>You can navigate to <a href="https://www.xrmtoolbox.com/plugins/">XrmToolBox.com/plugins/</a> and search for desired plugin.</p>
 
-<p><img src="/assets/2018-05-21/plugin_list.png" alt="plugin_list" /></p>
+<p><img src="../assets/2018-05-21/plugin_list.png" alt="plugin_list" /></p>
 
 <p>Once you found it. check whether it’s open source. navigate to source code location, grab it build it. Like this awesome plugin is developed by <a href="https://github.com/rajyraman">Natraj Yegnaraman</a> and source code is hosted at <a href="https://github.com/rajyraman/Ryr.XrmToolBox.EntityImageUpdater">GitHub/rajyraman/Ryr.XrmToolBox.EntityImageUpdater</a></p>
 
-<p><img src="/assets/2018-05-21/open_source_plugin.png" alt="open_source_plugin" /></p>
+<p><img src="../assets/2018-05-21/open_source_plugin.png" alt="open_source_plugin" /></p>
 
 <p>After building code grab the DLL from <em>bin/debug</em> or <em>bin/release(preferred, build with release config)</em>.</p>
 
@@ -240,7 +240,7 @@
 
 <p>Now move the above grabbed DLL to destination environment somehow network share or pen-drive. and place the DLL to same folder i.e  <strong>%AppData%\MscrmTools\XrmToolBox\Plugins</strong>. And here you go. Open XrmToolBox and you will see this plugin in plugin list, you can use like any other plugin.</p>
 
-<p><img src="/assets/2018-05-21/done.png" alt="done" /></p>
+<p><img src="../assets/2018-05-21/done.png" alt="done" /></p>
 
 <h3 id="things-to-consider">Things to consider</h3>
 

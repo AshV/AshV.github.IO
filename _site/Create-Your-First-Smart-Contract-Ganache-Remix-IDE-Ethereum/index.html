@@ -202,14 +202,14 @@
     </header> -->
 
         <article itemprop="articleBody">
-            <p><img src="/assets/2018-06-14/Ethereum-Banner.jpg" alt="Ethereum-Banner" /></p>
+            <p><img src="../assets/2018-06-14/Ethereum-Banner.jpg" alt="Ethereum-Banner" /></p>
 
 <p>Let’s create &amp; test your first smart contract on Ethereum Blockchain with simplest approach possible today, we will be using <a href="http://truffleframework.com/ganache/">Ganache</a>, <a href="https://remix.ethereum.org/">Remix IDE</a> &amp; <a href="https://www.myetherwallet.com/">MyEtherWallet</a>.
 We will be using use local instance of ethereum as a private blockchain for th sake of simplicity. Before that a let’s have a quick look at Smart Contracts.</p>
 
 <h2 id="what-is-smart-contract-">What is Smart Contract ?</h2>
 
-<p><img src="/assets/2018-06-14/SmartContract_NickSzabo.jpeg" alt="SmartContract_NickSzabo" /></p>
+<p><img src="../assets/2018-06-14/SmartContract_NickSzabo.jpeg" alt="SmartContract_NickSzabo" /></p>
 
 <p>Above image tells pretty much about Smart Contracts and it’s origin. <a href="https://en.wikipedia.org/wiki/Nick_Szabo">Nick Szabo</a>, who is cryptography genius &amp; legal scholar, has coined the term <a href="https://en.wikipedia.org/wiki/Smart_contract">Smart Contract</a> back in 1994. He was trying to store and execute legal contracts with the help of cryptography. Since then there has been many implementation of Smart Contract, but nothing was widely accepted and popular like Ethereum Smart Contract.</p>
 
@@ -221,18 +221,18 @@ We will be using use local instance of ethereum as a private blockchain for th s
 
 <p>Download and install Ganache from <a href="http://truffleframework.com/ganache/">http://truffleframework.com/ganache/</a></p>
 
-<p><img src="/assets/2018-06-14/Ganache_WebPage.png" alt="Ganache_WebPage" /></p>
+<p><img src="../assets/2018-06-14/Ganache_WebPage.png" alt="Ganache_WebPage" /></p>
 
 <p>Ganache runs a local instance of Ethereum, so we don’t need to struggle with Geth command line, along with this we get few accounts created by default, which can be used in development and testing. 
 Ganache has built-in block explorer also, so we can easily track all the block and transaction.</p>
 
 <p>Apart from this Ganache has many other useful features which you can see below, according to their website.</p>
 
-<p><img src="/assets/2018-06-14/Ganache_Features.png" alt="Ganache_Features" /></p>
+<p><img src="../assets/2018-06-14/Ganache_Features.png" alt="Ganache_Features" /></p>
 
 <p>After installing, open Ganache you would see this window</p>
 
-<p><img src="/assets/2018-06-14/Ganache_Window.png" alt="Ganache_Window" /></p>
+<p><img src="../assets/2018-06-14/Ganache_Window.png" alt="Ganache_Window" /></p>
 
 <p>You can see here list of accounts along with their address, balance and other information. In header you can see blocks, transaction information etc. Observe  RPC SERVER Address here, with this address you would be interacting with this blockchain.</p>
 
@@ -240,21 +240,21 @@ Ganache has built-in block explorer also, so we can easily track all the block a
 
 <p>Remix is an online IDE for solidity language, you can access it online at <a href="https://remix.ethereum.org/">https://remix.ethereum.org/</a>. We will use it to write and compile our smart contract code.</p>
 
-<p><img src="/assets/2018-06-14/RemixIDE.PNG" alt="RemixIDE" /></p>
+<p><img src="../assets/2018-06-14/RemixIDE.PNG" alt="RemixIDE" /></p>
 
 <h3 id="myetherwallet">MyEtherWallet</h3>
 
 <p>MyEtherWallet is an online wallet &amp; client side interface, which can interact with Ethereum blockchain &amp; perform operations on blockchain.</p>
 
-<p><img src="/assets/2018-06-14/MyEtherWallet_OnLine.png" alt="MyEtherWallet_OnLine" /></p>
+<p><img src="../assets/2018-06-14/MyEtherWallet_OnLine.png" alt="MyEtherWallet_OnLine" /></p>
 
 <p>But here we are using private blockchain running in our local, which can’t be accessed by online version, so we will download it from <a href="https://github.com/kvhnuke/etherwallet/releases">https://github.com/kvhnuke/etherwallet/releases</a> and run it locally.</p>
 
-<p><img src="/assets/2018-06-14/Download_MyEtherWallet.png" alt="Download_MyEtherWallet" /></p>
+<p><img src="../assets/2018-06-14/Download_MyEtherWallet.png" alt="Download_MyEtherWallet" /></p>
 
 <p>You can download latest release, unzip it and open index.html.</p>
 
-<p><img src="/assets/2018-06-14/MyEtherWallet_Local.png" alt="MyEtherWallet_Local" /></p>
+<p><img src="../assets/2018-06-14/MyEtherWallet_Local.png" alt="MyEtherWallet_Local" /></p>
 
 <h2 id="write-smart-contract-in-solidity">Write Smart Contract in Solidity</h2>
 
@@ -287,7 +287,7 @@ Ganache has built-in block explorer also, so we can easily track all the block a
 
 <p>Open <a href="https://remix.ethereum.org/">Remix IDE</a> and replace exiting code with the above one. Then click <code class="highlighter-rouge">Start to compile</code> if it compiles successfully, you can see your contract name(Calculator here) in green box, below Details button. On click of details button you can see all the data about compiled contract, including generated byte code, which we will be using further.</p>
 
-<p><img src="/assets/2018-06-14/Compiled.png" alt="Compiled" /></p>
+<p><img src="../assets/2018-06-14/Compiled.png" alt="Compiled" /></p>
 
 <p>Your code is compiled successfully, now let’s deploy &amp; test it.</p>
 
@@ -295,27 +295,27 @@ Ganache has built-in block explorer also, so we can easily track all the block a
 
 <p>We will deploy it to blockchain running in Ganache with the help of MyEtherWallet. Open Ganache and grab <code class="highlighter-rouge">RPC SERVER</code> URL.</p>
 
-<p><img src="/assets/2018-06-14/Ganache_RPC.png" alt="Ganache_RPC" /></p>
+<p><img src="../assets/2018-06-14/Ganache_RPC.png" alt="Ganache_RPC" /></p>
 
 <p>Now open index.html of MyEhterWallet, and connect to this blockchain. To do this click on dropdown as shown in image and select <strong>Add Custom Network/Node</strong></p>
 
-<p><img src="/assets/2018-06-14/MEW_LocalNode.png" alt="MEW_LocalNode" /></p>
+<p><img src="../assets/2018-06-14/MEW_LocalNode.png" alt="MEW_LocalNode" /></p>
 
 <p>Give some name to Node and enter URL &amp; Post copied from Ganache, and hit <code class="highlighter-rouge">Save &amp; Use Cutom Node</code>.</p>
 
-<p><img src="/assets/2018-06-14/Add_Node.png" alt="Add_Node" /></p>
+<p><img src="../assets/2018-06-14/Add_Node.png" alt="Add_Node" /></p>
 
 <p>You will see success message in bottom.</p>
 
-<p><img src="/assets/2018-06-14/Node_Connected.png" alt="Node_Connected.png" /></p>
+<p><img src="../assets/2018-06-14/Node_Connected.png" alt="Node_Connected.png" /></p>
 
 <p>Now goto Contacts in menu and click <strong>Deploy Contract</strong>, here you need <strong>Byte Code</strong> of your smart contract to deploy, which we will get from details of contract in Remix IDE.</p>
 
-<p><img src="/assets/2018-06-14/Deploy_Contract.png" alt="Deploy_Contract" /></p>
+<p><img src="../assets/2018-06-14/Deploy_Contract.png" alt="Deploy_Contract" /></p>
 
 <p>Go back to Remix IDE, click on Details &amp; copy BYTECODE.</p>
 
-<p><img src="/assets/2018-06-14/Copy_ByteCode.png" alt="Copy_ByteCode" /></p>
+<p><img src="../assets/2018-06-14/Copy_ByteCode.png" alt="Copy_ByteCode" /></p>
 
 <p>We need to pick contents of <code class="highlighter-rouge">object</code>, copy it &amp; paste in <strong>Byte Code</strong> in Deploy Contract in MyEtherWallet.</p>
 
@@ -329,29 +329,29 @@ Ganache has built-in block explorer also, so we can easily track all the block a
 
 <p>Right after pasting Byte Code, Gas Limit should appear. To access your wallet, MyEtherWallet need private key. Wallet 🤔? Yes, lemme explain wallet you in next step.</p>
 
-<p><img src="/assets/2018-06-14/Deploying.png" alt="Deploying" /></p>
+<p><img src="../assets/2018-06-14/Deploying.png" alt="Deploying" /></p>
 
 <p>As explained earlier Ganache will have few accounts created by default, Place where information about account is stored is referred as wallet. We will use one of those account.</p>
 
-<p><img src="/assets/2018-06-14/Show_Keys.png" alt="Show_Keys" />
+<p><img src="../assets/2018-06-14/Show_Keys.png" alt="Show_Keys" />
 Open Ganache and copy key from one of the wallet and use this in above step, and click <strong>Unblock</strong>.
-<img src="/assets/2018-06-14/Copy_Key.png" alt="Copy_Key" /></p>
+<img src="../assets/2018-06-14/Copy_Key.png" alt="Copy_Key" /></p>
 
 <p>After adding byte code and giving wallet access, hit Sign Transaction button, this makes transaction verifiable. Now Deploy Contract button will appear, hit it &amp; confirm transaction to deploy your smart contract to blockchain.</p>
 
-<p><img src="/assets/2018-06-14/Sign_Transaction.png" alt="Sign_Transaction" /></p>
+<p><img src="../assets/2018-06-14/Sign_Transaction.png" alt="Sign_Transaction" /></p>
 
 <p>Let’s verify in Ganache whether it’s deployed successfully. Goto Transactions in Ganache, you can here one <code class="highlighter-rouge">Contract Creation</code> transaction created in a block. Congrats! your smart contract is deployed successfully.</p>
 
-<p><img src="/assets/2018-06-14/Contract_Created_Ganache.png" alt="Contract_Created_Ganache" /></p>
+<p><img src="../assets/2018-06-14/Contract_Created_Ganache.png" alt="Contract_Created_Ganache" /></p>
 
 <p>Let’s test it now, click to open above shown transaction &amp; copy <strong>CREATED CONTRACT ADDRESS</strong>. Goto MyEtherWallet &amp; under Contracts, click Interact with Contract, paste the Contract Address here.</p>
 
-<p><img src="/assets/2018-06-14/Interact_To_Contract.png" alt="Interact_To_Contract" /></p>
+<p><img src="../assets/2018-06-14/Interact_To_Contract.png" alt="Interact_To_Contract" /></p>
 
 <p>For ABI interface you need to go to Remix IDE then details, get ABI form here and paste. ABI interface contains information about functions available in smart contract.</p>
 
-<p><img src="/assets/2018-06-14/Copy_ABI.png" alt="Copy_ABI" /></p>
+<p><img src="../assets/2018-06-14/Copy_ABI.png" alt="Copy_ABI" /></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
 	</span><span class="p">{</span><span class="w">
@@ -419,23 +419,23 @@ Open Ganache and copy key from one of the wallet and use this in above step, and
 
 <p>After clicking Access, you can see all available functions in your smart contract.</p>
 
-<p><img src="/assets/2018-06-14/Access_Contract.png" alt="Access_Contract" /></p>
+<p><img src="../assets/2018-06-14/Access_Contract.png" alt="Access_Contract" /></p>
 
 <p>Let’s call them &amp; test.</p>
 
-<p><img src="/assets/2018-06-14/Call_Add.png" alt="Call_Add" /></p>
+<p><img src="../assets/2018-06-14/Call_Add.png" alt="Call_Add" /></p>
 
 <p>While calling Add or Subtract, it will show a warning before making transaction, along with gas limit.</p>
 
-<p><img src="/assets/2018-06-14/Add_Warning.png" alt="Add_Warning" /></p>
+<p><img src="../assets/2018-06-14/Add_Warning.png" alt="Add_Warning" /></p>
 
 <p>But in LastOperation no warning will appear. Because it adds no data to blockchain.</p>
 
-<p><img src="/assets/2018-06-14/LastOperation.png" alt="LastOperation" /></p>
+<p><img src="../assets/2018-06-14/LastOperation.png" alt="LastOperation" /></p>
 
 <p>All those transactions you can see in Ganache, along with gas used.</p>
 
-<p><img src="/assets/2018-06-14/Transactions.png" alt="Transactions" /></p>
+<p><img src="../assets/2018-06-14/Transactions.png" alt="Transactions" /></p>
 
 <blockquote>
   <p>Hope it helps 😀</p>

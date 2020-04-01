@@ -206,15 +206,15 @@
 
 <p>Lookup Views are shown when user clicks on Look Up More Records in any Lookup Field. In Dynamics CRM/365, Lookup Views are available in almost all entities, In newly created custom entities also it will be available by default. Lookup View of Account Entity is shown.</p>
 
-<p><img src="/assets/2017-09-22/image_0.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_0.png" alt="image alt text" /></p>
 
-<p><img src="/assets/2017-09-22/image_1.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_1.png" alt="image alt text" /></p>
 
 <p>Parent Account field is a Lookup in Account, you can see Lookup View here</p>
 
-<p><img src="/assets/2017-09-22/image_2.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_2.png" alt="image alt text" /></p>
 
-<p><img src="/assets/2017-09-22/image_3.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_3.png" alt="image alt text" /></p>
 
 <p>Now If we want to show some other view here by default, <strong>setDeafautView()</strong> method does our job. See the syntax below.</p>
 
@@ -225,15 +225,15 @@
 
 <p>Select Look for as <strong>View</strong> and condition as <strong>Equals.</strong></p>
 
-<p><img src="/assets/2017-09-22/image_4.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_4.png" alt="image alt text" /></p>
 
 <p>Select your desired View from Lookup. It must belong to your Entity otherwise it won’t show any error but won’t work also, I am taking <strong>Active Accounts</strong> view Here.</p>
 
-<p><img src="/assets/2017-09-22/image_5.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_5.png" alt="image alt text" /></p>
 
 <p>Download and Open Fetch XML</p>
 
-<p><img src="/assets/2017-09-22/image_6.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_6.png" alt="image alt text" /></p>
 
 <p>You can find View ID here. Which is {00000000-0000-0000-00AA-000010001002} for me.</p>
 
@@ -259,13 +259,13 @@
 
 <p>Attach function to Form OnLoad event, Then Save &amp; Publish it.</p>
 
-<p><img src="/assets/2017-09-22/image_7.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_7.png" alt="image alt text" /></p>
 
 <p>Now go back to Account Form, refresh it to Load JavaScript, and in <strong>Parent Account</strong> click <strong>Look Up More Records</strong>.</p>
 
 <p>Congrats! Your default Lookup View is <strong>Active Accounts</strong> now.</p>
 
-<p><img src="/assets/2017-09-22/image_8.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_8.png" alt="image alt text" /></p>
 
 <p>Let’s make it more generic and useful by retrieving View Id from name with WebApi Ajax call.</p>
 
@@ -304,7 +304,7 @@
 </code></pre></div></div>
 <p>Find Gist here https://gist.github.com/AshV/90aa2dc8f2733384306b5f5dcfbbf95b</p>
 
-<p><img src="/assets/2017-09-22/image_9.png" alt="image alt text" /></p>
+<p><img src="../assets/2017-09-22/image_9.png" alt="image alt text" /></p>
 
 <p>I have given <strong>Customers</strong> as view name, so it is coming as default view. See in screenshot.</p>
 

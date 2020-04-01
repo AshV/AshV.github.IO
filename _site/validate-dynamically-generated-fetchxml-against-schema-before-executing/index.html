@@ -208,7 +208,7 @@
 
 <p><strong>Step 1</strong>. We need FetchXml schema which can be grabbed from SDK or can be found at the end of this article. Add this file with name <strong>fetch.xsd</strong> to your project and set <strong>Copy to Output Directory</strong> property as <strong>Copy Always</strong>.</p>
 
-<p><img src="/assets/2018-04-08/Fetch.xsd_Properties.png" alt="Fetch.xsd Properties" /></p>
+<p><img src="../assets/2018-04-08/Fetch.xsd_Properties.png" alt="Fetch.xsd Properties" /></p>
 
 <p><strong>Step 2</strong>. Add below listed namespaces to project</p>
 
@@ -283,7 +283,7 @@
 </code></pre></div></div>
 
 <p>Here given fetchXml looks fine let’s execute it.
-<img src="/assets/2018-04-08/Invalid_fetchXml.png" alt="Invalid fetchXml" />
+<img src="../assets/2018-04-08/Invalid_fetchXml.png" alt="Invalid fetchXml" />
 No it was Invalid because for <strong>contains</strong> fetchXml uses <strong>like</strong> similar to SQL, let’s fix it and run again.</p>
 
 <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
@@ -303,7 +303,7 @@ No it was Invalid because for <strong>contains</strong> fetchXml uses <strong>li
         <span class="s">$"fetchXml is invalid because </span><span class="p">{</span><span class="n">validateFetchXml</span><span class="p">.</span><span class="n">Message</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p><img src="/assets/2018-04-08/Valid_fetchXml.png" alt="Valid_fetchXml.png" /></p>
+<p><img src="../assets/2018-04-08/Valid_fetchXml.png" alt="Valid_fetchXml.png" /></p>
 
 <p><strong>Step 5</strong>. If you don’t want to keep schema as a separate file, you can keep it as string and convert it to MemoryStream, like here we are reading fetchXml string.</p>
 
