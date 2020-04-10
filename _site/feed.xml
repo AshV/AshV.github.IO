@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-01T11:34:23+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ashish Vishwakarma</title><subtitle>Devoted To Code</subtitle><entry><title type="html">Connect CrmServiceClient using Azure AD App Client ID &amp;amp; Client Secret for C# SDK</title><link href="http://localhost:4000/Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret/" rel="alternate" type="text/html" title="Connect CrmServiceClient using Azure AD App Client ID &amp; Client Secret for C# SDK" /><published>2020-03-02T00:18:01+05:30</published><updated>2020-03-02T00:18:01+05:30</updated><id>http://localhost:4000/Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret</id><content type="html" xml:base="http://localhost:4000/Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret/">&lt;p&gt;After depecation announcemnt of Dynamics 2011 Organization Service Endpoint in late 2018 and recommendation on using OAuth authentication &amp;amp; Dynamics 365 WebAPI, there was uncertainity for developers who were using/planning to use 3rd party integartion using C# SDK.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-11T02:19:11+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ashish Vishwakarma</title><subtitle>Devoted To Code</subtitle><entry><title type="html">Quick Local WebServer with IIS Express</title><link href="http://localhost:4000/Quick-Local-WebServer-IIS-Express/" rel="alternate" type="text/html" title="Quick Local WebServer with IIS Express" /><published>2020-04-11T00:18:01+05:30</published><updated>2020-04-11T00:18:01+05:30</updated><id>http://localhost:4000/Quick-Local-Webserver-IISExpress</id><content type="html" xml:base="http://localhost:4000/Quick-Local-WebServer-IIS-Express/">&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Download &lt;a href=&quot;../assets/2020-04-11/server.bat&quot;&gt;server.bat&lt;/a&gt;, place it in your folder, Run it and get going.&lt;/p&gt;
+
+&lt;p&gt;Web Development has changed drastically in recent years. These days even most of the front-end requires to be run from a web-server, and if like me you are not a full-time web developer, you may find a hard time setting up a local webserver.&lt;/p&gt;
+
+&lt;p&gt;Here’s good news! Many frameworks and languages provide out of the box web-server which can be utilized for the task. I mainly code on Microsoft related technologies so IISExpress is already installed in my machine, which can be used as a local web-server using this command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\&amp;gt; &amp;lt;path to iisexpress.exe&amp;gt; /path:&amp;lt;absolute path to folder&amp;gt; /port:&amp;lt;port to be used&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Suppose your IISExpress is installed at the default location, your front-end code is kept at C:\MyWeb and port to be used is 8000, then the command will look like this.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\&amp;gt; &quot;C:\Program Files (x86)\IIS Express\iisexpress.exe&quot; /path:C:\MyWeb /port:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To avoid typing this command every time I moved this to a batch file with a small tweak like below, where &lt;code class=&quot;highlighter-rouge&quot;&gt;%cd%&lt;/code&gt; picks your current directory.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;C:\Program Files (x86)\IIS Express\iisexpress.exe&quot; /path:%cd% /port:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You simply paste this batch file in your folder and get going. Executing this batch file will start a local webserver at the current folder with port 8000. Access your webpage at http://localhost:8000&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/2020-04-11/local-web-server.png&quot; alt=&quot;local-web-server&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../assets/2020-04-11/server.bat&quot;&gt;Download server.bat batch file here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To find local webserver options for other languages &amp;amp; frameworks follow this awesome Github Gist. &lt;a href=&quot;https://gist.github.com/willurd/5720255&quot;&gt;Big list of HTTP static server one-liners&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">TL;DR Download server.bat, place it in your folder, Run it and get going.</summary></entry><entry><title type="html">Connect CrmServiceClient using Azure AD App Client ID &amp;amp; Client Secret for C# SDK</title><link href="http://localhost:4000/Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret/" rel="alternate" type="text/html" title="Connect CrmServiceClient using Azure AD App Client ID &amp; Client Secret for C# SDK" /><published>2020-03-02T00:18:01+05:30</published><updated>2020-03-02T00:18:01+05:30</updated><id>http://localhost:4000/Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret</id><content type="html" xml:base="http://localhost:4000/Connect-CrmServiceClient-Authenticate-Azure-AD-ClientId-ClientSecret/">&lt;p&gt;After depecation announcemnt of Dynamics 2011 Organization Service Endpoint in late 2018 and recommendation on using OAuth authentication &amp;amp; Dynamics 365 WebAPI, there was uncertainity for developers who were using/planning to use 3rd party integartion using C# SDK.&lt;/p&gt;
 
 &lt;p&gt;Ref: &lt;a href=&quot;https://crmtipoftheday.com/1155/the-clock-is-ticking-on-your-endpoint/&quot;&gt;https://crmtipoftheday.com/1155/the-clock-is-ticking-on-your-endpoint/&lt;/a&gt;&lt;/p&gt;
 
@@ -1469,190 +1494,4 @@ Once you have all the details, prepare connection string as shown below and use 
 
 &lt;blockquote&gt;
   &lt;p&gt;Thanks for reading, I hope it’s helpful.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">Custom Actions are lesser used processes than Workflows and Plugins in Dynamics 365, but very useful also at the same time. People who have already have idea about Custom Workflow Activity or read my previous article it’s going to be very easy, coding part is same, only how we consume the code in dynamics 365 process is different, and use cases too, obviously. Custom Actions can be created with or without writing code, but they can be triggered only by the code. Here we will write custom code to retrieve case records assigned to calling user.</summary></entry><entry><title type="html">Creating Custom Workflow Activity in Dynamics 365</title><link href="http://localhost:4000/Custom-Workflow-Activity-Dynamics-365/" rel="alternate" type="text/html" title="Creating Custom Workflow Activity in Dynamics 365" /><published>2018-06-17T00:18:01+05:30</published><updated>2018-06-17T00:18:01+05:30</updated><id>http://localhost:4000/Custom-Workflow-Activity-Dynamics-365</id><content type="html" xml:base="http://localhost:4000/Custom-Workflow-Activity-Dynamics-365/">&lt;p&gt;&lt;img src=&quot;../assets/2018-06-25/ms-dynamics-365-header.webp&quot; alt=&quot;Dynamics 365 Header&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In Dynamics 365 Workflows if some functionality is not available in out of the box features, we have option to write Custom Workflow Activity and consume that in workflow processes. Let’s see how to create Custom Workflow Activities for Dynamics 365. Here for example we will write an activity which will take text as input and return work count as output.&lt;/p&gt;
-
-&lt;h3 id=&quot;step-1-create-new-project&quot;&gt;Step 1: Create New Project&lt;/h3&gt;
-
-&lt;p&gt;In Visual Studio create new project of type Class Library &amp;amp; select framework version 4.5.2, this might change for future versions. Name I have given as &lt;strong&gt;WordCountWorkflow&lt;/strong&gt;, which tells the purpose of the workflow.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/New-Workflow.png&quot; alt=&quot;New-Workflow&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;step-2-add-required-packags&quot;&gt;Step 2: Add Required Packags&lt;/h3&gt;
-
-&lt;p&gt;Goto manage nugget packages and install &lt;strong&gt;Microssoft.CrmSdk.CoreAssemblies&lt;/strong&gt;(for Microsoft.Xrm.Sdk namespace) &amp;amp; &lt;strong&gt;Microssoft.CrmSdk.Workflow&lt;/strong&gt;(for Microsoft.Xrm.Sdk.Workflow namespace).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/nugget-packages.png&quot; alt=&quot;nugget-packages&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;step-3-create-wordcount-class&quot;&gt;Step 3: Create WordCount Class&lt;/h3&gt;
-
-&lt;p&gt;Create class &lt;strong&gt;WordCount&lt;/strong&gt; and inherited from &lt;strong&gt;CodeActivity&lt;/strong&gt;, it would require to add &lt;strong&gt;System.Activities&lt;/strong&gt; namespace.&lt;/p&gt;
-
-&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Activities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;WordCountWorkflow&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WordCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CodeActivity&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CodeActivityContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;step-4-add-inputoutput-parameters&quot;&gt;Step 4: Add Input/Output Parameters&lt;/h3&gt;
-
-&lt;p&gt;Our workflow activity will require one input parameter of type text and one output parameter of type number to return word count. Let’s add them to the class, it would require &lt;strong&gt;Microsoft.Xrm.Sdk.Workflow&lt;/strong&gt; to be added.&lt;/p&gt;
-
-&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Microsoft.Xrm.Sdk.Workflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Activities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;WordCountWorkflow&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WordCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CodeActivity&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequiredArgument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Input Text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InArgument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InputText&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Word Count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OutArgument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CountOfWords&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CodeActivityContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;step-5-add-word-count-logic--getset-parameters&quot;&gt;Step 5: Add Word Count Logic &amp;amp; Get/Set Parameters&lt;/h3&gt;
-
-&lt;p&gt;Inside &lt;strong&gt;Execute&lt;/strong&gt; method we are getting &lt;strong&gt;InputText&lt;/strong&gt; parameter value and applying &lt;strong&gt;Split()&lt;/strong&gt; to split into words then &lt;strong&gt;.Length&lt;/strong&gt; property to get the count of words. Finally setting this value to &lt;strong&gt;CountOfWords&lt;/strong&gt; parameter.&lt;/p&gt;
-
-&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Microsoft.Xrm.Sdk.Workflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Activities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;WordCountWorkflow&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WordCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CodeActivity&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequiredArgument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Input Text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InArgument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InputText&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Word Count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OutArgument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CountOfWords&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CodeActivityContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CountOfWords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InputText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\n'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;StringSplitOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RemoveEmptyEntries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;step-6-signing-the-assembly&quot;&gt;Step 6: Signing the Assembly&lt;/h3&gt;
-
-&lt;p&gt;In Dynamics 365 it is necessary to sign the assembly before registering. To do this&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Right click on project, click on properties to open.&lt;/li&gt;
-  &lt;li&gt;On left pane, click on Signing.&lt;/li&gt;
-  &lt;li&gt;Check Sign the assembly checkbox.&lt;/li&gt;
-  &lt;li&gt;In Choose a strong name key file dropdown click New…&lt;/li&gt;
-  &lt;li&gt;Crete Strong Name Key popup will appear.&lt;/li&gt;
-  &lt;li&gt;Give some name.&lt;/li&gt;
-  &lt;li&gt;Optionally you can protect this key file with password.&lt;/li&gt;
-  &lt;li&gt;Click Ok to generate key and sign the assembly.&lt;/li&gt;
-  &lt;li&gt;Build the solution&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Sign-Assembly.png&quot; alt=&quot;Sign-Assembly&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;step-7-register-the-assembly-in-dynamics-365&quot;&gt;Step 7: Register the Assembly in Dynamics 365&lt;/h3&gt;
-
-&lt;p&gt;Open the Plugin Registration Tool and connect with your organization. If you don’t already have, grab it by adding &lt;strong&gt;Microsoft.CrmSdk.XrmTooling.PluginRegistrationTool&lt;/strong&gt; nuget package.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; Click on Register then Register New Assembly.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Register-New-Assembly.png&quot; alt=&quot;Register-New-Assembly&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; Register New Assembly popup will appear, select your project DLL from bin/debug folder of project.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Load-Assembly.png&quot; alt=&quot;Load-Assembly&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; After selecting DLL, make sure Select All is selected in Step 2.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Select-All.png&quot; alt=&quot;Select-All&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt; Leave rest of he options as it is and click &lt;strong&gt;Register Selected Plugins&lt;/strong&gt;, it should register your assembly successfully.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Registered.png&quot; alt=&quot;Registered&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt; You can verify the assembly after registering in Plugin Registration Tool.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Verify-DLL.png&quot; alt=&quot;Verify-DLL&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;step-8-consuming-custom-workflow-activity-in-workflow-process&quot;&gt;Step 8: Consuming Custom Workflow Activity in Workflow Process&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; Open CRM, goto solution where you want to create Workflow, navigate to Processes &amp;amp; create new. Give some meaningful name, I’ve given “Word Counter”, select Category as “Workflow” &amp;amp; select “Contact” in Entity. I have created as realtime workflow by unchecking “Run this workflow in the background (recommended)” checkbox, for the ease of testing.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/New-Workflow-Process.png&quot; alt=&quot;New-Workflow-Process&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; After Creation check “As an on-demand process” to make as On-demand workflow.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Make-On-Demand.png&quot; alt=&quot;Make-On-Demand&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; Click on “Add Step” and look for our assembly name i.e &lt;strong&gt;WordCountWorkflow&lt;/strong&gt;, click on this &lt;strong&gt;WordCountWorkflow.WordCount&lt;/strong&gt; will appear, click on this to add step.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Add-Step.png&quot; alt=&quot;Add-Step&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt; In added step click “Set Properties”, In properties set &lt;strong&gt;Input Text&lt;/strong&gt;(Input parameter given in code) as Address field of Contact record.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Set-Input.png&quot; alt=&quot;Set-Input&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt; Add another update step, and set &lt;strong&gt;Job Title&lt;/strong&gt; field as &lt;strong&gt;Word Count&lt;/strong&gt;(Output Parameter given in code).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Set-Output.png&quot; alt=&quot;Set-Output&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;6.&lt;/strong&gt; Workflow is completed, Save it &amp;amp; Activate it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Activate-Workflow.png&quot; alt=&quot;Activate-Workflow&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;testing-the-workflow&quot;&gt;Testing the Workflow&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; To test this, I have created one contact record with &lt;strong&gt;Address&lt;/strong&gt; field populated which has 9 words in total. Expand top menu in form and click “Run Workflow”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Run-Workflow.png&quot; alt=&quot;Run-Workflow&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; In appearing popup, select our “Word Counter” workflow and click “Add”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Select-Workflow.png&quot; alt=&quot;Select-Workflow&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; It will ask for confirmation to run, click “OK”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Confirm-Run.png&quot; alt=&quot;Confirm-Run&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt; Let the execution complete.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Executing.png&quot; alt=&quot;Executing&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt; Refresh the form to update and verify whether &lt;strong&gt;Job Title&lt;/strong&gt; field is updated with the Word Count of Address field.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/2018-06-17/Output-Success.png&quot; alt=&quot;Output-Success&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Congrats! Your Custom Workflow Activity is running successfully.&lt;/p&gt;
-
-&lt;p&gt;Grab complete source code here &lt;a href=&quot;https://github.com/AshV/Custom-Workflows-Dynamics-365&quot;&gt;https://github.com/AshV/Custom-Workflows-Dynamics-365&lt;/a&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Thanks for reading!&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">Custom Actions are lesser used processes than Workflows and Plugins in Dynamics 365, but very useful also at the same time. People who have already have idea about Custom Workflow Activity or read my previous article it’s going to be very easy, coding part is same, only how we consume the code in dynamics 365 process is different, and use cases too, obviously. Custom Actions can be created with or without writing code, but they can be triggered only by the code. Here we will write custom code to retrieve case records assigned to calling user.</summary></entry></feed>
