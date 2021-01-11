@@ -46,7 +46,7 @@ layout: null
                       </figure>
                       {% else %}
                       <figure>
-                          <img src="{{ site.baseurl | prepend: site.url }}/images/sitelogo_640x492.png" alt=" {{ post.title }} ">
+                         
                           <figcaption>{{ post.title }}</figcaption>
                       </figure>
                       {% endif %}
