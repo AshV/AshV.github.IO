@@ -5,11 +5,11 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
+    <title>A</title>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
     <atom:link href="{{ "/instantfeed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <updated>{{ site.time | date_to_xmlschema }}</updated>
+  
     <id>{{ site.url }}</id>
     <author>
       <name>{{ site.owner.name }}</name>
@@ -41,7 +41,6 @@ layout: null
                       <h1>{{ post.title | xml_escape }}</h1>
                       {% if post.imagefeature %}
                       <figure>
-                          <img src="{{ post.imagefeature }}" alt=" {{ post.title }} ">
                           <figcaption>{{ post.title }}</figcaption>
                       </figure>
                       {% else %}
@@ -50,17 +49,9 @@ layout: null
                           <figcaption>{{ post.title }}</figcaption>
                       </figure>
                       {% endif %}
-                      <time class="op-published" dateTime="{{ post.date | date: "%Y-%m-%d %H:%M:%S %Z" }}">{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</time>
-                      <time class="op-modified" dateTime="{{ post.modified | date: "%Y-%m-%d %H:%M:%S %Z" }}">{{ post.modified }}</time>
                   </header>
-                  {% if post.instantfeedback %}
-                    {{ post.content | replace: '<figure>', '<figure data-feedback="fb:likes">' }}
-                  {% else %}
-                    {{ post.content }}
-                  {% endif %}
                     <footer>
-                        <aside>Written by Amit Seal Ami, a Lecturer from Institute of Information Technology, University of Dhaka.</aside>
-                        <small>Copyright - Amit Seal Ami</small>
+                        <small>Copyright - Ashish Vishwakarma</small>
                   </footer>
                 </article>
               </body>
