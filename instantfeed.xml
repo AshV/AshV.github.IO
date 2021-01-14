@@ -39,16 +39,7 @@ layout: null
                 <article>
                   <header>
                       <h1>{{ post.title | xml_escape }}</h1>
-                      {% if post.imagefeature %}
-                      <figure>
-                          <figcaption>{{ post.title }}</figcaption>
-                      </figure>
-                      {% else %}
-                      <figure>
-                         
-                          <figcaption>{{ post.title }}</figcaption>
-                      </figure>
-                      {% endif %}
+               
                   </header>
                     <footer>
                         <small>Copyright - Ashish Vishwakarma</small>
