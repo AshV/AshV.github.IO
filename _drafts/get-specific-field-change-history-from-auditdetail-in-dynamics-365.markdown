@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Get Specific Field Change History from AuditDetail in Dynamics 365
-date: 2021-01-30 18:19:02
+date: 2021-01-30 18:43:39
 categories:
   - Dynamics-365
   - PowerApps
@@ -17,62 +17,62 @@ I’m sharing here core logic, it can be used either in Action or any other plac
 
 ### Model class to get history as a list
 
-```csharp
-public class FieldHistory  
-{  
-    public string ChangedBy { get; set; }  
-    public DateTime ChangedOn { get; set; }  
-    public string Oldvalue { get; set; }  
-    public string NewValue { get; set; }  
-}  
-```
+~~~csharp
+public class FieldHistory
+{
+    public string ChangedBy { get; set; }
+    public DateTime ChangedOn { get; set; }
+    public string Oldvalue { get; set; }
+    public string NewValue { get; set; }
+}
+~~~
 
 ### Function to get and parse field history
 
 Below code is using **FormattedValues** which retrieve user readable component out of OptionSet and EntityReference fields, this can be modified according to your requirements.
 
-```csharp
-public static List<FieldHistory> GetFieldHistory(string entityLogicalName, Guid recordId, string fieldName, IOrganizationService service)  
-{  
+~~~csharp
+public static List<FieldHistory> GetFieldHistory(string entityLogicalName, Guid recordId, string fieldName, IOrganizationService service)
+{
     // Retrieving change history fro given attribute/field
-    var attributeChangeHistoryRequest = new RetrieveAttributeChangeHistoryRequest  
-    {  
-        Target = new EntityReference(entityLogicalName, recordId),  
-        AttributeLogicalName = fieldName  
-    };  
-  
-    var attributeChangeHistoryResponse = (RetrieveAttributeChangeHistoryResponse)service.Execute(attributeChangeHistoryRequest);  
-    var details = attributeChangeHistoryResponse.AuditDetailCollection;  
-  
+    var attributeChangeHistoryRequest = new RetrieveAttributeChangeHistoryRequest
+    {
+        Target = new EntityReference(entityLogicalName, recordId),
+        AttributeLogicalName = fieldName
+    };
+
+    var attributeChangeHistoryResponse = (RetrieveAttributeChangeHistoryResponse)service.Execute(attributeChangeHistoryRequest);
+    var details = attributeChangeHistoryResponse.AuditDetailCollection;
+
     // List to store changes
-    var fieldHistory = new List<FieldHistory>();  
-  
-    foreach (var detail in details.AuditDetails)  
-    {  
-        var detailType = detail.GetType();  
-        if (detailType == typeof(AttributeAuditDetail))  
-        {  
-            // retrieve old & new value of each action of each audit change from AttributeAuditDetail  
-            var attributeDetail = (AttributeAuditDetail)detail;  
-  
-            var userName = attributeDetail.AuditRecord.GetAttributeValue<EntityReference>("userid").Name;  
-            var changedOn = attributeDetail.AuditRecord.GetAttributeValue<DateTime>("createdon");  
-            var newValue = attributeDetail.NewValue.FormattedValues[fieldName];  
-            var oldValue = attributeDetail.OldValue?.FormattedValues[fieldName];  
-  
-            fieldHistory.Add(new FieldHistory  
-            {  
-                ChangedBy = userName,  
-                ChangedOn = changedOn,  
-                Oldvalue = oldValue,  
-                NewValue = newValue  
-            });  
-  
-            return fieldHistory;  
-        }  
-    }  
-}  
-```
+    var fieldHistory = new List<FieldHistory>();
+
+    foreach (var detail in details.AuditDetails)
+    {
+        var detailType = detail.GetType();
+        if (detailType == typeof(AttributeAuditDetail))
+        {
+            // retrieve old & new value of each action of each audit change from AttributeAuditDetail
+            var attributeDetail = (AttributeAuditDetail)detail;
+
+            var userName = attributeDetail.AuditRecord.GetAttributeValue<EntityReference>("userid").Name;
+            var changedOn = attributeDetail.AuditRecord.GetAttributeValue<DateTime>("createdon");
+            var newValue = attributeDetail.NewValue.FormattedValues[fieldName];
+            var oldValue = attributeDetail.OldValue?.FormattedValues[fieldName];
+
+            fieldHistory.Add(new FieldHistory
+            {
+                ChangedBy = userName,
+                ChangedOn = changedOn,
+                Oldvalue = oldValue,
+                NewValue = newValue
+            });
+
+            return fieldHistory;
+        }
+    }
+}
+~~~
 
 If you observe I have use safe navigation operator for var oldValue = attributeDetail.OldValue?.FormattedValues\[fieldName\]; this is because for the first occurrence OldValue will always remain null.
 
