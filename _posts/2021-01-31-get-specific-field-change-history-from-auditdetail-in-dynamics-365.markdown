@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Get Specific Field Change History from AuditDetail in Dynamics 365
-date: 2021-01-30 18:43:39
+date: 2021-01-31 04:00:00
 categories:
   - Dynamics-365
   - PowerApps
