@@ -6,11 +6,11 @@ categories: CRM-SDK AuditDetail Dynamics-365
 permalink: Retrieve-Field-Change-History-AuditDetail-Dynamics-365-RetrieveAttributeChangeHistory/
 ---
 
-In a requirement we were asked to show one specific field change history in a custom portal written in PHP, our imeediate action was to call **RetrieveAttributeChangeHistory** via WebApi but if was just returning the list of value history without any other fields but geting CahngedOn and ChangedBy field was our requirement. (see details in github issue [here](https://github.com/MicrosoftDocs/dynamics-365-customer-engagement/issues/1183)).
+In a requirement we were asked to show one specific field change history in a custom portal written in PHP, our imeediate action was to call **RetrieveAttributeChangeHistory** via WebApi but if was just returning the list of value history without any other fields but geting ChangedOn and ChangedBy field was our requirement. (see details in github issue [here](https://github.com/MicrosoftDocs/dynamics-365-customer-engagement/issues/1183)).
 
 We finally headed to our good old CRM SDK libraries and written code in C# then access this via Dyanmics 365 WebApi using Dynamics 365 Custom Action.
 
-I'm sahring here core logic, it can be used according to your own requirement, either in Action or any other place where CRM SDK C# libraries can be consumed.
+I'm sharing here core logic, it can be used according to your own requirement, either in Action or any other place where CRM SDK C# libraries can be consumed.
 
 ### Model class to get history as a list
 
@@ -26,7 +26,7 @@ public class FieldHistory
 
 ### Function to get and parse field history
 
-Below code is using **FormattedValues** which retrieve user redable component out of OptionSet and EntityReference fields, this can be modifield according to your requirements.
+Below code is using **FormattedValues** which retrieve user readable component out of OptionSet and EntityReference fields, this can be modifield according to your requirements.
 
 ```csharp
 public static List<FieldHistory> GetFieldHistory(string entityLogicalName, Guid recordId, string fieldName, IOrganizationService service)
