@@ -1,0 +1,132 @@
+{{ define "main" }}
+<main class="relative z-10 w-full min-h-screen flex flex-col gap-8 p-6 md:p-12 lg:p-16 max-w-[1200px] mx-auto">
+    
+    <!-- Navigation Area -->
+    <nav class="flex justify-between items-center bg-transparent relative z-50 mb-4 md:mb-8">
+        <a href="{{ "/" | relURL }}" class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] transition-colors backdrop-blur-md text-sm font-medium text-[var(--text-main)] group focus:outline-none focus:ring-2 focus:ring-[var(--glass-highlight)]">
+            <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300"></i>
+            Back to Home
+        </a>
+    </nav>
+
+    <!-- Post Content Container -->
+    <article class="glass-panel rounded-3xl md:rounded-[3rem] p-6 sm:p-10 md:p-16 flex flex-col gap-10 min-[400px]:gap-12 md:gap-16 w-full mx-auto shadow-[0_8px_32px_rgba(0,0,0,0.1)] relative overflow-hidden backdrop-blur-xl border border-[var(--glass-border)]">
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-3xl md:rounded-[3rem]"></div>
+
+        <div class="relative z-10 flex flex-col gap-4">
+            <a href="{{ "/" | relURL }}" class="md:hidden self-start mb-2 px-4 py-2 rounded-full glass-panel border border-[var(--glass-border)] text-[var(--text-main)] text-sm flex items-center gap-2 hover:bg-[var(--glass-highlight)] transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </a>
+
+            {{ if isset .Params "image" }}
+            <div class="w-full aspect-[21/9] sm:aspect-[2.5/1] md:aspect-[3/1] rounded-2xl md:rounded-3xl overflow-hidden mb-6 md:mb-10 shadow-lg border border-[var(--glass-border)] relative group">
+                <div class="absolute inset-0 bg-black/10 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            {{ end }}
+
+            <div class="flex gap-2 flex-wrap text-[var(--text-main)]">
+                {{ range .Params.tags }}
+                <span class="px-3 py-1 text-xs md:text-sm font-medium rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] shadow-sm backdrop-blur-md">
+                    {{ . }}
+                </span>
+                {{ end }}
+            </div>
+
+            <div class="flex flex-col gap-3 mt-4 text-glow">
+                <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[var(--text-main)] leading-tight">
+                    {{ .Title }}
+                </h1>
+                <div class="flex items-center gap-4 text-sm text-[var(--text-muted)] font-medium">
+                    <span>{{ .Date.Format "Jan 02, 2006" }}</span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="prose prose-lg max-w-none mt-8 
+                        text-[var(--text-main)] 
+                        prose-headings:text-[var(--text-main)] 
+                        prose-p:text-[var(--text-main)] 
+                        prose-a:text-blue-500 hover:prose-a:text-blue-400 
+                        prose-strong:text-[var(--text-main)] 
+                        prose-ul:text-[var(--text-main)] 
+                        prose-ol:text-[var(--text-main)] 
+                        prose-li:text-[var(--text-main)] 
+                        prose-blockquote:text-[var(--text-main)] prose-blockquote:border-[var(--glass-border)]
+                        prose-code:text-[var(--text-main)] prose-code:bg-[var(--glass-bg)] prose-code:rounded prose-code:px-1
+                        prose-headings:font-semibold transition-colors duration-1000 text-glow">
+                {{ .Content }}
+            </div>
+        </div>
+
+        <!-- Share Options -->
+        <section id="share-section" class="flex flex-col items-center gap-4 mt-12 pt-12 border-t border-[var(--glass-border)]">
+            <h3 class="text-lg font-medium text-[var(--text-muted)]">Share this article</h3>
+            <div class="flex gap-3 flex-wrap justify-center">
+                <a href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}" target="_blank" rel="noopener noreferrer"
+                    class="p-3.5 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] hover:scale-105 transition-all backdrop-blur-md text-[var(--text-main)] group" title="Share on X">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer"
+                    class="p-3.5 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] hover:scale-105 transition-all backdrop-blur-md text-[var(--text-main)] group" title="Share on Facebook">
+                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?text={{ .Title | urlquery }}%20{{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer"
+                    class="p-3.5 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] hover:scale-105 transition-all backdrop-blur-md text-[var(--text-main)] group" title="Share on WhatsApp">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer"
+                    class="p-3.5 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] hover:scale-105 transition-all backdrop-blur-md text-[var(--text-main)] group" title="Share on LinkedIn">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');"
+                    class="p-3.5 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] hover:scale-105 transition-all backdrop-blur-md text-[var(--text-main)] copy-link-btn group" title="Copy Link">
+                    <i data-lucide="link" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </section>
+        
+    </article>
+
+    <!-- Suggested Posts -->
+    <div class="w-full mt-4 md:mt-8 perspective-[1000px]">
+        <h3 class="text-2xl font-bold tracking-tight text-[var(--text-main)] mb-8 px-2 md:px-0">Read Next</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+            {{ $current := . }}
+            {{ range first 3 (where .Site.RegularPages "Permalink" "!=" .Permalink) }}
+                {{ $delay := mod (add 1 (len .Title)) 10 }}
+                
+                {{ $targetUrl := .Permalink }}
+                {{ $targetAttr := "" | safeHTMLAttr }}
+                {{ if isset .Params "redirecturl" }}
+                    {{ $targetUrl = .Params.redirecturl }}
+                    {{ $targetAttr = "target=\"_blank\" rel=\"noopener noreferrer\"" | safeHTMLAttr }}
+                {{ end }}
+
+                <a href="{{ $targetUrl }}" {{ $targetAttr }} class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer flex flex-col h-full animation-random-tilt" style="display: flex; text-decoration: none; animation-duration: 7s; animation-delay: -{{ $delay }}s;">
+                    
+                    <div class="h-48 md:h-56 overflow-hidden relative border-b border-[var(--glass-border)]">
+                        <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        
+                        <div class="absolute top-4 right-4 z-20 flex gap-2">
+                            {{ range .Params.tags }}
+                                <span class="tag px-3 py-1 text-xs font-medium rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] backdrop-blur-md">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 md:p-6 flex-1 flex flex-col justify-center tilt-content">
+                        <h3 class="text-xl md:text-2xl font-semibold leading-snug text-[var(--text-main)] transition-all">
+                            {{ .Title }}
+                        </h3>
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </div>
+</main>
+{{ end }}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body class="bg-[var(--bg-color-main)] text-[var(--text-main)] antialiased transition-colors duration-1000 font-sans theme-morning min-h-screen relative overflow-x-hidden">
+    <!-- Ambient Background Layer -->
+    <div id="ambient-bg" class="fixed inset-0 z-0 overflow-hidden pointer-events-none transition-colors duration-1000 bg-[var(--bg-color-main)] opacity-70">
+        <!-- Blobs -->
+        <div class="blob absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full mix-blend-screen opacity-60 filter blur-[80px] bg-[var(--blob-1)] animate-blob"></div>
+        <div class="blob absolute top-[40%] right-[-10%] w-[40vw] h-[40vw] rounded-full mix-blend-screen opacity-50 filter blur-[100px] bg-[var(--blob-2)] animate-blob animation-delay-2000"></div>
+        <div class="blob absolute bottom-[-20%] left-[20%] w-[45vw] h-[45vw] rounded-full mix-blend-screen opacity-60 filter blur-[90px] bg-[var(--blob-3)] animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <!-- Main Content -->
+    {{ block "main" . }}{{ end }}
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="fixed bottom-6 right-6 z-50 p-4 rounded-full glass-panel border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] hover:scale-110 transition-all shadow-lg text-[var(--text-main)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] focus:outline-none">
+        <i id="theme-icon" data-lucide="sun" class="w-6 h-6 transition-transform duration-500"></i>
+    </button>
+
+    <!-- Essential Scripts -->
+    <script type="module" src="{{ "src/js/main.js" | absURL }}"></script>
+    <script>
+        // Ensure Lucide icons initialize
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

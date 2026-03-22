@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Default Theme (Dark / Night) */
+    --bg-color-main: #0B1120;
+    --bg-color-accent: #1E293B;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-highlight: rgba(255, 255, 255, 0.15);
+
+    /* Blob Colors */
+    --blob-1: #38BDF8;
+    /* Light Blue */
+    --blob-2: #818CF8;
+    /* Indigo */
+    --blob-3: #C084FC;
+    /* Purple */
+}
+
+/* Theme Options (Class toggles handled by JS) */
+body.theme-morning {
+    --bg-color-main: #F0F9FF;
+    --bg-color-accent: #E0F2FE;
+    --text-main: #0F172A;
+    --text-muted: #334155;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-highlight: rgba(255, 255, 255, 0.9);
+    --blob-1: #BAE6FD;
+    --blob-2: #DDD6FE;
+    --blob-3: #FBCFE8;
+}
+
+body.theme-afternoon {
+    --bg-color-main: #F8FAFC;
+    --bg-color-accent: #F1F5F9;
+    --text-main: #1E293B;
+    --text-muted: #475569;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.85);
+    --glass-highlight: rgba(255, 255, 255, 0.95);
+    --blob-1: #E0F2FE;
+    --blob-2: #EEF2FF;
+    --blob-3: #F0FDF4;
+}
+
+body.theme-evening {
+    --bg-color-main: #2A1F2D;
+    --bg-color-accent: #170F1E;
+    --text-main: #FDF4FF;
+    --text-muted: #D8B4E2;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.12);
+    --blob-1: #F472B6;
+    --blob-2: #FB923C;
+    --blob-3: #FBBF24;
+}
+
+body {
+    background-color: var(--bg-color-main);
+    color: var(--text-main);
+    transition: background-color 1.5s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Core Glass Component Style */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-top-color: var(--glass-highlight);
+    border-left-color: var(--glass-highlight);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.glass-panel:hover {
+    box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    /* slight brightness bump on hover */
+}
+
+body.theme-morning .glass-panel:hover,
+body.theme-afternoon .glass-panel:hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+
+/* Smooth Scrolling and Scrollbar hiding */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--glass-highlight);
+}
+
+/* Ambient Blobs Animations */
+.ambient-blob {
+    position: absolute;
+    filter: blur(100px);
+    opacity: 0.6;
+    border-radius: 50%;
+    animation: float 20s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    z-index: 0;
+    transition: background-color 2s ease;
+}
+
+/* Blob specific colors (can be overridden by JS) */
+.ambient-blob:nth-child(1) {
+    background-color: var(--blob-1);
+    width: 600px;
+    height: 600px;
+    top: -10%;
+    left: -10%;
+    animation-duration: 25s;
+}
+
+.ambient-blob:nth-child(2) {
+    background-color: var(--blob-2);
+    width: 800px;
+    height: 800px;
+    bottom: -20%;
+    right: -10%;
+    animation-duration: 30s;
+    animation-direction: alternate-reverse;
+}
+
+.ambient-blob:nth-child(3) {
+    background-color: var(--blob-3);
+    width: 500px;
+    height: 500px;
+    top: 40%;
+    left: 40%;
+    animation-duration: 20s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-30px, 40px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+/* 3D Tilt Utilities */
+.tilt-card {
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow;
+    transition: box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tilt-card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    z-index: 10;
+}
+
+.tilt-content {
+    transform: translateZ(30px);
+    /* Lifts content off the card */
+}
+
+/* Dynamic Hover Spotlight effect (Cursor tracking) */
+.glass-spotlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-spotlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(255, 255, 255, 0.06),
+            transparent 40%);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+body.theme-morning .glass-spotlight::before,
+body.theme-afternoon .glass-spotlight::before {
+    background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(255, 255, 255, 0.2),
+            transparent 40%);
+}
+
+.glass-spotlight:hover::before,
+.glass-spotlight.mobile-active-tilt::before {
+    opacity: 1;
+}
+
+/* Badge/Tag styling */
+.tag {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
+    color: var(--text-main);
+}
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Text Readability Glow */
+.text-glow {
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+body.theme-morning .text-glow,
+body.theme-afternoon .text-glow {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 1);
+}
+
+/* Tilt & Swing Card Animation */
+@keyframes random-tilt {
+    0%, 100% {
+        transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) translateZ(2px);
+    }
+    25% {
+        transform: perspective(1000px) rotateX(-2deg) rotateY(1deg) translateZ(-2px);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(3deg) rotateY(3deg) translateZ(5px);
+    }
+    75% {
+        transform: perspective(1000px) rotateX(-1deg) rotateY(-2deg) translateZ(0px);
+    }
+}
+.animation-random-tilt {
+    animation: random-tilt 7s ease-in-out infinite alternate;
+}

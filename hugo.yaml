@@ -1,0 +1,7 @@
+baseURL: "https://www.ashishvishwakarma.com/"
+languageCode: "en-us"
+title: "Ashish Vishwakarma"
+buildFuture: true
+
+params:
+  description: "Software Engineer | AI Enthusiast | Open Source Contributor"
