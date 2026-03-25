@@ -1,6 +1,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+
+{{- /* SEO: Canonical URL */ -}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{- /* SEO: Description – page excerpt > page summary > site description */ -}}
+{{- $description := .Site.Params.description -}}
+{{- if .Params.excerpt -}}
+  {{- $description = .Params.excerpt -}}
+{{- else if .IsPage -}}
+  {{- $description = .Summary | plainify | truncate 160 -}}
+{{- end -}}
+<meta name="description" content="{{ $description }}">
+
+{{- /* SEO: Open Graph */ -}}
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+{{- if .IsPage -}}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- else -}}
+<meta property="og:type" content="website">
+{{- end -}}
+{{- if .Params.image -}}
+<meta property="og:image" content="{{ .Params.image }}">
+{{- end -}}
+
+{{- /* SEO: Twitter Card */ -}}
+<meta name="twitter:card" content="{{ if .Params.image }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{- if .Params.image -}}
+<meta name="twitter:image" content="{{ .Params.image }}">
+{{- end -}}
 <!-- Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
