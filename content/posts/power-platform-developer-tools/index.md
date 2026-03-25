@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Collection of my Power Platform tools"
-excerpt: "A deep dive into Framer Motion, Vanilla CSS, and physics-based animations for the modern web."
+title: "My Power Platform Developer Tools"
+excerpt: "A collection of tools I built to make my life easier while working on Power Platform."
 date: 2026-03-24
 redirectUrl: "https://dev.ashishvishwakarma.com/power-platform-developer-tools"
 tags: [Power Platform, Tools]
