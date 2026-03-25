@@ -27,14 +27,18 @@
 {{- end -}}
 {{- if .Params.image -}}
 <meta property="og:image" content="{{ .Params.image }}">
+{{- else if .IsHome -}}
+<meta property="og:image" content="{{ "images/profile.jpg" | absURL }}">
 {{- end -}}
 
 {{- /* SEO: Twitter Card */ -}}
-<meta name="twitter:card" content="{{ if .Params.image }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:card" content="{{ if or .Params.image .IsHome }}summary_large_image{{ else }}summary{{ end }}">
 <meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:description" content="{{ $description }}">
 {{- if .Params.image -}}
 <meta name="twitter:image" content="{{ .Params.image }}">
+{{- else if .IsHome -}}
+<meta name="twitter:image" content="{{ "images/profile.jpg" | absURL }}">
 {{- end -}}
 <!-- Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
