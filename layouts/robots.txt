@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}
+Sitemap: {{ "prompt-gallery/sitemap.xml" | absURL }}

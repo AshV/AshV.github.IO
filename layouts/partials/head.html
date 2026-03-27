@@ -9,6 +9,28 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="manifest" href="/site.webmanifest">
 
+{{- /* SEO: JSON-LD Person Structured Data (homepage only) */ -}}
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ashish Vishwakarma",
+  "url": "{{ .Site.BaseURL }}",
+  "image": "{{ "images/profile.jpg" | absURL }}",
+  "jobTitle": "Software Engineer",
+  "description": "{{ .Site.Params.description }}",
+  "sameAs": [
+    "https://www.linkedin.com/in/ashishvishwakarma-ashv",
+    "https://github.com/AshV",
+    "https://x.com/aryanroyal",
+    "https://instagram.com/iAshishVi",
+    "https://dev.ashishvishwakarma.com"
+  ]
+}
+</script>
+{{- end -}}
+
 {{- /* SEO: Canonical URL */ -}}
 <link rel="canonical" href="{{ .Permalink }}">
 
