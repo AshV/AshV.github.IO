@@ -4,5 +4,8 @@ title: "Ashish Vishwakarma"
 buildFuture: true
 enableRobotsTXT: true
 
+permalinks:
+  posts: /:slug/
+
 params:
   description: "Engineer | AI Enthusiast | Open Source Contributor"
