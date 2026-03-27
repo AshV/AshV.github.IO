@@ -15,10 +15,6 @@
     <!-- Main Content -->
     {{ block "main" . }}{{ end }}
 
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="fixed bottom-6 right-6 z-50 p-4 rounded-full glass-panel border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] hover:scale-110 transition-all shadow-lg text-[var(--text-main)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] focus:outline-none">
-        <i id="theme-icon" data-lucide="sun" class="w-6 h-6 transition-transform duration-500"></i>
-    </button>
 
     <!-- Essential Scripts -->
     <script type="module" src="{{ "src/js/main.js" | absURL }}"></script>
