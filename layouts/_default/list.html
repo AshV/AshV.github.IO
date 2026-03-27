@@ -1,0 +1,63 @@
+{{ define "main" }}
+<main class="relative z-10 w-full min-h-screen flex flex-col gap-8 p-6 md:p-12 lg:p-16 max-w-[1800px] mx-auto">
+
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center bg-transparent relative z-50 mb-4 md:mb-8">
+        <a href="{{ "/" | relURL }}" class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] transition-colors backdrop-blur-md text-sm font-medium text-[var(--text-main)] group focus:outline-none focus:ring-2 focus:ring-[var(--glass-highlight)]">
+            <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300"></i>
+            Back to Home
+        </a>
+    </nav>
+
+    <!-- Page Title -->
+    <div class="text-center mb-4">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-main)] text-glow">
+            {{ .Title }}
+        </h1>
+        <p class="text-[var(--text-muted)] mt-3 text-lg">
+            {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}
+        </p>
+    </div>
+
+    <!-- Posts Grid -->
+    <div id="posts-grid" class="flex-1 w-full relative perspective-[1000px]">
+        <div id="posts-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10 pb-20">
+            {{ range $index, $element := .Pages }}
+                {{ $delay := mod $index 10 }}
+
+                {{ $targetUrl := .Permalink }}
+                {{ $targetAttr := "" | safeHTMLAttr }}
+                {{ if isset .Params "redirecturl" }}
+                    {{ $targetUrl = .Params.redirecturl }}
+                    {{ $targetAttr = "target=\"_blank\" rel=\"noopener noreferrer\"" | safeHTMLAttr }}
+                {{ end }}
+
+                <a href="{{ $targetUrl }}" {{ $targetAttr }} class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer flex flex-col h-full animation-random-tilt" style="display: flex; text-decoration: none; animation-duration: 7s; animation-delay: -{{ $delay }}s;">
+                    
+                    <div class="h-48 md:h-56 overflow-hidden relative border-b border-[var(--glass-border)]">
+                        <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                        
+                        <div class="absolute top-4 right-4 z-20 flex gap-2">
+                            {{ range .Params.tags }}
+                                <span class="tag px-3 py-1 text-xs font-medium rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] backdrop-blur-md">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 md:p-6 flex-1 flex flex-col justify-center tilt-content">
+                        <h3 class="text-xl md:text-2xl font-semibold leading-snug text-[var(--text-main)] transition-all">
+                            {{ .Title }}
+                        </h3>
+                        {{ if .Params.excerpt }}
+                        <p class="text-sm md:text-base text-[var(--text-muted)] mt-2 line-clamp-2">
+                            {{ .Params.excerpt }}
+                        </p>
+                        {{ end }}
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </div>
+</main>
+{{ end }}
