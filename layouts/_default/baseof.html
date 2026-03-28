@@ -1,3 +1,17 @@
+{{- if .Params.redirectUrl -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url={{ .Params.redirectUrl }}">
+    <link rel="canonical" href="{{ .Params.redirectUrl }}">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>Redirecting to <a href="{{ .Params.redirectUrl }}">{{ .Params.redirectUrl }}</a>...</p>
+</body>
+</html>
+{{- else -}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +29,6 @@
     <!-- Main Content -->
     {{ block "main" . }}{{ end }}
 
-
     <!-- Essential Scripts -->
     <script type="module" src="{{ "src/js/main.js" | absURL }}"></script>
     <script>
@@ -26,3 +39,4 @@
     </script>
 </body>
 </html>
+{{- end -}}
