@@ -30,7 +30,6 @@ const ALL_THEMES = [
 export function initTheme() {
     applyTheme();
     initAmbientBackground();
-    initShuffleButton();
 }
 
 function applyTheme() {
@@ -78,22 +77,3 @@ function initAmbientBackground() {
     }
 }
 
-function initShuffleButton() {
-    const shuffleBtn = document.getElementById('theme-shuffle-btn');
-    if (!shuffleBtn) return;
-
-    shuffleBtn.addEventListener('click', () => {
-        const body = document.body;
-        const current = sessionStorage.getItem('last-theme');
-        let pool = ALL_THEMES.filter(t => t !== current);
-        if (pool.length === 0) pool = ALL_THEMES;
-        
-        const chosen = pool[Math.floor(Math.random() * pool.length)];
-        sessionStorage.setItem('last-theme', chosen);
-        
-        // Remove void and all themes, then apply the new one
-        body.classList.remove('theme-void', ...ALL_THEMES);
-        body.classList.add(chosen);
-        console.log("Theme shuffled to:", chosen);
-    });
-}
