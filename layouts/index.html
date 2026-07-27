@@ -34,7 +34,7 @@
                             {{ .Title }}
                         </h3>
                         {{ if .Params.excerpt }}
-                        <p class="text-sm md:text-base text-[var(--text-muted)] mt-2">
+                        <p class="text-sm md:text-base text-[var(--text-muted)] mt-2 line-clamp-2 group-hover:line-clamp-none transition-all">
                             {{ .Params.excerpt }}
                         </p>
                         {{ end }}
