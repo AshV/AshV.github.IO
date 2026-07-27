@@ -53,60 +53,60 @@ body.theme-predawn {
     --blob-3: #0E4D8C;
 }
 
-/* 06:00 – 08:59  Sunrise — warm amber and coral */
+/* Sunrise — Crimson Dawn: near-black with deep rose/ember drama */
 body.theme-sunrise {
-    --bg-color-main: #FFF7ED;
-    --bg-color-accent: #FFEDD5;
-    --text-main: #1C0A00;
-    --text-muted: #7C4B2A;
-    --glass-bg: rgba(255, 255, 255, 0.55);
-    --glass-border: rgba(255, 255, 255, 0.75);
-    --glass-highlight: rgba(255, 255, 255, 0.88);
-    --blob-1: #FDBA74;
-    --blob-2: #FCA5A5;
-    --blob-3: #FDE68A;
+    --bg-color-main: #110207;
+    --bg-color-accent: #1E0410;
+    --text-main: #FFF1F2;
+    --text-muted: #FDA4AF;
+    --glass-bg: rgba(244, 63, 94, 0.06);
+    --glass-border: rgba(251, 113, 133, 0.15);
+    --glass-highlight: rgba(253, 164, 175, 0.22);
+    --blob-1: #BE123C;
+    --blob-2: #EA580C;
+    --blob-3: #F43F5E;
 }
 
-/* 09:00 – 11:59  Morning — crisp sky blue */
+/* Morning — Sapphire Dawn: deep royal blue with electric cobalt */
 body.theme-morning {
-    --bg-color-main: #F0F9FF;
-    --bg-color-accent: #E0F2FE;
-    --text-main: #0F172A;
-    --text-muted: #334155;
-    --glass-bg: rgba(255, 255, 255, 0.60);
-    --glass-border: rgba(255, 255, 255, 0.80);
-    --glass-highlight: rgba(255, 255, 255, 0.90);
-    --blob-1: #BAE6FD;
-    --blob-2: #DDD6FE;
-    --blob-3: #FBCFE8;
+    --bg-color-main: #040D22;
+    --bg-color-accent: #081840;
+    --text-main: #EFF6FF;
+    --text-muted: #93C5FD;
+    --glass-bg: rgba(59, 130, 246, 0.06);
+    --glass-border: rgba(96, 165, 250, 0.15);
+    --glass-highlight: rgba(147, 197, 253, 0.22);
+    --blob-1: #1D4ED8;
+    --blob-2: #4F46E5;
+    --blob-3: #3B82F6;
 }
 
-/* 12:00 – 14:59  Noon — bright white/green-tinted */
+/* Noon — Abyssal Teal: dark tropical deep-water vibes */
 body.theme-noon {
-    --bg-color-main: #F8FAFC;
-    --bg-color-accent: #ECFDF5;
-    --text-main: #0F2417;
-    --text-muted: #3D6651;
-    --glass-bg: rgba(255, 255, 255, 0.70);
-    --glass-border: rgba(255, 255, 255, 0.85);
-    --glass-highlight: rgba(255, 255, 255, 0.95);
-    --blob-1: #A7F3D0;
-    --blob-2: #BAE6FD;
-    --blob-3: #FEF9C3;
+    --bg-color-main: #011918;
+    --bg-color-accent: #022B28;
+    --text-main: #CCFBF1;
+    --text-muted: #5EEAD4;
+    --glass-bg: rgba(20, 184, 166, 0.06);
+    --glass-border: rgba(45, 212, 191, 0.14);
+    --glass-highlight: rgba(94, 234, 212, 0.20);
+    --blob-1: #0F766E;
+    --blob-2: #0891B2;
+    --blob-3: #14B8A6;
 }
 
-/* 15:00 – 17:59  Golden Hour — amber, gold, peach */
+/* Golden — Burnished Gold: dark obsidian with molten amber */
 body.theme-golden {
-    --bg-color-main: #FFFBEB;
-    --bg-color-accent: #FEF3C7;
-    --text-main: #1C0A00;
-    --text-muted: #92400E;
-    --glass-bg: rgba(255, 255, 255, 0.55);
-    --glass-border: rgba(255, 200, 100, 0.35);
-    --glass-highlight: rgba(255, 220, 140, 0.55);
-    --blob-1: #FCD34D;
-    --blob-2: #FB923C;
-    --blob-3: #F87171;
+    --bg-color-main: #0C0700;
+    --bg-color-accent: #1A0E00;
+    --text-main: #FEFCE8;
+    --text-muted: #FCD34D;
+    --glass-bg: rgba(217, 119, 6, 0.07);
+    --glass-border: rgba(245, 158, 11, 0.16);
+    --glass-highlight: rgba(252, 211, 77, 0.24);
+    --blob-1: #B45309;
+    --blob-2: #D97706;
+    --blob-3: #CA8A04;
 }
 
 /* 18:00 – 20:59  Dusk — deep purple/magenta twilight */
@@ -137,6 +137,92 @@ body.theme-late-night {
     --blob-3: #06B6D4;
 }
 
+/* ── 6 Additional Themes ──────────────────────────────────── */
+
+/* Forest — lush deep greens */
+body.theme-forest {
+    --bg-color-main: #071A0B;
+    --bg-color-accent: #0F2914;
+    --text-main: #D1FAE5;
+    --text-muted: #6EE7B7;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(110, 231, 183, 0.12);
+    --glass-highlight: rgba(167, 243, 208, 0.18);
+    --blob-1: #065F46;
+    --blob-2: #34D399;
+    --blob-3: #16A34A;
+}
+
+/* Ocean — deep-sea blues */
+body.theme-ocean {
+    --bg-color-main: #020C1B;
+    --bg-color-accent: #051C36;
+    --text-main: #E0F2FE;
+    --text-muted: #38BDF8;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(56, 189, 248, 0.12);
+    --glass-highlight: rgba(125, 211, 252, 0.18);
+    --blob-1: #0369A1;
+    --blob-2: #0EA5E9;
+    --blob-3: #22D3EE;
+}
+
+/* Volcanic — dark embers and lava */
+body.theme-volcanic {
+    --bg-color-main: #0F0300;
+    --bg-color-accent: #1E0700;
+    --text-main: #FEF3C7;
+    --text-muted: #FB923C;
+    --glass-bg: rgba(255, 80, 0, 0.06);
+    --glass-border: rgba(251, 146, 60, 0.14);
+    --glass-highlight: rgba(252, 165, 90, 0.22);
+    --blob-1: #DC2626;
+    --blob-2: #EA580C;
+    --blob-3: #D97706;
+}
+
+/* Arctic — Aurora Borealis: midnight navy with electric aurora blobs */
+body.theme-arctic {
+    --bg-color-main: #010E18;
+    --bg-color-accent: #011826;
+    --text-main: #CCFBF1;
+    --text-muted: #5EEAD4;
+    --glass-bg: rgba(0, 212, 170, 0.05);
+    --glass-border: rgba(0, 230, 180, 0.13);
+    --glass-highlight: rgba(0, 255, 200, 0.20);
+    --blob-1: #059669;
+    --blob-2: #7C3AED;
+    --blob-3: #06B6D4;
+}
+
+/* Sakura — cherry blossom pink */
+body.theme-sakura {
+    --bg-color-main: #FFF0F7;
+    --bg-color-accent: #FFE4F0;
+    --text-main: #4A0525;
+    --text-muted: #BE185D;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(251, 207, 232, 0.80);
+    --glass-highlight: rgba(255, 255, 255, 0.95);
+    --blob-1: #FBCFE8;
+    --blob-2: #F9A8D4;
+    --blob-3: #FCA5A5;
+}
+
+/* Cyberpunk — neon cyan/magenta on near-black */
+body.theme-cyberpunk {
+    --bg-color-main: #04040F;
+    --bg-color-accent: #080820;
+    --text-main: #F0FFFE;
+    --text-muted: #22D3EE;
+    --glass-bg: rgba(6, 182, 212, 0.05);
+    --glass-border: rgba(6, 182, 212, 0.15);
+    --glass-highlight: rgba(34, 211, 238, 0.25);
+    --blob-1: #06B6D4;
+    --blob-2: #A855F7;
+    --blob-3: #EC4899;
+}
+
 body {
     background-color: var(--bg-color-main);
     color: var(--text-main);
@@ -165,10 +251,7 @@ body {
     /* slight brightness bump on hover */
 }
 
-body.theme-sunrise .glass-panel:hover,
-body.theme-morning .glass-panel:hover,
-body.theme-noon .glass-panel:hover,
-body.theme-golden .glass-panel:hover {
+body.theme-sakura .glass-panel:hover {
     background: rgba(255, 255, 255, 0.85);
 }
 
@@ -293,10 +376,7 @@ html {
     transition: opacity 0.5s;
 }
 
-body.theme-sunrise .glass-spotlight::before,
-body.theme-morning .glass-spotlight::before,
-body.theme-noon .glass-spotlight::before,
-body.theme-golden .glass-spotlight::before {
+body.theme-sakura .glass-spotlight::before {
     background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
             rgba(255, 255, 255, 0.2),
             transparent 40%);
@@ -334,10 +414,7 @@ body.theme-golden .glass-spotlight::before {
     text-shadow: 0 0 12px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(0, 0, 0, 0.9);
 }
 
-body.theme-sunrise .text-glow,
-body.theme-morning .text-glow,
-body.theme-noon .text-glow,
-body.theme-golden .text-glow {
+body.theme-sakura .text-glow {
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 1);
 }
 

@@ -1,6 +1,7 @@
 // Theme and Ambient Management
 
 const ALL_THEMES = [
+    // Time-of-day originals
     'theme-midnight',
     'theme-predawn',
     'theme-sunrise',
@@ -9,17 +10,21 @@ const ALL_THEMES = [
     'theme-golden',
     'theme-dusk',
     'theme-late-night',
+    // New themes
+    'theme-forest',
+    'theme-ocean',
+    'theme-volcanic',
+    'theme-arctic',
+    'theme-sakura',
+    'theme-cyberpunk',
 ];
 
 export function initTheme() {
-    updateThemeBasedOnTime();
+    applyTheme();
     initAmbientBackground();
-
-    // Update theme every hour
-    setInterval(updateThemeBasedOnTime, 1000 * 60 * 60);
 }
 
-function updateThemeBasedOnTime() {
+function applyTheme() {
     const body = document.body;
 
     // Remove all theme classes first
@@ -33,25 +38,15 @@ function updateThemeBasedOnTime() {
         return;
     }
 
-    // Fall back to time-based selection
-    const hour = new Date().getHours();
-    if (hour >= 0 && hour < 3) {
-        body.classList.add('theme-midnight');     // 00:00 – 02:59  Deep night
-    } else if (hour >= 3 && hour < 6) {
-        body.classList.add('theme-predawn');      // 03:00 – 05:59  Pre-dawn
-    } else if (hour >= 6 && hour < 9) {
-        body.classList.add('theme-sunrise');      // 06:00 – 08:59  Sunrise
-    } else if (hour >= 9 && hour < 12) {
-        body.classList.add('theme-morning');      // 09:00 – 11:59  Morning
-    } else if (hour >= 12 && hour < 15) {
-        body.classList.add('theme-noon');         // 12:00 – 14:59  Noon
-    } else if (hour >= 15 && hour < 18) {
-        body.classList.add('theme-golden');       // 15:00 – 17:59  Golden Hour
-    } else if (hour >= 18 && hour < 21) {
-        body.classList.add('theme-dusk');         // 18:00 – 20:59  Dusk
-    } else {
-        body.classList.add('theme-late-night');   // 21:00 – 23:59  Late Night
-    }
+    // Pick a random theme on every page load
+    // Avoid repeating the same theme back-to-back
+    const last = sessionStorage.getItem('last-theme');
+    let pool = ALL_THEMES.filter(t => t !== last);
+    if (pool.length === 0) pool = ALL_THEMES; // safety fallback
+
+    const chosen = pool[Math.floor(Math.random() * pool.length)];
+    sessionStorage.setItem('last-theme', chosen);
+    body.classList.add(chosen);
 }
 
 function initAmbientBackground() {
