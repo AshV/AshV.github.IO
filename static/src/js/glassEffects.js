@@ -5,6 +5,7 @@ export function initGlassEffects() {
     initTilt();
     initMobileScrollEffects();
     initScrollReveal();
+    initReadingProgress();
 }
 
 function initSpotlight() {
@@ -139,4 +140,18 @@ function initScrollReveal() {
     // Find all elements looking to be revealed
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
     revealElements.forEach(el => observer.observe(el));
+}
+
+function initReadingProgress() {
+    const progressBar = document.getElementById('reading-progress');
+    if (!progressBar) return;
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (height > 0) {
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + "%";
+        }
+    }, { passive: true });
 }

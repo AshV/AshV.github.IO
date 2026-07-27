@@ -17,11 +17,20 @@ const ALL_THEMES = [
     'theme-arctic',
     'theme-sakura',
     'theme-cyberpunk',
+    'theme-monochrome',
+    'theme-amethyst',
+    'theme-autumn',
+    'theme-nebula',
+    'theme-blossom',
+    'theme-inferno',
+    'theme-yozakura',
+    'theme-hanami',
 ];
 
 export function initTheme() {
     applyTheme();
     initAmbientBackground();
+    initShuffleButton();
 }
 
 function applyTheme() {
@@ -33,20 +42,28 @@ function applyTheme() {
     // --- Query-string override: ?theme=dusk ---
     const params = new URLSearchParams(window.location.search);
     const requested = params.get('theme');
-    if (requested && ALL_THEMES.includes('theme-' + requested)) {
-        body.classList.add('theme-' + requested);
-        return;
-    }
-
+    
     // Pick a random theme on every page load
     // Avoid repeating the same theme back-to-back
     const last = sessionStorage.getItem('last-theme');
     let pool = ALL_THEMES.filter(t => t !== last);
     if (pool.length === 0) pool = ALL_THEMES; // safety fallback
 
-    const chosen = pool[Math.floor(Math.random() * pool.length)];
+    let chosen = pool[Math.floor(Math.random() * pool.length)];
+    
+    if (requested && ALL_THEMES.includes('theme-' + requested)) {
+        chosen = 'theme-' + requested;
+    }
+    
     sessionStorage.setItem('last-theme', chosen);
-    body.classList.add(chosen);
+    
+    // Delay theme application to allow base 'theme-void' to render first
+    // This creates a beautiful fade-in effect on every page load
+    setTimeout(() => {
+        body.classList.remove('theme-void', ...ALL_THEMES);
+        body.classList.add(chosen);
+        console.log("Current theme applied:", chosen);
+    }, 150);
 }
 
 function initAmbientBackground() {
@@ -59,4 +76,24 @@ function initAmbientBackground() {
         blob.className = 'ambient-blob';
         container.appendChild(blob);
     }
+}
+
+function initShuffleButton() {
+    const shuffleBtn = document.getElementById('theme-shuffle-btn');
+    if (!shuffleBtn) return;
+
+    shuffleBtn.addEventListener('click', () => {
+        const body = document.body;
+        const current = sessionStorage.getItem('last-theme');
+        let pool = ALL_THEMES.filter(t => t !== current);
+        if (pool.length === 0) pool = ALL_THEMES;
+        
+        const chosen = pool[Math.floor(Math.random() * pool.length)];
+        sessionStorage.setItem('last-theme', chosen);
+        
+        // Remove void and all themes, then apply the new one
+        body.classList.remove('theme-void', ...ALL_THEMES);
+        body.classList.add(chosen);
+        console.log("Theme shuffled to:", chosen);
+    });
 }

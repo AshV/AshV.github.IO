@@ -21,6 +21,32 @@
     /* Purple */
 }
 
+/* Custom Text Selection */
+::selection {
+    background: var(--glass-highlight);
+    color: var(--text-main);
+    text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* Custom Glass Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color-main);
+    transition: background 1.5s ease;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+    border: 2px solid var(--bg-color-main);
+    transition: background 1.5s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--glass-highlight);
+}
+
 /* ============================================================
    Time-based themes — 8 × 3-hour windows (JS toggles class)
    ============================================================ */
@@ -223,10 +249,135 @@ body.theme-cyberpunk {
     --blob-3: #EC4899;
 }
 
+/* Monochrome — pure grayscale brutalist */
+body.theme-monochrome {
+    --bg-color-main: #0A0A0A;
+    --bg-color-accent: #171717;
+    --text-main: #F5F5F5;
+    --text-muted: #A3A3A3;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.15);
+    --blob-1: #262626;
+    --blob-2: #404040;
+    --blob-3: #525252;
+}
+
+/* Amethyst — luxurious deep violet and plum */
+body.theme-amethyst {
+    --bg-color-main: #1C0A26;
+    --bg-color-accent: #291136;
+    --text-main: #F9F0FF;
+    --text-muted: #D1A3FF;
+    --glass-bg: rgba(184, 98, 255, 0.05);
+    --glass-border: rgba(184, 98, 255, 0.15);
+    --glass-highlight: rgba(209, 163, 255, 0.25);
+    --blob-1: #7C3AED;
+    --blob-2: #9333EA;
+    --blob-3: #C026D3;
+}
+
+/* Autumn — rich earth, espresso and burnt orange */
+body.theme-autumn {
+    --bg-color-main: #1C110C;
+    --bg-color-accent: #291A14;
+    --text-main: #FFF1E6;
+    --text-muted: #FDBA74;
+    --glass-bg: rgba(249, 115, 22, 0.05);
+    --glass-border: rgba(249, 115, 22, 0.15);
+    --glass-highlight: rgba(253, 186, 116, 0.25);
+    --blob-1: #D97706;
+    --blob-2: #EA580C;
+    --blob-3: #9A3412;
+}
+
+/* Nebula — cosmic deep blue with magenta/cyan accents */
+body.theme-nebula {
+    --bg-color-main: #0B0E20;
+    --bg-color-accent: #11142E;
+    --text-main: #F0F4FF;
+    --text-muted: #A3B8FF;
+    --glass-bg: rgba(139, 92, 246, 0.06);
+    --glass-border: rgba(139, 92, 246, 0.18);
+    --glass-highlight: rgba(167, 139, 250, 0.3);
+    --blob-1: #8B5CF6;
+    --blob-2: #E81CFF;
+    --blob-3: #06B6D4;
+}
+/* Blossom — Soft pinkish and calm */
+body.theme-blossom {
+    --bg-color-main: #2A1521;
+    --bg-color-accent: #3A1D2D;
+    --text-main: #FFF0F5;
+    --text-muted: #FBCFE8;
+    --glass-bg: rgba(244, 114, 182, 0.05);
+    --glass-border: rgba(244, 114, 182, 0.15);
+    --glass-highlight: rgba(244, 114, 182, 0.25);
+    --blob-1: #EC4899;
+    --blob-2: #F472B6;
+    --blob-3: #BE185D;
+}
+
+/* Inferno — Deep, glowing red */
+body.theme-inferno {
+    --bg-color-main: #1A0505;
+    --bg-color-accent: #2A0808;
+    --text-main: #FFF0F0;
+    --text-muted: #FCA5A5;
+    --glass-bg: rgba(239, 68, 68, 0.05);
+    --glass-border: rgba(239, 68, 68, 0.15);
+    --glass-highlight: rgba(239, 68, 68, 0.25);
+    --blob-1: #EF4444;
+    --blob-2: #DC2626;
+    --blob-3: #991B1B;
+}
+
+/* Yozakura — Night Sakura, deep midnight blue with pale glowing pink */
+body.theme-yozakura {
+    --bg-color-main: #0B0C18;
+    --bg-color-accent: #17162A;
+    --text-main: #FFE8F0;
+    --text-muted: #FCA5A5;
+    --glass-bg: rgba(244, 143, 177, 0.05);
+    --glass-border: rgba(244, 143, 177, 0.15);
+    --glass-highlight: rgba(244, 143, 177, 0.25);
+    --blob-1: #EC4899;
+    --blob-2: #818CF8;
+    --blob-3: #F472B6;
+}
+
+/* Hanami — Twilight cherry blossom viewing, sunset purple and warm peach */
+body.theme-hanami {
+    --bg-color-main: #1C1023;
+    --bg-color-accent: #2C1635;
+    --text-main: #FFF0F0;
+    --text-muted: #FCA5A5;
+    --glass-bg: rgba(251, 113, 133, 0.05);
+    --glass-border: rgba(251, 113, 133, 0.15);
+    --glass-highlight: rgba(251, 113, 133, 0.25);
+    --blob-1: #FB7185;
+    --blob-2: #F472B6;
+    --blob-3: #C084FC;
+}
+
+/* Void — Pitch black initial state for smooth fade-in */
+body.theme-void {
+    --bg-color-main: #000000;
+    --bg-color-accent: #000000;
+    --text-main: #000000;
+    --text-muted: #000000;
+    --glass-bg: rgba(0, 0, 0, 0);
+    --glass-border: rgba(255, 255, 255, 0);
+    --glass-highlight: rgba(255, 255, 255, 0);
+    --blob-1: #000000;
+    --blob-2: #000000;
+    --blob-3: #000000;
+}
+
 body {
     background-color: var(--bg-color-main);
     color: var(--text-main);
-    transition: background-color 1.5s ease;
+    transition: background-color 1.5s ease-in-out, color 1.5s ease-in-out;
     font-family: 'Inter', sans-serif;
 }
 

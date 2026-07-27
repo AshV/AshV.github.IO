@@ -17,7 +17,7 @@
 <head>
 {{ partial "head.html" . }}
 </head>
-<body class="bg-[var(--bg-color-main)] text-[var(--text-main)] antialiased transition-colors duration-1000 font-sans theme-morning min-h-screen relative overflow-x-hidden">
+<body class="bg-[var(--bg-color-main)] text-[var(--text-main)] antialiased transition-colors duration-1000 font-sans theme-void min-h-screen relative overflow-x-hidden">
     <!-- Ambient Background Layer -->
     <div id="ambient-bg" class="fixed inset-0 z-0 overflow-hidden pointer-events-none transition-colors duration-1000 bg-[var(--bg-color-main)] opacity-70">
         <!-- Blobs -->
@@ -28,6 +28,20 @@
     
     <!-- Main Content -->
     {{ block "main" . }}{{ end }}
+
+    <!-- Theme Shuffle Button -->
+    <button id="theme-shuffle-btn" class="hidden md:flex fixed bottom-6 right-6 z-50 p-3 lg:p-4 rounded-full glass-panel border border-[var(--glass-border)] hover:bg-[var(--glass-highlight)] transition-all hover:scale-110 hover:-rotate-12 group shadow-lg items-center justify-center" title="Shuffle Theme">
+        <svg class="w-5 h-5 lg:w-6 lg:h-6 text-[var(--text-main)]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path>
+            <path d="m14 7 3 3"></path>
+            <path d="M5 6v4"></path>
+            <path d="M19 14v4"></path>
+            <path d="M10 2v2"></path>
+            <path d="M7 8H3"></path>
+            <path d="M21 16h-4"></path>
+            <path d="M11 3H9"></path>
+        </svg>
+    </button>
 
     <!-- Essential Scripts -->
     <script type="module" src="{{ "src/js/main.js" | absURL }}"></script>
