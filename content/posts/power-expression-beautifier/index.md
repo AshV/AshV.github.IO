@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 70
 title: "Power Automate Expression Beautifier"
 excerpt: "Paste complex Power Automate expressions and instantly format them into a readable, indented structure. Makes debugging nested expressions effortless."
 date: 2025-04-12

@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 30
 title: "Prompt Gallery"
 excerpt: "Collection of AI Prompts to quickly generate images, videos, and other creative content."
 date: 2026-03-25

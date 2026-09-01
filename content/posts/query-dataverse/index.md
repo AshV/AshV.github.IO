@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 50
 title: "Query Dataverse"
 excerpt: "A collection of frequently used Microsoft Dataverse queries — check admin roles, list security roles, team assignments, cloud flow statuses, and more."
 date: 2025-03-05

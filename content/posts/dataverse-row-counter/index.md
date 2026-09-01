@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 60
 title: "Dataverse Row Counter"
 excerpt: "A quick browser-based alternative to XrmToolBox plugins like Fast Record Counter. Count Dataverse table rows instantly without installing anything."
 date: 2025-02-10

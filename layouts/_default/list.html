@@ -22,7 +22,7 @@
     <!-- Posts Grid -->
     <div id="posts-grid" class="flex-1 w-full relative perspective-[1000px]">
         <div id="posts-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10 pb-20">
-            {{ range $index, $element := .Pages }}
+            {{ range $index, $element := .Pages.ByWeight }}
                 {{ $delay := mod $index 10 }}
 
                 {{ $targetUrl := .Permalink }}

@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 40
 title: "My Power Platform Developer Tools"
 excerpt: "A collection of tools I built to make my life easier while working on Power Platform."
 date: 2026-03-24

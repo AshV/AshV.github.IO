@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 10
 title: "Retire Wise"
 excerpt: "Life is not to work till last breath. Earn enough to live a happy life and then rest, Travel and explore the world, Share your knowledge and wisdom with others, and spend quality time with your loved ones."
 date: 2026-07-25

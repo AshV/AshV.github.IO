@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 80
 title: "Flow Calendar"
 excerpt: "A visual calendar view for Power Automate cloud flows in your Dataverse environment. Quickly see flow schedules and status at a glance."
 date: 2025-01-15

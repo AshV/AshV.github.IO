@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 20
 title: "WhatsApp Chat Export Reader"
 excerpt: "Ever wished you could search, filter, and analyze your WhatsApp chats export? This tool lets you upload your WhatsApp chat export (txt) and instantly search across all messages, filter by date, sender, keywords, and even analyze media attachments."
 date: 2026-07-24

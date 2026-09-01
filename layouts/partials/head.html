@@ -31,6 +31,32 @@
   ]
 }
 </script>
+
+{{- /* SEO: ItemList – lets Google index all tools/apps from the homepage */ -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Tools & Projects by Ashish Vishwakarma",
+  "description": "{{ .Site.Params.description }}",
+  "numberOfItems": {{ len .Site.RegularPages.ByWeight }},
+  "itemListElement": [
+    {{- range $index, $page := .Site.RegularPages.ByWeight -}}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "ListItem",
+      "position": {{ add $index 1 }},
+      "name": {{ $page.Title | jsonify }},
+      "description": {{ ($page.Params.excerpt | default "") | jsonify }},
+      "url": "{{ with $page.Params.redirectUrl }}{{ . }}{{ else }}{{ $page.Permalink }}{{ end }}"
+      {{- if $page.Params.image }},
+      "image": "{{ $page.Params.image }}"
+      {{- end }}
+    }
+    {{- end }}
+  ]
+}
+</script>
 {{- end -}}
 
 {{- /* SEO: Canonical URL (skip for redirect pages – they set their own canonical above) */ -}}

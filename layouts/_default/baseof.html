@@ -1,14 +1,38 @@
 {{- if .Params.redirectUrl -}}
+{{- $description := .Site.Params.description -}}
+{{- if .Params.excerpt -}}
+  {{- $description = .Params.excerpt -}}
+{{- end -}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url={{ .Params.redirectUrl }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ $description }}">
     <link rel="canonical" href="{{ .Params.redirectUrl }}">
-    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url={{ .Params.redirectUrl }}">
+
+    {{- /* Open Graph for social sharing previews */ -}}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:url" content="{{ .Params.redirectUrl }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:type" content="website">
+    {{- if .Params.image }}
+    <meta property="og:image" content="{{ .Params.image }}">
+    {{- end }}
+
+    {{- /* Twitter Card */ -}}
+    <meta name="twitter:card" content="{{ if .Params.image }}summary_large_image{{ else }}summary{{ end }}">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    {{- if .Params.image }}
+    <meta name="twitter:image" content="{{ .Params.image }}">
+    {{- end }}
 </head>
 <body>
-    <p>Redirecting to <a href="{{ .Params.redirectUrl }}">{{ .Params.redirectUrl }}</a>...</p>
+    <p>Redirecting to <a href="{{ .Params.redirectUrl }}">{{ .Title }}</a>...</p>
 </body>
 </html>
 {{- else -}}

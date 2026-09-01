@@ -1,5 +1,6 @@
 ---
 layout: post
+weight: 90
 title: "FetchXML to SQL Converter"
 excerpt: "Convert FetchXML queries to SQL online. Paste your Dataverse FetchXML and get the equivalent SQL query instantly — no installation required."
 date: 2024-09-15
