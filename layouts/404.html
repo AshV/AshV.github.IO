@@ -1,0 +1,219 @@
+{{ define "main" }}
+<main class="relative z-10 w-full min-h-screen flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 max-w-[1800px] mx-auto overflow-hidden">
+
+    <!-- Floating Particles (purely decorative) -->
+    <div id="particle-field" class="fixed inset-0 pointer-events-none z-0" aria-hidden="true"></div>
+
+    <!-- Central Glass Card -->
+    <div class="glass-panel relative rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-14 lg:p-20 max-w-2xl w-full text-center z-10 overflow-hidden group">
+
+        <!-- Spotlight shimmer on hover -->
+        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[var(--glass-highlight)] to-transparent group-hover:animate-[shimmer_2s_infinite] pointer-events-none"></div>
+
+        <!-- Floating Astronaut -->
+        <div id="astronaut" class="mx-auto mb-8 md:mb-10 w-40 h-40 md:w-52 md:h-52 relative" aria-hidden="true">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_40px_var(--blob-1)]">
+                <!-- Tether line -->
+                <path d="M100 180 Q 60 160, 40 190" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5">
+                    <animate attributeName="d" values="M100 180 Q 60 160, 40 190;M100 180 Q 70 155, 35 185;M100 180 Q 60 160, 40 190" dur="4s" repeatCount="indefinite"/>
+                </path>
+                <!-- Body -->
+                <ellipse cx="100" cy="110" rx="30" ry="38" fill="var(--glass-highlight)" stroke="var(--glass-border)" stroke-width="2"/>
+                <!-- Helmet -->
+                <circle cx="100" cy="72" r="28" fill="var(--glass-bg)" stroke="var(--glass-border)" stroke-width="2"/>
+                <!-- Visor -->
+                <ellipse cx="100" cy="72" rx="20" ry="18" fill="var(--bg-color-main)" opacity="0.8" stroke="var(--text-muted)" stroke-width="1"/>
+                <!-- Visor glare -->
+                <ellipse cx="92" cy="66" rx="6" ry="4" fill="var(--glass-highlight)" opacity="0.6" transform="rotate(-20 92 66)"/>
+                <!-- Backpack -->
+                <rect x="70" y="90" width="10" height="30" rx="4" fill="var(--glass-highlight)" stroke="var(--glass-border)" stroke-width="1" opacity="0.7"/>
+                <!-- Left arm -->
+                <path d="M70 105 Q 50 100, 45 115" stroke="var(--glass-highlight)" stroke-width="6" stroke-linecap="round" fill="none">
+                    <animate attributeName="d" values="M70 105 Q 50 100, 45 115;M70 105 Q 48 95, 42 108;M70 105 Q 50 100, 45 115" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <!-- Right arm (waving) -->
+                <path d="M130 105 Q 150 95, 155 80" stroke="var(--glass-highlight)" stroke-width="6" stroke-linecap="round" fill="none">
+                    <animate attributeName="d" values="M130 105 Q 150 95, 155 80;M130 105 Q 155 88, 160 72;M130 105 Q 150 95, 155 80" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <!-- Left leg -->
+                <path d="M88 146 Q 80 165, 75 175" stroke="var(--glass-highlight)" stroke-width="6" stroke-linecap="round" fill="none">
+                    <animate attributeName="d" values="M88 146 Q 80 165, 75 175;M88 146 Q 82 168, 78 180;M88 146 Q 80 165, 75 175" dur="5s" repeatCount="indefinite"/>
+                </path>
+                <!-- Right leg -->
+                <path d="M112 146 Q 120 165, 125 175" stroke="var(--glass-highlight)" stroke-width="6" stroke-linecap="round" fill="none">
+                    <animate attributeName="d" values="M112 146 Q 120 165, 125 175;M112 146 Q 118 162, 122 170;M112 146 Q 120 165, 125 175" dur="4.5s" repeatCount="indefinite"/>
+                </path>
+                <!-- Stars around astronaut -->
+                <circle cx="30" cy="40" r="2" fill="var(--text-main)" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="170" cy="50" r="1.5" fill="var(--text-main)" opacity="0.4">
+                    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="155" cy="150" r="2" fill="var(--text-main)" opacity="0.5">
+                    <animate attributeName="opacity" values="0.5;0.05;0.5" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="45" cy="155" r="1" fill="var(--text-main)" opacity="0.3">
+                    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="160" cy="30" r="1" fill="var(--text-main)" opacity="0.4">
+                    <animate attributeName="opacity" values="0.4;0;0.4" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+
+        <!-- Glitch 404 Text -->
+        <div class="relative mb-4 md:mb-6 select-none" aria-hidden="true">
+            <h1 id="glitch-text" class="text-8xl md:text-9xl font-bold tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-[var(--blob-1)] via-[var(--blob-2)] to-[var(--blob-3)]"
+                data-text="404">
+                404
+            </h1>
+        </div>
+
+        <!-- Message -->
+        <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold text-[var(--text-main)] mb-3 md:mb-4 tracking-tight">
+            Lost in space
+        </h2>
+        <p class="text-sm md:text-base text-[var(--text-muted)] max-w-md mx-auto mb-8 md:mb-10 leading-relaxed">
+            The page you're looking for has drifted beyond the known universe.
+            Let's navigate you back to familiar territory.
+        </p>
+
+        <!-- CTA Button -->
+        <a href="/" id="btn-home"
+           class="group/btn inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[var(--blob-1)] to-[var(--blob-2)] text-[var(--bg-color-main)] font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_var(--blob-1)] active:scale-95 relative overflow-hidden">
+            <!-- Button shimmer -->
+            <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover/btn:animate-[shimmer_1.5s_infinite] pointer-events-none"></span>
+            <svg class="w-5 h-5 transition-transform group-hover/btn:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            <span class="relative">Beam me home</span>
+        </a>
+
+        <!-- Attempted URL hint -->
+        <p id="attempted-path" class="mt-6 md:mt-8 text-xs text-[var(--text-muted)] opacity-50 font-mono truncate max-w-full px-4"></p>
+    </div>
+
+</main>
+
+<style>
+    /* Astronaut floating animation */
+    #astronaut {
+        animation: astronaut-drift 6s ease-in-out infinite;
+    }
+    @keyframes astronaut-drift {
+        0%, 100% { transform: translateY(0) rotate(-3deg); }
+        50%      { transform: translateY(-18px) rotate(3deg); }
+    }
+
+    /* Glitch effect on the 404 text */
+    #glitch-text {
+        position: relative;
+    }
+    #glitch-text::before,
+    #glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: inherit;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+    }
+    #glitch-text::before {
+        animation: glitch-1 4s infinite linear;
+        clip-path: inset(0 0 65% 0);
+    }
+    #glitch-text::after {
+        animation: glitch-2 4s infinite linear;
+        clip-path: inset(65% 0 0 0);
+    }
+
+    @keyframes glitch-1 {
+        0%, 88%, 100% { opacity: 0; transform: none; }
+        89%           { opacity: 0.8; transform: translate(-4px, -2px); }
+        90%           { opacity: 0.8; transform: translate(4px, 2px); }
+        91%           { opacity: 0; transform: none; }
+    }
+    @keyframes glitch-2 {
+        0%, 92%, 100% { opacity: 0; transform: none; }
+        93%           { opacity: 0.8; transform: translate(4px, -2px); }
+        94%           { opacity: 0.8; transform: translate(-4px, 2px); }
+        95%           { opacity: 0; transform: none; }
+    }
+
+    /* Particle styles */
+    .drift-particle {
+        position: absolute;
+        border-radius: 50%;
+        background: var(--text-main);
+        pointer-events: none;
+        will-change: transform, opacity;
+        animation: particle-float linear infinite;
+    }
+
+    @keyframes particle-float {
+        0%   { transform: translateY(0) translateX(0); opacity: 0; }
+        10%  { opacity: var(--p-opacity, 0.3); }
+        90%  { opacity: var(--p-opacity, 0.3); }
+        100% { transform: translateY(-100vh) translateX(var(--p-drift, 20px)); opacity: 0; }
+    }
+
+    /* Shimmer keyframes (also used by hero, but define here for self-containment) */
+    @keyframes shimmer {
+        100% { transform: translateX(200%); }
+    }
+</style>
+
+<script>
+(function() {
+    // Show the attempted path
+    const pathEl = document.getElementById('attempted-path');
+    if (pathEl && window.location.pathname !== '/') {
+        pathEl.textContent = window.location.pathname;
+    }
+
+    // Generate floating particles
+    const field = document.getElementById('particle-field');
+    if (field) {
+        const count = window.innerWidth < 640 ? 20 : 40;
+        for (let i = 0; i < count; i++) {
+            const p = document.createElement('div');
+            p.classList.add('drift-particle');
+            const size = Math.random() * 3 + 1;
+            const left = Math.random() * 100;
+            const delay = Math.random() * 15;
+            const duration = Math.random() * 12 + 10;
+            const drift = (Math.random() - 0.5) * 80;
+            const opacity = Math.random() * 0.3 + 0.05;
+            p.style.cssText = `
+                width: ${size}px;
+                height: ${size}px;
+                left: ${left}%;
+                bottom: -${size}px;
+                animation-delay: ${delay}s;
+                animation-duration: ${duration}s;
+                --p-drift: ${drift}px;
+                --p-opacity: ${opacity};
+            `;
+            field.appendChild(p);
+        }
+    }
+
+    // Parallax tilt on the astronaut following cursor
+    const astro = document.getElementById('astronaut');
+    if (astro && window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', (e) => {
+            const cx = window.innerWidth / 2;
+            const cy = window.innerHeight / 2;
+            const dx = (e.clientX - cx) / cx;
+            const dy = (e.clientY - cy) / cy;
+            astro.style.transform = `translateY(${-18 * Math.sin(Date.now()/1000)}px) rotate(${dx * 8}deg) translateX(${dx * 12}px)`;
+        });
+    }
+})();
+</script>
+{{ end }}
