@@ -1,17 +1,17 @@
 {{ define "main" }}
-<main class="relative z-10 w-full min-h-screen flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 max-w-[1800px] mx-auto overflow-hidden">
+<main class="relative z-10 w-full h-screen max-h-screen flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden">
 
     <!-- Floating Particles (purely decorative) -->
     <div id="particle-field" class="fixed inset-0 pointer-events-none z-0" aria-hidden="true"></div>
 
     <!-- Central Glass Card -->
-    <div class="glass-panel relative rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-14 lg:p-20 max-w-2xl w-full text-center z-10 overflow-hidden group">
+    <div class="glass-panel relative rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 max-w-xl w-full text-center z-10 overflow-hidden group">
 
         <!-- Spotlight shimmer on hover -->
         <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[var(--glass-highlight)] to-transparent group-hover:animate-[shimmer_2s_infinite] pointer-events-none"></div>
 
         <!-- Floating Astronaut -->
-        <div id="astronaut" class="mx-auto mb-8 md:mb-10 w-40 h-40 md:w-52 md:h-52 relative" aria-hidden="true">
+        <div id="astronaut" class="mx-auto mb-4 md:mb-6 w-28 h-28 md:w-36 md:h-36 relative" aria-hidden="true">
             <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_40px_var(--blob-1)]">
                 <!-- Tether line -->
                 <path d="M100 180 Q 60 160, 40 190" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5">
@@ -63,47 +63,54 @@
         </div>
 
         <!-- Glitch 404 Text -->
-        <div class="relative mb-4 md:mb-6 select-none" aria-hidden="true">
-            <h1 id="glitch-text" class="text-8xl md:text-9xl font-bold tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-[var(--blob-1)] via-[var(--blob-2)] to-[var(--blob-3)]"
+        <div class="relative mb-2 md:mb-4 select-none" aria-hidden="true">
+            <h1 id="glitch-text" class="text-7xl md:text-8xl font-bold tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-[var(--blob-1)] via-[var(--blob-2)] to-[var(--blob-3)]"
                 data-text="404">
                 404
             </h1>
         </div>
 
         <!-- Message -->
-        <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold text-[var(--text-main)] mb-3 md:mb-4 tracking-tight">
+        <h2 class="text-lg md:text-2xl font-semibold text-[var(--text-main)] mb-2 md:mb-3 tracking-tight">
             Lost in space
         </h2>
-        <p class="text-sm md:text-base text-[var(--text-muted)] max-w-md mx-auto mb-8 md:mb-10 leading-relaxed">
+        <p class="text-xs md:text-sm text-[var(--text-muted)] max-w-sm mx-auto mb-5 md:mb-7 leading-relaxed">
             The page you're looking for has drifted beyond the known universe.
             Let's navigate you back to familiar territory.
         </p>
 
         <!-- CTA Button -->
         <a href="/" id="btn-home"
-           class="group/btn inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[var(--blob-1)] to-[var(--blob-2)] text-[var(--bg-color-main)] font-semibold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_var(--blob-1)] active:scale-95 relative overflow-hidden">
+           class="group/btn inline-flex items-center gap-2.5 px-6 py-3 md:px-8 md:py-3.5 rounded-full bg-gradient-to-r from-[var(--blob-1)] to-[var(--blob-2)] text-[var(--bg-color-main)] font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_var(--blob-1)] active:scale-95 relative overflow-hidden">
             <!-- Button shimmer -->
             <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover/btn:animate-[shimmer_1.5s_infinite] pointer-events-none"></span>
-            <svg class="w-5 h-5 transition-transform group-hover/btn:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 transition-transform group-hover/btn:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
             </svg>
             <span class="relative">Beam me home</span>
         </a>
 
         <!-- Attempted URL hint -->
-        <p id="attempted-path" class="mt-6 md:mt-8 text-xs text-[var(--text-muted)] opacity-50 font-mono truncate max-w-full px-4"></p>
+        <p id="attempted-path" class="mt-4 md:mt-5 text-[10px] md:text-xs text-[var(--text-muted)] opacity-50 font-mono truncate max-w-full px-4"></p>
     </div>
 
 </main>
 
 <style>
+    /* Lock body to viewport on 404 */
+    body:has(#astronaut) {
+        overflow: hidden;
+        height: 100vh;
+        max-height: 100vh;
+    }
+
     /* Astronaut floating animation */
     #astronaut {
         animation: astronaut-drift 6s ease-in-out infinite;
     }
     @keyframes astronaut-drift {
         0%, 100% { transform: translateY(0) rotate(-3deg); }
-        50%      { transform: translateY(-18px) rotate(3deg); }
+        50%      { transform: translateY(-12px) rotate(3deg); }
     }
 
     /* Glitch effect on the 404 text */
@@ -162,7 +169,7 @@
         100% { transform: translateY(-100vh) translateX(var(--p-drift, 20px)); opacity: 0; }
     }
 
-    /* Shimmer keyframes (also used by hero, but define here for self-containment) */
+    /* Shimmer keyframes */
     @keyframes shimmer {
         100% { transform: translateX(200%); }
     }
@@ -211,7 +218,7 @@
             const cy = window.innerHeight / 2;
             const dx = (e.clientX - cx) / cx;
             const dy = (e.clientY - cy) / cy;
-            astro.style.transform = `translateY(${-18 * Math.sin(Date.now()/1000)}px) rotate(${dx * 8}deg) translateX(${dx * 12}px)`;
+            astro.style.transform = `translateY(${-12 * Math.sin(Date.now()/1000)}px) rotate(${dx * 8}deg) translateX(${dx * 12}px)`;
         });
     }
 })();
