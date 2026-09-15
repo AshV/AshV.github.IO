@@ -3,6 +3,7 @@
     {
       "destination": "/DataverseRowCounter/",
       "title": "Dataverse Row Counter",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/dataverserowcounter",
         "/dataverse-row-counter",
@@ -14,6 +15,7 @@
     {
       "destination": "/FetchXmlTester/",
       "title": "FetchXML Tester Online",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/fetchxmltester",
         "/fetchxml-tester",
@@ -24,6 +26,7 @@
     {
       "destination": "/FetchXMLToSQL/",
       "title": "FetchXML to SQL Converter",
+      "image": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/fetchxmltosql",
         "/fetchxml-to-sql",
@@ -35,6 +38,7 @@
     {
       "destination": "/FlowCalendar/",
       "title": "Flow Calendar",
+      "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/flowcalendar",
         "/flow-calendar"
@@ -44,6 +48,7 @@
     {
       "destination": "/image-as-kindle-cover/",
       "title": "Image As Kindle Cover",
+      "image": "https://www.ashishvishwakarma.com/image-as-kindle-cover/og-image.jpg",
       "aliases": [
         "/kindle-cover",
         "/image-kindle-cover",
@@ -54,6 +59,7 @@
     {
       "destination": "/markdown-reader/",
       "title": "Markdown Editor Online",
+      "image": "https://www.ashishvishwakarma.com/markdown-reader/og-image.png",
       "aliases": [
         "/markdown-editor",
         "/markdown-editor-online",
@@ -64,6 +70,7 @@
     {
       "destination": "/PowerExpressionBeautifier/",
       "title": "Power Automate Expression Beautifier",
+      "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/powerexpressionbeautifier",
         "/power-expression-beautifier",
@@ -78,6 +85,7 @@
     {
       "destination": "/prompt-gallery/",
       "title": "Prompt Gallery",
+      "image": "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/prompt",
         "/prompts"
@@ -87,6 +95,7 @@
     {
       "destination": "/qdv/",
       "title": "Query Dataverse",
+      "image": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/query-dataverse",
         "/querydataverse",
@@ -97,6 +106,7 @@
     {
       "destination": "/retirewise/",
       "title": "Retire Wise",
+      "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/retire-wise",
         "/retire"
@@ -106,6 +116,7 @@
     {
       "destination": "/whatsapp-chat-reader/",
       "title": "WhatsApp Chat Export Reader",
+      "image": "https://plus.unsplash.com/premium_photo-1676057060928-c717a8e96784?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/whatsapp-chat-export-reader",
         "/whatsapp-reader",
@@ -116,6 +127,7 @@
     {
       "destination": "/xsv-editor/",
       "title": "CSV Editor Online",
+      "image": "https://www.ashishvishwakarma.com/xsv-editor/og-image.png",
       "aliases": [
         "/csv-editor",
         "/csv-editor-online",
@@ -127,6 +139,7 @@
     {
       "destination": "/power-platform-developer-tools/",
       "title": "My Power Platform Developer Tools",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop",
       "aliases": [
         "/developer-tools",
         "/dev-tools"

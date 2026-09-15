@@ -70,34 +70,42 @@
             </h1>
         </div>
 
-        <!-- Message -->
-        <h2 class="text-lg md:text-2xl font-semibold text-[var(--text-main)] mb-2 md:mb-3 tracking-tight">
-            Lost in space
-        </h2>
-        <p class="text-xs md:text-sm text-[var(--text-muted)] max-w-sm mx-auto mb-5 md:mb-7 leading-relaxed">
-            The page you're looking for has drifted beyond the known universe.
-            Let's navigate you back to familiar territory.
-        </p>
-
-        <!-- CTA Button -->
-        <a href="/" id="btn-home"
-           class="group/btn inline-flex items-center gap-2.5 px-6 py-3 md:px-8 md:py-3.5 rounded-full bg-gradient-to-r from-[var(--blob-1)] to-[var(--blob-2)] text-[var(--bg-color-main)] font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_var(--blob-1)] active:scale-95 relative overflow-hidden">
-            <!-- Button shimmer -->
-            <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover/btn:animate-[shimmer_1.5s_infinite] pointer-events-none"></span>
-            <svg class="w-4 h-4 transition-transform group-hover/btn:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-            </svg>
-            <span class="relative">Beam me home</span>
-        </a>
-
-        <!-- Did you mean? Suggestions (hidden by default, shown by JS) -->
-        <div id="suggestions-section" class="mt-5 md:mt-7 w-full max-w-sm mx-auto hidden" style="animation: suggestion-fade-in 0.5s ease-out forwards;">
-            <p class="text-[10px] md:text-xs text-[var(--text-muted)] uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
-                <span class="w-6 h-px bg-[var(--text-muted)] opacity-30"></span>
-                Did you mean?
-                <span class="w-6 h-px bg-[var(--text-muted)] opacity-30"></span>
+        <!-- Did you mean? Suggestions — IN FOCUS AREA, right after 404 heading -->
+        <div id="suggestions-section" class="w-full max-w-md mx-auto mb-4 hidden">
+            <p class="text-xs md:text-sm text-[var(--text-muted)] mb-1 md:mb-2">
+                Were you looking for?
             </p>
-            <div id="suggestions-list" class="flex flex-col gap-2"></div>
+            <div id="suggestions-list" class="flex flex-col gap-2.5"></div>
+            <a href="/" id="btn-home-alt"
+               class="group/btn inline-flex items-center justify-center gap-2 mt-4 md:mt-5 px-5 py-2.5 rounded-full border border-[var(--glass-border)] text-[var(--text-muted)] text-xs font-medium transition-all duration-300 hover:border-[var(--blob-1)] hover:text-[var(--text-main)] hover:scale-105 active:scale-95">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                Or go home
+            </a>
+        </div>
+
+        <!-- Default 404 content (hidden when suggestions are shown) -->
+        <div id="default-404-content">
+            <!-- Message -->
+            <h2 class="text-lg md:text-2xl font-semibold text-[var(--text-main)] mb-2 md:mb-3 tracking-tight">
+                Lost in space
+            </h2>
+            <p class="text-xs md:text-sm text-[var(--text-muted)] max-w-sm mx-auto mb-5 md:mb-7 leading-relaxed">
+                The page you're looking for has drifted beyond the known universe.
+                Let's navigate you back to familiar territory.
+            </p>
+
+            <!-- CTA Button -->
+            <a href="/" id="btn-home"
+               class="group/btn inline-flex items-center gap-2.5 px-6 py-3 md:px-8 md:py-3.5 rounded-full bg-gradient-to-r from-[var(--blob-1)] to-[var(--blob-2)] text-[var(--bg-color-main)] font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_var(--blob-1)] active:scale-95 relative overflow-hidden">
+                <!-- Button shimmer -->
+                <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover/btn:animate-[shimmer_1.5s_infinite] pointer-events-none"></span>
+                <svg class="w-4 h-4 transition-transform group-hover/btn:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                <span class="relative">Beam me home</span>
+            </a>
         </div>
 
         <!-- Attempted URL hint -->
@@ -190,42 +198,41 @@
         to   { opacity: 1; transform: translateY(0); }
     }
 
-    .suggestion-pill {
+    .suggestion-card {
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        padding: 0.6rem 1rem;
+        padding: 0.5rem;
+        padding-right: 1rem;
         border-radius: 1rem;
         background: var(--glass-bg);
         border: 1px solid var(--glass-border);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         text-decoration: none;
-        transition: all 0.25s ease;
-        animation: suggestion-fade-in 0.4s ease-out both;
+        transition: all 0.3s ease;
+        animation: suggestion-fade-in 0.5s ease-out both;
+        overflow: hidden;
     }
-    .suggestion-pill:hover {
+    .suggestion-card:hover {
         border-color: var(--blob-1);
-        box-shadow: 0 0 20px rgba(var(--blob-1-rgb, 139, 92, 246), 0.15);
-        transform: translateX(4px);
+        box-shadow: 0 0 24px rgba(var(--blob-1-rgb, 139, 92, 246), 0.2);
+        transform: translateY(-2px);
     }
-    .suggestion-pill .pill-icon {
+    .suggestion-card .card-thumb {
         flex-shrink: 0;
-        width: 1.5rem;
-        height: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.5rem;
-        background: linear-gradient(135deg, var(--blob-1), var(--blob-2));
-        font-size: 0.65rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 0.75rem;
+        object-fit: cover;
+        background: var(--glass-highlight);
     }
-    .suggestion-pill .pill-text {
+    .suggestion-card .card-text {
         flex: 1;
         min-width: 0;
         text-align: left;
     }
-    .suggestion-pill .pill-title {
+    .suggestion-card .card-title {
         display: block;
         font-size: 0.8rem;
         font-weight: 600;
@@ -233,23 +240,25 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        line-height: 1.3;
     }
-    .suggestion-pill .pill-path {
+    .suggestion-card .card-path {
         display: block;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         color: var(--text-muted);
         font-family: monospace;
-        opacity: 0.7;
+        opacity: 0.6;
+        margin-top: 0.15rem;
     }
-    .suggestion-pill .pill-arrow {
+    .suggestion-card .card-arrow {
         flex-shrink: 0;
         color: var(--text-muted);
-        opacity: 0.4;
-        transition: opacity 0.25s, transform 0.25s;
+        opacity: 0.3;
+        transition: opacity 0.3s, transform 0.3s, color 0.3s;
     }
-    .suggestion-pill:hover .pill-arrow {
+    .suggestion-card:hover .card-arrow {
         opacity: 1;
-        transform: translateX(2px);
+        transform: translateX(3px);
         color: var(--blob-1);
     }
 </style>
@@ -269,16 +278,17 @@
     const normPath = rawPath.replace(/\/+$/, '').toLowerCase() || '/';
 
     // ---- Build inverted lookup maps from the destination-centric data ----
-    const aliasMap = {};   // lowercase alias → { destination, title }
-    const kwMap = {};      // keyword → [{ destination, title }, ...]
+    const aliasMap = {};   // lowercase alias → { destination, title, image }
+    const kwMap = {};      // keyword → [{ destination, title, image }, ...]
 
     (DATA.redirects || []).forEach(function(entry) {
         const dest = entry.destination;
         const title = entry.title || dest;
+        const image = entry.image || '';
 
         // Invert aliases
         (entry.aliases || []).forEach(function(alias) {
-            aliasMap[alias.toLowerCase().replace(/\/+$/, '')] = { destination: dest, title: title };
+            aliasMap[alias.toLowerCase().replace(/\/+$/, '')] = { destination: dest, title: title, image: image };
         });
 
         // Invert keywords
@@ -287,7 +297,7 @@
             if (!kwMap[key]) kwMap[key] = [];
             // Avoid duplicates for the same destination
             if (!kwMap[key].some(function(e) { return e.destination === dest; })) {
-                kwMap[key].push({ destination: dest, title: title });
+                kwMap[key].push({ destination: dest, title: title, image: image });
             }
         });
     });
@@ -349,12 +359,12 @@
         .filter(function(t) { return t.length > 1; }); // skip single chars
 
     // Score each destination by how many keyword tokens match
-    var scores = {};  // destination → { score, title, destination }
+    var scores = {};  // destination → { score, title, destination, image }
     tokens.forEach(function(token) {
         if (kwMap[token]) {
             kwMap[token].forEach(function(entry) {
                 if (!scores[entry.destination]) {
-                    scores[entry.destination] = { score: 0, title: entry.title, destination: entry.destination };
+                    scores[entry.destination] = { score: 0, title: entry.title, destination: entry.destination, image: entry.image };
                 }
                 scores[entry.destination].score++;
             });
@@ -371,19 +381,32 @@
     if (suggestions.length > 0) {
         var section = document.getElementById('suggestions-section');
         var list = document.getElementById('suggestions-list');
+        var defaultContent = document.getElementById('default-404-content');
+        var astronaut = document.getElementById('astronaut');
         if (section && list) {
+            // Hide default 404 content & shrink astronaut to make room
+            if (defaultContent) defaultContent.style.display = 'none';
+            if (astronaut) {
+                astronaut.classList.remove('mb-4', 'md:mb-6', 'w-28', 'h-28', 'md:w-36', 'md:h-36');
+                astronaut.classList.add('mb-2', 'md:mb-3', 'w-16', 'h-16', 'md:w-20', 'md:h-20');
+            }
+
             suggestions.forEach(function(s, idx) {
                 var a = document.createElement('a');
                 a.href = s.destination;
-                a.className = 'suggestion-pill';
-                a.style.animationDelay = (idx * 0.1) + 's';
-                a.innerHTML =
-                    '<span class="pill-icon">→</span>' +
-                    '<span class="pill-text">' +
-                        '<span class="pill-title">' + s.title + '</span>' +
-                        '<span class="pill-path">' + s.destination + '</span>' +
+                a.className = 'suggestion-card';
+                a.style.animationDelay = (idx * 0.12) + 's';
+
+                var imgHtml = s.image
+                    ? '<img class="card-thumb" src="' + s.image + '" alt="' + s.title + '" loading="eager">'
+                    : '<div class="card-thumb" style="background:linear-gradient(135deg,var(--blob-1),var(--blob-2))"></div>';
+
+                a.innerHTML = imgHtml +
+                    '<span class="card-text">' +
+                        '<span class="card-title">' + s.title + '</span>' +
+                        '<span class="card-path">' + s.destination + '</span>' +
                     '</span>' +
-                    '<svg class="pill-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                    '<svg class="card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                         '<path d="M5 12h14M12 5l7 7-7 7"/>' +
                     '</svg>';
                 list.appendChild(a);
