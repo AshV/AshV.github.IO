@@ -1,0 +1,141 @@
+{
+  "redirects": [
+    {
+      "destination": "/DataverseRowCounter/",
+      "title": "Dataverse Row Counter",
+      "aliases": [
+        "/dataverserowcounter",
+        "/dataverse-row-counter",
+        "/dataverse-counter",
+        "/row-counter"
+      ],
+      "keywords": ["dataverse", "counter", "row"]
+    },
+    {
+      "destination": "/FetchXmlTester/",
+      "title": "FetchXML Tester Online",
+      "aliases": [
+        "/fetchxmltester",
+        "/fetchxml-tester",
+        "/fetchxml-tester-online"
+      ],
+      "keywords": ["fetchxml", "tester"]
+    },
+    {
+      "destination": "/FetchXMLToSQL/",
+      "title": "FetchXML to SQL Converter",
+      "aliases": [
+        "/fetchxmltosql",
+        "/fetchxml-to-sql",
+        "/fetchxml-to-sql-converter",
+        "/fetchxml2sql"
+      ],
+      "keywords": ["fetchxml", "sql", "converter"]
+    },
+    {
+      "destination": "/FlowCalendar/",
+      "title": "Flow Calendar",
+      "aliases": [
+        "/flowcalendar",
+        "/flow-calendar"
+      ],
+      "keywords": ["flow", "calendar"]
+    },
+    {
+      "destination": "/image-as-kindle-cover/",
+      "title": "Image As Kindle Cover",
+      "aliases": [
+        "/kindle-cover",
+        "/image-kindle-cover",
+        "/kindle"
+      ],
+      "keywords": ["kindle", "epub", "dither", "image", "cover"]
+    },
+    {
+      "destination": "/markdown-reader/",
+      "title": "Markdown Editor Online",
+      "aliases": [
+        "/markdown-editor",
+        "/markdown-editor-online",
+        "/md-editor"
+      ],
+      "keywords": ["markdown", "md", "editor"]
+    },
+    {
+      "destination": "/PowerExpressionBeautifier/",
+      "title": "Power Automate Expression Beautifier",
+      "aliases": [
+        "/powerexpressionbeautifier",
+        "/power-expression-beautifier",
+        "/power-automate-expression-beautifier",
+        "/power-automate-beautifier",
+        "/pa-beautifier",
+        "/flow-beautifier",
+        "/expression-beautifier"
+      ],
+      "keywords": ["beautifier", "expression", "format", "power"]
+    },
+    {
+      "destination": "/prompt-gallery/",
+      "title": "Prompt Gallery",
+      "aliases": [
+        "/prompt",
+        "/prompts"
+      ],
+      "keywords": ["prompt", "gallery", "ai"]
+    },
+    {
+      "destination": "/qdv/",
+      "title": "Query Dataverse",
+      "aliases": [
+        "/query-dataverse",
+        "/querydataverse",
+        "/dataverse-query"
+      ],
+      "keywords": ["query", "dataverse"]
+    },
+    {
+      "destination": "/retirewise/",
+      "title": "Retire Wise",
+      "aliases": [
+        "/retire-wise",
+        "/retire"
+      ],
+      "keywords": ["retire", "fire", "wise"]
+    },
+    {
+      "destination": "/whatsapp-chat-reader/",
+      "title": "WhatsApp Chat Export Reader",
+      "aliases": [
+        "/whatsapp-chat-export-reader",
+        "/whatsapp-reader",
+        "/whatsapp"
+      ],
+      "keywords": ["whatsapp", "chat"]
+    },
+    {
+      "destination": "/xsv-editor/",
+      "title": "CSV Editor Online",
+      "aliases": [
+        "/csv-editor",
+        "/csv-editor-online",
+        "/tsv-editor",
+        "/csv"
+      ],
+      "keywords": ["csv", "tsv", "xsv", "editor"]
+    },
+    {
+      "destination": "/power-platform-developer-tools/",
+      "title": "My Power Platform Developer Tools",
+      "aliases": [
+        "/developer-tools",
+        "/dev-tools"
+      ],
+      "keywords": ["developer", "tools", "platform"]
+    }
+  ],
+  "prefixRedirects": {
+    "/old-blog/": "/",
+    "/blog/": "/"
+  }
+}

@@ -90,6 +90,16 @@
             <span class="relative">Beam me home</span>
         </a>
 
+        <!-- Did you mean? Suggestions (hidden by default, shown by JS) -->
+        <div id="suggestions-section" class="mt-5 md:mt-7 w-full max-w-sm mx-auto hidden" style="animation: suggestion-fade-in 0.5s ease-out forwards;">
+            <p class="text-[10px] md:text-xs text-[var(--text-muted)] uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
+                <span class="w-6 h-px bg-[var(--text-muted)] opacity-30"></span>
+                Did you mean?
+                <span class="w-6 h-px bg-[var(--text-muted)] opacity-30"></span>
+            </p>
+            <div id="suggestions-list" class="flex flex-col gap-2"></div>
+        </div>
+
         <!-- Attempted URL hint -->
         <p id="attempted-path" class="mt-4 md:mt-5 text-[10px] md:text-xs text-[var(--text-muted)] opacity-50 font-mono truncate max-w-full px-4"></p>
     </div>
@@ -173,52 +183,250 @@
     @keyframes shimmer {
         100% { transform: translateX(200%); }
     }
+
+    /* Suggestion section */
+    @keyframes suggestion-fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .suggestion-pill {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 1rem;
+        border-radius: 1rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        text-decoration: none;
+        transition: all 0.25s ease;
+        animation: suggestion-fade-in 0.4s ease-out both;
+    }
+    .suggestion-pill:hover {
+        border-color: var(--blob-1);
+        box-shadow: 0 0 20px rgba(var(--blob-1-rgb, 139, 92, 246), 0.15);
+        transform: translateX(4px);
+    }
+    .suggestion-pill .pill-icon {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        background: linear-gradient(135deg, var(--blob-1), var(--blob-2));
+        font-size: 0.65rem;
+    }
+    .suggestion-pill .pill-text {
+        flex: 1;
+        min-width: 0;
+        text-align: left;
+    }
+    .suggestion-pill .pill-title {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-main);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .suggestion-pill .pill-path {
+        display: block;
+        font-size: 0.65rem;
+        color: var(--text-muted);
+        font-family: monospace;
+        opacity: 0.7;
+    }
+    .suggestion-pill .pill-arrow {
+        flex-shrink: 0;
+        color: var(--text-muted);
+        opacity: 0.4;
+        transition: opacity 0.25s, transform 0.25s;
+    }
+    .suggestion-pill:hover .pill-arrow {
+        opacity: 1;
+        transform: translateX(2px);
+        color: var(--blob-1);
+    }
 </style>
 
 <script>
 (function() {
-    // Show the attempted path
-    const pathEl = document.getElementById('attempted-path');
-    if (pathEl && window.location.pathname !== '/') {
-        pathEl.textContent = window.location.pathname;
+    /* ==============================================
+       BROKEN PATH RESOLVER
+       Three-tier redirect: exact → prefix → suggest
+       ============================================== */
+
+    // Hugo injects the redirect data at build time
+    const DATA = {{ $.Site.Data.redirects | jsonify }};
+
+    // Normalize the current path: lowercase, strip trailing slash (keep root /)
+    const rawPath = window.location.pathname;
+    const normPath = rawPath.replace(/\/+$/, '').toLowerCase() || '/';
+
+    // ---- Build inverted lookup maps from the destination-centric data ----
+    const aliasMap = {};   // lowercase alias → { destination, title }
+    const kwMap = {};      // keyword → [{ destination, title }, ...]
+
+    (DATA.redirects || []).forEach(function(entry) {
+        const dest = entry.destination;
+        const title = entry.title || dest;
+
+        // Invert aliases
+        (entry.aliases || []).forEach(function(alias) {
+            aliasMap[alias.toLowerCase().replace(/\/+$/, '')] = { destination: dest, title: title };
+        });
+
+        // Invert keywords
+        (entry.keywords || []).forEach(function(kw) {
+            var key = kw.toLowerCase();
+            if (!kwMap[key]) kwMap[key] = [];
+            // Avoid duplicates for the same destination
+            if (!kwMap[key].some(function(e) { return e.destination === dest; })) {
+                kwMap[key].push({ destination: dest, title: title });
+            }
+        });
+    });
+
+    // ---- Tier 1: Exact alias redirect ----
+    var exactMatch = aliasMap[normPath];
+    if (exactMatch) {
+        // SEO: inject canonical link
+        var canon = document.createElement('link');
+        canon.rel = 'canonical';
+        canon.href = exactMatch.destination;
+        document.head.appendChild(canon);
+
+        // SEO: inject meta refresh as crawler fallback
+        var refresh = document.createElement('meta');
+        refresh.httpEquiv = 'refresh';
+        refresh.content = '0;url=' + exactMatch.destination;
+        document.head.appendChild(refresh);
+
+        // Redirect (replaces history entry — no back-button loop)
+        window.location.replace(exactMatch.destination);
+        return; // Stop execution, page will redirect
     }
 
-    // Generate floating particles
-    const field = document.getElementById('particle-field');
+    // ---- Tier 2: Prefix redirect ----
+    var prefixes = DATA.prefixRedirects || {};
+    var prefixKeys = Object.keys(prefixes);
+    for (var i = 0; i < prefixKeys.length; i++) {
+        if (normPath.indexOf(prefixKeys[i].toLowerCase()) === 0) {
+            var prefDest = prefixes[prefixKeys[i]];
+            var canon2 = document.createElement('link');
+            canon2.rel = 'canonical';
+            canon2.href = prefDest;
+            document.head.appendChild(canon2);
+
+            var refresh2 = document.createElement('meta');
+            refresh2.httpEquiv = 'refresh';
+            refresh2.content = '0;url=' + prefDest;
+            document.head.appendChild(refresh2);
+
+            window.location.replace(prefDest);
+            return;
+        }
+    }
+
+    // ---- If we reach here, show the 404 page ----
+
+    // Show the attempted path
+    var pathEl = document.getElementById('attempted-path');
+    if (pathEl && rawPath !== '/') {
+        pathEl.textContent = rawPath;
+    }
+
+    // ---- Tier 3: Keyword-based suggestions ----
+    // Tokenize the path: split on /, -, _, ., and digits-to-letters boundaries
+    var tokens = normPath
+        .replace(/^\//,'')          // strip leading slash
+        .split(/[\/\-_\.]+/)        // split on separators
+        .filter(function(t) { return t.length > 1; }); // skip single chars
+
+    // Score each destination by how many keyword tokens match
+    var scores = {};  // destination → { score, title, destination }
+    tokens.forEach(function(token) {
+        if (kwMap[token]) {
+            kwMap[token].forEach(function(entry) {
+                if (!scores[entry.destination]) {
+                    scores[entry.destination] = { score: 0, title: entry.title, destination: entry.destination };
+                }
+                scores[entry.destination].score++;
+            });
+        }
+    });
+
+    // Sort by score descending, take top 3
+    var suggestions = Object.keys(scores)
+        .map(function(k) { return scores[k]; })
+        .sort(function(a, b) { return b.score - a.score; })
+        .slice(0, 3);
+
+    // Render suggestions if we have any
+    if (suggestions.length > 0) {
+        var section = document.getElementById('suggestions-section');
+        var list = document.getElementById('suggestions-list');
+        if (section && list) {
+            suggestions.forEach(function(s, idx) {
+                var a = document.createElement('a');
+                a.href = s.destination;
+                a.className = 'suggestion-pill';
+                a.style.animationDelay = (idx * 0.1) + 's';
+                a.innerHTML =
+                    '<span class="pill-icon">→</span>' +
+                    '<span class="pill-text">' +
+                        '<span class="pill-title">' + s.title + '</span>' +
+                        '<span class="pill-path">' + s.destination + '</span>' +
+                    '</span>' +
+                    '<svg class="pill-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                        '<path d="M5 12h14M12 5l7 7-7 7"/>' +
+                    '</svg>';
+                list.appendChild(a);
+            });
+            section.classList.remove('hidden');
+        }
+    }
+
+    // ---- Floating particles (decorative) ----
+    var field = document.getElementById('particle-field');
     if (field) {
-        const count = window.innerWidth < 640 ? 20 : 40;
-        for (let i = 0; i < count; i++) {
-            const p = document.createElement('div');
+        var count = window.innerWidth < 640 ? 20 : 40;
+        for (var j = 0; j < count; j++) {
+            var p = document.createElement('div');
             p.classList.add('drift-particle');
-            const size = Math.random() * 3 + 1;
-            const left = Math.random() * 100;
-            const delay = Math.random() * 15;
-            const duration = Math.random() * 12 + 10;
-            const drift = (Math.random() - 0.5) * 80;
-            const opacity = Math.random() * 0.3 + 0.05;
-            p.style.cssText = `
-                width: ${size}px;
-                height: ${size}px;
-                left: ${left}%;
-                bottom: -${size}px;
-                animation-delay: ${delay}s;
-                animation-duration: ${duration}s;
-                --p-drift: ${drift}px;
-                --p-opacity: ${opacity};
-            `;
+            var size = Math.random() * 3 + 1;
+            var left = Math.random() * 100;
+            var delay = Math.random() * 15;
+            var duration = Math.random() * 12 + 10;
+            var drift = (Math.random() - 0.5) * 80;
+            var opacity = Math.random() * 0.3 + 0.05;
+            p.style.cssText =
+                'width:' + size + 'px;' +
+                'height:' + size + 'px;' +
+                'left:' + left + '%;' +
+                'bottom:-' + size + 'px;' +
+                'animation-delay:' + delay + 's;' +
+                'animation-duration:' + duration + 's;' +
+                '--p-drift:' + drift + 'px;' +
+                '--p-opacity:' + opacity + ';';
             field.appendChild(p);
         }
     }
 
-    // Parallax tilt on the astronaut following cursor
-    const astro = document.getElementById('astronaut');
+    // ---- Parallax tilt on astronaut following cursor ----
+    var astro = document.getElementById('astronaut');
     if (astro && window.matchMedia('(pointer: fine)').matches) {
-        document.addEventListener('mousemove', (e) => {
-            const cx = window.innerWidth / 2;
-            const cy = window.innerHeight / 2;
-            const dx = (e.clientX - cx) / cx;
-            const dy = (e.clientY - cy) / cy;
-            astro.style.transform = `translateY(${-12 * Math.sin(Date.now()/1000)}px) rotate(${dx * 8}deg) translateX(${dx * 12}px)`;
+        document.addEventListener('mousemove', function(e) {
+            var cx = window.innerWidth / 2;
+            var cy = window.innerHeight / 2;
+            var dx = (e.clientX - cx) / cx;
+            var dy = (e.clientY - cy) / cy;
+            astro.style.transform = 'translateY(' + (-12 * Math.sin(Date.now()/1000)) + 'px) rotate(' + (dx * 8) + 'deg) translateX(' + (dx * 12) + 'px)';
         });
     }
 })();
