@@ -262,7 +262,7 @@
        ============================================== */
 
     // Hugo injects the redirect data at build time
-    const DATA = {{ $.Site.Data.redirects | jsonify }};
+    const DATA = {{ $.Site.Data.redirects | jsonify | safeJS }};
 
     // Normalize the current path: lowercase, strip trailing slash (keep root /)
     const rawPath = window.location.pathname;
