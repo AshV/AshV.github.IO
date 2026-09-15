@@ -1,11 +1,11 @@
 {{ define "main" }}
-<main class="relative z-10 w-full h-screen max-h-screen flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden">
+<main class="relative z-10 w-full min-h-screen flex flex-col items-center justify-center p-4 md:p-8 py-8 overflow-y-auto">
 
     <!-- Floating Particles (purely decorative) -->
     <div id="particle-field" class="fixed inset-0 pointer-events-none z-0" aria-hidden="true"></div>
 
     <!-- Central Glass Card -->
-    <div class="glass-panel relative rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 max-w-xl w-full text-center z-10 overflow-hidden group">
+    <div id="central-card" class="glass-panel relative rounded-[2rem] md:rounded-[3rem] p-6 md:p-8 lg:p-10 max-w-xl w-full text-center z-10 overflow-hidden group transition-all duration-500">
 
         <!-- Spotlight shimmer on hover -->
         <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[var(--glass-highlight)] to-transparent group-hover:animate-[shimmer_2s_infinite] pointer-events-none"></div>
@@ -71,18 +71,23 @@
         </div>
 
         <!-- Did you mean? Suggestions — IN FOCUS AREA, right after 404 heading -->
-        <div id="suggestions-section" class="w-full max-w-md mx-auto mb-4 hidden">
-            <p class="text-xs md:text-sm text-[var(--text-muted)] mb-1 md:mb-2">
-                Were you looking for?
-            </p>
-            <div id="suggestions-list" class="flex flex-col gap-2.5"></div>
-            <a href="/" id="btn-home-alt"
-               class="group/btn inline-flex items-center justify-center gap-2 mt-4 md:mt-5 px-5 py-2.5 rounded-full border border-[var(--glass-border)] text-[var(--text-muted)] text-xs font-medium transition-all duration-300 hover:border-[var(--blob-1)] hover:text-[var(--text-main)] hover:scale-105 active:scale-95">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                </svg>
-                Or go home
-            </a>
+        <div id="suggestions-section" class="w-full mx-auto mb-4 hidden">
+            <div class="flex items-center justify-center gap-2 mb-3 md:mb-4">
+                <span class="inline-block w-2 h-2 rounded-full bg-[var(--blob-1)] animate-pulse"></span>
+                <p class="text-xs md:text-sm font-medium text-[var(--text-muted)]">
+                    Were you looking for one of these?
+                </p>
+            </div>
+            <div id="suggestions-list" class="grid gap-4 w-full"></div>
+            <div class="mt-5 md:mt-6">
+                <a href="/" id="btn-home-alt"
+                   class="group/btn inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-[var(--glass-border)] text-[var(--text-muted)] text-xs font-medium transition-all duration-300 hover:border-[var(--blob-1)] hover:text-[var(--text-main)] hover:scale-105 active:scale-95 bg-[var(--glass-bg)] backdrop-blur-md">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    Or return to home
+                </a>
+            </div>
         </div>
 
         <!-- Default 404 content (hidden when suggestions are shown) -->
@@ -115,11 +120,18 @@
 </main>
 
 <style>
-    /* Lock body to viewport on 404 */
+    /* Viewport / scroll lock on 404 */
     body:has(#astronaut) {
+        min-height: 100vh;
+    }
+    body:has(#astronaut):not(.has-suggestions) {
         overflow: hidden;
         height: 100vh;
         max-height: 100vh;
+    }
+    body.has-suggestions {
+        overflow-y: auto;
+        min-height: 100vh;
     }
 
     /* Astronaut floating animation */
@@ -193,73 +205,19 @@
     }
 
     /* Suggestion section */
-    @keyframes suggestion-fade-in {
-        from { opacity: 0; transform: translateY(10px); }
-        to   { opacity: 1; transform: translateY(0); }
+    @keyframes suggestion-card-enter {
+        from {
+            opacity: 0;
+            transform: translateY(16px) scale(0.97);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     }
 
-    .suggestion-card {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.5rem;
-        padding-right: 1rem;
-        border-radius: 1rem;
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        text-decoration: none;
-        transition: all 0.3s ease;
-        animation: suggestion-fade-in 0.5s ease-out both;
-        overflow: hidden;
-    }
-    .suggestion-card:hover {
-        border-color: var(--blob-1);
-        box-shadow: 0 0 24px rgba(var(--blob-1-rgb, 139, 92, 246), 0.2);
-        transform: translateY(-2px);
-    }
-    .suggestion-card .card-thumb {
-        flex-shrink: 0;
-        width: 3.5rem;
-        height: 3.5rem;
-        border-radius: 0.75rem;
-        object-fit: cover;
-        background: var(--glass-highlight);
-    }
-    .suggestion-card .card-text {
-        flex: 1;
-        min-width: 0;
-        text-align: left;
-    }
-    .suggestion-card .card-title {
-        display: block;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--text-main);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1.3;
-    }
-    .suggestion-card .card-path {
-        display: block;
-        font-size: 0.6rem;
-        color: var(--text-muted);
-        font-family: monospace;
-        opacity: 0.6;
-        margin-top: 0.15rem;
-    }
-    .suggestion-card .card-arrow {
-        flex-shrink: 0;
-        color: var(--text-muted);
-        opacity: 0.3;
-        transition: opacity 0.3s, transform 0.3s, color 0.3s;
-    }
-    .suggestion-card:hover .card-arrow {
-        opacity: 1;
-        transform: translateX(3px);
-        color: var(--blob-1);
+    .suggestion-card-home {
+        animation: suggestion-card-enter 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 </style>
 
@@ -278,26 +236,27 @@
     const normPath = rawPath.replace(/\/+$/, '').toLowerCase() || '/';
 
     // ---- Build inverted lookup maps from the destination-centric data ----
-    const aliasMap = {};   // lowercase alias → { destination, title, image }
-    const kwMap = {};      // keyword → [{ destination, title, image }, ...]
+    const aliasMap = {};   // lowercase alias → { destination, title, image, keywords }
+    const kwMap = {};      // keyword → [{ destination, title, image, keywords }, ...]
 
     (DATA.redirects || []).forEach(function(entry) {
         const dest = entry.destination;
         const title = entry.title || dest;
         const image = entry.image || '';
+        const keywords = entry.keywords || [];
 
         // Invert aliases
         (entry.aliases || []).forEach(function(alias) {
-            aliasMap[alias.toLowerCase().replace(/\/+$/, '')] = { destination: dest, title: title, image: image };
+            aliasMap[alias.toLowerCase().replace(/\/+$/, '')] = { destination: dest, title: title, image: image, keywords: keywords };
         });
 
         // Invert keywords
-        (entry.keywords || []).forEach(function(kw) {
+        keywords.forEach(function(kw) {
             var key = kw.toLowerCase();
             if (!kwMap[key]) kwMap[key] = [];
             // Avoid duplicates for the same destination
             if (!kwMap[key].some(function(e) { return e.destination === dest; })) {
-                kwMap[key].push({ destination: dest, title: title, image: image });
+                kwMap[key].push({ destination: dest, title: title, image: image, keywords: keywords });
             }
         });
     });
@@ -359,12 +318,12 @@
         .filter(function(t) { return t.length > 1; }); // skip single chars
 
     // Score each destination by how many keyword tokens match
-    var scores = {};  // destination → { score, title, destination, image }
+    var scores = {};  // destination → { score, title, destination, image, keywords }
     tokens.forEach(function(token) {
         if (kwMap[token]) {
             kwMap[token].forEach(function(entry) {
                 if (!scores[entry.destination]) {
-                    scores[entry.destination] = { score: 0, title: entry.title, destination: entry.destination, image: entry.image };
+                    scores[entry.destination] = { score: 0, title: entry.title, destination: entry.destination, image: entry.image, keywords: entry.keywords };
                 }
                 scores[entry.destination].score++;
             });
@@ -377,40 +336,107 @@
         .sort(function(a, b) { return b.score - a.score; })
         .slice(0, 3);
 
+    // Dynamic 3D tilt & spotlight effect for cards
+    function attachCardTilt(card) {
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+        card.addEventListener('mousemove', function(e) {
+            var rect = card.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', x + 'px');
+            card.style.setProperty('--mouse-y', y + 'px');
+
+            var centerX = rect.width / 2;
+            var centerY = rect.height / 2;
+            var rotateX = ((y - centerY) / centerY) * -8;
+            var rotateY = ((x - centerX) / centerX) * 8;
+            card.style.transform = 'perspective(1000px) translateY(-5px) scale3d(1.02, 1.02, 1.02) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        });
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = '';
+            card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        });
+        card.addEventListener('mouseenter', function() {
+            card.style.transition = 'none';
+        });
+    }
+
     // Render suggestions if we have any
     if (suggestions.length > 0) {
         var section = document.getElementById('suggestions-section');
         var list = document.getElementById('suggestions-list');
         var defaultContent = document.getElementById('default-404-content');
         var astronaut = document.getElementById('astronaut');
+        var centralCard = document.getElementById('central-card');
+
         if (section && list) {
-            // Hide default 404 content & shrink astronaut to make room
+            // Enable body scrolling if needed on mobile/smaller screens
+            document.body.classList.add('has-suggestions');
+
+            // Hide default 404 content & shrink astronaut to keep suggestions in focus
             if (defaultContent) defaultContent.style.display = 'none';
             if (astronaut) {
                 astronaut.classList.remove('mb-4', 'md:mb-6', 'w-28', 'h-28', 'md:w-36', 'md:h-36');
                 astronaut.classList.add('mb-2', 'md:mb-3', 'w-16', 'h-16', 'md:w-20', 'md:h-20');
             }
 
+            // Adapt central card and grid layout based on number of suggestions
+            if (centralCard) {
+                centralCard.classList.remove('max-w-xl');
+                if (suggestions.length === 1) {
+                    centralCard.classList.add('max-w-lg');
+                    list.className = 'grid grid-cols-1 max-w-sm mx-auto gap-4 w-full';
+                } else if (suggestions.length === 2) {
+                    centralCard.classList.add('max-w-2xl', 'md:max-w-3xl');
+                    list.className = 'grid grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto gap-4 md:gap-6 w-full';
+                } else {
+                    centralCard.classList.add('max-w-4xl', 'lg:max-w-5xl');
+                    list.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full';
+                }
+            }
+
             suggestions.forEach(function(s, idx) {
                 var a = document.createElement('a');
                 a.href = s.destination;
-                a.className = 'suggestion-card';
-                a.style.animationDelay = (idx * 0.12) + 's';
+                a.className = 'glass-panel glass-spotlight tilt-card rounded-[1.75rem] md:rounded-[2rem] overflow-hidden group cursor-pointer flex flex-col h-full suggestion-card-home transition-all duration-300 hover:border-[var(--blob-1)]';
+                a.style.display = 'flex';
+                a.style.textDecoration = 'none';
+                a.style.animationDelay = (idx * 0.1) + 's';
 
+                // Tag badges in top-right corner of image
+                var tags = (s.keywords && s.keywords.length > 0) ? s.keywords.slice(0, 2) : ['Tool'];
+                var tagsHtml = tags.map(function(t) {
+                    return '<span class="tag px-2.5 py-0.5 text-[10px] md:text-xs font-medium rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] backdrop-blur-md transition-opacity duration-300 group-hover:opacity-0 capitalize">' + t + '</span>';
+                }).join('');
+
+                // Image element with smooth hover scale
                 var imgHtml = s.image
-                    ? '<img class="card-thumb" src="' + s.image + '" alt="' + s.title + '" loading="eager">'
-                    : '<div class="card-thumb" style="background:linear-gradient(135deg,var(--blob-1),var(--blob-2))"></div>';
+                    ? '<img src="' + s.image + '" alt="' + s.title + '" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="eager">'
+                    : '<div class="w-full h-full bg-gradient-to-br from-[var(--blob-1)] to-[var(--blob-2)] flex items-center justify-center opacity-80"></div>';
 
-                a.innerHTML = imgHtml +
-                    '<span class="card-text">' +
-                        '<span class="card-title">' + s.title + '</span>' +
-                        '<span class="card-path">' + s.destination + '</span>' +
-                    '</span>' +
-                    '<svg class="card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-                        '<path d="M5 12h14M12 5l7 7-7 7"/>' +
-                    '</svg>';
+                a.innerHTML =
+                    '<div class="h-36 sm:h-40 md:h-44 overflow-hidden relative border-b border-[var(--glass-border)]">' +
+                        '<div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>' +
+                        imgHtml +
+                        '<div class="absolute top-3 right-3 z-30 flex gap-1.5">' +
+                            tagsHtml +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="p-4 md:p-5 flex-1 flex flex-col justify-center tilt-content text-left">' +
+                        '<h3 class="text-base md:text-lg font-semibold leading-snug text-[var(--text-main)] transition-all group-hover:text-shadow-sm group-hover:text-[var(--blob-1)]">' +
+                            s.title +
+                        '</h3>' +
+                        '<p class="text-xs text-[var(--text-muted)] mt-1.5 font-mono opacity-75 truncate">' +
+                            s.destination +
+                        '</p>' +
+                    '</div>';
+
+                // Attach interactive 3D tilt and mouse spotlight tracking
+                attachCardTilt(a);
+
                 list.appendChild(a);
             });
+
             section.classList.remove('hidden');
         }
     }
