@@ -11,56 +11,82 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-{{- /* SEO: JSON-LD Person Structured Data (homepage only) */ -}}
+{{- /* SEO: JSON-LD Person & ProfilePage Structured Data (homepage only) */ -}}
 {{- if .IsHome -}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ashish Vishwakarma",
-  "url": "{{ .Site.BaseURL }}",
-  "image": "{{ "images/profile.jpg" | absURL }}",
-  "jobTitle": "Software Engineer",
-  "description": "{{ .Site.Params.description }}",
-  "sameAs": [
-    "https://www.linkedin.com/in/ashishvishwakarma-ashv",
-    "https://github.com/AshV",
-    "https://x.com/aryanroyal",
-    "https://instagram.com/iAshishVi",
-    "https://dev.ashishvishwakarma.com"
-  ]
-}
-</script>
-
-{{- /* SEO: ItemList – lets Google index all tools/apps from the homepage */ -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Tools & Projects by Ashish Vishwakarma",
-  "description": "{{ .Site.Params.description }}",
-  "numberOfItems": {{ len .Site.RegularPages.ByWeight }},
-  "itemListElement": [
-    {{- range $index, $page := .Site.RegularPages.ByWeight -}}
-    {{ if $index }},{{ end }}
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": {{ add $index 1 }},
-      "name": {{ $page.Title | jsonify }},
-      "description": {{ ($page.Params.excerpt | default "") | jsonify }},
-      "url": "{{ with $page.Params.redirectUrl }}{{ . }}{{ else }}{{ $page.Permalink }}{{ end }}"
-      {{- if $page.Params.image }},
-      "image": "{{ $page.Params.image }}"
-      {{- end }}
+      "@type": "ProfilePage",
+      "@id": "{{ .Site.BaseURL }}#webpage",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "Ashish Vishwakarma — Developer Lab & Software Portfolio",
+      "description": "{{ .Site.Params.description }}",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "{{ .Site.BaseURL }}#author",
+        "name": "Ashish Vishwakarma",
+        "url": "{{ .Site.BaseURL }}",
+        "image": "{{ "images/profile.jpg" | absURL }}",
+        "jobTitle": "Software Engineer",
+        "description": "{{ .Site.Params.description }}",
+        "sameAs": [
+          "https://www.linkedin.com/in/ashishvishwakarma-ashv",
+          "https://github.com/AshV",
+          "https://x.com/aryanroyal",
+          "https://instagram.com/iAshishVi",
+          "https://dev.ashishvishwakarma.com"
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "{{ .Site.BaseURL }}#tools",
+      "name": "Developer Tools & Applications by Ashish Vishwakarma",
+      "description": "Collection of open-source utilities, web applications, and developer tools created by Ashish Vishwakarma.",
+      "numberOfItems": {{ len .Site.RegularPages.ByWeight }},
+      "itemListElement": [
+        {{- range $index, $page := .Site.RegularPages.ByWeight -}}
+        {{- $targetUrl := $page.Permalink -}}
+        {{- if isset $page.Params "redirecturl" -}}
+          {{- $targetUrl = $page.Params.redirecturl -}}
+        {{- end -}}
+        {{ if $index }},{{ end }}
+        {
+          "@type": "ListItem",
+          "position": {{ add $index 1 }},
+          "item": {
+            "@type": "WebApplication",
+            "name": {{ $page.Title | jsonify }},
+            "description": {{ ($page.Params.excerpt | default "") | jsonify }},
+            "url": {{ $targetUrl | jsonify }},
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "All",
+            "author": {
+              "@type": "Person",
+              "name": "Ashish Vishwakarma",
+              "url": "{{ $.Site.BaseURL }}"
+            }
+            {{- if $page.Params.image }},
+            "image": "{{ $page.Params.image }}"
+            {{- end }}
+          }
+        }
+        {{- end }}
+      ]
     }
-    {{- end }}
   ]
 }
 </script>
 {{- end -}}
 
-{{- /* SEO: Canonical URL (skip for redirect pages – they set their own canonical above) */ -}}
-{{- if not .Params.redirectUrl -}}
+{{- /* SEO: Canonical URL & Redirect Handling for Post Stubs */ -}}
+{{- if isset .Params "redirecturl" -}}
+<link rel="canonical" href="{{ .Params.redirecturl }}">
+<meta http-equiv="refresh" content="0; url={{ .Params.redirecturl }}">
+<meta name="robots" content="noindex, follow">
+{{- else -}}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end -}}
 

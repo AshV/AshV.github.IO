@@ -12,6 +12,26 @@
         </a>
     </nav>
 
+{{ if isset .Params "redirecturl" }}
+<script>
+    window.location.replace("{{ .Params.redirecturl }}");
+</script>
+<div class="glass-panel p-8 sm:p-12 rounded-3xl text-center max-w-lg mx-auto my-16 shadow-xl border border-[var(--glass-border)] flex flex-col items-center">
+    {{ if isset .Params "image" }}
+    <div class="w-24 h-24 rounded-2xl overflow-hidden mb-6 shadow-md border border-[var(--glass-border)]">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+    </div>
+    {{ end }}
+    <h1 class="text-2xl sm:text-3xl font-bold text-[var(--text-main)] mb-3">{{ .Title }}</h1>
+    {{ if .Params.excerpt }}
+    <p class="text-[var(--text-muted)] text-sm sm:text-base mb-6">{{ .Params.excerpt }}</p>
+    {{ end }}
+    <a href="{{ .Params.redirecturl }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium hover:opacity-90 transition-opacity shadow-lg">
+        <span>Open Application</span>
+        <i data-lucide="external-link" class="w-4 h-4"></i>
+    </a>
+</div>
+{{ else }}
     <!-- Post Content Container -->
     <article class="glass-panel rounded-3xl md:rounded-[3rem] p-6 sm:p-10 md:p-16 flex flex-col gap-10 min-[400px]:gap-12 md:gap-16 w-full mx-auto shadow-[0_8px_32px_rgba(0,0,0,0.1)] relative overflow-hidden backdrop-blur-xl border border-[var(--glass-border)]">
         
@@ -131,5 +151,6 @@
             {{ end }}
         </div>
     </div>
+    {{ end }}
 </main>
 {{ end }}
