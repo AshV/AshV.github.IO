@@ -2,5 +2,10 @@ User-agent: *
 Allow: /
 
 Sitemap: {{ "sitemap.xml" | absURL }}
-Sitemap: {{ "gyankosh/sitemap.xml" | absURL }}
-Sitemap: {{ "wisdom/sitemap.xml" | absURL }}
+Sitemap: {{ "FolderMount/sitemap.xml" | absURL }}
+Sitemap: {{ "webapi-tester/sitemap.xml" | absURL }}
+Sitemap: {{ "xsv-editor/sitemap.xml" | absURL }}
+Sitemap: {{ "markdown-reader/sitemap.xml" | absURL }}
+Sitemap: {{ "FetchXmlTester/sitemap.xml" | absURL }}
+Sitemap: {{ "gyankosh/sitemap-index.xml" | absURL }}
+Sitemap: {{ "wisdom/sitemap-index.xml" | absURL }}
