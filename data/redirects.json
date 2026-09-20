@@ -145,6 +145,50 @@
         "/dev-tools"
       ],
       "keywords": ["developer", "tools", "platform"]
+    },
+    {
+      "destination": "/FolderMount/",
+      "title": "FolderMount for Windows",
+      "image": "https://www.ashishvishwakarma.com/FolderMount/assets/images/og-image.jpg",
+      "aliases": [
+        "/foldermount",
+        "/folder-mount",
+        "/subst-gui"
+      ],
+      "keywords": ["foldermount", "windows", "virtual", "drive", "subst", "path"]
+    },
+    {
+      "destination": "/webapi-tester/",
+      "title": "OData WebAPI Tester Online",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=400&auto=format&fit=crop",
+      "aliases": [
+        "/webapitester",
+        "/webapi-tester",
+        "/odata-tester",
+        "/odata"
+      ],
+      "keywords": ["odata", "webapi", "tester", "dataverse", "dynamics"]
+    },
+    {
+      "destination": "/gyankosh/",
+      "title": "ज्ञानकोश — सनातन धर्मग्रंथ",
+      "image": "https://www.ashishvishwakarma.com/gyankosh/og-default.jpg",
+      "aliases": [
+        "/gyankosh",
+        "/gyan-kosh"
+      ],
+      "keywords": ["gyankosh", "vedas", "gita", "sanatan", "spiritual"]
+    },
+    {
+      "destination": "/wisdom/",
+      "title": "Wisdom — Timeless Quotes",
+      "image": "https://www.ashishvishwakarma.com/wisdom/og-image.jpg",
+      "aliases": [
+        "/wisdom",
+        "/quotes",
+        "/reels"
+      ],
+      "keywords": ["wisdom", "quotes", "philosophy", "reels", "inspiration"]
     }
   ],
   "prefixRedirects": {
