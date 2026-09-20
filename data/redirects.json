@@ -5,56 +5,78 @@
       "title": "Dataverse Row Counter",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/dataverserowcounter",
-        "/dataverse-row-counter",
         "/dataverse-counter",
+        "/dataverse-row-counter",
+        "/dataverserowcounter",
         "/row-counter"
       ],
-      "keywords": ["dataverse", "counter", "row"]
+      "keywords": [
+        "counter",
+        "dataverse",
+        "row"
+      ]
     },
     {
       "destination": "/FetchXmlTester/",
       "title": "FetchXML Tester Online",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/fetchxmltester",
         "/fetchxml-tester",
-        "/fetchxml-tester-online"
+        "/fetchxml-tester-online",
+        "/fetchxmltester"
       ],
-      "keywords": ["fetchxml", "tester"]
+      "keywords": [
+        "dataverse",
+        "fetchxml",
+        "tester"
+      ]
     },
     {
       "destination": "/FetchXMLToSQL/",
       "title": "FetchXML to SQL Converter",
       "image": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/fetchxmltosql",
         "/fetchxml-to-sql",
         "/fetchxml-to-sql-converter",
-        "/fetchxml2sql"
+        "/fetchxml2sql",
+        "/fetchxmltosql"
       ],
-      "keywords": ["fetchxml", "sql", "converter"]
+      "keywords": [
+        "converter",
+        "fetchxml",
+        "sql"
+      ]
     },
     {
       "destination": "/FlowCalendar/",
       "title": "Flow Calendar",
       "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/flowcalendar",
-        "/flow-calendar"
+        "/flow-calendar",
+        "/flowcalendar"
       ],
-      "keywords": ["flow", "calendar"]
+      "keywords": [
+        "calendar",
+        "flow",
+        "power-automate"
+      ]
     },
     {
       "destination": "/image-as-kindle-cover/",
       "title": "Image As Kindle Cover",
       "image": "https://www.ashishvishwakarma.com/image-as-kindle-cover/og-image.jpg",
       "aliases": [
-        "/kindle-cover",
         "/image-kindle-cover",
-        "/kindle"
+        "/kindle",
+        "/kindle-cover"
       ],
-      "keywords": ["kindle", "epub", "dither", "image", "cover"]
+      "keywords": [
+        "cover",
+        "dither",
+        "epub",
+        "image",
+        "kindle"
+      ]
     },
     {
       "destination": "/markdown-reader/",
@@ -65,130 +87,175 @@
         "/markdown-editor-online",
         "/md-editor"
       ],
-      "keywords": ["markdown", "md", "editor"]
+      "keywords": [
+        "editor",
+        "markdown",
+        "md"
+      ]
     },
     {
       "destination": "/PowerExpressionBeautifier/",
       "title": "Power Automate Expression Beautifier",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/powerexpressionbeautifier",
-        "/power-expression-beautifier",
-        "/power-automate-expression-beautifier",
-        "/power-automate-beautifier",
-        "/pa-beautifier",
+        "/expression-beautifier",
         "/flow-beautifier",
-        "/expression-beautifier"
+        "/pa-beautifier",
+        "/power-automate-beautifier",
+        "/power-automate-expression-beautifier",
+        "/power-expression-beautifier",
+        "/powerexpressionbeautifier"
       ],
-      "keywords": ["beautifier", "expression", "format", "power"]
-    },
-    {
-      "destination": "/prompt-gallery/",
-      "title": "Prompt Gallery",
-      "image": "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?q=80&w=400&auto=format&fit=crop",
-      "aliases": [
-        "/prompt",
-        "/prompts"
-      ],
-      "keywords": ["prompt", "gallery", "ai"]
+      "keywords": [
+        "beautifier",
+        "expression",
+        "format",
+        "power",
+        "power-automate"
+      ]
     },
     {
       "destination": "/qdv/",
       "title": "Query Dataverse",
       "image": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=400&auto=format&fit=crop",
       "aliases": [
+        "/dataverse-query",
         "/query-dataverse",
-        "/querydataverse",
-        "/dataverse-query"
+        "/querydataverse"
       ],
-      "keywords": ["query", "dataverse"]
+      "keywords": [
+        "dataverse",
+        "odata",
+        "query"
+      ]
     },
     {
       "destination": "/retirewise/",
       "title": "Retire Wise",
       "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/retire-wise",
-        "/retire"
+        "/retire",
+        "/retire-wise"
       ],
-      "keywords": ["retire", "fire", "wise"]
+      "keywords": [
+        "fire",
+        "retire",
+        "wise"
+      ]
     },
     {
       "destination": "/whatsapp-chat-reader/",
       "title": "WhatsApp Chat Export Reader",
       "image": "https://plus.unsplash.com/premium_photo-1676057060928-c717a8e96784?q=80&w=400&auto=format&fit=crop",
       "aliases": [
+        "/whatsapp",
         "/whatsapp-chat-export-reader",
-        "/whatsapp-reader",
-        "/whatsapp"
+        "/whatsapp-reader"
       ],
-      "keywords": ["whatsapp", "chat"]
+      "keywords": [
+        "chat",
+        "whatsapp"
+      ]
     },
     {
       "destination": "/xsv-editor/",
       "title": "CSV Editor Online",
       "image": "https://www.ashishvishwakarma.com/xsv-editor/og-image.png",
       "aliases": [
+        "/csv",
         "/csv-editor",
         "/csv-editor-online",
-        "/tsv-editor",
-        "/csv"
+        "/tsv-editor"
       ],
-      "keywords": ["csv", "tsv", "xsv", "editor"]
+      "keywords": [
+        "csv",
+        "editor",
+        "tsv",
+        "xsv"
+      ]
     },
     {
       "destination": "/power-platform-developer-tools/",
       "title": "My Power Platform Developer Tools",
       "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/developer-tools",
-        "/dev-tools"
+        "/dev-tools",
+        "/developer-tools"
       ],
-      "keywords": ["developer", "tools", "platform"]
+      "keywords": [
+        "developer",
+        "platform",
+        "tools"
+      ]
     },
     {
       "destination": "/FolderMount/",
       "title": "FolderMount for Windows",
       "image": "https://www.ashishvishwakarma.com/FolderMount/assets/images/og-image.jpg",
       "aliases": [
-        "/foldermount",
         "/folder-mount",
+        "/foldermount",
         "/subst-gui"
       ],
-      "keywords": ["foldermount", "windows", "virtual", "drive", "subst", "path"]
+      "keywords": [
+        "drive",
+        "foldermount",
+        "path",
+        "subst",
+        "virtual",
+        "windows"
+      ]
     },
     {
       "destination": "/webapi-tester/",
       "title": "OData WebAPI Tester Online",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=400&auto=format&fit=crop",
       "aliases": [
-        "/webapitester",
-        "/webapi-tester",
+        "/odata",
         "/odata-tester",
-        "/odata"
+        "/webapi-tester",
+        "/webapitester"
       ],
-      "keywords": ["odata", "webapi", "tester", "dataverse", "dynamics"]
+      "keywords": [
+        "dataverse",
+        "dynamics",
+        "odata",
+        "tester",
+        "webapi"
+      ]
     },
     {
       "destination": "/gyankosh/",
       "title": "ज्ञानकोश — सनातन धर्मग्रंथ",
       "image": "https://www.ashishvishwakarma.com/gyankosh/og-default.jpg",
       "aliases": [
-        "/gyankosh",
-        "/gyan-kosh"
+        "/gyan-kosh",
+        "/gyankosh"
       ],
-      "keywords": ["gyankosh", "vedas", "gita", "sanatan", "spiritual"]
+      "keywords": [
+        "gita",
+        "gyankosh",
+        "sanatan",
+        "spiritual",
+        "vedas"
+      ]
     },
     {
       "destination": "/wisdom/",
       "title": "Wisdom — Timeless Quotes",
       "image": "https://www.ashishvishwakarma.com/wisdom/og-image.jpg",
       "aliases": [
-        "/wisdom",
         "/quotes",
-        "/reels"
+        "/reels",
+        "/wisdom"
       ],
-      "keywords": ["wisdom", "quotes", "philosophy", "reels", "inspiration"]
+      "keywords": [
+        "inspiration",
+        "philosophy",
+        "quotes",
+        "reels",
+        "wisdom"
+      ]
     }
   ],
   "prefixRedirects": {
