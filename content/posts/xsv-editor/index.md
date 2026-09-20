@@ -1,6 +1,6 @@
 ---
 layout: post
-weight: 2
+weight: 8
 title: "CSV Editor Online"
 excerpt: "Free online CSV editor with spreadsheet-like navigation. Edit, view, sort, filter, and export CSV, TSV, PSV, and delimiter-separated files instantly in your browser. 100% client-side privacy."
 date: 2026-08-20

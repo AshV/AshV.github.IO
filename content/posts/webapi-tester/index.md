@@ -1,6 +1,6 @@
 ---
 layout: post
-weight: 5
+weight: 2
 title: "OData WebAPI Tester Online"
 excerpt: "Free online developer studio to test, format, validate, and execute Microsoft Dataverse and Dynamics 365 OData Web API queries directly in your browser without sharing credentials. Includes visual clause builder, split screen, and code generator."
 date: 2026-09-20

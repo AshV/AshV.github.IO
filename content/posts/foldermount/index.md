@@ -1,6 +1,6 @@
 ---
 layout: post
-weight: 4
+weight: 1
 title: "FolderMount for Windows"
 excerpt: "Free Windows desktop utility to map any local folder to a dedicated virtual drive letter (P:, M:, Z:). Eliminates MAX_PATH 260 character limits, organizes project workspaces, and persists across reboots with zero administrator rights required."
 date: 2026-09-20

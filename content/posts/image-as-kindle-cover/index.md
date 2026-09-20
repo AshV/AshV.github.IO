@@ -1,6 +1,6 @@
 ---
 layout: post
-weight: 1
+weight: 7
 title: "Image As Kindle Cover"
 excerpt: "Simulate 16-level Amazon Kindle E-ink rendering (Atkinson & Floyd-Steinberg dithering) and export valid EPUB 3 covers ready for Amazon Send to Kindle."
 date: 2026-08-15
