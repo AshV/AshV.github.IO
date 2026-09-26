@@ -39,7 +39,7 @@
                     class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer flex flex-col h-full animation-random-tilt" 
                     style="display: flex; text-decoration: none; animation-duration: 7s; animation-delay: -{{ $delay }}s;">
                     
-                    <div class="h-48 md:h-56 overflow-hidden relative border-b border-[var(--glass-border)]">
+                    <div class="w-full aspect-video overflow-hidden relative border-b border-[var(--glass-border)]">
                         <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
                         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                         
