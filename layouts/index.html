@@ -3,60 +3,6 @@
     
     {{ partial "hero.html" . }}
 
-    <!-- Search Bar -->
-    <div class="w-full max-w-3xl mx-auto -mt-2 mb-2 relative z-20">
-        <div class="glass-panel glass-spotlight relative rounded-2xl md:rounded-full border border-[var(--glass-border)] shadow-lg backdrop-blur-xl transition-all duration-300 focus-within:border-blue-400/50 focus-within:shadow-[0_0_25px_rgba(59,130,246,0.25)] flex items-center px-4 py-2.5 md:py-3 gap-3 group">
-            
-            <!-- Search Icon -->
-            <div class="text-[var(--text-muted)] group-focus-within:text-blue-400 transition-colors shrink-0">
-                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.3-4.3"></path>
-                </svg>
-            </div>
-
-            <!-- Search Input -->
-            <input 
-                type="text" 
-                id="search-input" 
-                placeholder="Search tools, apps, keywords (e.g. dataverse, markdown, gita)..." 
-                autocomplete="off" 
-                spellcheck="false"
-                aria-label="Search applications and tools"
-                class="w-full bg-transparent border-none outline-none text-sm md:text-base text-[var(--text-main)] placeholder-[var(--text-muted)] tracking-wide font-normal"
-            >
-
-            <!-- Action Badges / Clear Button -->
-            <div class="flex items-center gap-2 shrink-0">
-                <!-- Clear Button -->
-                <button 
-                    type="button" 
-                    id="search-clear-btn" 
-                    class="hidden p-1 rounded-full text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--glass-highlight)] transition-all cursor-pointer"
-                    aria-label="Clear search">
-                    <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-
-                <!-- Count Badge -->
-                <span 
-                    id="search-count-badge" 
-                    class="hidden sm:inline-block text-xs px-2.5 py-1 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-muted)] font-medium select-none">
-                    16 tools
-                </span>
-
-                <!-- Keyboard Shortcut Hint -->
-                <kbd 
-                    id="search-shortcut-badge" 
-                    title="Press to focus search" 
-                    class="hidden md:inline-flex items-center gap-1 text-[10px] font-mono font-medium px-2 py-1 rounded-md bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-muted)] select-none cursor-default">
-                    Ctrl+K
-                </kbd>
-            </div>
-        </div>
-    </div>
 
     <!-- Posts Grid -->
     <div id="posts-grid" class="flex-1 w-full relative perspective-[1000px]">

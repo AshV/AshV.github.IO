@@ -587,3 +587,17 @@ body.theme-sakura .text-glow {
 .animation-random-tilt {
     animation: random-tilt 7s ease-in-out infinite alternate;
 }
+
+/* Header Search Expandable Bar */
+#header-search-box {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 767px) {
+    #header-search-box {
+        background: var(--bg-color-main) !important;
+        backdrop-filter: blur(40px) !important;
+        -webkit-backdrop-filter: blur(40px) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+    }
+}

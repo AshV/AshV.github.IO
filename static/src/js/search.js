@@ -5,8 +5,12 @@
  */
 
 export function initSearch() {
+    const searchWrapper = document.getElementById('header-search-wrapper');
+    const searchToggleBtn = document.getElementById('search-toggle-btn');
+    const searchBox = document.getElementById('header-search-box');
     const searchInput = document.getElementById('search-input');
     const searchClearBtn = document.getElementById('search-clear-btn');
+    const searchCloseBtn = document.getElementById('search-close-btn');
     const searchCountBadge = document.getElementById('search-count-badge');
     const searchShortcutBadge = document.getElementById('search-shortcut-badge');
     const emptyState = document.getElementById('search-empty-state');
@@ -24,7 +28,33 @@ export function initSearch() {
         searchShortcutBadge.textContent = isMac ? '⌘K' : 'Ctrl+K';
     }
 
-    // 2. Filter Function
+    // 2. Open & Close Search Bar Helpers
+    function openSearch() {
+        if (!searchBox) return;
+        searchBox.classList.remove('hidden');
+        searchBox.classList.add('flex');
+        if (searchToggleBtn) searchToggleBtn.classList.add('hidden');
+        setTimeout(() => {
+            searchInput.focus();
+            searchInput.select();
+        }, 50);
+    }
+
+    function closeSearch() {
+        if (!searchBox) return;
+        if (searchInput.value) {
+            searchInput.value = '';
+            performSearch();
+        }
+        searchBox.classList.add('hidden');
+        searchBox.classList.remove('flex');
+        if (searchToggleBtn) {
+            searchToggleBtn.classList.remove('hidden');
+            searchToggleBtn.focus();
+        }
+    }
+
+    // 3. Filter Function
     function performSearch() {
         const rawQuery = searchInput.value.trim().toLowerCase();
         const queryTokens = rawQuery.split(/\s+/).filter(Boolean);
@@ -86,44 +116,75 @@ export function initSearch() {
         }
     }
 
-    // 3. Clear Search
+    // 4. Clear Search
     function clearSearch() {
         searchInput.value = '';
         performSearch();
         searchInput.focus();
     }
 
-    // 4. Event Listeners
+    // 5. Event Listeners
     searchInput.addEventListener('input', performSearch);
 
+    if (searchToggleBtn) {
+        searchToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openSearch();
+        });
+    }
+
+    if (searchCloseBtn) {
+        searchCloseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeSearch();
+        });
+    }
+
     if (searchClearBtn) {
-        searchClearBtn.addEventListener('click', clearSearch);
+        searchClearBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            clearSearch();
+        });
     }
 
     if (emptyStateResetBtn) {
-        emptyStateResetBtn.addEventListener('click', clearSearch);
+        emptyStateResetBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            clearSearch();
+        });
     }
 
-    // 5. Global Keyboard Shortcuts: Ctrl+K, Cmd+K, '/', Escape
+    // Close on click outside if search input is empty
+    document.addEventListener('click', (e) => {
+        if (!searchWrapper || !searchBox || searchBox.classList.contains('hidden')) return;
+        if (!searchWrapper.contains(e.target)) {
+            if (!searchInput.value.trim()) {
+                searchBox.classList.add('hidden');
+                searchBox.classList.remove('flex');
+                if (searchToggleBtn) searchToggleBtn.classList.remove('hidden');
+            }
+        }
+    });
+
+    // 6. Global Keyboard Shortcuts: Ctrl+K, Cmd+K, '/', Escape
     document.addEventListener('keydown', (e) => {
         // Don't intercept if user is typing in another input or textarea
         const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
-        const isEditable = activeTag === 'input' || activeTag === 'textarea' || document.activeElement.isContentEditable;
+        const isEditable = activeTag === 'textarea' || (activeTag === 'input' && document.activeElement !== searchInput) || document.activeElement.isContentEditable;
 
-        // Focus search: Ctrl+K, Cmd+K, or Slash (when not in an input)
+        // Focus / Open search: Ctrl+K, Cmd+K, or Slash (when not in an input)
         if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !isEditable)) {
             e.preventDefault();
-            searchInput.focus();
-            searchInput.select();
+            openSearch();
             return;
         }
 
-        // Clear search / Blur: Escape
-        if (e.key === 'Escape' && document.activeElement === searchInput) {
+        // Clear search / Blur / Close: Escape
+        if (e.key === 'Escape' && searchBox && !searchBox.classList.contains('hidden')) {
             if (searchInput.value) {
                 clearSearch();
             } else {
-                searchInput.blur();
+                closeSearch();
             }
         }
     });
