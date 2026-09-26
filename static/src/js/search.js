@@ -9,7 +9,6 @@ export function initSearch() {
     const searchToggleBtn = document.getElementById('search-toggle-btn');
     const searchBox = document.getElementById('header-search-box');
     const searchInput = document.getElementById('search-input');
-    const searchClearBtn = document.getElementById('search-clear-btn');
     const searchCloseBtn = document.getElementById('search-close-btn');
     const searchCountBadge = document.getElementById('search-count-badge');
     const searchShortcutBadge = document.getElementById('search-shortcut-badge');
@@ -66,16 +65,21 @@ export function initSearch() {
                 card.style.display = 'flex';
             });
 
-            if (searchClearBtn) searchClearBtn.classList.add('hidden');
             if (emptyState) emptyState.classList.add('hidden');
             if (searchCountBadge) {
                 searchCountBadge.textContent = `${totalCount} tools`;
             }
+            if (searchCloseBtn) {
+                searchCloseBtn.title = 'Close (Esc)';
+                searchCloseBtn.setAttribute('aria-label', 'Close search bar');
+            }
             return;
         }
 
-        // Show clear button
-        if (searchClearBtn) searchClearBtn.classList.remove('hidden');
+        if (searchCloseBtn) {
+            searchCloseBtn.title = 'Clear search';
+            searchCloseBtn.setAttribute('aria-label', 'Clear search');
+        }
 
         let matchCount = 0;
 
@@ -136,14 +140,11 @@ export function initSearch() {
     if (searchCloseBtn) {
         searchCloseBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            closeSearch();
-        });
-    }
-
-    if (searchClearBtn) {
-        searchClearBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            clearSearch();
+            if (searchInput.value) {
+                clearSearch();
+            } else {
+                closeSearch();
+            }
         });
     }
 
