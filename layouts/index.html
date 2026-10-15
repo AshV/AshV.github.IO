@@ -39,11 +39,11 @@
                     class="glass-panel glass-spotlight tilt-card reveal-on-scroll rounded-[2rem] md:rounded-[2.5rem] overflow-hidden group cursor-pointer flex flex-col h-full animation-random-tilt" 
                     style="display: flex; text-decoration: none; animation-duration: 7s; animation-delay: -{{ $delay }}s;">
                     
-                    <div class="w-full aspect-video overflow-hidden relative border-b border-[var(--glass-border)]">
+                    <div class="card-image-layer w-full aspect-video overflow-hidden relative border-b border-[var(--glass-border)]">
                         <div class="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
                         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                         
-                        <div class="absolute top-4 right-4 z-30 flex gap-2">
+                        <div class="card-tag-layer absolute top-4 right-4 z-30 flex gap-2">
                             {{ range .Params.tags }}
                                 <span class="tag px-3 py-1 text-xs font-medium rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] backdrop-blur-md transition-opacity duration-300 group-hover:opacity-0">{{ . }}</span>
                             {{ end }}

@@ -492,17 +492,46 @@ html {
 .tilt-card {
     transform-style: preserve-3d;
     will-change: transform, box-shadow;
-    transition: box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    /* Directional shadow: driven by --tilt-x / --tilt-y CSS vars set by JS */
+    --tilt-x: 0;
+    --tilt-y: 0;
 }
 
 .tilt-card:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     z-index: 10;
+    /* Shadow shifts opposite to the tilt direction for realistic light-source */
+    box-shadow:
+        calc(var(--tilt-y) * -2px) calc(var(--tilt-x) * 2px) 20px rgba(0,0,0,0.35),
+        calc(var(--tilt-y) * -4px) calc(var(--tilt-x) * 4px) 50px rgba(0,0,0,0.25),
+        0 0 0 1px var(--glass-highlight);
+}
+
+/* Z-stratified layers inside the card — exploits preserve-3d */
+.tilt-card .card-image-layer {
+    transform: translateZ(-4px) scale(0.995);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+}
+.tilt-card:hover .card-image-layer {
+    transform: translateZ(0px) scale(1);
+}
+
+.tilt-card .card-tag-layer {
+    transform: translateZ(16px);
+    transition: transform 0.4s ease;
+}
+.tilt-card:hover .card-tag-layer {
+    transform: translateZ(28px);
 }
 
 .tilt-content {
-    transform: translateZ(30px);
-    /* Lifts content off the card */
+    /* At rest: flush; on hover JS sets inline transform */
+    transform: translateZ(0);
+    transition: transform 0.4s ease;
+}
+.tilt-card:hover .tilt-content {
+    transform: translateZ(40px);
 }
 
 /* Dynamic Hover Spotlight effect (Cursor tracking) */
@@ -569,23 +598,56 @@ body.theme-sakura .text-glow {
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 1);
 }
 
-/* Tilt & Swing Card Animation */
+/* Tilt & Swing Card Animation — more dramatic keyframes */
 @keyframes random-tilt {
-    0%, 100% {
-        transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) translateZ(2px);
-    }
-    25% {
-        transform: perspective(1000px) rotateX(-2deg) rotateY(1deg) translateZ(-2px);
-    }
-    50% {
-        transform: perspective(1000px) rotateX(3deg) rotateY(3deg) translateZ(5px);
-    }
-    75% {
-        transform: perspective(1000px) rotateX(-1deg) rotateY(-2deg) translateZ(0px);
-    }
+    0%   { transform: perspective(1200px) rotateX(3deg)  rotateY(-5deg)  translateZ(4px); }
+    20%  { transform: perspective(1200px) rotateX(-4deg) rotateY(3deg)   translateZ(-3px); }
+    40%  { transform: perspective(1200px) rotateX(5deg)  rotateY(6deg)   translateZ(8px); }
+    60%  { transform: perspective(1200px) rotateX(-3deg) rotateY(-4deg)  translateZ(2px); }
+    80%  { transform: perspective(1200px) rotateX(2deg)  rotateY(5deg)   translateZ(-4px); }
+    100% { transform: perspective(1200px) rotateX(-5deg) rotateY(-3deg)  translateZ(6px); }
 }
 .animation-random-tilt {
-    animation: random-tilt 7s ease-in-out infinite alternate;
+    animation: random-tilt 6s ease-in-out infinite alternate;
+}
+
+/* Hero 3D parallax — driven by --hero-rx CSS var set by scroll JS */
+#hero-section {
+    --hero-rx: 0deg;
+    transform: perspective(800px) rotateX(var(--hero-rx));
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+/* Blob parallax depth — driven by --blob-tx / --blob-ty CSS vars */
+.ambient-blob {
+    --blob-tx: 0px;
+    --blob-ty: 0px;
+    transform: translate(var(--blob-tx), var(--blob-ty)) !important;
+}
+/* Override the float keyframe translate so parallax adds on top */
+.ambient-blob:nth-child(1) { animation: float1 25s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+.ambient-blob:nth-child(2) { animation: float2 30s infinite alternate-reverse cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+.ambient-blob:nth-child(3) { animation: float3 20s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+@keyframes float1 {
+    0%   { transform: translate(calc(var(--blob-tx) +   0px), calc(var(--blob-ty) +  0px)) scale(1); }
+    33%  { transform: translate(calc(var(--blob-tx) +  50px), calc(var(--blob-ty) - 50px)) scale(1.12); }
+    66%  { transform: translate(calc(var(--blob-tx) + -30px), calc(var(--blob-ty) + 40px)) scale(0.9); }
+    100% { transform: translate(calc(var(--blob-tx) +   0px), calc(var(--blob-ty) +  0px)) scale(1); }
+}
+@keyframes float2 {
+    0%   { transform: translate(calc(var(--blob-tx) +   0px), calc(var(--blob-ty) +  0px)) scale(1); }
+    33%  { transform: translate(calc(var(--blob-tx) +  60px), calc(var(--blob-ty) - 40px)) scale(1.1); }
+    66%  { transform: translate(calc(var(--blob-tx) + -40px), calc(var(--blob-ty) + 60px)) scale(0.88); }
+    100% { transform: translate(calc(var(--blob-tx) +   0px), calc(var(--blob-ty) +  0px)) scale(1); }
+}
+@keyframes float3 {
+    0%   { transform: translate(calc(var(--blob-tx) +   0px), calc(var(--blob-ty) +  0px)) scale(1); }
+    33%  { transform: translate(calc(var(--blob-tx) +  40px), calc(var(--blob-ty) - 60px)) scale(1.08); }
+    66%  { transform: translate(calc(var(--blob-tx) + -50px), calc(var(--blob-ty) + 30px)) scale(0.95); }
+    100% { transform: translate(calc(var(--blob-tx) +   0px), calc(var(--blob-ty) +  0px)) scale(1); }
 }
 
 /* Header Search Expandable Bar */

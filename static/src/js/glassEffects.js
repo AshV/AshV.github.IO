@@ -6,6 +6,8 @@ export function initGlassEffects() {
     initMobileScrollEffects();
     initScrollReveal();
     initReadingProgress();
+    initHeroParallax();
+    initBlobParallax();
 }
 
 function initSpotlight() {
@@ -24,122 +26,111 @@ function initSpotlight() {
 }
 
 function initTilt() {
+    const MAX_ROTATE = 18; // ±18° — dramatic, iOS-springboard feel
     const cards = document.querySelectorAll('.tilt-card');
 
     cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            // Disable CSS animation so JS takes full control
+            card.style.animation  = 'none';
+            card.style.transition = 'none';
+        });
+
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // x position within the element.
-            const y = e.clientY - rect.top;  // y position within the element.
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-            const centerX = rect.width / 2;
+            const centerX = rect.width  / 2;
             const centerY = rect.height / 2;
 
-            const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
-            const rotateY = ((x - centerX) / centerX) * 10;
+            // Normalised -1 … +1
+            const nx = (x - centerX) / centerX;
+            const ny = (y - centerY) / centerY;
 
-            card.style.transform = `perspective(1000px) translateY(-5px) scale3d(1.02, 1.02, 1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            const rotateX = ny * -MAX_ROTATE;
+            const rotateY = nx *  MAX_ROTATE;
+
+            // Drive the directional shadow CSS vars
+            card.style.setProperty('--tilt-x', rotateX.toFixed(2));
+            card.style.setProperty('--tilt-y', rotateY.toFixed(2));
+
+            card.style.transform =
+                `perspective(1200px) translateY(-8px) scale3d(1.04, 1.04, 1.04) ` +
+                `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
 
         card.addEventListener('mouseleave', () => {
-            // Reset to default smoothly
-            card.style.transform = `perspective(1000px) translateY(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)`;
-            card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
-            
-            // Allow the CSS animation to take back over after the smooth hover reset transition finishes.
-            setTimeout(() => { 
-                if (!card.matches(':hover')) {
-                    card.style.transform = ''; 
-                }
-            }, 500);
-        });
+            // Smooth reset
+            card.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.6s ease';
+            card.style.transform  = 'perspective(1200px) translateY(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)';
+            card.style.setProperty('--tilt-x', '0');
+            card.style.setProperty('--tilt-y', '0');
 
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'none'; // remove transition for smooth tracking
+            // Hand back to CSS animation after reset settles
+            setTimeout(() => {
+                if (!card.matches(':hover')) {
+                    card.style.transform  = '';
+                    card.style.transition = '';
+                    card.style.animation  = '';
+                }
+            }, 650);
         });
     });
 }
 
 function initMobileScrollEffects() {
-    // Only run this logic on devices without fine pointer control (mobile/tablets)
-    if (!window.matchMedia("(hover: none)").matches) return;
+    if (!window.matchMedia('(hover: none)').matches) return;
 
     const cards = document.querySelectorAll('.tilt-card');
-
-    // We observe when cards are moving through the viewport
     const viewportHeight = window.innerHeight;
 
     const onScroll = () => {
         cards.forEach(card => {
             const rect = card.getBoundingClientRect();
-
-            // Only calculate if the card is actually on screen
             if (rect.top <= viewportHeight && rect.bottom >= 0) {
-                // Calculate how close the center of the card is to the center of the viewport
-                const cardCenterY = rect.top + (rect.height / 2);
+                const cardCenterY     = rect.top + (rect.height / 2);
                 const viewportCenterY = viewportHeight / 2;
+                const distanceRatio   = (cardCenterY - viewportCenterY) / viewportCenterY;
 
-                // Value from -1 (top of screen) to 1 (bottom of screen)
-                // 0 is perfectly centered
-                const distanceRatio = (cardCenterY - viewportCenterY) / viewportCenterY;
-
-                // If it's near the center (ratio between -0.4 and 0.4), apply a slight pop and tilt
                 if (Math.abs(distanceRatio) < 0.6) {
-                    const rotateX = distanceRatio * -15; // Max 15 deg tilt
-                    // Add a slight static Y rotation just to show off the 3d
-                    const rotateY = distanceRatio * 5;
+                    const rotateX = distanceRatio * -18;
+                    const rotateY = distanceRatio *   6;
 
-                    // Add a faux spotlight by moving variables
-                    card.style.setProperty('--mouse-x', `${rect.width / 2}px`);
+                    card.style.setProperty('--mouse-x', `${rect.width  / 2}px`);
                     card.style.setProperty('--mouse-y', `${rect.height / 2}px`);
-
-                    // Ensure the spotlight is visible by adding a class or inline style that forces the opacity
                     card.classList.add('mobile-active-tilt');
 
-                    card.style.transform = `perspective(1000px) translateY(-5px) scale3d(1.02, 1.02, 1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                    card.style.transform  = `perspective(1200px) translateY(-8px) scale3d(1.04, 1.04, 1.04) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                     card.style.transition = 'transform 0.1s ease-out';
-                    card.style.boxShadow = '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)';
-                    card.style.zIndex = '10';
+                    card.style.boxShadow  = '0 20px 40px rgba(0,0,0,0.35), 0 10px 20px rgba(0,0,0,0.25)';
+                    card.style.zIndex     = '10';
                 } else {
-                    // Reset when scrolling away from center
                     card.classList.remove('mobile-active-tilt');
-                    card.style.transform = `perspective(1000px) translateY(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)`;
+                    card.style.transform  = `perspective(1200px) translateY(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)`;
                     card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
-                    card.style.boxShadow = '';
-                    card.style.zIndex = '';
+                    card.style.boxShadow  = '';
+                    card.style.zIndex     = '';
                 }
             }
         });
     };
 
-    // Attach to scroll and touch events
     window.addEventListener('scroll', onScroll, { passive: true });
-
-    // Run once on load to catch cards already in view
     onScroll();
 }
 
 function initScrollReveal() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // Trigger when 15% of the element is visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add the animation class
                 entry.target.classList.add('reveal-visible');
-                // Stop observing once revealed (optional, remove if you want elements to hide/reveal constantly)
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { root: null, rootMargin: '0px', threshold: 0.15 });
 
-    // Find all elements looking to be revealed
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    revealElements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 }
 
 function initReadingProgress() {
@@ -148,10 +139,55 @@ function initReadingProgress() {
 
     window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const height    = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         if (height > 0) {
-            const scrolled = (winScroll / height) * 100;
-            progressBar.style.width = scrolled + "%";
+            progressBar.style.width = ((winScroll / height) * 100) + '%';
         }
+    }, { passive: true });
+}
+
+// ── Hero scroll parallax ──────────────────────────────────────────────────────
+function initHeroParallax() {
+    const hero = document.getElementById('hero-section');
+    if (!hero) return;
+
+    window.addEventListener('scroll', () => {
+        const scrollY   = window.scrollY;
+        const maxScroll = 300; // px of scroll that maps to full tilt range
+        const maxTilt   = 6;   // degrees
+        const tilt = Math.min(scrollY / maxScroll * maxTilt, maxTilt);
+        hero.style.setProperty('--hero-rx', `${tilt}deg`);
+    }, { passive: true });
+}
+
+// ── Blob mouse parallax ───────────────────────────────────────────────────────
+function initBlobParallax() {
+    const blobs = document.querySelectorAll('.ambient-blob');
+    if (!blobs.length) return;
+
+    // Different depth multipliers per blob (fraction of viewport offset)
+    const depths = [0.025, -0.018, 0.012];
+
+    let ticking = false;
+    document.addEventListener('mousemove', (e) => {
+        if (ticking) return;
+        ticking = true;
+
+        requestAnimationFrame(() => {
+            const cx = window.innerWidth  / 2;
+            const cy = window.innerHeight / 2;
+            const dx = e.clientX - cx;
+            const dy = e.clientY - cy;
+
+            blobs.forEach((blob, i) => {
+                const d  = depths[i] ?? 0.01;
+                const tx = (dx * d).toFixed(1);
+                const ty = (dy * d).toFixed(1);
+                blob.style.setProperty('--blob-tx', `${tx}px`);
+                blob.style.setProperty('--blob-ty', `${ty}px`);
+            });
+
+            ticking = false;
+        });
     }, { passive: true });
 }
