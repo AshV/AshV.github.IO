@@ -663,3 +663,85 @@ body.theme-sakura .text-glow {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
     }
 }
+
+/* ============================================================
+   Device Capability Guards
+   Classes are stamped on <html> before first paint by the
+   inline detection script in head.html.  All selectors are
+   html.cap-* so specificity beats component styles without !important.
+   ============================================================ */
+
+/* ── Reduced-motion: kill every animation & transition ──────── */
+html.cap-reduced-motion *,
+html.cap-reduced-motion *::before,
+html.cap-reduced-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+}
+/* Keep blobs but freeze them */
+html.cap-reduced-motion .ambient-blob {
+    animation: none !important;
+}
+
+/* ── Reduced-transparency: replace glass with solid fallback ── */
+html.cap-reduced-transparency .glass-panel {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--bg-color-accent) !important;
+}
+
+/* ── No hover (touch-only devices): disable mouse-only effects  */
+html.cap-no-hover .animation-random-tilt {
+    animation: none;
+}
+html.cap-no-hover .tilt-card {
+    transform: none !important;
+    transition: none !important;
+}
+html.cap-no-hover #hero-section {
+    transform: none !important;
+}
+/* Spotlight pseudo-element is pointless without a cursor */
+html.cap-no-hover .glass-spotlight::before {
+    display: none;
+}
+
+/* ── Low CPU (≤ 2 cores): disable blobs & heavy transforms ──── */
+html.cap-low-cpu .ambient-blob {
+    animation: none;
+    opacity: 0.3;
+    filter: blur(60px);   /* cheaper than blur(100px) */
+}
+html.cap-low-cpu .animation-random-tilt {
+    animation: none;
+}
+
+/* ── Low memory (< 2 GB): drop backdrop-blur (GPU cost) ─────── */
+html.cap-low-memory .glass-panel,
+html.cap-low-memory #header-search-box {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--bg-color-accent) !important;
+}
+html.cap-low-memory .ambient-blob {
+    display: none;
+}
+
+/* ── Slow connection: no blobs (they're decorative, not critical) */
+html.cap-slow-connection .ambient-blob {
+    display: none;
+}
+
+/* ── Low battery: reduce all animation to conserve power ─────── */
+html.cap-low-battery .ambient-blob {
+    animation-duration: 60s !important; /* very slow drift */
+    opacity: 0.2 !important;
+}
+html.cap-low-battery .animation-random-tilt {
+    animation: none;
+}
+html.cap-low-battery .glass-panel {
+    backdrop-filter: blur(8px) !important; /* cheaper blur */
+    -webkit-backdrop-filter: blur(8px) !important;
+}

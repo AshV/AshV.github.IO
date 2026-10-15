@@ -125,6 +125,56 @@
 {{- else if .IsHome -}}
 <meta name="twitter:image" content="{{ "images/profile.jpg" | absURL }}">
 {{- end -}}
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Device Capability Detection — runs synchronously before first paint.
+     Stamps classes on <html> so CSS guards fire with zero layout shift.
+     No external dependencies. ~600 bytes unminified.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+    var h = document.documentElement;
+
+    // ── Motion / transparency preference ─────────────────────────────────────
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+        h.classList.add('cap-reduced-motion');
+    if (window.matchMedia('(prefers-reduced-transparency: reduce)').matches)
+        h.classList.add('cap-reduced-transparency');
+
+    // ── Pointer type  (fine = mouse, coarse = touch/stylus) ──────────────────
+    var hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+    h.classList.add(hasFinePointer ? 'cap-pointer-fine' : 'cap-pointer-coarse');
+
+    // ── Hover capability ──────────────────────────────────────────────────────
+    if (!window.matchMedia('(hover: hover)').matches)
+        h.classList.add('cap-no-hover');
+
+    // ── Screen DPR (low = likely older / budget hardware) ────────────────────
+    if ((window.devicePixelRatio || 1) < 1.5)
+        h.classList.add('cap-low-dpr');
+
+    // ── CPU cores  ────────────────────────────────────────────────────────────
+    if ((navigator.hardwareConcurrency || 2) <= 2)
+        h.classList.add('cap-low-cpu');
+
+    // ── RAM  (Chrome / Edge only — ~85 % coverage) ───────────────────────────
+    if (navigator.deviceMemory && navigator.deviceMemory < 2)
+        h.classList.add('cap-low-memory');
+
+    // ── Network speed  (Chrome / Edge only) ──────────────────────────────────
+    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (conn && (conn.saveData || conn.effectiveType === 'slow-2g' || conn.effectiveType === '2g'))
+        h.classList.add('cap-slow-connection');
+
+    // ── Battery — async, applied after load (won't block first paint) ────────
+    if ('getBattery' in navigator) {
+        navigator.getBattery().then(function (b) {
+            if (!b.charging && b.level < 0.20)
+                h.classList.add('cap-low-battery');
+        });
+    }
+})();
+</script>
+
 <!-- Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>

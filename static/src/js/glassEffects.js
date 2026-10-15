@@ -1,14 +1,38 @@
 // Glass Effects & 3D Tilt
 
 export function initGlassEffects() {
+    // Read capability classes stamped on <html> before first paint
+    // by the inline detection script in head.html.
+    const caps = document.documentElement.classList;
+    const hasHover   = !caps.contains('cap-no-hover');
+    const lowCPU     = caps.contains('cap-low-cpu');
+    const lowMemory  = caps.contains('cap-low-memory');
+    const reduced    = caps.contains('cap-reduced-motion');
+    const slowConn   = caps.contains('cap-slow-connection');
+    const lowBattery = caps.contains('cap-low-battery');
+
+    // Spotlight: lightweight, always safe
     initSpotlight();
-    initTilt();
-    initMobileScrollEffects();
+
+    // 3D tilt: only meaningful with a real pointer; skip on reduced-motion
+    if (hasHover && !reduced) initTilt();
+
+    // Mobile scroll tilt: only for touch devices (initTilt is skipped there)
+    if (!hasHover) initMobileScrollEffects();
+
+    // Scroll reveal: IntersectionObserver is cheap — always run
     initScrollReveal();
+
+    // Reading progress: cheap scroll handler
     initReadingProgress();
-    initHeroParallax();
-    initBlobParallax();
+
+    // Hero parallax: skip if no hover, reduced motion, low-CPU, or low-battery
+    if (hasHover && !reduced && !lowCPU && !lowBattery) initHeroParallax();
+
+    // Blob parallax: skip on touch, reduced-motion, low-CPU, slow connection, low-memory
+    if (hasHover && !reduced && !lowCPU && !slowConn && !lowMemory) initBlobParallax();
 }
+
 
 function initSpotlight() {
     // Add spotlight to all glass panels
