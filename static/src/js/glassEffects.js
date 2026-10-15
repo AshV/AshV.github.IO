@@ -51,54 +51,81 @@ function initSpotlight() {
 
 function initTilt() {
     const MAX_ROTATE = 18; // ±18° — dramatic, iOS-springboard feel
+    const ENTRY_MS   = 220; // duration of the smooth pop-in transition
     const cards = document.querySelectorAll('.tilt-card');
 
     cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            // Disable CSS animation so JS takes full control
-            card.style.animation  = 'none';
-            card.style.transition = 'none';
-        });
+        let entryTimer = null;
+        let tracking   = false; // true once entry animation has settled
 
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+        card.addEventListener('mouseenter', (e) => {
+            // Stop idle CSS animation
+            card.style.animation = 'none';
 
-            const centerX = rect.width  / 2;
-            const centerY = rect.height / 2;
+            // ── Phase 1: smooth entry pop ───────────────────────────────────
+            // Apply an eased transition so the scale-up feels satisfying
+            card.style.transition =
+                `transform ${ENTRY_MS}ms cubic-bezier(0.34, 1.56, 0.64, 1), ` +
+                `box-shadow ${ENTRY_MS}ms ease`;
 
-            // Normalised -1 … +1
-            const nx = (x - centerX) / centerX;
-            const ny = (y - centerY) / centerY;
-
+            // Seed the initial tilt from cursor position immediately
+            const rect   = card.getBoundingClientRect();
+            const nx     = ((e.clientX - rect.left)  / rect.width  - 0.5) * 2;
+            const ny     = ((e.clientY - rect.top)   / rect.height - 0.5) * 2;
             const rotateX = ny * -MAX_ROTATE;
             const rotateY = nx *  MAX_ROTATE;
 
-            // Drive the directional shadow CSS vars
             card.style.setProperty('--tilt-x', rotateX.toFixed(2));
             card.style.setProperty('--tilt-y', rotateY.toFixed(2));
+            card.style.transform =
+                `perspective(1200px) translateY(-8px) scale3d(1.04, 1.04, 1.04) ` +
+                `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
+            // ── Phase 2: switch to lag-free tracking after entry settles ───
+            tracking = false;
+            clearTimeout(entryTimer);
+            entryTimer = setTimeout(() => {
+                card.style.transition = 'none';
+                tracking = true;
+            }, ENTRY_MS);
+        });
+
+        card.addEventListener('mousemove', (e) => {
+            if (!tracking) return; // still in entry animation — don't fight it
+
+            const rect    = card.getBoundingClientRect();
+            const nx      = ((e.clientX - rect.left)  / rect.width  - 0.5) * 2;
+            const ny      = ((e.clientY - rect.top)   / rect.height - 0.5) * 2;
+            const rotateX = ny * -MAX_ROTATE;
+            const rotateY = nx *  MAX_ROTATE;
+
+            card.style.setProperty('--tilt-x', rotateX.toFixed(2));
+            card.style.setProperty('--tilt-y', rotateY.toFixed(2));
             card.style.transform =
                 `perspective(1200px) translateY(-8px) scale3d(1.04, 1.04, 1.04) ` +
                 `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
 
         card.addEventListener('mouseleave', () => {
-            // Smooth reset
-            card.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.6s ease';
-            card.style.transform  = 'perspective(1200px) translateY(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)';
+            clearTimeout(entryTimer);
+            tracking = false;
+
+            // Smooth exit back to neutral
+            card.style.transition =
+                'transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.55s ease';
+            card.style.transform =
+                'perspective(1200px) translateY(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)';
             card.style.setProperty('--tilt-x', '0');
             card.style.setProperty('--tilt-y', '0');
 
-            // Hand back to CSS animation after reset settles
+            // Hand CSS animation back after exit settles
             setTimeout(() => {
                 if (!card.matches(':hover')) {
                     card.style.transform  = '';
                     card.style.transition = '';
                     card.style.animation  = '';
                 }
-            }, 650);
+            }, 600);
         });
     });
 }
