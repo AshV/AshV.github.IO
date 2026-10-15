@@ -534,31 +534,6 @@ html {
     transform: translateZ(40px);
 }
 
-/* ── Sibling isolation — only the hovered card "pops" ──────────────────────
-   :has() is supported in all modern browsers (Chrome 105+, Safari 15.4+,
-   Firefox 121+).  Non-hovered siblings scale down and fade out so the active
-   card feels uniquely expanded, like iOS springboard.
-   The animation:none freeze stops the idle tilt from fighting the scale.
-   ─────────────────────────────────────────────────────────────────────────── */
-#posts-container:has(.tilt-card:hover) .tilt-card:not(:hover) {
-    animation: none !important;          /* freeze idle tilt on siblings      */
-    transform: scale3d(0.94, 0.94, 0.94) !important;
-    opacity: 0.55;
-    filter: brightness(0.65);
-    transition:
-        transform  0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
-        opacity    0.35s ease,
-        filter     0.35s ease !important;
-}
-
-/* Respect reduced-motion: skip the sibling dimming entirely */
-html.cap-reduced-motion #posts-container:has(.tilt-card:hover) .tilt-card:not(:hover) {
-    animation: none !important;
-    transform: none !important;
-    opacity: 1;
-    filter: none;
-}
-
 /* Dynamic Hover Spotlight effect (Cursor tracking) */
 .glass-spotlight {
     position: relative;
