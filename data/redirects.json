@@ -239,23 +239,6 @@
         "spiritual",
         "vedas"
       ]
-    },
-    {
-      "destination": "/wisdom/",
-      "title": "Wisdom — Timeless Quotes",
-      "image": "https://www.ashishvishwakarma.com/wisdom/og-image.jpg",
-      "aliases": [
-        "/quotes",
-        "/reels",
-        "/wisdom"
-      ],
-      "keywords": [
-        "inspiration",
-        "philosophy",
-        "quotes",
-        "reels",
-        "wisdom"
-      ]
     }
   ],
   "prefixRedirects": {
