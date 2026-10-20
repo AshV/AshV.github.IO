@@ -225,9 +225,9 @@
       ]
     },
     {
-      "destination": "/gyankosh/",
+      "destination": "https://gyankosh.app/",
       "title": "ज्ञानकोश — सनातन धर्मग्रंथ",
-      "image": "https://www.ashishvishwakarma.com/gyankosh/og-default.jpg",
+      "image": "https://gyankosh.app/og-default.jpg",
       "aliases": [
         "/gyan-kosh",
         "/gyankosh"
