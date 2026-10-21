@@ -239,6 +239,32 @@
         "spiritual",
         "vedas"
       ]
+    },
+    {
+      "destination": "https://ih4.in/",
+      "title": "IH4 — One-Time File & Text Sharing",
+      "image": "https://ih4.in/og-image.jpg",
+      "aliases": [
+        "/ih4",
+        "/ih4-share",
+        "/ih4share",
+        "/pin-share",
+        "/share"
+      ],
+      "keywords": [
+        "4-digit",
+        "ephemeral",
+        "file-sharing",
+        "ih4",
+        "one-time",
+        "pin",
+        "privacy",
+        "pwa",
+        "secret",
+        "secure",
+        "share",
+        "text-sharing"
+      ]
     }
   ],
   "prefixRedirects": {
